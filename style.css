@@ -10,7 +10,9 @@ body {
 }
 
 
-/* الهيدر */
+/* =========================
+   الهيدر
+========================= */
 
 .header {
     height: 75px;
@@ -45,7 +47,9 @@ body {
 }
 
 
-/* الواجهة الرئيسية */
+/* =========================
+   الواجهة الرئيسية
+========================= */
 
 .hero {
     min-height: 430px;
@@ -62,12 +66,14 @@ body {
 .hero-content h1 {
     font-size: 55px;
     margin: 0 0 15px;
+
     color: #062b52;
 }
 
 .hero-content p {
     font-size: 22px;
     color: #666;
+
     margin-bottom: 35px;
 }
 
@@ -91,7 +97,9 @@ body {
 }
 
 
-/* المنتجات */
+/* =========================
+   المنتجات
+========================= */
 
 .products {
     padding: 70px 8%;
@@ -100,21 +108,30 @@ body {
 
 .products h2 {
     font-size: 35px;
+
     margin: 0 0 10px;
+
     color: #062b52;
 }
 
 .products-description {
     color: #777;
+
     margin-bottom: 40px;
 }
 
 .products-container {
     display: flex;
+
     justify-content: center;
+
     gap: 30px;
+
     flex-wrap: wrap;
 }
+
+
+/* كارت المنتج */
 
 .product-card {
     background: white;
@@ -134,30 +151,20 @@ body {
     transform: translateY(-5px);
 }
 
+
+/* صورة المنتج */
+
 .product-image {
-    height: 220px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f0f0f0;
-
-    border-radius: 10px;
-
-    margin-bottom: 20px;
-}
-
-.product-image svg {
-     height: 300px;
+    width: 100%;
+    height: 300px;
 
     overflow: hidden;
 
     border-radius: 10px;
 
-    margin-bottom: 20px;
-
     background: #eee;
+
+    margin-bottom: 20px;
 }
 
 .product-image img {
@@ -174,18 +181,29 @@ body {
 .product-card:hover .product-image img {
     transform: scale(1.05);
 }
-}
+
+
+/* اسم المنتج */
 
 .product-card h3 {
     font-size: 21px;
+
     margin: 10px 0;
 }
 
+
+/* السعر */
+
 .price {
     font-size: 20px;
+
     font-weight: bold;
+
     color: #062b52;
 }
+
+
+/* زر الطلب */
 
 .product-card button {
     width: 100%;
@@ -193,6 +211,7 @@ body {
     border: none;
 
     background: #062b52;
+
     color: white;
 
     padding: 13px;
@@ -209,7 +228,9 @@ body {
 }
 
 
-/* التواصل */
+/* =========================
+   التواصل
+========================= */
 
 .contact {
     text-align: center;
@@ -221,6 +242,7 @@ body {
 
 .contact h2 {
     color: #062b52;
+
     font-size: 30px;
 }
 
@@ -230,6 +252,7 @@ body {
 
 .contact button {
     background: #062b52;
+
     color: white;
 
     border: none;
@@ -244,10 +267,13 @@ body {
 }
 
 
-/* أسفل الصفحة */
+/* =========================
+   أسفل الصفحة
+========================= */
 
 footer {
     background: #062b52;
+
     color: white;
 
     text-align: center;
@@ -260,7 +286,9 @@ footer p {
 }
 
 
-/* الموبايل */
+/* =========================
+   الموبايل
+========================= */
 
 @media (max-width: 700px) {
 
@@ -282,6 +310,11 @@ footer p {
 
     .products {
         padding: 50px 20px;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 330px;
     }
 
 }
