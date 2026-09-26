@@ -1,22 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: #f5f5f5;
     color: #222;
 }
 
+
+/* الهيدر */
+
 .header {
-    height: 70px;
-    background-color: #062b52;
+    height: 75px;
+    background: #062b52;
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+
+    padding: 0 8%;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bold;
 }
 
@@ -31,67 +40,222 @@ body {
     font-size: 17px;
 }
 
+.menu a:hover {
+    color: #ddd;
+}
+
+
+/* الواجهة الرئيسية */
+
 .hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    padding: 90px 20px;
-    background-color: white;
+
+    background: white;
 }
 
-.hero h1 {
-    font-size: 42px;
+.hero-content h1 {
+    font-size: 55px;
     margin: 0 0 15px;
+    color: #062b52;
 }
 
-.hero p {
-    font-size: 20px;
+.hero-content p {
+    font-size: 22px;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
-.hero button {
-    background-color: #062b52;
+.hero-button {
+    display: inline-block;
+
+    background: #062b52;
     color: white;
-    border: none;
-    padding: 14px 35px;
-    font-size: 17px;
-    border-radius: 6px;
-    cursor: pointer;
+
+    text-decoration: none;
+
+    padding: 15px 40px;
+
+    border-radius: 7px;
+
+    font-size: 18px;
 }
+
+.hero-button:hover {
+    background: #0a3d70;
+}
+
+
+/* المنتجات */
 
 .products {
-    padding: 50px 30px;
+    padding: 70px 8%;
     text-align: center;
 }
 
 .products h2 {
-    font-size: 32px;
-    margin-bottom: 35px;
+    font-size: 35px;
+    margin: 0 0 10px;
+    color: #062b52;
 }
 
-.product {
-    background-color: white;
-    width: 260px;
-    margin: auto;
-    padding: 25px;
+.products-description {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: white;
+
+    width: 280px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0f0f0;
+
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
 
-.product h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
+    font-size: 90px;
 
-.product p {
-    font-size: 18px;
     margin-bottom: 20px;
 }
 
-.product button {
-    background-color: #062b52;
-    color: white;
+.product-card h3 {
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #062b52;
+}
+
+.product-card button {
+    width: 100%;
+
     border: none;
-    padding: 12px 25px;
+
+    background: #062b52;
+    color: white;
+
+    padding: 13px;
+
     border-radius: 6px;
+
+    font-size: 16px;
+
     cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #0a3d70;
+}
+
+
+/* التواصل */
+
+.contact {
+    text-align: center;
+
+    background: white;
+
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    color: #062b52;
+    font-size: 30px;
+}
+
+.contact p {
+    color: #666;
+}
+
+.contact button {
+    background: #062b52;
+    color: white;
+
+    border: none;
+
+    padding: 13px 35px;
+
+    border-radius: 6px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+
+/* أسفل الصفحة */
+
+footer {
+    background: #062b52;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* الموبايل */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .products {
+        padding: 50px 20px;
+    }
+
 }
