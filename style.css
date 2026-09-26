@@ -9,22 +9,15 @@ body {
     color: #222;
 }
 
-
-/* =========================
-   الهيدر
-========================= */
+/* الهيدر */
 
 .header {
     height: 75px;
-
     background: #062b52;
-
     color: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 8%;
@@ -46,24 +39,14 @@ body {
     font-size: 17px;
 }
 
-.menu a:hover {
-    color: #ddd;
-}
-
-
-/* =========================
-   الواجهة الرئيسية
-========================= */
+/* الواجهة */
 
 .hero {
     min-height: 430px;
-
     background: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -71,94 +54,65 @@ body {
 
 .hero-content h1 {
     font-size: 55px;
-
     margin: 0 0 15px;
-
     color: #062b52;
 }
 
 .hero-content p {
     font-size: 22px;
-
     color: #666;
-
     margin-bottom: 35px;
 }
 
 .hero-button {
     display: inline-block;
-
     background: #062b52;
-
     color: white;
 
     text-decoration: none;
 
     padding: 15px 40px;
-
     border-radius: 7px;
 
     font-size: 18px;
 }
 
-.hero-button:hover {
-    background: #0a3d70;
-}
-
-
-/* =========================
-   الأقسام
-========================= */
+/* الأقسام */
 
 .categories {
     padding: 70px 8%;
-
     text-align: center;
-
     background: #f5f5f5;
 }
 
 .categories h2 {
     margin: 0 0 10px;
-
     font-size: 35px;
-
     color: #062b52;
 }
 
 .categories-description {
     color: #777;
-
     margin-bottom: 40px;
 }
 
-
-/* حاوية الكروت */
-
 .categories-container {
     display: flex;
-
     justify-content: center;
-
     gap: 30px;
-
     flex-wrap: wrap;
 }
 
-
-/* الكارت */
+/* كروت الأقسام */
 
 .category-card {
     width: 300px;
-
     background: white;
 
     border-radius: 15px;
-
     overflow: hidden;
 
     text-decoration: none;
-
     color: #222;
 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
@@ -168,41 +122,34 @@ body {
 
 .category-card:hover {
     transform: translateY(-8px);
-
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-
-/* صورة الكارت */
+/* صور الأقسام */
 
 .category-image {
     width: 100%;
-
     height: 330px;
 
     overflow: hidden;
-
     background: #e8e8e8;
 }
 
 .category-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
-
     display: block;
 
-    transition: transform 0.4s;
+    transition: 0.4s;
 }
 
 .category-card:hover .category-image img {
     transform: scale(1.05);
 }
 
-
-/* معلومات الكارت */
+/* اسم القسم */
 
 .category-info {
     padding: 20px;
@@ -218,26 +165,19 @@ body {
 
 .category-info span {
     color: #777;
-
     font-size: 15px;
 }
 
-
-/* =========================
-   التواصل
-========================= */
+/* التواصل */
 
 .contact {
     text-align: center;
-
     background: white;
-
     padding: 60px 20px;
 }
 
 .contact h2 {
     color: #062b52;
-
     font-size: 30px;
 }
 
@@ -247,7 +187,6 @@ body {
 
 .contact button {
     background: #062b52;
-
     color: white;
 
     border: none;
@@ -261,14 +200,10 @@ body {
     cursor: pointer;
 }
 
-
-/* =========================
-   الفوتر
-========================= */
+/* الفوتر */
 
 footer {
     background: #062b52;
-
     color: white;
 
     text-align: center;
@@ -280,10 +215,7 @@ footer p {
     margin: 0;
 }
 
-
-/* =========================
-   الموبايل
-========================= */
+/* الموبايل */
 
 @media (max-width: 700px) {
 
@@ -315,5 +247,4 @@ footer p {
     .category-image {
         height: 320px;
     }
-
 }
