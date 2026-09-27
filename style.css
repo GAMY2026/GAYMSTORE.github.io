@@ -1,83 +1,271 @@
-/* كروت الصور */
-
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-
-    padding: 50px 8%;
+* {
+    box-sizing: border-box;
 }
 
-.image-card {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* الشريط الأزرق */
+
+.header {
+    height: 75px;
+    background: #062b52;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/* الصفحة الرئيسية */
+
+.hero {
+    min-height: 430px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    margin: 0 0 15px;
+
+    color: #062b52;
+}
+
+.hero-content p {
+    font-size: 22px;
+    color: #666;
+
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+
+    background: #062b52;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 40px;
+
+    border-radius: 7px;
+
+    font-size: 18px;
+}
+
+
+/* الأقسام */
+
+.categories {
+    padding: 70px 8%;
+
+    text-align: center;
+
+    background: #f5f5f5;
+}
+
+.categories h2 {
+    margin: 0 0 10px;
+
+    font-size: 35px;
+
+    color: #062b52;
+}
+
+.categories-description {
+    color: #777;
+
+    margin-bottom: 40px;
+}
+
+.categories-container {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* الكروت */
+
+.category-card {
     width: 300px;
+
     background: white;
 
     border-radius: 15px;
+
     overflow: hidden;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+    text-decoration: none;
+
+    color: #222;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
 
     transition: 0.3s;
 }
 
-.image-card:hover {
+.category-card:hover {
     transform: translateY(-8px);
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
-.image-card img {
+
+/* الرموز */
+
+.category-image {
     width: 100%;
-    height: 330px;
+    height: 300px;
 
-    object-fit: cover;
+    display: flex;
 
-    display: block;
+    align-items: center;
+    justify-content: center;
 
-    transition: 0.4s;
+    background: #eef3f8;
 }
 
-.image-card:hover img {
-    transform: scale(1.05);
+.category-icon {
+    font-size: 115px;
 }
 
-.card-content {
+
+/* معلومات الكارت */
+
+.category-info {
     padding: 20px;
-
-    text-align: center;
 }
 
-.card-content h3 {
-    margin: 0 0 10px;
+.category-info h3 {
+    margin: 0 0 8px;
+
+    font-size: 27px;
 
     color: #062b52;
-
-    font-size: 24px;
 }
 
-.card-content p {
+.category-info span {
     color: #777;
 
-    margin-bottom: 20px;
+    font-size: 15px;
 }
 
-.card-btn {
-    display: inline-block;
 
+/* التواصل */
+
+.contact {
+    text-align: center;
+
+    background: white;
+
+    padding: 60px 20px;
+}
+
+.contact h2 {
+    color: #062b52;
+
+    font-size: 30px;
+}
+
+.contact p {
+    color: #666;
+}
+
+.contact button {
     background: #062b52;
 
     color: white;
 
-    text-decoration: none;
+    border: none;
 
-    padding: 11px 25px;
+    padding: 13px 35px;
 
     border-radius: 6px;
 
-    transition: 0.3s;
+    font-size: 17px;
 }
 
-.card-btn:hover {
-    background: #0b3d70;
+
+/* الفوتر */
+
+footer {
+    background: #062b52;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* الموبايل */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .categories {
+        padding: 50px 20px;
+    }
+
+    .category-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
 }
