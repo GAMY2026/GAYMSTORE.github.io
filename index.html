@@ -1,706 +1,734 @@
+```html
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>GAMY STORE</title>
+    <title>GAMY STORE</title>
 
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- HEADER -->
-<header class="header">
+    <!-- HEADER -->
+    <header class="header">
 
-    <div class="logo">
-        GAMY STORE
-    </div>
+        <div class="logo">
+            GAMY STORE
+        </div>
 
-    <nav class="menu">
-        <a href="#home">الرئيسية</a>
-        <a href="#men">رجالي</a>
-        <a href="#women">حريمي</a>
-        <a href="#shoes">كوتشات</a>
-        <a href="#contact">تواصل معنا</a>
-    </nav>
+        <nav class="menu">
+            <a href="#home">الرئيسية</a>
+            <a href="#new">جديد</a>
+            <a href="#men">رجالي</a>
+            <a href="#women">حريمي</a>
+            <a href="#shoes">أحذية</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
 
-</header>
-
-
-<!-- HOME -->
-<section class="home" id="home">
-
-    <div class="home-image">
-
-        <img
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=85"
-            alt="GAMY STORE">
-
-    </div>
+    </header>
 
 
-    <div class="home-content">
+    <!-- HOME / HERO -->
+    <section class="home" id="home">
 
-        <span>مرحباً بك في عالم الأناقة</span>
-
-        <h1>GAMY STORE</h1>
-
-        <h2>أناقتك تبدأ من هنا</h2>
-
-        <p>
-            اكتشف أحدث صيحات الموضة للرجال والنساء
-            بتصميمات عصرية تناسب كل إطلالة.
-        </p>
-
-        <a href="#categories" class="main-button">
-            تسوق الآن
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- CATEGORIES -->
-<section class="categories" id="categories">
-
-    <h2>تسوق حسب القسم</h2>
-
-    <p>
-        اختار القسم المفضل لديك وابدأ التسوق
-    </p>
-
-    <div class="category-list">
-
-        <a href="#men" class="category">
+        <div class="home-image">
 
             <img
-                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
-                alt="ملابس رجالي">
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=90"
+                alt="GAMY STORE">
 
-            <h3>ملابس رجالي</h3>
+            <div class="home-overlay"></div>
 
-        </a>
+            <div class="home-content">
+
+                <span>NEW COLLECTION</span>
+
+                <h1>
+                    GAMY STORE
+                </h1>
+
+                <h2>
+                    أناقتك تبدأ من هنا
+                </h2>
+
+                <p>
+                    اكتشف أحدث صيحات الموضة
+                    للرجال والنساء والأحذية.
+                </p>
+
+                <a href="#new" class="hero-button">
+                    تسوق الآن
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-        <a href="#women" class="category">
+    <!-- CATEGORY TITLE -->
+    <section class="section-title">
+
+        <span>GAMY COLLECTION</span>
+
+        <h2>
+            اكتشف مجموعتنا
+        </h2>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="new">
+
+        <a href="#men" class="category-card">
 
             <img
-                src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80"
-                alt="ملابس حريمي">
+                src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=85"
+                alt="رجالي">
 
-            <h3>ملابس حريمي</h3>
+            <div class="category-overlay">
+                <h3>رجالي</h3>
+                <span>SHOP MEN</span>
+            </div>
 
         </a>
 
 
-        <a href="#shoes" class="category">
+        <a href="#women" class="category-card">
 
             <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                alt="كوتشات">
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+                alt="حريمي">
 
-            <h3>كوتشات</h3>
+            <div class="category-overlay">
+                <h3>حريمي</h3>
+                <span>SHOP WOMEN</span>
+            </div>
 
         </a>
 
-    </div>
 
-</section>
+        <a href="#shoes" class="category-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+                alt="أحذية">
+
+            <div class="category-overlay">
+                <h3>أحذية</h3>
+                <span>SHOP SHOES</span>
+            </div>
+
+        </a>
+
+    </section>
 
 
-<!-- MEN -->
-<section class="products-section" id="men">
+    <!-- MEN -->
+    <section class="products-section" id="men">
 
-    <div class="section-heading">
+        <div class="section-heading">
 
-        <span>GAMY MEN</span>
+            <div>
+                <span>FOR MEN</span>
+                <h2>رجالي</h2>
+            </div>
 
-        <h2>ملابس رجالي</h2>
+            <a href="#men">
+                عرض الكل
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="product-label">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85"
+                        alt="تيشيرت رجالي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        تيشيرت رجالي Oversized
+                    </h3>
+
+                    <strong>
+                        750 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أسود</option>
+                        <option>أبيض</option>
+                        <option>بيج</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="product-label">
+                        TREND
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85"
+                        alt="قميص رجالي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        قميص رجالي Casual
+                    </h3>
+
+                    <strong>
+                        950 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أبيض</option>
+                        <option>أسود</option>
+                        <option>أزرق</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=85"
+                        alt="جاكيت رجالي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        جاكيت رجالي Modern
+                    </h3>
+
+                    <strong>
+                        1400 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أسود</option>
+                        <option>رمادي</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WOMEN -->
+    <section class="products-section light-section" id="women">
+
+        <div class="section-heading">
+
+            <div>
+                <span>FOR WOMEN</span>
+                <h2>حريمي</h2>
+            </div>
+
+            <a href="#women">
+                عرض الكل
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="product-label">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85"
+                        alt="طقم حريمي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        طقم حريمي Modern
+                    </h3>
+
+                    <strong>
+                        1100 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>بيج</option>
+                        <option>أسود</option>
+                        <option>أبيض</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=85"
+                        alt="فستان">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        فستان حريمي Elegant
+                    </h3>
+
+                    <strong>
+                        1250 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أسود</option>
+                        <option>أحمر</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85"
+                        alt="ملابس حريمي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        جاكيت حريمي
+                    </h3>
+
+                    <strong>
+                        1350 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أبيض</option>
+                        <option>أسود</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHOES -->
+    <section class="products-section" id="shoes">
+
+        <div class="section-heading">
+
+            <div>
+                <span>STEP INTO STYLE</span>
+                <h2>الأحذية</h2>
+            </div>
+
+            <a href="#shoes">
+                عرض الكل
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="product-label">
+                        BEST
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+                        alt="كوتشي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        GAMY Runner
+                    </h3>
+
+                    <strong>
+                        1200 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أبيض</option>
+                        <option>أسود</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                        <option>44</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85"
+                        alt="حذاء">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        GAMY Classic
+                    </h3>
+
+                    <strong>
+                        1450 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أسود</option>
+                        <option>بني</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <span class="product-label">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85"
+                        alt="حذاء رياضي">
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        GAMY Street
+                    </h3>
+
+                    <strong>
+                        1350 جنيه
+                    </strong>
+
+                    <select class="color">
+                        <option>أبيض</option>
+                        <option>رمادي</option>
+                    </select>
+
+                    <select class="size">
+                        <option>اختر المقاس</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                        <option>44</option>
+                    </select>
+
+                    <button class="add-cart">
+                        أضف للسلة
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BRAND STRIP -->
+    <section class="brand-strip">
+
+        <div>
+            <strong>شحن سريع</strong>
+            <span>توصيل لجميع المحافظات</span>
+        </div>
+
+        <div>
+            <strong>الدفع عند الاستلام</strong>
+            <span>اطلب وانت مطمن</span>
+        </div>
+
+        <div>
+            <strong>استبدال واسترجاع</strong>
+            <span>خدمة سهلة وسريعة</span>
+        </div>
+
+        <div>
+            <strong>GAMY STORE</strong>
+            <span>ستايلك.. اختيارك</span>
+        </div>
+
+    </section>
+
+
+    <!-- MOST WANTED -->
+    <section class="most-wanted">
+
+        <div class="section-title">
+
+            <span>MOST WANTED</span>
+
+            <h2>
+                الأكثر طلباً
+            </h2>
+
+        </div>
 
         <p>
-            أحدث موديلات الملابس الرجالي
+            اختيارات مميزة لستايلك اليومي.
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="products">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
 
+        <div>
 
-        <div class="product">
+            <span>GET IN TOUCH</span>
 
-            <div class="product-image">
+            <h2>
+                تواصل مع GAMY STORE
+            </h2>
 
-                <img
-                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
-                    alt="تيشيرت رجالي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>تيشيرت رجالي</h3>
-
-                <p>
-                    تيشيرت كاجوال مناسب للخروج.
-                </p>
-
-                <strong>450 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أسود</option>
-                    <option>أبيض</option>
-                    <option>كحلي</option>
-                    <option>رمادي</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
+            <p>
+                تابعنا واعرف كل جديد في عالم الموضة.
+            </p>
 
         </div>
 
+        <a href="mailto:info@gamystore.com">
+            تواصل معنا
+        </a>
 
-        <div class="product">
+    </section>
 
-            <div class="product-image">
 
-                <img
-                    src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80"
-                    alt="قميص رجالي">
+    <!-- FOOTER -->
+    <footer>
 
-            </div>
-
-            <div class="product-info">
-
-                <h3>قميص رجالي</h3>
-
-                <p>
-                    قميص أنيق للمناسبات والخروجات.
-                </p>
-
-                <strong>650 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أبيض</option>
-                    <option>أسود</option>
-                    <option>أزرق</option>
-                    <option>بيج</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
+        <div class="footer-logo">
+            GAMY STORE
         </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
-                    alt="جاكيت رجالي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>جاكيت رجالي</h3>
-
-                <p>
-                    جاكيت عصري وأنيق.
-                </p>
-
-                <strong>950 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أسود</option>
-                    <option>بني</option>
-                    <option>بيج</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- WOMEN -->
-<section class="products-section white-section" id="women">
-
-    <div class="section-heading">
-
-        <span>GAMY WOMEN</span>
-
-        <h2>ملابس حريمي</h2>
 
         <p>
-            أحدث موديلات الملابس الحريمي
+            © 2026 GAMY STORE - جميع الحقوق محفوظة
         </p>
 
-    </div>
+    </footer>
 
 
-    <div class="products">
+    <!-- CART -->
+    <div class="cart" id="cart">
 
+        <div class="cart-header">
 
-        <div class="product">
+            <h2>
+                سلة المشتريات
+            </h2>
 
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80"
-                    alt="فستان حريمي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>فستان حريمي</h3>
-
-                <p>
-                    فستان أنيق بتصميم عصري.
-                </p>
-
-                <strong>850 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أسود</option>
-                    <option>أحمر</option>
-                    <option>بيج</option>
-                    <option>أبيض</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
+            <button id="closeCart">
+                ×
+            </button>
 
         </div>
 
+        <div id="cartItems"></div>
 
-        <div class="product">
+        <div class="cart-bottom">
 
-            <div class="product-image">
+            <strong>
+                الإجمالي:
+                <span id="cartTotal">0 جنيه</span>
+            </strong>
 
-                <img
-                    src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80"
-                    alt="بلوزة حريمي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>بلوزة حريمي</h3>
-
-                <p>
-                    بلوزة ناعمة مناسبة للخروج.
-                </p>
-
-                <strong>520 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أبيض</option>
-                    <option>وردي</option>
-                    <option>أسود</option>
-                    <option>بيج</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=700&q=80"
-                    alt="جاكيت حريمي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>جاكيت حريمي</h3>
-
-                <p>
-                    جاكيت أنيق مناسب للإطلالات اليومية.
-                </p>
-
-                <strong>780 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أسود</option>
-                    <option>بني</option>
-                    <option>بيج</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
+            <button id="checkoutButton">
+                إتمام الطلب
+            </button>
 
         </div>
 
     </div>
 
-</section>
 
+    <div class="cart-overlay" id="cartOverlay"></div>
 
-<!-- SHOES -->
-<section class="products-section" id="shoes">
 
-    <div class="section-heading">
-
-        <span>GAMY SHOES</span>
-
-        <h2>كوتشات</h2>
-
-        <p>
-            أحدث موديلات الكوتشات
-        </p>
-
-    </div>
-
-
-    <div class="products">
-
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
-                    alt="كوتش رياضي">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>كوتش رياضي</h3>
-
-                <p>
-                    كوتش رياضي مريح للاستخدام اليومي.
-                </p>
-
-                <strong>1200 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أبيض</option>
-                    <option>أسود</option>
-                    <option>رمادي</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>40</option>
-                    <option>41</option>
-                    <option>42</option>
-                    <option>43</option>
-                    <option>44</option>
-                    <option>45</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=700&q=80"
-                    alt="كوتش كاجوال">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>كوتش كاجوال</h3>
-
-                <p>
-                    كوتش كاجوال مناسب للخروج.
-                </p>
-
-                <strong>1050 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أبيض</option>
-                    <option>أسود</option>
-                    <option>بيج</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>39</option>
-                    <option>40</option>
-                    <option>41</option>
-                    <option>42</option>
-                    <option>43</option>
-                    <option>44</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
-                    alt="كوتش مودرن">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>كوتش مودرن</h3>
-
-                <p>
-                    تصميم عصري وراحة طوال اليوم.
-                </p>
-
-                <strong>1350 جنيه</strong>
-
-                <label>اللون</label>
-
-                <select class="color">
-                    <option>أبيض</option>
-                    <option>أسود</option>
-                    <option>أزرق</option>
-                </select>
-
-                <label>المقاس</label>
-
-                <select class="size">
-                    <option>40</option>
-                    <option>41</option>
-                    <option>42</option>
-                    <option>43</option>
-                    <option>44</option>
-                    <option>45</option>
-                </select>
-
-                <button class="add-cart">
-                    أضف إلى السلة
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-    <h2>تواصل معنا</h2>
-
-    <p>
-        للاستفسار عن المنتجات والطلبات تواصل معنا
-    </p>
-
-    <button>
-        واتساب
+    <button class="cart-icon" id="openCart">
+        🛒
+        <span id="cartCount">0</span>
     </button>
 
-</section>
 
-
-<!-- FOOTER -->
-<footer>
-
-    <p>
-        © 2026 GAMY STORE - جميع الحقوق محفوظة
-    </p>
-
-</footer>
-
-
-<!-- CART -->
-
-<div class="cart" id="cart">
-
-    <div class="cart-header">
-
-        <h2>سلة المشتريات</h2>
-
-        <button id="closeCart">
-            ×
-        </button>
-
-    </div>
-
-    <div id="cartItems"></div>
-
-    <div class="cart-total">
-
-        <span>
-            الإجمالي:
-        </span>
-
-        <strong id="cartTotal">
-            0 جنيه
-        </strong>
-
-    </div>
-
-    <button
-        class="checkout-button"
-        id="checkoutButton">
-
-        إتمام الطلب
-
-    </button>
-
-</div>
-
-
-<!-- CART OVERLAY -->
-
-<div
-    class="cart-overlay"
-    id="cartOverlay">
-</div>
-
-
-<!-- CART BUTTON -->
-
-<button
-    class="cart-icon"
-    id="openCart">
-
-    🛒
-
-    <span id="cartCount">
-        0
-    </span>
-
-</button>
-
-
-<script src="script.js"></script>
-```
+    <script src="script.js"></script>
 
 </body>
 
 </html>
+```
