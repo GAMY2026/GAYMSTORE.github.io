@@ -32,7 +32,7 @@ body {
 }
 
 .logo {
-    color: white;
+    color: #fff;
     font-size: 27px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -45,7 +45,7 @@ body {
 }
 
 .menu a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -114,7 +114,7 @@ body {
     display: inline-block;
     padding: 14px 42px;
     background: #062b52;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -127,6 +127,7 @@ body {
     width: 100%;
     padding: 80px 6%;
     text-align: center;
+    background: #fff;
 }
 
 .categories h2 {
@@ -151,12 +152,12 @@ body {
 
 .category {
     display: block;
-    background: white;
+    background: #fff;
     text-decoration: none;
     color: #222;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .category img {
@@ -182,7 +183,7 @@ body {
 }
 
 .white-section {
-    background: white;
+    background: #fff;
 }
 
 .section-heading {
@@ -221,10 +222,10 @@ body {
 
 .product {
     min-width: 0;
-    background: white;
+    background: #fff;
     border-radius: 9px;
     overflow: hidden;
-    box-shadow: 0 5px 22px rgba(0,0,0,0.09);
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.09);
 }
 
 .product-image {
@@ -276,7 +277,7 @@ body {
     padding: 11px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background: white;
+    background: #fff;
     font-size: 14px;
 }
 
@@ -287,7 +288,7 @@ body {
     border: none;
     border-radius: 5px;
     background: #062b52;
-    color: white;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -320,7 +321,7 @@ body {
     border: none;
     border-radius: 5px;
     background: #062b52;
-    color: white;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -330,7 +331,7 @@ body {
 footer {
     padding: 22px;
     background: #062b52;
-    color: white;
+    color: #fff;
     text-align: center;
 }
 
@@ -350,11 +351,11 @@ footer p {
     border: none;
     border-radius: 50%;
     background: #062b52;
-    color: white;
+    color: #fff;
     font-size: 24px;
     cursor: pointer;
     z-index: 2000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cart-icon span {
@@ -365,7 +366,7 @@ footer p {
     height: 23px;
     border-radius: 50%;
     background: #e53935;
-    color: white;
+    color: #fff;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -382,9 +383,9 @@ footer p {
     width: 400px;
     max-width: 90%;
     height: 100vh;
-    background: white;
+    background: #fff;
     z-index: 3000;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
     overflow-y: auto;
 }
@@ -397,7 +398,7 @@ footer p {
     height: 70px;
     padding: 0 20px;
     background: #062b52;
-    color: white;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -411,7 +412,7 @@ footer p {
 .cart-header button {
     border: none;
     background: transparent;
-    color: white;
+    color: #fff;
     font-size: 32px;
     cursor: pointer;
 }
@@ -451,7 +452,7 @@ footer p {
     border: none;
     border-radius: 4px;
     background: #c62828;
-    color: white;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -474,7 +475,7 @@ footer p {
     border: none;
     border-radius: 5px;
     background: #062b52;
-    color: white;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -486,7 +487,7 @@ footer p {
 .cart-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     z-index: 2500;
     opacity: 0;
     visibility: hidden;
@@ -509,7 +510,6 @@ footer p {
     .products {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 
@@ -557,5 +557,4 @@ footer p {
     .cart {
         width: 90%;
     }
-
 }
