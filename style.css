@@ -1,5 +1,5 @@
 /* =========================
-   الإعدادات الأساسية
+   GENERAL
 ========================= */
 
 * {
@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    background: #f4f6f8;
     color: #222;
 }
 
@@ -23,32 +23,30 @@ body {
 ========================= */
 
 .header {
-    height: 80px;
+    height: 85px;
     background: #062b52;
-    color: white;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 8%;
+    padding: 0 7%;
 
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 28px;
+    color: white;
+    font-size: 30px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .menu {
     display: flex;
-    align-items: center;
     gap: 35px;
 }
 
@@ -59,27 +57,30 @@ body {
     font-size: 17px;
     font-weight: bold;
 
+    padding: 10px 5px;
+
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #d9e8f7;
+    color: #bcd5eb;
 }
 
 
 /* =========================
-   HOME / HERO
+   HOME
 ========================= */
 
 .hero {
-    min-height: 520px;
+    min-height: 560px;
 
     background:
         linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #eef4f9 55%,
-            #dce8f2 100%
+            120deg,
+            #062b52 0%,
+            #0b477d 45%,
+            #e8f0f7 45%,
+            #f8fafc 100%
         );
 
     display: flex;
@@ -93,28 +94,23 @@ body {
 }
 
 
-/* دائرة كبيرة يمين */
+/* دوائر ديكورية */
 
 .hero::before {
     content: "";
 
     position: absolute;
 
-    width: 380px;
-    height: 380px;
+    width: 420px;
+    height: 420px;
 
     border-radius: 50%;
 
-    background: #d9e5ef;
+    background: rgba(255, 255, 255, 0.08);
 
     top: -180px;
     right: -100px;
-
-    opacity: 0.8;
 }
-
-
-/* دائرة كبيرة يسار */
 
 .hero::after {
     content: "";
@@ -126,59 +122,60 @@ body {
 
     border-radius: 50%;
 
-    background: #e4edf5;
+    background: rgba(6, 43, 82, 0.08);
 
-    bottom: -160px;
-    left: -90px;
-
-    opacity: 0.9;
+    bottom: -150px;
+    left: -80px;
 }
 
 
-/* محتوى الـ Home */
+/* محتوى Home */
 
 .hero-content {
     position: relative;
     z-index: 2;
 
-    max-width: 800px;
-
     padding: 40px 20px;
+
+    max-width: 850px;
 }
 
 .hero-content h1 {
     margin: 0 0 20px;
 
-    font-size: 65px;
-    font-weight: bold;
-
     color: #062b52;
 
-    letter-spacing: 2px;
+    font-size: 70px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .hero-content p {
     margin: 0 auto 35px;
 
-    font-size: 23px;
-
     color: #555;
+
+    font-size: 23px;
 
     line-height: 1.8;
 }
 
 
-/* زر تصفح الأقسام */
+/* زر */
 
 .hero-button {
     display: inline-block;
 
+    padding: 16px 45px;
+
     background: #062b52;
+
     color: white;
 
     text-decoration: none;
-
-    padding: 16px 42px;
 
     border-radius: 8px;
 
@@ -191,61 +188,55 @@ body {
 }
 
 .hero-button:hover {
-    background: #0b4078;
+    background: #0c477c;
 
-    transform: translateY(-3px);
-
-    box-shadow: 0 12px 25px rgba(6, 43, 82, 0.30);
+    transform: translateY(-4px);
 }
 
 
 /* =========================
-   الأقسام
+   CATEGORIES
 ========================= */
 
 .categories {
-    padding: 80px 8%;
+    padding: 90px 7%;
+
+    background: #f4f6f8;
 
     text-align: center;
-
-    background: #f5f7fa;
 }
 
 .categories h2 {
     margin: 0 0 12px;
 
-    font-size: 38px;
-
     color: #062b52;
+
+    font-size: 40px;
 }
 
 .categories-description {
     margin: 0 0 50px;
 
-    font-size: 18px;
-
     color: #777;
+
+    font-size: 18px;
 }
+
+
+/* الكروت */
 
 .categories-container {
     display: flex;
 
     justify-content: center;
 
-    align-items: stretch;
-
     gap: 30px;
 
     flex-wrap: wrap;
 }
 
-
-/* =========================
-   الكروت
-========================= */
-
 .category-card {
-    width: 300px;
+    width: 310px;
 
     background: white;
 
@@ -257,61 +248,61 @@ body {
 
     color: #222;
 
+    border: 1px solid #e8edf2;
+
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 
     transition: 0.35s;
-
-    border: 1px solid #edf0f3;
 }
 
 .category-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
 
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
 }
 
 
-/* منطقة الصورة / الرمز */
+/* مكان الأيقونة */
 
 .category-image {
-    width: 100%;
-    height: 260px;
+    height: 270px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(
-        135deg,
-        #eef3f8,
-        #e2ebf3
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #eef4f9,
+            #dce8f2
+        );
 }
 
 .category-icon {
-    font-size: 105px;
+    font-size: 110px;
 
     transition: 0.3s;
 }
 
 .category-card:hover .category-icon {
-    transform: scale(1.08);
+    transform: scale(1.12);
 }
 
 
 /* معلومات الكارت */
 
 .category-info {
-    padding: 25px 20px 28px;
+    padding: 25px;
 }
 
 .category-info h3 {
     margin: 0 0 10px;
 
-    font-size: 27px;
-
     color: #062b52;
+
+    font-size: 28px;
 }
 
 .category-info span {
@@ -322,15 +313,15 @@ body {
 
 
 /* =========================
-   تواصل معنا
+   CONTACT
 ========================= */
 
 .contact {
+    padding: 80px 20px;
+
     text-align: center;
 
     background: white;
-
-    padding: 75px 20px;
 }
 
 .contact h2 {
@@ -338,7 +329,7 @@ body {
 
     color: #062b52;
 
-    font-size: 35px;
+    font-size: 36px;
 }
 
 .contact p {
@@ -350,13 +341,13 @@ body {
 }
 
 .contact button {
+    border: none;
+
     background: #062b52;
 
     color: white;
 
-    border: none;
-
-    padding: 14px 38px;
+    padding: 14px 40px;
 
     border-radius: 8px;
 
@@ -368,9 +359,9 @@ body {
 }
 
 .contact button:hover {
-    background: #0b4078;
+    background: #0c477c;
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 
@@ -379,13 +370,13 @@ body {
 ========================= */
 
 footer {
+    padding: 25px;
+
     background: #062b52;
 
     color: white;
 
     text-align: center;
-
-    padding: 23px;
 }
 
 footer p {
@@ -396,7 +387,7 @@ footer p {
 
 
 /* =========================
-   الموبايل
+   MOBILE
 ========================= */
 
 @media (max-width: 700px) {
@@ -404,17 +395,15 @@ footer p {
     .header {
         height: auto;
 
-        min-height: 70px;
-
-        padding: 15px 20px;
+        padding: 18px 20px;
 
         flex-direction: column;
 
-        gap: 12px;
+        gap: 15px;
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .menu {
@@ -426,19 +415,22 @@ footer p {
     }
 
     .hero {
-        min-height: 480px;
+        min-height: 500px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #e8f0f7,
+                #ffffff
+            );
     }
 
     .hero-content h1 {
-        font-size: 42px;
+        font-size: 45px;
     }
 
     .hero-content p {
         font-size: 18px;
-    }
-
-    .hero-button {
-        padding: 14px 30px;
     }
 
     .categories {
@@ -452,10 +444,6 @@ footer p {
     .category-card {
         width: 100%;
         max-width: 350px;
-    }
-
-    .category-image {
-        height: 240px;
     }
 
 }
