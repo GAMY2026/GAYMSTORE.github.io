@@ -1,19 +1,29 @@
+/* =========================
+   الإعدادات الأساسية
+========================= */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
+    background: #f5f7fa;
     color: #222;
 }
 
 
-/* الشريط الأزرق */
+/* =========================
+   HEADER
+========================= */
 
 .header {
-    height: 75px;
+    height: 80px;
     background: #062b52;
     color: white;
 
@@ -22,35 +32,55 @@ body {
     justify-content: space-between;
 
     padding: 0 8%;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 27px;
+    font-size: 28px;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .menu {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
+
     font-size: 17px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #d9e8f7;
 }
 
 
-/* الصفحة الرئيسية */
+/* =========================
+   HOME / HERO
+========================= */
 
 .hero {
-    min-height: 430px;
+    min-height: 520px;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #eef3f8 100%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #eef4f9 55%,
+            #dce8f2 100%
+        );
 
     display: flex;
     align-items: center;
@@ -63,9 +93,30 @@ body {
 }
 
 
-/* الدائرة العلوية */
+/* دائرة كبيرة يمين */
 
 .hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: #d9e5ef;
+
+    top: -180px;
+    right: -100px;
+
+    opacity: 0.8;
+}
+
+
+/* دائرة كبيرة يسار */
+
+.hero::after {
     content: "";
 
     position: absolute;
@@ -75,52 +126,49 @@ body {
 
     border-radius: 50%;
 
-    background: #e1e9f1;
+    background: #e4edf5;
 
-    top: -130px;
-    right: -80px;
+    bottom: -160px;
+    left: -90px;
+
+    opacity: 0.9;
 }
 
 
-/* الدائرة السفلية */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    border-radius: 50%;
-
-    background: #e8eef4;
-
-    bottom: -100px;
-    left: -60px;
-}
-
-
-/* محتوى الصفحة الرئيسية */
+/* محتوى الـ Home */
 
 .hero-content {
     position: relative;
     z-index: 2;
+
+    max-width: 800px;
+
+    padding: 40px 20px;
 }
 
 .hero-content h1 {
-    font-size: 55px;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
+
+    font-size: 65px;
+    font-weight: bold;
 
     color: #062b52;
+
+    letter-spacing: 2px;
 }
 
 .hero-content p {
-    font-size: 22px;
-    color: #666;
+    margin: 0 auto 35px;
 
-    margin-bottom: 35px;
+    font-size: 23px;
+
+    color: #555;
+
+    line-height: 1.8;
 }
+
+
+/* زر تصفح الأقسام */
 
 .hero-button {
     display: inline-block;
@@ -130,36 +178,53 @@ body {
 
     text-decoration: none;
 
-    padding: 15px 40px;
+    padding: 16px 42px;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
     font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(6, 43, 82, 0.25);
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #0b4078;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(6, 43, 82, 0.30);
 }
 
 
-/* الأقسام */
+/* =========================
+   الأقسام
+========================= */
 
 .categories {
-    padding: 70px 8%;
+    padding: 80px 8%;
 
     text-align: center;
 
-    background: #f5f5f5;
+    background: #f5f7fa;
 }
 
 .categories h2 {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 
-    font-size: 35px;
+    font-size: 38px;
 
     color: #062b52;
 }
 
 .categories-description {
-    color: #777;
+    margin: 0 0 50px;
 
-    margin-bottom: 40px;
+    font-size: 18px;
+
+    color: #777;
 }
 
 .categories-container {
@@ -167,20 +232,24 @@ body {
 
     justify-content: center;
 
+    align-items: stretch;
+
     gap: 30px;
 
     flex-wrap: wrap;
 }
 
 
-/* الكروت */
+/* =========================
+   الكروت
+========================= */
 
 .category-card {
     width: 300px;
 
     background: white;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
     overflow: hidden;
 
@@ -188,45 +257,57 @@ body {
 
     color: #222;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 
-    transition: 0.3s;
+    transition: 0.35s;
+
+    border: 1px solid #edf0f3;
 }
 
 .category-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.14);
 }
 
 
-/* الرموز */
+/* منطقة الصورة / الرمز */
 
 .category-image {
     width: 100%;
-    height: 300px;
+    height: 260px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: #eef3f8;
+    background: linear-gradient(
+        135deg,
+        #eef3f8,
+        #e2ebf3
+    );
 }
 
 .category-icon {
-    font-size: 115px;
+    font-size: 105px;
+
+    transition: 0.3s;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.08);
 }
 
 
 /* معلومات الكارت */
 
 .category-info {
-    padding: 20px;
+    padding: 25px 20px 28px;
 }
 
 .category-info h3 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 
     font-size: 27px;
 
@@ -236,28 +317,36 @@ body {
 .category-info span {
     color: #777;
 
-    font-size: 15px;
+    font-size: 16px;
 }
 
 
-/* التواصل */
+/* =========================
+   تواصل معنا
+========================= */
 
 .contact {
     text-align: center;
 
     background: white;
 
-    padding: 60px 20px;
+    padding: 75px 20px;
 }
 
 .contact h2 {
+    margin: 0 0 15px;
+
     color: #062b52;
 
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .contact p {
+    margin-bottom: 30px;
+
     color: #666;
+
+    font-size: 18px;
 }
 
 .contact button {
@@ -267,15 +356,27 @@ body {
 
     border: none;
 
-    padding: 13px 35px;
+    padding: 14px 38px;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #0b4078;
+
+    transform: translateY(-2px);
 }
 
 
-/* الفوتر */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: #062b52;
@@ -284,41 +385,77 @@ footer {
 
     text-align: center;
 
-    padding: 20px;
+    padding: 23px;
 }
 
 footer p {
     margin: 0;
+
+    font-size: 15px;
 }
 
 
-/* الموبايل */
+/* =========================
+   الموبايل
+========================= */
 
 @media (max-width: 700px) {
 
     .header {
-        padding: 0 20px;
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
     }
 
     .menu {
-        gap: 12px;
+        gap: 15px;
     }
 
     .menu a {
         font-size: 14px;
     }
 
+    .hero {
+        min-height: 480px;
+    }
+
     .hero-content h1 {
-        font-size: 40px;
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero-button {
+        padding: 14px 30px;
     }
 
     .categories {
-        padding: 50px 20px;
+        padding: 60px 20px;
+    }
+
+    .categories h2 {
+        font-size: 32px;
     }
 
     .category-card {
         width: 100%;
         max-width: 350px;
+    }
+
+    .category-image {
+        height: 240px;
     }
 
 }
