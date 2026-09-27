@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    background: #ffffff;
     color: #222;
 }
 
@@ -23,7 +23,8 @@ body {
 ========================= */
 
 .header {
-    height: 85px;
+    height: 80px;
+
     background: #062b52;
 
     display: flex;
@@ -35,13 +36,15 @@ body {
     position: relative;
     z-index: 10;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
     color: white;
-    font-size: 30px;
+
+    font-size: 28px;
     font-weight: bold;
+
     letter-spacing: 2px;
 }
 
@@ -52,18 +55,17 @@ body {
 
 .menu a {
     color: white;
+
     text-decoration: none;
 
     font-size: 17px;
     font-weight: bold;
 
-    padding: 10px 5px;
-
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #bcd5eb;
+    color: #d6e5f2;
 }
 
 
@@ -71,105 +73,101 @@ body {
    HOME
 ========================= */
 
-.hero {
-    min-height: 560px;
-
-    background:
-        linear-gradient(
-            120deg,
-            #062b52 0%,
-            #0b477d 45%,
-            #e8f0f7 45%,
-            #f8fafc 100%
-        );
+.home {
+    min-height: 600px;
 
     display: flex;
+
     align-items: center;
-    justify-content: center;
 
-    text-align: center;
+    background: #f5f7fa;
 
-    position: relative;
+    direction: ltr;
+}
+
+
+/* صورة الهوم */
+
+.home-image {
+    width: 55%;
+    height: 600px;
+
     overflow: hidden;
 }
 
+.home-image img {
+    width: 100%;
+    height: 100%;
 
-/* دوائر ديكورية */
+    object-fit: cover;
 
-.hero::before {
-    content: "";
+    display: block;
 
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    top: -180px;
-    right: -100px;
+    transition: 0.5s;
 }
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    background: rgba(6, 43, 82, 0.08);
-
-    bottom: -150px;
-    left: -80px;
+.home-image img:hover {
+    transform: scale(1.03);
 }
 
 
-/* محتوى Home */
+/* الكلام */
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.home-content {
+    width: 45%;
 
-    padding: 40px 20px;
+    padding: 50px;
 
-    max-width: 850px;
+    text-align: right;
+
+    direction: rtl;
 }
 
-.hero-content h1 {
-    margin: 0 0 20px;
+.small-title {
+    color: #777;
+
+    font-size: 20px;
+}
+
+.home-content h1 {
+    margin: 10px 0;
 
     color: #062b52;
 
-    font-size: 70px;
+    font-size: 60px;
+
     font-weight: bold;
 
-    letter-spacing: 3px;
-
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    letter-spacing: 2px;
 }
 
-.hero-content p {
-    margin: 0 auto 35px;
+.home-content h2 {
+    margin: 0 0 20px;
 
-    color: #555;
+    color: #333;
 
-    font-size: 23px;
+    font-size: 30px;
+}
 
-    line-height: 1.8;
+.home-content p {
+    max-width: 500px;
+
+    color: #666;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    margin-bottom: 35px;
 }
 
 
-/* زر */
+/* زر الهوم */
 
-.hero-button {
+.home-button {
     display: inline-block;
 
-    padding: 16px 45px;
+    padding: 16px 38px;
 
     background: #062b52;
 
@@ -177,20 +175,18 @@ body {
 
     text-decoration: none;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
     font-size: 18px;
     font-weight: bold;
 
-    box-shadow: 0 8px 20px rgba(6, 43, 82, 0.25);
-
     transition: 0.3s;
 }
 
-.hero-button:hover {
+.home-button:hover {
     background: #0c477c;
 
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 
@@ -199,23 +195,23 @@ body {
 ========================= */
 
 .categories {
-    padding: 90px 7%;
+    padding: 80px 7%;
 
-    background: #f4f6f8;
+    background: white;
 
     text-align: center;
 }
 
 .categories h2 {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
 
     color: #062b52;
 
-    font-size: 40px;
+    font-size: 38px;
 }
 
-.categories-description {
-    margin: 0 0 50px;
+.description {
+    margin-bottom: 50px;
 
     color: #777;
 
@@ -240,7 +236,7 @@ body {
 
     background: white;
 
-    border-radius: 18px;
+    border-radius: 12px;
 
     overflow: hidden;
 
@@ -248,61 +244,55 @@ body {
 
     color: #222;
 
-    border: 1px solid #e8edf2;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
-    transition: 0.35s;
-}
-
-.category-card:hover {
-    transform: translateY(-12px);
-
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
-}
-
-
-/* مكان الأيقونة */
-
-.category-image {
-    height: 270px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef4f9,
-            #dce8f2
-        );
-}
-
-.category-icon {
-    font-size: 110px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
 
     transition: 0.3s;
 }
 
-.category-card:hover .category-icon {
-    transform: scale(1.12);
+.category-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* صور الأقسام */
+
+.category-image {
+    width: 100%;
+    height: 320px;
+
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.05);
 }
 
 
 /* معلومات الكارت */
 
 .category-info {
-    padding: 25px;
+    padding: 22px;
 }
 
 .category-info h3 {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
 
     color: #062b52;
 
-    font-size: 28px;
+    font-size: 27px;
 }
 
 .category-info span {
@@ -317,11 +307,11 @@ body {
 ========================= */
 
 .contact {
-    padding: 80px 20px;
+    padding: 75px 20px;
+
+    background: #f5f7fa;
 
     text-align: center;
-
-    background: white;
 }
 
 .contact h2 {
@@ -329,39 +319,31 @@ body {
 
     color: #062b52;
 
-    font-size: 36px;
+    font-size: 35px;
 }
 
 .contact p {
-    margin-bottom: 30px;
-
     color: #666;
 
     font-size: 18px;
+
+    margin-bottom: 30px;
 }
 
 .contact button {
+    padding: 14px 40px;
+
     border: none;
+
+    border-radius: 7px;
 
     background: #062b52;
 
     color: white;
 
-    padding: 14px 40px;
-
-    border-radius: 8px;
-
     font-size: 17px;
 
     cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.contact button:hover {
-    background: #0c477c;
-
-    transform: translateY(-3px);
 }
 
 
@@ -370,7 +352,7 @@ body {
 ========================= */
 
 footer {
-    padding: 25px;
+    padding: 22px;
 
     background: #062b52;
 
@@ -381,8 +363,6 @@ footer {
 
 footer p {
     margin: 0;
-
-    font-size: 15px;
 }
 
 
@@ -390,7 +370,7 @@ footer p {
    MOBILE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     .header {
         height: auto;
@@ -402,47 +382,58 @@ footer p {
         gap: 15px;
     }
 
-    .logo {
-        font-size: 25px;
-    }
-
     .menu {
-        gap: 15px;
+        gap: 18px;
     }
 
     .menu a {
         font-size: 14px;
     }
 
-    .hero {
-        min-height: 500px;
 
-        background:
-            linear-gradient(
-                180deg,
-                #e8f0f7,
-                #ffffff
-            );
+    .home {
+        flex-direction: column;
+
+        min-height: auto;
     }
 
-    .hero-content h1 {
+    .home-image {
+        width: 100%;
+        height: 400px;
+
+        order: 1;
+    }
+
+    .home-content {
+        width: 100%;
+
+        padding: 50px 25px;
+
+        text-align: center;
+
+        order: 2;
+    }
+
+    .home-content h1 {
         font-size: 45px;
     }
 
-    .hero-content p {
-        font-size: 18px;
+    .home-content h2 {
+        font-size: 25px;
     }
+
+    .home-content p {
+        font-size: 17px;
+    }
+
 
     .categories {
         padding: 60px 20px;
     }
 
-    .categories h2 {
-        font-size: 32px;
-    }
-
     .category-card {
         width: 100%;
+
         max-width: 350px;
     }
 
