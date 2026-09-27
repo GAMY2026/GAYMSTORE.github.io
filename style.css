@@ -20,8 +20,7 @@ body {
 
 .header {
     height: 80px;
-
-    background: #062b52;
+    background-color: #062b52;
     color: white;
 
     display: flex;
@@ -32,31 +31,25 @@ body {
 
     position: sticky;
     top: 0;
-
     z-index: 1000;
 }
 
 .logo {
     font-size: 26px;
     font-weight: bold;
-
     letter-spacing: 1px;
 }
 
 .menu {
     display: flex;
     align-items: center;
-
     gap: 28px;
 }
 
 .menu a {
     color: white;
-
     text-decoration: none;
-
     font-size: 16px;
-
     transition: 0.3s;
 }
 
@@ -73,40 +66,32 @@ body {
 
 .home-image {
     position: relative;
-
     width: 100%;
     height: 600px;
-
     overflow: hidden;
 }
 
 .home-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
 .home-image::after {
     content: "";
-
     position: absolute;
-
     inset: 0;
 
-    background:
-        linear-gradient(
-            to left,
-            rgba(0, 0, 0, 0.72),
-            rgba(0, 0, 0, 0.12)
-        );
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.10)
+    );
 }
 
 .home-content {
     position: absolute;
-
     z-index: 2;
 
     top: 50%;
@@ -115,7 +100,6 @@ body {
     transform: translateY(-50%);
 
     color: white;
-
     max-width: 550px;
 }
 
@@ -125,21 +109,17 @@ body {
 
 .home-content h1 {
     font-size: 58px;
-
     margin: 15px 0 5px;
 }
 
 .home-content h2 {
     font-size: 32px;
-
     margin-bottom: 18px;
 }
 
 .home-content p {
     font-size: 18px;
-
     line-height: 1.8;
-
     margin-bottom: 25px;
 }
 
@@ -147,15 +127,13 @@ body {
     display: inline-block;
 
     background: white;
-
     color: #062b52;
 
     padding: 14px 32px;
 
-    border-radius: 4px;
+    border-radius: 5px;
 
     text-decoration: none;
-
     font-weight: bold;
 
     transition: 0.3s;
@@ -163,7 +141,6 @@ body {
 
 .main-button:hover {
     background: #d8b36a;
-
     color: white;
 }
 
@@ -184,15 +161,12 @@ body {
 .products-section h2,
 .contact h2 {
     text-align: center;
-
     font-size: 34px;
-
     color: #062b52;
 }
 
 .section-subtitle {
     text-align: center;
-
     color: #777;
 
     margin-top: 10px;
@@ -200,15 +174,13 @@ body {
 }
 
 
-/* ================= CATEGORIES ================= */
+/* ================= CATEGORY CARDS ================= */
 
 .category-container {
     max-width: 1200px;
-
     margin: 0 auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
@@ -249,15 +221,13 @@ body {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.05)
-        );
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.05)
+    );
 }
 
 .category-overlay {
@@ -266,7 +236,6 @@ body {
     z-index: 2;
 
     bottom: 35px;
-
     right: 30px;
     left: 30px;
 
@@ -275,19 +244,16 @@ body {
 
 .category-overlay > span:first-child {
     font-size: 13px;
-
     letter-spacing: 2px;
 }
 
 .category-overlay h3 {
     font-size: 42px;
-
     margin: 8px 0;
 }
 
 .category-overlay p {
     font-size: 17px;
-
     margin-bottom: 20px;
 }
 
@@ -310,27 +276,22 @@ body {
 
 .products-container {
     max-width: 1200px;
-
     margin: 0 auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
 }
 
 .product {
-    position: relative;
-
     background: white;
 
     padding: 12px;
 
     border-radius: 10px;
 
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 
     overflow: hidden;
 
@@ -340,8 +301,7 @@ body {
 .product:hover {
     transform: translateY(-6px);
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
 }
 
 
@@ -385,7 +345,6 @@ body {
     right: 12px;
 
     background: #c62828;
-
     color: white;
 
     padding: 7px 11px;
@@ -393,7 +352,6 @@ body {
     border-radius: 5px;
 
     font-size: 13px;
-
     font-weight: bold;
 }
 
@@ -457,7 +415,7 @@ body {
 }
 
 
-/* زر السلة */
+/* زر أضف للسلة */
 
 .add-cart {
     width: 100%;
@@ -509,7 +467,7 @@ body {
 
     padding: 14px 35px;
 
-    border-radius: 4px;
+    border-radius: 5px;
 
     cursor: pointer;
 
@@ -558,7 +516,6 @@ body {
     border-radius: 50%;
 
     background: #062b52;
-
     color: white;
 
     font-size: 25px;
@@ -567,8 +524,7 @@ body {
 
     z-index: 2000;
 
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cart-icon span {
@@ -589,7 +545,6 @@ body {
     font-size: 13px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -605,7 +560,6 @@ body {
     background: rgba(0, 0, 0, 0.5);
 
     opacity: 0;
-
     visibility: hidden;
 
     transition: 0.3s;
@@ -615,7 +569,6 @@ body {
 
 .cart-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
@@ -626,7 +579,6 @@ body {
     left: -420px;
 
     width: 400px;
-
     max-width: 90%;
 
     height: 100vh;
@@ -636,7 +588,6 @@ body {
     z-index: 3000;
 
     display: flex;
-
     flex-direction: column;
 
     transition: 0.35s;
@@ -654,9 +605,7 @@ body {
     padding: 20px;
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
 
@@ -688,7 +637,6 @@ body {
     margin-bottom: 15px;
 
     display: flex;
-
     justify-content: space-between;
 
     gap: 15px;
@@ -745,7 +693,7 @@ body {
 
     border: none;
 
-    border-radius: 4px;
+    border-radius: 5px;
 
     cursor: pointer;
 
