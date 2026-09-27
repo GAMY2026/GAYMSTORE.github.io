@@ -1,147 +1,68 @@
-* {
-    box-sizing: border-box;
-}
+/* كروت الصور */
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #222;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-.header {
-    height: 75px;
-    background: #062b52;
-    color: white;
-
+.card-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 8%;
-
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-
-    position: relative;
-    z-index: 10;
-}
-
-.logo {
-    font-size: 27px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.menu {
-    display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
+
+    padding: 50px 8%;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
+.image-card {
+    width: 300px;
+    background: white;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
 
     transition: 0.3s;
 }
 
-.menu a:hover {
-    color: #c9d8e8;
+.image-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
+.image-card img {
+    width: 100%;
+    height: 330px;
 
-/* =========================
-   HERO
-========================= */
+    object-fit: cover;
 
-.hero {
-    min-height: 430px;
+    display: block;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #f1f5f9 100%
-    );
+    transition: 0.4s;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
 
     text-align: center;
-
-    position: relative;
-    overflow: hidden;
 }
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 320px;
-    height: 320px;
-
-    border-radius: 50%;
-
-    background: #e4ebf2;
-
-    top: -150px;
-    right: -80px;
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 240px;
-    height: 240px;
-
-    border-radius: 50%;
-
-    background: #e9eef3;
-
-    bottom: -120px;
-    left: -70px;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 750px;
-
-    padding: 30px 20px;
-}
-
-.hero-content h1 {
-    margin: 0 0 15px;
-
-    font-size: 65px;
+.card-content h3 {
+    margin: 0 0 10px;
 
     color: #062b52;
 
-    letter-spacing: 2px;
+    font-size: 24px;
 }
 
-.hero-content p {
-    margin: 0 0 35px;
+.card-content p {
+    color: #777;
 
-    font-size: 23px;
-
-    color: #555;
+    margin-bottom: 20px;
 }
 
-.hero-button {
+.card-btn {
     display: inline-block;
 
     background: #062b52;
@@ -150,254 +71,13 @@ body {
 
     text-decoration: none;
 
-    padding: 15px 45px;
+    padding: 11px 25px;
 
-    border-radius: 8px;
-
-    font-size: 18px;
-
-    font-weight: bold;
+    border-radius: 6px;
 
     transition: 0.3s;
-
-    box-shadow: 0 6px 15px rgba(6, 43, 82, 0.2);
 }
 
-.hero-button:hover {
+.card-btn:hover {
     background: #0b3d70;
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories {
-    padding: 75px 8%;
-
-    text-align: center;
-
-    background: #f5f7fa;
-}
-
-.categories h2 {
-    margin: 0 0 10px;
-
-    font-size: 36px;
-
-    color: #062b52;
-}
-
-.categories-description {
-    margin: 0 0 45px;
-
-    color: #777;
-
-    font-size: 17px;
-}
-
-.categories-container {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-}
-
-
-/* =========================
-   CATEGORY CARD
-========================= */
-
-.category-card {
-    width: 300px;
-
-    background: white;
-
-    border-radius: 16px;
-
-    overflow: hidden;
-
-    text-decoration: none;
-
-    color: #222;
-
-    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
-}
-
-
-/* منطقة الرمز */
-
-.category-image {
-    width: 100%;
-    height: 300px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #eef3f8;
-}
-
-.category-icon {
-    font-size: 115px;
-
-    transition: 0.3s;
-}
-
-.category-card:hover .category-icon {
-    transform: scale(1.08);
-}
-
-
-/* معلومات القسم */
-
-.category-info {
-    padding: 22px;
-}
-
-.category-info h3 {
-    margin: 0 0 8px;
-
-    font-size: 27px;
-
-    color: #062b52;
-}
-
-.category-info span {
-    color: #777;
-
-    font-size: 15px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    padding: 65px 20px;
-
-    text-align: center;
-
-    background: white;
-}
-
-.contact h2 {
-    margin-top: 0;
-
-    color: #062b52;
-
-    font-size: 32px;
-}
-
-.contact p {
-    color: #666;
-
-    font-size: 17px;
-}
-
-.contact button {
-    margin-top: 10px;
-
-    background: #062b52;
-
-    color: white;
-
-    border: none;
-
-    padding: 13px 35px;
-
-    border-radius: 7px;
-
-    font-size: 17px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.contact button:hover {
-    background: #0b3d70;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #062b52;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 22px;
-}
-
-footer p {
-    margin: 0;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .header {
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    .menu {
-        gap: 12px;
-    }
-
-    .menu a {
-        font-size: 13px;
-    }
-
-    .hero {
-        min-height: 380px;
-    }
-
-    .hero-content h1 {
-        font-size: 42px;
-    }
-
-    .hero-content p {
-        font-size: 18px;
-    }
-
-    .categories {
-        padding: 55px 20px;
-    }
-
-    .category-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
 }
