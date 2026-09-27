@@ -44,15 +44,55 @@ body {
 /* الصفحة الرئيسية */
 
 .hero {
+  .hero {
     min-height: 430px;
 
-    background: white;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #eef3f8 100%
+    );
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: #e1e9f1;
+
+    top: -130px;
+    right: -80px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: #e8eef4;
+
+    bottom: -100px;
+    left: -60px;
 }
 
 .hero-content h1 {
