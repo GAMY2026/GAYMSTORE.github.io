@@ -1,26 +1,41 @@
 let cart = [];
 
-const buttons = document.querySelectorAll(".add-cart");
+const addButtons = document.querySelectorAll(".add-cart");
 
-buttons.forEach(function (button) {
+const cartElement = document.getElementById("cart");
+const cartItemsElement = document.getElementById("cartItems");
+const cartCountElement = document.getElementById("cartCount");
+const cartTotalElement = document.getElementById("cartTotal");
+
+const openCartButton = document.getElementById("openCart");
+const closeCartButton = document.getElementById("closeCart");
+const overlay = document.getElementById("cartOverlay");
+const checkoutButton = document.getElementById("checkoutButton");
+
+
+/* ADD TO CART */
+
+addButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
         const product = button.closest(".product");
 
-        const name = product.querySelector("h3").textContent;
+        const name =
+            product.querySelector("h3").textContent.trim();
 
-        const priceText = product.querySelector("strong").textContent;
+        const priceText =
+            product.querySelector("strong").textContent;
 
-        const price = parseInt(
-            priceText.replace(/\D/g, "")
-        );
+        const price =
+            parseInt(priceText.replace(/\D/g, ""));
 
-        const selects = product.querySelectorAll("select");
+        const color =
+            product.querySelector(".color").value;
 
-        const color = selects[0].value;
+        const size =
+            product.querySelector(".size").value;
 
-        const size = selects[1].value;
 
         cart.push({
             name: name,
@@ -28,6 +43,7 @@ buttons.forEach(function (button) {
             color: color,
             size: size
         });
+
 
         updateCart();
 
@@ -38,27 +54,27 @@ buttons.forEach(function (button) {
 });
 
 
+/* UPDATE CART */
+
 function updateCart() {
 
-    const cartItems = document.getElementById("cartItems");
-
-    const cartCount = document.getElementById("cartCount");
-
-    const cartTotal = document.getElementById("cartTotal");
-
-    cartItems.innerHTML = "";
+    cartItemsElement.innerHTML = "";
 
     let total = 0;
+
 
     cart.forEach(function (item, index) {
 
         total += item.price;
 
-        const div = document.createElement("div");
 
-        div.className = "cart-item";
+        const itemElement =
+            document.createElement("div");
 
-        div.innerHTML = `
+        itemElement.className = "cart-item";
+
+
+        itemElement.innerHTML = `
             <div>
 
                 <h3>${item.name}</h3>
@@ -71,57 +87,100 @@ function updateCart() {
 
             </div>
 
-            <button onclick="removeItem(${index})">
+            <button class="remove-item">
                 حذف
             </button>
         `;
 
-        cartItems.appendChild(div);
+
+        const removeButton =
+            itemElement.querySelector(".remove-item");
+
+
+        removeButton.addEventListener(
+            "click",
+            function () {
+
+                cart.splice(index, 1);
+
+                updateCart();
+
+            }
+        );
+
+
+        cartItemsElement.appendChild(itemElement);
 
     });
 
-    cartCount.textContent = cart.length;
 
-    cartTotal.textContent = total + " جنيه";
+    cartCountElement.textContent =
+        cart.length;
+
+    cartTotalElement.textContent =
+        total + " جنيه";
 }
 
 
-function removeItem(index) {
-
-    cart.splice(index, 1);
-
-    updateCart();
-
-}
-
+/* OPEN CART */
 
 function openCart() {
 
-    document.getElementById("cart").classList.add("active");
+    cartElement.classList.add("active");
 
-    document.getElementById("cartOverlay").classList.add("active");
+    overlay.classList.add("active");
 
 }
 
+
+/* CLOSE CART */
 
 function closeCart() {
 
-    document.getElementById("cart").classList.remove("active");
+    cartElement.classList.remove("active");
 
-    document.getElementById("cartOverlay").classList.remove("active");
+    overlay.classList.remove("active");
 
 }
 
 
-function checkout() {
+/* BUTTONS */
 
-    if (cart.length === 0) {
+openCartButton.addEventListener(
+    "click",
+    openCart
+);
 
-        alert("السلة فارغة");
 
-        return;
+closeCartButton.addEventListener(
+    "click",
+    closeCart
+);
+
+
+overlay.addEventListener(
+    "click",
+    closeCart
+);
+
+
+/* CHECKOUT */
+
+checkoutButton.addEventListener(
+    "click",
+    function () {
+
+        if (cart.length === 0) {
+
+            alert("السلة فارغة");
+
+            return;
+        }
+
+
+        alert(
+            "تم تجهيز الطلب بنجاح"
+        );
+
     }
-
-    alert("تم تجهيز الطلب بنجاح");
-
-}
+);
