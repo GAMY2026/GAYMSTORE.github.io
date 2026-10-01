@@ -48,13 +48,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const product = button.closest(".product");
 
-            const name = product.querySelector("h3").textContent;
+            const name =
+                product.querySelector("h3").textContent;
 
-            const priceText = product.querySelector(".price").textContent;
+            const priceText =
+                product.querySelector(".price").textContent;
 
-            const price = parseInt(priceText.replace(/[^\d]/g, ""));
+            const price =
+                parseInt(priceText.replace(/[^\d]/g, ""));
 
-            const size = product.querySelector(".size").value;
+            const size =
+                product.querySelector(".size").value;
 
 
             // التأكد من اختيار المقاس
@@ -79,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             updateCart();
 
+
             // فتح السلة تلقائياً
             cartElement.classList.add("active");
             overlay.classList.add("active");
@@ -93,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cartItems.innerHTML = "";
 
-
         let total = 0;
 
 
@@ -102,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
             total += item.price;
 
 
-            const cartItem = document.createElement("div");
+            const cartItem =
+                document.createElement("div");
 
             cartItem.classList.add("cart-item");
 
@@ -138,7 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // الإجمالي
-        cartTotal.textContent = total + " جنيه";
+        cartTotal.textContent =
+            total + " جنيه";
 
 
         // أزرار الحذف
@@ -150,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             button.addEventListener("click", function () {
 
-                const index = button.getAttribute("data-index");
+                const index =
+                    button.getAttribute("data-index");
 
                 cart.splice(index, 1);
 
