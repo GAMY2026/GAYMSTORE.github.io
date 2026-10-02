@@ -1,271 +1,145 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================
-       ELEMENTS
-    ========================= */
-
-    const elements = {
-        openCart: document.getElementById("openCart"),
-        closeCart: document.getElementById("closeCart"),
-        cart: document.getElementById("cart"),
-        overlay: document.getElementById("cartOverlay"),
-
-        cartItems: document.getElementById("cartItems"),
-        cartCount: document.getElementById("cartCount"),
-        cartTotal: document.getElementById("cartTotal"),
-
-        addButtons: document.querySelectorAll(".add-cart")
-    };
-
-
-    /* =========================
-       CART DATA
-    ========================= */
 
     let cart = [];
 
+    const openCart = document.getElementById("openCart");
+    const closeCart = document.getElementById("closeCart");
+    const cart = document.getElementById("cart");
+    const cartOverlay = document.getElementById("cartOverlay");
 
-    /* =========================
-       OPEN CART
-    ========================= */
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
 
-    function openCart() {
-        elements.cart.classList.add("active");
-        elements.overlay.classList.add("active");
-    }
+    // فتح السلة
+    openCart.addEventListener("click", function () {
+        cart.classList.add("active");
+        cartOverlay.classList.add("active");
+    });
 
+    // إغلاق السلة
+    closeCart.addEventListener("click", function () {
+        cart.classList.remove("active");
+        cartOverlay.classList.remove("active");
+    });
 
-    /* =========================
-       CLOSE CART
-    ========================= */
-
-    function closeCart() {
-        elements.cart.classList.remove("active");
-        elements.overlay.classList.remove("active");
-    }
-
-
-    /* =========================
-       ADD PRODUCT
-    ========================= */
-
-    function addProduct(button) {
-
-        const product = button.closest(".product");
-
-        if (!product) {
-            return;
-        }
+    // إغلاق السلة عند الضغط خارجها
+    cartOverlay.addEventListener("click", function () {
+        cart.classList.remove("active");
+        cartOverlay.classList.remove("active");
+    });
 
 
-        const name =
-            product.querySelector("h3").textContent.trim();
+    // أزرار إضافة المنتجات
+    const addButtons = document.querySelectorAll(".add-cart");
 
+    addButtons.forEach(function (button) {
 
-        const priceText =
-            product.querySelector(".price").textContent;
+        button.addEventListener("click", function () {
 
+            const product = button.closest(".product");
 
-        const price =
-            parseInt(
-                priceText.replace(/[^\d]/g, ""),
-                10
-            );
+            const name = product.querySelector("h3").textContent;
+            const priceText = product.querySelector(".price").textContent;
+            const price = parseInt(priceText.replace(/[^\d]/g, ""));
 
+            const color = product.querySelector(".color").value;
+            const size = product.querySelector(".size").value;
 
-        const color =
-            product.querySelector(".color").value;
+            // التأكد من اختيار اللون والمقاس
+            if (color === "" || size === "") {
+                alert("PLEASE SELECT COLOR AND SIZE");
+                return;
+            }
 
+            cart.push({
+                name: name,
+                price: price,
+                color: color,
+                size: size
+            });
 
-        const size =
-            product.querySelector(".size").value;
+            updateCart();
 
+            // فتح السلة تلقائياً بعد إضافة المنتج
+            cart.classList.add("active");
+            cartOverlay.classList.add("active");
 
-        /* CHECK COLOR */
-
-        if (color === "") {
-
-            alert("من فضلك اختر اللون أولاً");
-
-            return;
-        }
-
-
-        /* CHECK SIZE */
-
-        if (size === "") {
-
-            alert("من فضلك اختر المقاس أولاً");
-
-            return;
-        }
-
-
-        /* ADD TO CART */
-
-        cart.push({
-            name: name,
-            price: price,
-            color: color,
-            size: size
         });
 
-
-        updateCart();
-
-        openCart();
-    }
+    });
 
 
-    /* =========================
-       UPDATE CART
-    ========================= */
-
+    // تحديث السلة
     function updateCart() {
 
-        elements.cartItems.innerHTML = "";
+        cartItems.innerHTML = "";
 
         let total = 0;
-
-
-        /* EMPTY CART */
-
-        if (cart.length === 0) {
-
-            elements.cartItems.innerHTML = `
-                <p class="empty-cart">
-                    السلة فارغة حالياً
-                </p>
-            `;
-
-            elements.cartCount.textContent = "0";
-            elements.cartTotal.textContent = "0 جنيه";
-
-            return;
-        }
-
-
-        /* CART PRODUCTS */
 
         cart.forEach(function (item, index) {
 
             total += item.price;
 
-
-            const cartItem =
-                document.createElement("div");
+            const cartItem = document.createElement("div");
 
             cartItem.className = "cart-item";
 
-
             cartItem.innerHTML = `
-                <div>
+                <div class="cart-item-info">
 
-                    <h3>
-                        ${item.name}
-                    </h3>
+                    <h3>${item.name}</h3>
 
                     <p>
-                        اللون: ${item.color}
+                        COLOR: ${item.color}
                     </p>
 
                     <p>
-                        المقاس: ${item.size}
+                        SIZE: ${item.size}
                     </p>
 
                     <strong>
-                        ${item.price} جنيه
+                        ${item.price} EGP
                     </strong>
 
                 </div>
 
-                <button
+                <button 
                     class="remove-item"
                     data-index="${index}">
-                    حذف
+                    ×
                 </button>
             `;
 
-
-            elements.cartItems.appendChild(cartItem);
+            cartItems.appendChild(cartItem);
 
         });
 
 
-        /* UPDATE COUNT */
+        // عدد المنتجات
+        cartCount.textContent = cart.length;
 
-        elements.cartCount.textContent =
-            cart.length;
+        // الإجمالي
+        cartTotal.textContent = total + " EGP";
 
 
-        /* UPDATE TOTAL */
+        // أزرار حذف المنتجات
+        const removeButtons = document.querySelectorAll(".remove-item");
 
-        elements.cartTotal.textContent =
-            total + " جنيه";
+        removeButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const index = button.getAttribute("data-index");
+
+                cart.splice(index, 1);
+
+                updateCart();
+
+            });
+
+        });
+
     }
 
-
-    /* =========================
-       REMOVE PRODUCT
-    ========================= */
-
-    function removeProduct(index) {
-
-        cart.splice(index, 1);
-
-        updateCart();
-    }
-
-
-    /* =========================
-       EVENTS
-    ========================= */
-
-    elements.openCart.addEventListener(
-        "click",
-        openCart
-    );
-
-
-    elements.closeCart.addEventListener(
-        "click",
-        closeCart
-    );
-
-
-    elements.overlay.addEventListener(
-        "click",
-        closeCart
-    );
-
-
-    /* ADD BUTTONS */
-
-    elements.addButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-                addProduct(button);
-            }
-        );
-
-    });
-
-
-    /* REMOVE BUTTONS */
-
-    elements.cartItems.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                event.target.classList.contains(
-                    "remove-item"
-                )
-            ) {
-
-                const index =
-                    parseInt(
-```
+});
