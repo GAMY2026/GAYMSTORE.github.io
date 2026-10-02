@@ -1,7 +1,7 @@
 ```css
-/* ==============================
+/* =========================
    RESET
-================================ */
+========================= */
 
 * {
     margin: 0;
@@ -14,31 +14,24 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: Arial, Tahoma, sans-serif;
-    background: #f4f4f2;
+    background: #f5f5f5;
     color: #222;
-    line-height: 1.6;
-}
-
-button,
-select {
-    font-family: inherit;
-}
-
-a {
-    text-decoration: none;
+    direction: rtl;
 }
 
 
-/* ==============================
+/* =========================
    HEADER
-================================ */
+========================= */
 
 .header {
+    height: 80px;
     width: 100%;
-    height: 78px;
-    padding: 0 6%;
-    background: #071b2f;
+    padding: 0 45px;
+
+    background: #062b52;
 
     display: flex;
     align-items: center;
@@ -47,77 +40,47 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    border-bottom: 1px solid rgba(216, 179, 106, 0.25);
 }
-
-
-/* LOGO */
 
 .logo {
     color: #ffffff;
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 26px;
+    font-weight: bold;
     letter-spacing: 2px;
-    white-space: nowrap;
 }
 
 .logo span {
     color: #d8b36a;
 }
 
-
-/* NAV */
-
 .nav {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 25px;
 }
 
 .nav a {
     color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-
-    transition: color 0.3s ease;
-
-    position: relative;
-}
-
-.nav a::after {
-    content: "";
-
-    position: absolute;
-    right: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 2px;
-
-    background: #d8b36a;
-
-    transition: width 0.3s ease;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
 .nav a:hover {
     color: #d8b36a;
 }
 
-.nav a:hover::after {
-    width: 100%;
-}
 
-
-/* CART BUTTON */
+/* =========================
+   CART BUTTON
+========================= */
 
 .cart-button {
     position: relative;
 
-    padding: 10px 17px;
+    padding: 10px 16px;
 
     border: 1px solid #d8b36a;
-    border-radius: 4px;
+    border-radius: 5px;
 
     background: transparent;
     color: #ffffff;
@@ -127,46 +90,46 @@ a {
     font-size: 14px;
     font-weight: bold;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .cart-button:hover {
     background: #d8b36a;
-    color: #071b2f;
+    color: #062b52;
 }
 
 #cartCount {
     position: absolute;
 
-    top: -9px;
-    left: -9px;
+    top: -8px;
+    left: -8px;
 
     width: 22px;
     height: 22px;
-
-    border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    border-radius: 50%;
+
     background: #d8b36a;
-    color: #071b2f;
+    color: #062b52;
 
     font-size: 11px;
     font-weight: bold;
 }
 
 
-/* ==============================
-   HOME
-================================ */
+/* =========================
+   HOME VIDEO
+========================= */
 
 .home {
     width: 100%;
-    height: calc(100vh - 78px);
+    height: calc(100vh - 80px);
 
-    min-height: 560px;
+    min-height: 550px;
 
     position: relative;
 
@@ -200,41 +163,23 @@ a {
 
     transform: translate(-50%, -50%);
 
-    border: none;
+    border: 0;
 
     pointer-events: none;
 }
 
 
-/* DARK OVERLAY */
-
-.home-video::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.72),
-            rgba(0, 0, 0, 0.15)
-        );
-
-    pointer-events: none;
-}
-
-
-/* HOME CONTENT */
+/* =========================
+   HOME CONTENT
+========================= */
 
 .home-content {
     position: absolute;
 
     z-index: 5;
 
-    top: 50%;
     left: 8%;
+    top: 50%;
 
     transform: translateY(-50%);
 
@@ -244,21 +189,20 @@ a {
 }
 
 .home-content p {
+    margin-bottom: 10px;
+
     color: #d8b36a;
 
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
+    font-size: 14px;
     font-weight: bold;
 
-    margin-bottom: 12px;
+    letter-spacing: 4px;
 }
 
 .home-content h1 {
-    font-size: clamp(55px, 8vw, 105px);
+    font-size: clamp(55px, 8vw, 100px);
 
-    line-height: 0.9;
+    line-height: 0.95;
 
     font-weight: 900;
 
@@ -272,68 +216,65 @@ a {
 }
 
 .home-content h2 {
-    margin-top: 25px;
+    margin-top: 20px;
 
     font-size: 24px;
 
-    font-weight: 400;
+    font-weight: normal;
 }
 
 .home-button {
     display: inline-block;
 
-    margin-top: 30px;
+    margin-top: 25px;
 
-    padding: 13px 30px;
+    padding: 13px 28px;
 
     background: #d8b36a;
-    color: #071b2f;
+    color: #062b52;
 
-    font-size: 15px;
+    border-radius: 5px;
+
     font-weight: bold;
 
-    border-radius: 3px;
-
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .home-button:hover {
     background: #ffffff;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 
-/* ==============================
-   SECTION TITLES
-================================ */
+/* =========================
+   SECTION HEADING
+========================= */
 
 .section-heading {
     max-width: 700px;
 
-    margin: 0 auto 50px;
+    margin: 0 auto 45px;
 
     text-align: center;
 }
 
-.section-heading > span {
-    color: #b08a3c;
+.section-heading span {
+    color: #b08b42;
 
-    font-size: 11px;
+    font-size: 12px;
 
     font-weight: bold;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
 .section-heading h2 {
-    margin: 7px 0 10px;
+    margin: 8px 0;
 
-    color: #071b2f;
+    color: #062b52;
 
-    font-size: 37px;
-
-    font-weight: 800;
+    font-size: 36px;
 }
 
 .section-heading p {
@@ -343,18 +284,18 @@ a {
 }
 
 
-/* ==============================
+/* =========================
    CATEGORIES
-================================ */
+========================= */
 
 .categories {
-    padding: 95px 6%;
+    padding: 80px 6%;
 
     background: #ffffff;
 }
 
 .categories-grid {
-    max-width: 1250px;
+    max-width: 1200px;
 
     margin: auto;
 
@@ -362,13 +303,13 @@ a {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 }
 
 .category-card {
-    min-height: 330px;
+    min-height: 300px;
 
-    padding: 35px;
+    padding: 30px;
 
     display: flex;
 
@@ -380,7 +321,7 @@ a {
 
     color: #ffffff;
 
-    transition: all 0.4s ease;
+    transition: 0.3s;
 }
 
 .category-card::before {
@@ -393,8 +334,8 @@ a {
     background:
         linear-gradient(
             to top,
-            rgba(0, 0, 0, 0.82),
-            rgba(0, 0, 0, 0.05)
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.05)
         );
 }
 
@@ -407,15 +348,15 @@ a {
 .category-card small {
     color: #d8b36a;
 
-    font-size: 10px;
+    font-size: 11px;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .category-card h3 {
-    margin: 4px 0 8px;
+    margin: 5px 0;
 
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .category-card span {
@@ -423,33 +364,30 @@ a {
 }
 
 .men-category {
-    background: #26343f;
+    background: #283641;
 }
 
 .women-category {
-    background: #5a494d;
+    background: #59484d;
 }
 
 .shoes-category {
-    background: #3b3d3b;
+    background: #3d3d3a;
 }
 
 .category-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 18px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
 
-/* ==============================
-   PRODUCTS SECTION
-================================ */
+/* =========================
+   PRODUCTS
+========================= */
 
 .products-section {
-    padding: 95px 6%;
+    padding: 80px 6%;
 
-    background: #f4f4f2;
+    background: #f5f5f5;
 }
 
 .light-section {
@@ -457,7 +395,7 @@ a {
 }
 
 .products-grid {
-    max-width: 1250px;
+    max-width: 1200px;
 
     margin: auto;
 
@@ -469,37 +407,34 @@ a {
 }
 
 
-/* ==============================
+/* =========================
    PRODUCT CARD
-================================ */
+========================= */
 
 .product {
-    overflow: hidden;
-
     background: #ffffff;
 
     border: 1px solid #e5e5e5;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    overflow: hidden;
+
+    transition: 0.3s;
 }
 
 .product:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.09);
+        0 12px 30px rgba(0,0,0,0.1);
 }
 
 
-/* ==============================
+/* =========================
    PRODUCT IMAGE
-================================ */
+========================= */
 
 .product-image {
-    width: 100%;
-    height: 350px;
+    height: 330px;
 
     display: flex;
 
@@ -512,11 +447,11 @@ a {
 }
 
 .product-placeholder {
-    font-size: 120px;
+    font-size: 115px;
 
     filter: grayscale(100%);
 
-    transition: transform 0.4s ease;
+    transition: 0.3s;
 }
 
 .product:hover .product-placeholder {
@@ -524,10 +459,10 @@ a {
 }
 
 
-/* PRODUCT BACKGROUNDS */
+/* PRODUCT COLORS */
 
 .shirt-blue {
-    background: #dfe7eb;
+    background: #dfe8ec;
 }
 
 .shirt-gray {
@@ -535,7 +470,7 @@ a {
 }
 
 .pants-dark {
-    background: #d4d4d1;
+    background: #d6d6d3;
 }
 
 .blouse {
@@ -543,15 +478,15 @@ a {
 }
 
 .jacket {
-    background: #d9d1ca;
+    background: #d9d1c9;
 }
 
 .elegant-jacket {
-    background: #ded9d2;
+    background: #ded8d0;
 }
 
 .sneaker {
-    background: #dfe2df;
+    background: #e0e2df;
 }
 
 .white-sneaker {
@@ -568,12 +503,12 @@ a {
 .product-badge {
     position: absolute;
 
-    top: 17px;
-    right: 17px;
+    top: 15px;
+    right: 15px;
 
-    padding: 5px 10px;
+    padding: 5px 9px;
 
-    background: #071b2f;
+    background: #062b52;
     color: #ffffff;
 
     font-size: 9px;
@@ -582,20 +517,18 @@ a {
 }
 
 
-/* ==============================
+/* =========================
    PRODUCT INFO
-================================ */
+========================= */
 
 .product-info {
-    padding: 24px;
+    padding: 22px;
 }
 
 .product-info h3 {
-    color: #071b2f;
+    color: #062b52;
 
-    font-size: 21px;
-
-    font-weight: bold;
+    font-size: 20px;
 }
 
 .product-description {
@@ -609,17 +542,17 @@ a {
 .price {
     margin: 12px 0 18px;
 
-    color: #b08a3c;
+    color: #b08b42;
 
-    font-size: 20px;
+    font-size: 19px;
 
     font-weight: bold;
 }
 
 
-/* ==============================
-   PRODUCT OPTIONS
-================================ */
+/* =========================
+   OPTIONS
+========================= */
 
 .options {
     display: grid;
@@ -646,11 +579,9 @@ a {
 
     border: 1px solid #dddddd;
 
-    border-radius: 2px;
+    border-radius: 4px;
 
     background: #ffffff;
-
-    color: #333;
 
     outline: none;
 
@@ -658,59 +589,55 @@ a {
 }
 
 .options select:focus {
-    border-color: #b08a3c;
+    border-color: #062b52;
 }
 
 
-/* ==============================
-   ADD TO CART
-================================ */
+/* =========================
+   ADD CART
+========================= */
 
 .add-cart {
     width: 100%;
 
     padding: 13px;
 
-    border: 1px solid #071b2f;
+    border: none;
 
-    border-radius: 2px;
+    border-radius: 4px;
 
-    background: #071b2f;
-
+    background: #062b52;
     color: #ffffff;
 
     cursor: pointer;
 
     font-size: 14px;
-
     font-weight: bold;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .add-cart:hover {
     background: #d8b36a;
 
-    border-color: #d8b36a;
-
-    color: #071b2f;
+    color: #062b52;
 }
 
 
-/* ==============================
+/* =========================
    CONTACT
-================================ */
+========================= */
 
 .contact {
-    padding: 95px 6%;
+    padding: 80px 6%;
 
-    background: #071b2f;
+    background: #062b52;
 
     color: #ffffff;
 }
 
 .contact-box {
-    max-width: 800px;
+    max-width: 750px;
 
     margin: auto;
 
@@ -722,21 +649,19 @@ a {
 
     font-size: 11px;
 
-    font-weight: bold;
-
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
 .contact-box h2 {
-    margin: 8px 0 12px;
+    margin: 10px 0;
 
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .contact-box p {
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 
-    color: #c6c6c6;
+    color: #cccccc;
 
     font-size: 15px;
 }
@@ -744,38 +669,34 @@ a {
 .whatsapp-button {
     display: inline-block;
 
-    padding: 13px 30px;
+    padding: 13px 28px;
 
     background: #25d366;
 
     color: #ffffff;
 
-    border-radius: 3px;
-
-    font-size: 15px;
+    border-radius: 5px;
 
     font-weight: bold;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .whatsapp-button:hover {
     transform: translateY(-3px);
-
-    opacity: 0.9;
 }
 
 
-/* ==============================
+/* =========================
    FOOTER
-================================ */
+========================= */
 
 footer {
-    padding: 30px 15px;
+    padding: 28px 15px;
 
-    background: #04111d;
+    background: #041525;
 
-    color: #777;
+    color: #888;
 
     text-align: center;
 }
@@ -793,9 +714,9 @@ footer {
 }
 
 
-/* ==============================
+/* =========================
    CART OVERLAY
-================================ */
+========================= */
 
 .cart-overlay {
     position: fixed;
@@ -804,13 +725,13 @@ footer {
 
     z-index: 1998;
 
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0,0,0,0.6);
 
     opacity: 0;
 
     visibility: hidden;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .cart-overlay.active {
@@ -820,9 +741,9 @@ footer {
 }
 
 
-/* ==============================
+/* =========================
    CART
-================================ */
+========================= */
 
 .cart {
     position: fixed;
@@ -830,12 +751,12 @@ footer {
     top: 0;
     right: 0;
 
-    z-index: 1999;
-
-    width: 420px;
+    width: 400px;
     max-width: 92%;
 
     height: 100vh;
+
+    z-index: 1999;
 
     background: #ffffff;
 
@@ -845,10 +766,10 @@ footer {
 
     transform: translateX(100%);
 
-    transition: transform 0.35s ease;
+    transition: 0.35s;
 
     box-shadow:
-        -15px 0 40px rgba(0, 0, 0, 0.2);
+        -10px 0 30px rgba(0,0,0,0.2);
 }
 
 .cart.active {
@@ -859,9 +780,9 @@ footer {
 /* CART HEADER */
 
 .cart-header {
-    padding: 20px;
+    padding: 18px 20px;
 
-    background: #071b2f;
+    background: #062b52;
 
     color: #ffffff;
 
@@ -891,7 +812,7 @@ footer {
 
     color: #ffffff;
 
-    font-size: 34px;
+    font-size: 32px;
 
     cursor: pointer;
 }
@@ -908,21 +829,19 @@ footer {
 }
 
 .cart-item {
-    padding: 17px 0;
+    padding: 16px 0;
+
+    border-bottom: 1px solid #eeeeee;
 
     display: flex;
 
     justify-content: space-between;
 
     gap: 15px;
-
-    border-bottom: 1px solid #eeeeee;
 }
 
 .cart-item h3 {
-    margin-bottom: 5px;
-
-    color: #071b2f;
+    color: #062b52;
 
     font-size: 16px;
 }
@@ -936,9 +855,9 @@ footer {
 .cart-item strong {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
-    color: #b08a3c;
+    color: #b08b42;
 }
 
 .remove-item {
@@ -956,7 +875,7 @@ footer {
 }
 
 .empty-cart {
-    padding: 50px 10px;
+    padding: 45px 10px;
 
     color: #888;
 
@@ -983,17 +902,17 @@ footer {
 }
 
 .total-row strong {
-    color: #b08a3c;
+    color: #b08b42;
 }
 
 .checkout-button {
     width: 100%;
 
-    padding: 14px;
+    padding: 13px;
 
     border: none;
 
-    background: #071b2f;
+    background: #062b52;
 
     color: #ffffff;
 
@@ -1007,22 +926,22 @@ footer {
 .checkout-button:hover {
     background: #d8b36a;
 
-    color: #071b2f;
+    color: #062b52;
 }
 
 
-/* ==============================
+/* =========================
    TABLET
-================================ */
+========================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1000px) {
 
     .header {
         padding: 0 25px;
     }
 
     .nav {
-        gap: 15px;
+        gap: 14px;
     }
 
     .nav a {
@@ -1036,16 +955,16 @@ footer {
 }
 
 
-/* ==============================
+/* =========================
    MOBILE
-================================ */
+========================= */
 
 @media (max-width: 700px) {
 
     .header {
         height: 70px;
 
-        padding: 0 14px;
+        padding: 0 15px;
     }
 
     .logo {
@@ -1057,7 +976,7 @@ footer {
     }
 
     .cart-button {
-        padding: 8px 12px;
+        padding: 8px 11px;
 
         font-size: 12px;
     }
@@ -1068,7 +987,7 @@ footer {
     .home {
         height: calc(100vh - 70px);
 
-        min-height: 520px;
+        min-height: 500px;
     }
 
     .home-video iframe {
@@ -1080,15 +999,23 @@ footer {
     }
 
     .home-content {
-        left: 20px;
-        right: 20px;
+        left: 15px;
+        right: 15px;
 
         top: auto;
-        bottom: 55px;
+        bottom: 45px;
 
         transform: none;
 
         text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 55px;
+    }
+
+    .home-content h2 {
+        font-size: 18px;
     }
 
     .home-content p {
@@ -1097,27 +1024,13 @@ footer {
         letter-spacing: 3px;
     }
 
-    .home-content h1 {
-        font-size: 60px;
-    }
-
-    .home-content h2 {
-        font-size: 19px;
-    }
-
-    .home-button {
-        margin-top: 22px;
-
-        padding: 12px 25px;
-    }
-
 
     /* SECTIONS */
 
     .categories,
     .products-section,
     .contact {
-        padding: 70px 18px;
+        padding: 65px 15px;
     }
 
     .section-heading {
@@ -1125,7 +1038,7 @@ footer {
     }
 
     .section-heading h2 {
-        font-size: 30px;
+        font-size: 29px;
     }
 
 
@@ -1136,7 +1049,7 @@ footer {
     }
 
     .category-card {
-        min-height: 245px;
+        min-height: 230px;
     }
 
 
@@ -1147,14 +1060,21 @@ footer {
     }
 
     .product-image {
-        height: 320px;
+        height: 300px;
+    }
+
+
+    /* OPTIONS */
+
+    .options {
+        grid-template-columns: 1fr 1fr;
     }
 
 
     /* CONTACT */
 
     .contact-box h2 {
-        font-size: 30px;
+        font-size: 29px;
     }
 
 
@@ -1166,9 +1086,9 @@ footer {
 }
 
 
-/* ==============================
+/* =========================
    SMALL MOBILE
-================================ */
+========================= */
 
 @media (max-width: 430px) {
 
@@ -1185,19 +1105,19 @@ footer {
     }
 
     .home-content h1 {
-        font-size: 50px;
+        font-size: 48px;
     }
 
     .home-content h2 {
-        font-size: 17px;
+        font-size: 16px;
+    }
+
+    .product-image {
+        height: 270px;
     }
 
     .options {
         grid-template-columns: 1fr;
-    }
-
-    .product-image {
-        height: 280px;
     }
 
     .cart {
