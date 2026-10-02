@@ -1,19 +1,60 @@
 ```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GAMY STORE</title>
+    <title>GAMY STORE | Luxury Fashion</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =========================
+         TOP FASHION BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        <div class="top-bar-track">
+
+            <span>FASHION</span>
+            <b>•</b>
+
+            <span>GAMY STORE</span>
+            <b>•</b>
+
+            <span>ORDER NOW</span>
+            <b>•</b>
+
+            <span>NEW COLLECTION</span>
+            <b>•</b>
+
+            <span>LUXURY CLOTHING</span>
+            <b>•</b>
+
+            <span>DISCOVER MORE</span>
+            <b>•</b>
+
+            <span>FASHION</span>
+            <b>•</b>
+
+            <span>GAMY STORE</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN HEADER
+    ========================== -->
 
     <header class="header">
 
@@ -21,36 +62,55 @@
             GAMY <span>STORE</span>
         </a>
 
+
         <nav class="nav">
 
-            <a href="#home">الرئيسية</a>
-            <a href="#categories">الأقسام</a>
-            <a href="#men">رجالي</a>
-            <a href="#women">حريمي</a>
-            <a href="#shoes">كوتشات</a>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#home">HOME</a>
+
+            <a href="#categories">COLLECTIONS</a>
+
+            <a href="#men">MEN</a>
+
+            <a href="#women">WOMEN</a>
+
+            <a href="#shoes">SNEAKERS</a>
+
+            <a href="#contact">CONTACT</a>
 
         </nav>
 
+
         <button class="cart-button" id="openCart">
-            🛒 السلة
-            <span id="cartCount">0</span>
+
+            <span class="cart-icon">🛍</span>
+
+            <span>CART</span>
+
+            <span class="cart-count" id="cartCount">0</span>
+
         </button>
 
     </header>
 
 
-    <!-- ================= HOME ================= -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main>
+
+
+        <!-- =========================
+             HOME / HERO VIDEO
+        ========================== -->
 
         <section class="home" id="home">
 
             <div class="home-video">
 
                 <iframe
-                    src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1"
-                    title="GAMY STORE"
+                    src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
+                    title="GAMY STORE Luxury Fashion"
                     frameborder="0"
                     allow="autoplay; encrypted-media; picture-in-picture"
                     allowfullscreen>
@@ -58,29 +118,50 @@
 
             </div>
 
+
+            <div class="home-overlay"></div>
+
+
             <div class="home-content">
 
-                <p>NEW COLLECTION</p>
+                <span class="hero-small">
+                    NEW COLLECTION
+                </span>
 
                 <h1>
                     GAMY
                     <span>STORE</span>
                 </h1>
 
-                <h2>
-                    الموضة اللي تليق بيك
-                </h2>
+                <p>
+                    LUXURY FASHION
+                    <br>
+                    MADE FOR YOUR STYLE
+                </p>
 
                 <a href="#categories" class="home-button">
-                    اكتشف المجموعة
+                    EXPLORE COLLECTION
                 </a>
+
+            </div>
+
+
+            <div class="home-bottom">
+
+                <span>EST. 2026</span>
+
+                <span>GAMY STORE</span>
+
+                <span>CAIRO • EGYPT</span>
 
             </div>
 
         </section>
 
 
-        <!-- ================= CATEGORIES ================= -->
+        <!-- =========================
+             COLLECTIONS
+        ========================== -->
 
         <section class="categories" id="categories">
 
@@ -88,10 +169,10 @@
 
                 <span>DISCOVER</span>
 
-                <h2>تسوق حسب القسم</h2>
+                <h2>OUR COLLECTIONS</h2>
 
                 <p>
-                    اختار القسم المفضل ليك واكتشف أحدث المنتجات
+                    Explore our latest fashion collections
                 </p>
 
             </div>
@@ -99,34 +180,59 @@
 
             <div class="categories-grid">
 
+
+                <!-- MEN -->
+
                 <a href="#men" class="category-card men-category">
 
-                    <div>
-                        <small>COLLECTION</small>
-                        <h3>رجالي</h3>
-                        <span>اكتشف المجموعة ←</span>
+                    <div class="category-content">
+
+                        <small>01 / COLLECTION</small>
+
+                        <h3>MEN</h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
                     </div>
 
                 </a>
 
+
+                <!-- WOMEN -->
 
                 <a href="#women" class="category-card women-category">
 
-                    <div>
-                        <small>COLLECTION</small>
-                        <h3>حريمي</h3>
-                        <span>اكتشف المجموعة ←</span>
+                    <div class="category-content">
+
+                        <small>02 / COLLECTION</small>
+
+                        <h3>WOMEN</h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
                     </div>
 
                 </a>
 
 
+                <!-- SNEAKERS -->
+
                 <a href="#shoes" class="category-card shoes-category">
 
-                    <div>
-                        <small>COLLECTION</small>
-                        <h3>كوتشات</h3>
-                        <span>اكتشف المجموعة ←</span>
+                    <div class="category-content">
+
+                        <small>03 / COLLECTION</small>
+
+                        <h3>SNEAKERS</h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
                     </div>
 
                 </a>
@@ -136,7 +242,9 @@
         </section>
 
 
-        <!-- ================= MEN ================= -->
+        <!-- =========================
+             MEN COLLECTION
+        ========================== -->
 
         <section class="products-section" id="men">
 
@@ -144,10 +252,10 @@
 
                 <span>MEN COLLECTION</span>
 
-                <h2>ملابس رجالي</h2>
+                <h2>MEN'S EDIT</h2>
 
                 <p>
-                    اختار القطعة والمقاس واللون وأضفها للسلة
+                    Contemporary pieces designed for everyday luxury
                 </p>
 
             </div>
@@ -156,115 +264,190 @@
             <div class="products-grid">
 
 
+                <!-- PRODUCT 1 -->
+
                 <article class="product">
 
                     <div class="product-image shirt-blue">
+
                         <div class="product-placeholder">
-                            👕
+                            T-SHIRT
                         </div>
 
                         <span class="product-badge">
                             NEW
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>تيشيرت رجالي</h3>
+                        <h3>
+                            Premium T-Shirt
+                        </h3>
 
                         <p class="product-description">
-                            تيشيرت رجالي ستايل عصري
+                            Modern essential with a clean luxury look
                         </p>
 
                         <div class="price">
-                            450 جنيه
+                            450 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>أبيض</option>
-                                    <option>أزرق</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLUE
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>S</option>
+
                                     <option>M</option>
+
                                     <option>L</option>
+
                                     <option>XL</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
 
                 </article>
 
+
+
+                <!-- PRODUCT 2 -->
 
                 <article class="product">
 
                     <div class="product-image shirt-gray">
+
                         <div class="product-placeholder">
-                            👔
+                            SHIRT
                         </div>
 
                         <span class="product-badge">
                             NEW
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>قميص رجالي</h3>
+                        <h3>
+                            Premium Shirt
+                        </h3>
 
                         <p class="product-description">
-                            قميص أنيق مناسب لكل الأوقات
+                            Elegant shirt designed for every occasion
                         </p>
 
                         <div class="price">
-                            650 جنيه
+                            650 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أبيض</option>
-                                    <option>أسود</option>
-                                    <option>رمادي</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        GREY
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>S</option>
+
                                     <option>M</option>
+
                                     <option>L</option>
+
                                     <option>XL</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -272,57 +455,95 @@
                 </article>
 
 
+
+                <!-- PRODUCT 3 -->
+
                 <article class="product">
 
                     <div class="product-image pants-dark">
+
                         <div class="product-placeholder">
-                            👖
+                            PANTS
                         </div>
 
                         <span class="product-badge">
                             BEST
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>بنطلون رجالي</h3>
+                        <h3>
+                            Premium Pants
+                        </h3>
 
                         <p class="product-description">
-                            بنطلون بتصميم عصري ومريح
+                            Modern fit with maximum everyday comfort
                         </p>
 
                         <div class="price">
-                            800 جنيه
+                            800 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>كحلي</option>
-                                    <option>رمادي</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        NAVY
+                                    </option>
+
+                                    <option>
+                                        GREY
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>30</option>
+
                                     <option>32</option>
+
                                     <option>34</option>
+
                                     <option>36</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -334,7 +555,10 @@
         </section>
 
 
-        <!-- ================= WOMEN ================= -->
+
+        <!-- =========================
+             WOMEN COLLECTION
+        ========================== -->
 
         <section class="products-section light-section" id="women">
 
@@ -342,10 +566,10 @@
 
                 <span>WOMEN COLLECTION</span>
 
-                <h2>ملابس حريمي</h2>
+                <h2>WOMEN'S EDIT</h2>
 
                 <p>
-                    أحدث الاختيارات للسيدات
+                    Refined pieces created for a distinctive look
                 </p>
 
             </div>
@@ -354,57 +578,94 @@
             <div class="products-grid">
 
 
+                <!-- PRODUCT 1 -->
+
                 <article class="product">
 
                     <div class="product-image blouse">
+
                         <div class="product-placeholder">
-                            👚
+                            BLOUSE
                         </div>
 
                         <span class="product-badge">
                             NEW
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>بلوزة حريمي</h3>
+                        <h3>
+                            Premium Blouse
+                        </h3>
 
                         <p class="product-description">
-                            تصميم أنيق وناعم
+                            Soft and elegant design for a refined style
                         </p>
 
                         <div class="price">
-                            550 جنيه
+                            550 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أبيض</option>
-                                    <option>أسود</option>
-                                    <option>بيج</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>S</option>
+
                                     <option>M</option>
+
                                     <option>L</option>
+
                                     <option>XL</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -412,57 +673,95 @@
                 </article>
 
 
+
+                <!-- PRODUCT 2 -->
+
                 <article class="product">
 
                     <div class="product-image jacket">
+
                         <div class="product-placeholder">
-                            🧥
+                            JACKET
                         </div>
 
                         <span class="product-badge">
                             HOT
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>جاكت حريمي</h3>
+                        <h3>
+                            Signature Jacket
+                        </h3>
 
                         <p class="product-description">
-                            جاكت أنيق لإطلالة مميزة
+                            A statement piece for a sophisticated look
                         </p>
 
                         <div class="price">
-                            950 جنيه
+                            950 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>بني</option>
-                                    <option>بيج</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BROWN
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>S</option>
+
                                     <option>M</option>
+
                                     <option>L</option>
+
                                     <option>XL</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -470,56 +769,93 @@
                 </article>
 
 
+
+                <!-- PRODUCT 3 -->
+
                 <article class="product">
 
                     <div class="product-image elegant-jacket">
+
                         <div class="product-placeholder">
-                            🧥
+                            PREMIUM
                         </div>
 
                         <span class="product-badge">
                             PREMIUM
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>جاكت أنيق</h3>
+                        <h3>
+                            Luxury Jacket
+                        </h3>
 
                         <p class="product-description">
-                            قطعة مميزة لإطلالة راقية
+                            A premium piece for an elevated wardrobe
                         </p>
 
                         <div class="price">
-                            1200 جنيه
+                            1200 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>أبيض</option>
-                                    <option>بيج</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>S</option>
+
                                     <option>M</option>
+
                                     <option>L</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -531,18 +867,21 @@
         </section>
 
 
-        <!-- ================= SHOES ================= -->
+
+        <!-- =========================
+             SNEAKERS COLLECTION
+        ========================== -->
 
         <section class="products-section" id="shoes">
 
             <div class="section-heading">
 
-                <span>SHOES COLLECTION</span>
+                <span>SNEAKERS COLLECTION</span>
 
-                <h2>الكوتشات</h2>
+                <h2>THE SNEAKER EDIT</h2>
 
                 <p>
-                    اختار الكوتش المناسب ليك
+                    Step into comfort, style and everyday luxury
                 </p>
 
             </div>
@@ -551,57 +890,94 @@
             <div class="products-grid">
 
 
+                <!-- PRODUCT 1 -->
+
                 <article class="product">
 
                     <div class="product-image sneaker">
+
                         <div class="product-placeholder">
-                            👟
+                            SNEAKER
                         </div>
 
                         <span class="product-badge">
                             NEW
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>كوتش رياضي</h3>
+                        <h3>
+                            Sport Sneaker
+                        </h3>
 
                         <p class="product-description">
-                            راحة وأناقة في كل خطوة
+                            Comfort and style in every step
                         </p>
 
                         <div class="price">
-                            1100 جنيه
+                            1100 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>أبيض</option>
-                                    <option>أحمر</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        RED
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>40</option>
+
                                     <option>41</option>
+
                                     <option>42</option>
+
                                     <option>43</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -609,56 +985,91 @@
                 </article>
 
 
+
+                <!-- PRODUCT 2 -->
+
                 <article class="product">
 
                     <div class="product-image white-sneaker">
+
                         <div class="product-placeholder">
-                            👟
+                            WHITE
                         </div>
 
                         <span class="product-badge">
                             BEST
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>كوتش أبيض</h3>
+                        <h3>
+                            White Sneaker
+                        </h3>
 
                         <p class="product-description">
-                            تصميم أبيض بسيط وأنيق
+                            Clean, minimal and effortlessly stylish
                         </p>
 
                         <div class="price">
-                            1250 جنيه
+                            1250 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أبيض</option>
-                                    <option>أسود</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>40</option>
+
                                     <option>41</option>
+
                                     <option>42</option>
+
                                     <option>43</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -666,57 +1077,95 @@
                 </article>
 
 
+
+                <!-- PRODUCT 3 -->
+
                 <article class="product">
 
                     <div class="product-image classic-sneaker">
+
                         <div class="product-placeholder">
-                            👞
+                            CLASSIC
                         </div>
 
                         <span class="product-badge">
                             PREMIUM
                         </span>
+
                     </div>
+
 
                     <div class="product-info">
 
-                        <h3>كوتش كلاسيك</h3>
+                        <h3>
+                            Classic Sneaker
+                        </h3>
 
                         <p class="product-description">
-                            تصميم كلاسيك لإطلالة مختلفة
+                            Timeless design for a distinctive style
                         </p>
 
                         <div class="price">
-                            1350 جنيه
+                            1350 EGP
                         </div>
+
 
                         <div class="options">
 
                             <label>
-                                اللون
+
+                                COLOR
+
                                 <select class="color">
-                                    <option value="">اختر اللون</option>
-                                    <option>أسود</option>
-                                    <option>بني</option>
-                                    <option>أبيض</option>
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BROWN
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
                                 </select>
+
                             </label>
 
+
                             <label>
-                                المقاس
+
+                                SIZE
+
                                 <select class="size">
-                                    <option value="">اختر المقاس</option>
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
                                     <option>40</option>
+
                                     <option>41</option>
+
                                     <option>42</option>
+
                                     <option>43</option>
+
                                 </select>
+
                             </label>
 
                         </div>
 
+
                         <button class="add-cart">
-                            إضافة للسلة
+                            ADD TO CART
                         </button>
 
                     </div>
@@ -728,7 +1177,10 @@
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
 
         <section class="contact" id="contact">
 
@@ -736,14 +1188,17 @@
 
                 <span>CONTACT US</span>
 
-                <h2>جاهز تختار إطلالتك؟</h2>
+                <h2>
+                    READY TO DEFINE YOUR STYLE?
+                </h2>
 
                 <p>
-                    لو عندك أي استفسار أو عايز تطلب منتج تواصل معنا مباشرة
+                    Have a question or want to place an order?
+                    Get in touch with GAMY STORE.
                 </p>
 
                 <a href="#" class="whatsapp-button">
-                    تواصل معنا على واتساب
+                    CONTACT US
                 </a>
 
             </div>
@@ -753,7 +1208,10 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -762,27 +1220,47 @@
         </div>
 
         <p>
-            © 2026 GAMY STORE — جميع الحقوق محفوظة
+            © 2026 GAMY STORE — ALL RIGHTS RESERVED
         </p>
 
     </footer>
 
 
-    <!-- ================= CART OVERLAY ================= -->
 
-    <div class="cart-overlay" id="cartOverlay"></div>
+    <!-- =========================
+         CART OVERLAY
+    ========================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay">
+    </div>
 
 
-    <!-- ================= CART ================= -->
 
-    <aside class="cart" id="cart">
+    <!-- =========================
+         SHOPPING CART
+    ========================== -->
+
+    <aside
+        class="cart"
+        id="cart">
+
 
         <div class="cart-header">
 
             <div>
-                <small>GAMY STORE</small>
-                <h2>سلة المشتريات</h2>
+
+                <small>
+                    GAMY STORE
+                </small>
+
+                <h2>
+                    SHOPPING BAG
+                </h2>
+
             </div>
+
 
             <button id="closeCart">
                 ×
@@ -791,7 +1269,10 @@
         </div>
 
 
-        <div class="cart-items" id="cartItems"></div>
+        <div
+            class="cart-items"
+            id="cartItems">
+        </div>
 
 
         <div class="cart-footer">
@@ -799,23 +1280,29 @@
             <div class="total-row">
 
                 <span>
-                    الإجمالي
+                    TOTAL
                 </span>
 
                 <strong id="cartTotal">
-                    0 جنيه
+                    0 EGP
                 </strong>
 
             </div>
 
+
             <button class="checkout-button">
-                إتمام الطلب
+                CHECKOUT
             </button>
 
         </div>
 
     </aside>
 
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script src="script.js"></script>
 
