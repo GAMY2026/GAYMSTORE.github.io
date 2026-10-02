@@ -1,7 +1,14 @@
 ```css
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   GAMY STORE
+   CSS REFACTOR
+   Layout + Design Consistency
+===================================================== */
+
+
+/* =====================================================
+   1. GLOBAL
+===================================================== */
 
 * {
     margin: 0;
@@ -17,6 +24,7 @@ body {
     font-family: Arial, Tahoma, sans-serif;
     background: #f5f5f5;
     color: #222;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -30,31 +38,35 @@ select {
     font-family: inherit;
 }
 
+img {
+    max-width: 100%;
+}
 
-/* =========================
-   TOP BAR
-========================= */
+
+/* =====================================================
+   2. TOP BAR
+===================================================== */
 
 .top-bar {
     min-height: 42px;
     padding: 8px 30px;
-
-    background: #062b52;
-    color: #fff;
 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 35px;
 
+    background: #062b52;
+    color: #fff;
+
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
 .top-bar a {
     color: #d8b36a;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .top-bar a:hover {
@@ -62,9 +74,9 @@ select {
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* =====================================================
+   3. HEADER
+===================================================== */
 
 .header {
     width: 100%;
@@ -72,27 +84,28 @@ select {
 
     padding: 0 45px;
 
-    background: #fff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 25px;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
+    background: #fff;
+
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
+    flex-shrink: 0;
+
     color: #062b52;
 
     font-size: 25px;
     font-weight: 800;
-
     letter-spacing: 2px;
-    white-space: nowrap;
 }
 
 .nav {
@@ -106,11 +119,12 @@ select {
     color: #222;
 
     font-size: 13px;
-    font-weight: bold;
-
+    font-weight: 700;
     letter-spacing: 1px;
 
-    transition: 0.3s;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .nav a:hover {
@@ -118,68 +132,73 @@ select {
 }
 
 
-/* =========================
-   CART BUTTON
-========================= */
+/* =====================================================
+   4. CART BUTTON
+===================================================== */
 
 .cart-button {
+    position: relative;
+
     width: 44px;
     height: 44px;
 
-    border: none;
+    flex-shrink: 0;
+
+    border: 0;
     border-radius: 50%;
 
     background: #062b52;
     color: #fff;
 
-    cursor: pointer;
-
     font-size: 19px;
 
-    position: relative;
+    cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .cart-button:hover {
     background: #d8b36a;
     color: #062b52;
+    transform: translateY(-2px);
 }
 
 #cartCount {
     position: absolute;
-
     top: -5px;
     right: -5px;
 
     width: 20px;
     height: 20px;
 
-    background: #d8b36a;
-    color: #062b52;
-
-    border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
+    border-radius: 50%;
+
+    background: #d8b36a;
+    color: #062b52;
+
     font-size: 11px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 
-/* =========================
-   HOME / VIDEO
-========================= */
+/* =====================================================
+   5. HOME / VIDEO
+===================================================== */
 
 .home {
+    position: relative;
+
     width: 100%;
     height: calc(100vh - 120px);
-
     min-height: 560px;
 
-    position: relative;
     overflow: hidden;
 
     background: #000;
@@ -187,7 +206,6 @@ select {
 
 .home-video {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -208,32 +226,21 @@ select {
     min-width: 177.78vh;
     min-height: 100%;
 
+    border: 0;
+
     transform: translate(-50%, -50%);
-
-    border: none;
 }
-
-
-/* =========================
-   VIDEO OVERLAY
-========================= */
 
 .home-overlay {
     position: absolute;
-
     inset: 0;
-
-    background: rgba(0, 0, 0, 0.32);
 
     z-index: 1;
 
+    background: rgba(0, 0, 0, 0.32);
+
     pointer-events: none;
 }
-
-
-/* =========================
-   HOME CONTENT
-========================= */
 
 .home-content {
     position: absolute;
@@ -241,23 +248,21 @@ select {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    z-index: 2;
 
-    width: 90%;
-    max-width: 850px;
+    width: min(90%, 850px);
 
     text-align: center;
-
     color: #fff;
 
-    z-index: 2;
+    transform: translate(-50%, -50%);
 }
 
 .home-content p {
     margin-bottom: 15px;
 
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 700;
 
     letter-spacing: 4px;
 }
@@ -266,20 +271,18 @@ select {
     margin-bottom: 14px;
 
     font-size: clamp(42px, 7vw, 85px);
-
     font-weight: 900;
 
-    letter-spacing: 5px;
-
     line-height: 1;
+
+    letter-spacing: 5px;
 }
 
 .home-content h2 {
     margin-bottom: 30px;
 
     font-size: clamp(15px, 2vw, 23px);
-
-    font-weight: normal;
+    font-weight: 400;
 
     letter-spacing: 3px;
 }
@@ -293,110 +296,61 @@ select {
     color: #062b52;
 
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .home-content a:hover {
     background: #d8b36a;
     color: #fff;
+    transform: translateY(-2px);
 }
 
 
-/* =========================
-   CATEGORIES
-========================= */
+/* =====================================================
+   6. SECTION BASE
+===================================================== */
 
-.categories {
-    padding: 85px 6%;
-
-    background: #fff;
-
-    text-align: center;
+.categories,
+.products,
+.contact {
+    width: 100%;
 }
 
-.categories > h2 {
-    margin-bottom: 45px;
-
-    color: #062b52;
-
-    font-size: 32px;
-    letter-spacing: 2px;
-}
-
-.categories-container {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.category-card {
-    min-height: 190px;
-
-    padding: 40px 20px;
-
-    background: #062b52;
-    color: #fff;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.35s;
-}
-
-.category-card:hover {
-    transform: translateY(-7px);
-
-    background: #d8b36a;
-    color: #062b52;
-}
-
-.category-card h3 {
-    margin-bottom: 10px;
-
-    font-size: 27px;
-
-    letter-spacing: 2px;
-}
-
-.category-card p {
-    font-size: 14px;
-}
-
-
-/* =========================
-   PRODUCTS SECTION
-========================= */
-
+.categories,
 .products {
     padding: 85px 6%;
-
-    text-align: center;
-
-    background: #f5f5f5;
 }
 
-.products:nth-of-type(even) {
+.categories {
     background: #fff;
+    text-align: center;
 }
 
+.products {
+    background: #f5f5f5;
+    text-align: center;
+}
+
+
+/* =====================================================
+   7. SECTION TITLES
+===================================================== */
+
+.categories > h2,
 .products > h2 {
     margin-bottom: 10px;
 
     color: #062b52;
 
     font-size: 32px;
+    font-weight: 800;
 
     letter-spacing: 2px;
 }
@@ -409,35 +363,98 @@ select {
     font-size: 15px;
 }
 
-.products-container {
-    max-width: 1250px;
 
-    margin: auto;
+/* =====================================================
+   8. CATEGORIES
+===================================================== */
+
+.categories > h2 {
+    margin-bottom: 45px;
+}
+
+.categories-container {
+    width: min(100%, 1200px);
+
+    margin: 0 auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
+.category-card {
+    min-height: 190px;
+
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #062b52;
+    color: #fff;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.category-card:hover {
+    background: #d8b36a;
+    color: #062b52;
+
+    transform: translateY(-6px);
+}
+
+.category-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.category-card p {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   9. PRODUCTS GRID
+===================================================== */
+
+.products-container {
+    width: min(100%, 1250px);
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
 
-/* =========================
-   PRODUCT CARD
-========================= */
+/* =====================================================
+   10. PRODUCT CARD
+===================================================== */
 
 .product {
+    overflow: hidden;
+
     padding-bottom: 25px;
 
     background: #fff;
 
-    border-radius: 3px;
-
-    overflow: hidden;
+    border-radius: 4px;
 
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
 
-    transition: 0.35s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .product:hover {
@@ -447,10 +464,10 @@ select {
 }
 
 .product img {
+    display: block;
+
     width: 100%;
     height: 350px;
-
-    display: block;
 
     object-fit: cover;
 }
@@ -461,6 +478,7 @@ select {
     color: #222;
 
     font-size: 19px;
+    font-weight: 700;
 }
 
 .product .price {
@@ -469,13 +487,13 @@ select {
     color: #062b52;
 
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 
-/* =========================
-   PRODUCT OPTIONS
-========================= */
+/* =====================================================
+   11. PRODUCT OPTIONS
+===================================================== */
 
 .product label {
     display: block;
@@ -484,39 +502,37 @@ select {
 
     margin: 10px auto 5px;
 
-    text-align: right;
-
     color: #555;
 
+    text-align: right;
+
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .product select {
-    width: calc(100% - 40px);
+    display: block;
 
+    width: calc(100% - 40px);
     height: 43px;
 
     margin: 0 auto;
 
-    display: block;
-
     padding: 0 12px;
 
-    background: #fff;
-
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 4px;
 
+    outline: none;
+
+    background: #fff;
     color: #333;
 
     font-size: 14px;
 
     cursor: pointer;
 
-    outline: none;
-
-    transition: 0.3s;
+    transition: border-color 0.3s ease;
 }
 
 .product select:focus {
@@ -524,30 +540,31 @@ select {
 }
 
 
-/* =========================
-   ADD TO CART
-========================= */
+/* =====================================================
+   12. ADD TO CART
+===================================================== */
 
 .add-cart {
-    width: calc(100% - 40px);
+    display: block;
 
+    width: calc(100% - 40px);
     min-height: 45px;
 
     margin: 20px auto 0;
 
-    display: block;
-
-    border: none;
+    border: 0;
 
     background: #062b52;
     color: #fff;
 
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .add-cart:hover {
@@ -556,15 +573,14 @@ select {
 }
 
 
-/* =========================
-   CONTACT
-========================= */
+/* =====================================================
+   13. CONTACT
+===================================================== */
 
 .contact {
     padding: 80px 6%;
 
     background: #062b52;
-
     color: #fff;
 
     text-align: center;
@@ -592,9 +608,12 @@ select {
     background: #d8b36a;
     color: #062b52;
 
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
 
-    transition: 0.3s;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .contact a:hover {
@@ -602,15 +621,14 @@ select {
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* =====================================================
+   14. FOOTER
+===================================================== */
 
 footer {
     padding: 30px 20px;
 
     background: #031b34;
-
     color: #fff;
 
     text-align: center;
@@ -620,7 +638,6 @@ footer h3 {
     margin-bottom: 8px;
 
     font-size: 18px;
-
     letter-spacing: 2px;
 }
 
@@ -631,23 +648,24 @@ footer p {
 }
 
 
-/* =========================
-   CART OVERLAY
-========================= */
+/* =====================================================
+   15. CART OVERLAY
+===================================================== */
 
 .cart-overlay {
     position: fixed;
-
     inset: 0;
+
+    z-index: 1999;
 
     background: rgba(0, 0, 0, 0.55);
 
     opacity: 0;
     visibility: hidden;
 
-    z-index: 1999;
-
-    transition: 0.3s;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .cart-overlay.active {
@@ -656,9 +674,9 @@ footer p {
 }
 
 
-/* =========================
-   CART
-========================= */
+/* =====================================================
+   16. CART
+===================================================== */
 
 .cart {
     position: fixed;
@@ -666,38 +684,42 @@ footer p {
     top: 0;
     right: -430px;
 
-    width: 400px;
-    max-width: 92%;
-
-    height: 100vh;
-
-    background: #fff;
-
     z-index: 2000;
 
-    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    max-width: 92%;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
 
-    transition: 0.35s ease;
+    background: #fff;
+
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+
+    transition: right 0.35s ease;
 }
 
 .cart.active {
     right: 0;
 }
 
+
+/* =====================================================
+   17. CART HEADER
+===================================================== */
+
 .cart-header {
     min-height: 75px;
 
     padding: 0 22px;
 
-    background: #062b52;
-    color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background: #062b52;
+    color: #fff;
 }
 
 .cart-header h2 {
@@ -708,7 +730,7 @@ footer p {
     width: 36px;
     height: 36px;
 
-    border: none;
+    border: 0;
 
     background: transparent;
     color: #fff;
@@ -719,9 +741,9 @@ footer p {
 }
 
 
-/* =========================
-   CART ITEMS
-========================= */
+/* =====================================================
+   18. CART ITEMS
+===================================================== */
 
 #cartItems {
     flex: 1;
@@ -732,21 +754,17 @@ footer p {
 }
 
 .cart-item {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
 
+    margin-bottom: 15px;
     padding: 17px;
 
     background: #f7f7f7;
 
     border-right: 3px solid #062b52;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: space-between;
-
-    gap: 12px;
 }
 
 .cart-item h3 {
@@ -776,19 +794,22 @@ footer p {
 }
 
 .remove-item {
+    flex-shrink: 0;
+
     padding: 7px 10px;
 
-    border: none;
+    border: 0;
 
     background: #eee;
-
     color: #c00;
 
     font-size: 12px;
 
     cursor: pointer;
 
-    flex-shrink: 0;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .remove-item:hover {
@@ -797,9 +818,9 @@ footer p {
 }
 
 
-/* =========================
-   CART FOOTER
-========================= */
+/* =====================================================
+   19. CART FOOTER
+===================================================== */
 
 .cart-footer {
     padding: 20px;
@@ -810,18 +831,18 @@ footer p {
 }
 
 .cart-footer h3 {
+    display: flex;
+    justify-content: space-between;
+
     color: #062b52;
 
     font-size: 18px;
-
-    display: flex;
-    justify-content: space-between;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+/* =====================================================
+   20. TABLET
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -837,26 +858,24 @@ footer p {
         font-size: 11px;
     }
 
+    .categories-container,
     .products-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .categories-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .product img {
         height: 300px;
     }
-
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   21. MOBILE
+===================================================== */
 
 @media (max-width: 650px) {
+
+    /* TOP BAR */
 
     .top-bar {
         min-height: 38px;
@@ -888,11 +907,14 @@ footer p {
 
     .logo {
         font-size: 18px;
-
         letter-spacing: 1px;
     }
 
     .nav {
+        flex: 1;
+
+        justify-content: flex-start;
+
         gap: 10px;
 
         overflow-x: auto;
@@ -905,9 +927,9 @@ footer p {
     }
 
     .nav a {
-        font-size: 9px;
+        flex-shrink: 0;
 
-        white-space: nowrap;
+        font-size: 9px;
 
         letter-spacing: 0.4px;
     }
@@ -917,8 +939,6 @@ footer p {
         height: 38px;
 
         font-size: 16px;
-
-        flex-shrink: 0;
     }
 
 
@@ -926,18 +946,7 @@ footer p {
 
     .home {
         height: calc(100vh - 103px);
-
         min-height: 500px;
-    }
-
-    .home-video iframe {
-        height: 100%;
-
-        width: 177.78vh;
-
-        min-width: 100%;
-
-        min-height: 56.25vw;
     }
 
     .home-content {
@@ -975,17 +984,30 @@ footer p {
     }
 
 
-    /* CATEGORIES */
+    /* SECTIONS */
 
-    .categories {
-        padding: 60px 20px;
+    .categories,
+    .products {
+        padding: 60px 15px;
+    }
+
+    .categories > h2,
+    .products > h2 {
+        font-size: 25px;
     }
 
     .categories > h2 {
         margin-bottom: 30px;
-
-        font-size: 25px;
     }
+
+    .products > p {
+        margin-bottom: 30px;
+
+        font-size: 13px;
+    }
+
+
+    /* CATEGORIES */
 
     .categories-container {
         grid-template-columns: 1fr;
@@ -1005,20 +1027,6 @@ footer p {
 
 
     /* PRODUCTS */
-
-    .products {
-        padding: 60px 15px;
-    }
-
-    .products > h2 {
-        font-size: 25px;
-    }
-
-    .products > p {
-        margin-bottom: 30px;
-
-        font-size: 13px;
-    }
 
     .products-container {
         grid-template-columns: 1fr;
@@ -1051,7 +1059,6 @@ footer p {
 
     .contact p {
         font-size: 13px;
-
         line-height: 1.8;
     }
 
@@ -1080,13 +1087,12 @@ footer p {
     .cart-item {
         padding: 14px;
     }
-
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =====================================================
+   22. SMALL MOBILE
+===================================================== */
 
 @media (max-width: 400px) {
 
@@ -1121,6 +1127,5 @@ footer p {
     .product img {
         height: 290px;
     }
-
 }
 ```
