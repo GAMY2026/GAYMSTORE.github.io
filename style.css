@@ -1,603 +1,902 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
+```css
+/* =========================================================
+   GAMY STORE
+   LUXURY FASHION WEBSITE
+   ========================================================= */
 
-<head>
 
-    <meta charset="UTF-8">
+/* =========================================================
+   RESET
+   ========================================================= */
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <title>GAMY STORE | Luxury Fashion</title>
+html {
+    scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="style.css">
+body {
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
 
-</head>
+    background: #f7f7f5;
+    color: #111;
 
-<body>
+    overflow-x: hidden;
+}
 
-    <!-- =========================
-         TOP FASHION BAR
-    ========================== -->
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <div class="top-bar">
+button,
+select {
+    font-family: inherit;
+}
 
-        <div class="top-bar-track">
+button {
+    cursor: pointer;
+}
 
-            <span>FASHION</span>
-            <b>•</b>
 
-            <span>GAMY STORE</span>
-            <b>•</b>
+/* =========================================================
+   COLORS
+   ========================================================= */
 
-            <span>ORDER NOW</span>
-            <b>•</b>
+:root {
+    --black: #111111;
+    --dark: #171717;
+    --white: #ffffff;
+    --cream: #f7f7f5;
+    --gold: #c7a76a;
+    --gold-light: #e1c993;
+    --gray: #777777;
+    --light-gray: #eeeeeb;
+    --border: #ddddda;
+}
 
-            <span>NEW COLLECTION</span>
-            <b>•</b>
 
-            <span>LUXURY CLOTHING</span>
-            <b>•</b>
+/* =========================================================
+   TOP FASHION BAR
+   ========================================================= */
 
-            <span>DISCOVER MORE</span>
-            <b>•</b>
+.top-bar {
+    width: 100%;
+    height: 38px;
 
-            <span>FASHION</span>
-            <b>•</b>
+    background: #ffffff;
+    color: #111111;
 
-            <span>GAMY STORE</span>
+    border-bottom: 1px solid #e8e8e5;
 
-        </div>
+    overflow: hidden;
 
-    </div>
+    display: flex;
+    align-items: center;
 
+    position: relative;
+    z-index: 1100;
+}
 
-    <!-- =========================
-         MAIN HEADER
-    ========================== -->
+.top-bar-track {
+    display: flex;
+    align-items: center;
+    gap: 28px;
 
-    <header class="header">
+    white-space: nowrap;
 
-        <a href="#home" class="logo">
-            GAMY <span>STORE</span>
-        </a>
+    width: max-content;
 
+    animation: topMarquee 28s linear infinite;
 
-        <nav class="nav">
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
 
-            <a href="#home">HOME</a>
+.top-bar-track b {
+    color: var(--gold);
 
-            <a href="#categories">COLLECTIONS</a>
+    font-size: 13px;
+}
 
-            <a href="#men">MEN</a>
+@keyframes topMarquee {
 
-            <a href="#women">WOMEN</a>
+    0% {
+        transform: translateX(0);
+    }
 
-            <a href="#shoes">SNEAKERS</a>
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
-            <a href="#contact">CONTACT</a>
 
-        </nav>
+/* =========================================================
+   HEADER
+   ========================================================= */
 
+.header {
+    width: 100%;
+    height: 86px;
 
-        <button class="cart-button" id="openCart">
+    background: #111111;
+    color: #ffffff;
 
-            <span class="cart-icon">🛍</span>
+    display: flex;
+    align-items: center;
 
-            <span>CART</span>
+    padding: 0 5%;
 
-            <span class="cart-count" id="cartCount">0</span>
+    position: sticky;
+    top: 0;
 
-        </button>
+    z-index: 1000;
 
-    </header>
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+/* =========================================================
+   LOGO
+   ========================================================= */
 
-    <main>
+.logo {
+    width: 210px;
 
+    font-size: 24px;
+    font-weight: 700;
 
-        <!-- =========================
-             HOME / HERO VIDEO
-        ========================== -->
+    letter-spacing: 4px;
 
-        <section class="home" id="home">
+    color: #ffffff;
 
-            <div class="home-video">
+    transition: 0.3s;
+}
 
-                <iframe
-                    src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
-                    title="GAMY STORE Luxury Fashion"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+.logo span {
+    color: var(--gold);
+    font-weight: 400;
+}
 
-            </div>
+.logo:hover {
+    color: var(--gold-light);
+}
 
 
-            <div class="home-overlay"></div>
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
+.nav {
+    flex: 1;
 
-            <div class="home-content">
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-                <span class="hero-small">
-                    NEW COLLECTION
-                </span>
+    gap: 34px;
+}
 
-                <h1>
-                    GAMY
-                    <span>STORE</span>
-                </h1>
+.nav a {
+    position: relative;
 
-                <p>
-                    LUXURY FASHION
-                    <br>
-                    MADE FOR YOUR STYLE
-                </p>
+    color: #ffffff;
 
-                <a href="#categories" class="home-button">
-                    EXPLORE COLLECTION
-                </a>
+    font-size: 11px;
+    font-weight: 600;
 
-            </div>
+    letter-spacing: 2px;
 
+    transition: 0.3s;
 
-            <div class="home-bottom">
+    padding: 10px 0;
+}
 
-                <span>EST. 2026</span>
+.nav a::after {
+    content: "";
 
-                <span>GAMY STORE</span>
+    position: absolute;
 
-                <span>CAIRO • EGYPT</span>
+    bottom: 0;
+    left: 50%;
 
-            </div>
+    width: 0;
+    height: 1px;
 
-        </section>
+    background: var(--gold);
 
+    transform: translateX(-50%);
 
-        <!-- =========================
-             COLLECTIONS
-        ========================== -->
+    transition: 0.3s;
+}
 
-        <section class="categories" id="categories">
+.nav a:hover {
+    color: var(--gold-light);
+}
 
-            <div class="section-heading">
+.nav a:hover::after {
+    width: 100%;
+}
 
-                <span>DISCOVER</span>
 
-                <h2>OUR COLLECTIONS</h2>
+/* =========================================================
+   CART BUTTON
+   ========================================================= */
 
-                <p>
-                    Explore our latest fashion collections
-                </p>
+.cart-button {
+    width: 120px;
+    height: 42px;
 
-            </div>
+    border: 1px solid rgba(255, 255, 255, 0.35);
 
+    background: transparent;
 
-            <div class="categories-grid">
+    color: #ffffff;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <!-- MEN -->
+    gap: 8px;
 
-                <a href="#men" class="category-card men-category">
+    font-size: 10px;
+    font-weight: 600;
 
-                    <div class="category-content">
+    letter-spacing: 1.5px;
 
-                        <small>01 / COLLECTION</small>
+    transition: 0.3s;
+}
 
-                        <h3>MEN</h3>
+.cart-button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
 
-                        <span>
-                            EXPLORE COLLECTION →
-                        </span>
+    color: #111111;
+}
 
-                    </div>
+.cart-icon {
+    font-size: 15px;
+}
 
-                </a>
+.cart-count {
+    min-width: 19px;
+    height: 19px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <!-- WOMEN -->
+    background: var(--gold);
+    color: #111111;
 
-                <a href="#women" class="category-card women-category">
+    border-radius: 50%;
 
-                    <div class="category-content">
+    font-size: 9px;
+    font-weight: 700;
+}
 
-                        <small>02 / COLLECTION</small>
 
-                        <h3>WOMEN</h3>
+/* =========================================================
+   HOME
+   ========================================================= */
 
-                        <span>
-                            EXPLORE COLLECTION →
-                        </span>
+.home {
+    width: 100%;
+    height: calc(100vh - 124px);
 
-                    </div>
+    min-height: 600px;
 
-                </a>
+    position: relative;
 
+    overflow: hidden;
 
-                <!-- SNEAKERS -->
+    background: #111111;
+}
 
-                <a href="#shoes" class="category-card shoes-category">
 
-                    <div class="category-content">
+/* =========================================================
+   VIDEO
+   ========================================================= */
 
-                        <small>03 / COLLECTION</small>
+.home-video {
+    position: absolute;
 
-                        <h3>SNEAKERS</h3>
+    inset: 0;
 
-                        <span>
-                            EXPLORE COLLECTION →
-                        </span>
+    width: 100%;
+    height: 100%;
 
-                    </div>
+    overflow: hidden;
+}
 
-                </a>
+.home-video iframe {
+    position: absolute;
 
-            </div>
+    top: 50%;
+    left: 50%;
 
-        </section>
+    width: 100vw;
+    height: 56.25vw;
 
+    min-width: 177.77vh;
+    min-height: 100vh;
 
-        <!-- =========================
-             MEN COLLECTION
-        ========================== -->
+    transform: translate(-50%, -50%);
 
-        <section class="products-section" id="men">
+    border: 0;
 
-            <div class="section-heading">
+    pointer-events: none;
+}
 
-                <span>MEN COLLECTION</span>
 
-                <h2>MEN'S EDIT</h2>
+/* =========================================================
+   VIDEO OVERLAY
+   ========================================================= */
 
-                <p>
-                    Contemporary pieces designed for everyday luxury
-                </p>
+.home-overlay {
+    position: absolute;
 
-            </div>
+    inset: 0;
 
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.35)
+        );
 
-            <div class="products-grid">
+    z-index: 2;
+}
 
 
-                <!-- PRODUCT 1 -->
+/* =========================================================
+   HOME CONTENT
+   ========================================================= */
 
-                <article class="product">
+.home-content {
+    position: absolute;
 
-                    <div class="product-image shirt-blue">
+    top: 50%;
+    left: 8%;
 
-                        <div class="product-placeholder">
-                            T-SHIRT
-                        </div>
+    transform: translateY(-50%);
 
-                        <span class="product-badge">
-                            NEW
-                        </span>
+    z-index: 3;
 
-                    </div>
+    color: #ffffff;
 
+    max-width: 600px;
+}
 
-                    <div class="product-info">
+.hero-small {
+    display: inline-block;
 
-                        <h3>
-                            Premium T-Shirt
-                        </h3>
+    color: var(--gold-light);
 
-                        <p class="product-description">
-                            Modern essential with a clean luxury look
-                        </p>
+    font-size: 11px;
+    font-weight: 600;
 
-                        <div class="price">
-                            450 EGP
-                        </div>
+    letter-spacing: 5px;
 
+    margin-bottom: 20px;
+}
 
-                        <div class="options">
+.home-content h1 {
+    font-size: clamp(60px, 9vw, 125px);
 
-                            <label>
+    line-height: 0.82;
 
-                                COLOR
+    font-weight: 700;
 
-                                <select class="color">
+    letter-spacing: 7px;
 
-                                    <option value="">
-                                        SELECT COLOR
-                                    </option>
+    margin-bottom: 28px;
+}
 
-                                    <option>
-                                        BLACK
-                                    </option>
+.home-content h1 span {
+    display: block;
 
-                                    <option>
-                                        WHITE
-                                    </option>
+    color: transparent;
 
-                                    <option>
-                                        BLUE
-                                    </option>
+    -webkit-text-stroke: 1px #ffffff;
 
-                                </select>
+    font-weight: 300;
+}
 
-                            </label>
+.home-content p {
+    font-size: 13px;
 
+    line-height: 2;
 
-                            <label>
+    letter-spacing: 4px;
 
-                                SIZE
+    color: rgba(255, 255, 255, 0.85);
 
-                                <select class="size">
+    margin-bottom: 32px;
+}
 
-                                    <option value="">
-                                        SELECT SIZE
-                                    </option>
+.home-button {
+    display: inline-flex;
 
-                                    <option>S</option>
+    align-items: center;
+    justify-content: center;
 
-                                    <option>M</option>
+    min-width: 210px;
+    height: 52px;
 
-                                    <option>L</option>
+    padding: 0 30px;
 
-                                    <option>XL</option>
+    background: #ffffff;
+    color: #111111;
 
-                                </select>
+    font-size: 10px;
+    font-weight: 700;
 
-                            </label>
+    letter-spacing: 2px;
 
-                        </div>
+    transition: 0.3s;
+}
 
+.home-button:hover {
+    background: var(--gold);
+    color: #111111;
 
-                        <button class="add-cart">
-                            ADD TO CART
-                        </button>
+    transform: translateY(-3px);
+}
 
-                    </div>
 
-                </article>
+/* =========================================================
+   HOME BOTTOM
+   ========================================================= */
 
+.home-bottom {
+    position: absolute;
 
+    left: 8%;
+    right: 8%;
+    bottom: 28px;
 
-                <!-- PRODUCT 2 -->
+    z-index: 3;
 
-                <article class="product">
+    display: flex;
+    justify-content: space-between;
 
-                    <div class="product-image shirt-gray">
+    color: rgba(255, 255, 255, 0.7);
 
-                        <div class="product-placeholder">
-                            SHIRT
-                        </div>
+    font-size: 9px;
 
-                        <span class="product-badge">
-                            NEW
-                        </span>
+    letter-spacing: 3px;
 
-                    </div>
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
 
+    padding-top: 14px;
+}
 
-                    <div class="product-info">
 
-                        <h3>
-                            Premium Shirt
-                        </h3>
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
 
-                        <p class="product-description">
-                            Elegant shirt designed for every occasion
-                        </p>
+.section-heading {
+    text-align: center;
 
-                        <div class="price">
-                            650 EGP
-                        </div>
+    max-width: 750px;
 
+    margin: 0 auto 60px;
+}
 
-                        <div class="options">
+.section-heading > span {
+    display: block;
 
-                            <label>
+    color: var(--gold);
 
-                                COLOR
+    font-size: 10px;
+    font-weight: 700;
 
-                                <select class="color">
+    letter-spacing: 4px;
 
-                                    <option value="">
-                                        SELECT COLOR
-                                    </option>
+    margin-bottom: 15px;
+}
 
-                                    <option>
-                                        WHITE
-                                    </option>
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 48px);
 
-                                    <option>
-                                        BLACK
-                                    </option>
+    font-weight: 400;
 
-                                    <option>
-                                        GREY
-                                    </option>
+    letter-spacing: 3px;
 
-                                </select>
+    color: #111111;
 
-                            </label>
+    margin-bottom: 17px;
+}
 
+.section-heading p {
+    color: #777777;
 
-                            <label>
+    font-size: 13px;
 
-                                SIZE
+    letter-spacing: 1px;
+}
 
-                                <select class="size">
 
-                                    <option value="">
-                                        SELECT SIZE
-                                    </option>
+/* =========================================================
+   CATEGORIES
+   ========================================================= */
 
-                                    <option>S</option>
+.categories {
+    padding: 110px 6%;
 
-                                    <option>M</option>
+    background: #ffffff;
+}
 
-                                    <option>L</option>
+.categories-grid {
+    display: grid;
 
-                                    <option>XL</option>
+    grid-template-columns: repeat(3, 1fr);
 
-                                </select>
+    gap: 20px;
 
-                            </label>
+    max-width: 1400px;
 
-                        </div>
+    margin: auto;
+}
 
+.category-card {
+    height: 450px;
 
-                        <button class="add-cart">
-                            ADD TO CART
-                        </button>
+    position: relative;
 
-                    </div>
+    overflow: hidden;
 
-                </article>
+    background: #222222;
 
+    display: flex;
+    align-items: flex-end;
 
+    padding: 40px;
 
-                <!-- PRODUCT 3 -->
+    color: #ffffff;
 
-                <article class="product">
+    transition: 0.5s;
+}
 
-                    <div class="product-image pants-dark">
+.category-card::before {
+    content: "";
 
-                        <div class="product-placeholder">
-                            PANTS
-                        </div>
+    position: absolute;
 
-                        <span class="product-badge">
-                            BEST
-                        </span>
+    inset: 0;
 
-                    </div>
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.08)
+        );
 
+    z-index: 1;
+}
 
-                    <div class="product-info">
+.category-card::after {
+    content: "";
 
-                        <h3>
-                            Premium Pants
-                        </h3>
+    position: absolute;
 
-                        <p class="product-description">
-                            Modern fit with maximum everyday comfort
-                        </p>
+    inset: 12px;
 
-                        <div class="price">
-                            800 EGP
-                        </div>
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
+    z-index: 2;
 
-                        <div class="options">
+    transition: 0.4s;
+}
 
-                            <label>
+.category-card:hover {
+    transform: translateY(-8px);
+}
 
-                                COLOR
+.category-card:hover::after {
+    border-color: var(--gold);
+    inset: 20px;
+}
 
-                                <select class="color">
 
-                                    <option value="">
-                                        SELECT COLOR
-                                    </option>
+/* Category visual backgrounds */
 
-                                    <option>
-                                        BLACK
-                                    </option>
+.men-category {
+    background:
+        linear-gradient(
+            135deg,
+            #1b1b1b,
+            #555555
+        );
+}
 
-                                    <option>
-                                        NAVY
-                                    </option>
+.women-category {
+    background:
+        linear-gradient(
+            135deg,
+            #282828,
+            #777777
+        );
+}
 
-                                    <option>
-                                        GREY
-                                    </option>
+.shoes-category {
+    background:
+        linear-gradient(
+            135deg,
+            #101010,
+            #3d3d3d
+        );
+}
 
-                                </select>
 
-                            </label>
+.category-content {
+    position: relative;
 
+    z-index: 3;
+}
 
-                            <label>
+.category-content small {
+    display: block;
 
-                                SIZE
+    font-size: 9px;
 
-                                <select class="size">
+    letter-spacing: 3px;
 
-                                    <option value="">
-                                        SELECT SIZE
-                                    </option>
+    color: var(--gold-light);
 
-                                    <option>30</option>
+    margin-bottom: 12px;
+}
 
-                                    <option>32</option>
+.category-content h3 {
+    font-size: 42px;
 
-                                    <option>34</option>
+    font-weight: 400;
 
-                                    <option>36</option>
+    letter-spacing: 5px;
 
-                                </select>
+    margin-bottom: 18px;
+}
 
-                            </label>
+.category-content span {
+    font-size: 10px;
 
-                        </div>
+    letter-spacing: 2px;
 
+    transition: 0.3s;
+}
 
-                        <button class="add-cart">
-                            ADD TO CART
-                        </button>
+.category-card:hover .category-content span {
+    color: var(--gold-light);
+}
 
-                    </div>
 
-                </article>
+/* =========================================================
+   PRODUCTS SECTIONS
+   ========================================================= */
 
-            </div>
+.products-section {
+    padding: 110px 6%;
 
-        </section>
+    background: #f7f7f5;
+}
 
+.light-section {
+    background: #ffffff;
+}
 
+.products-grid {
+    max-width: 1400px;
 
-        <!-- =========================
-             WOMEN COLLECTION
-        ========================== -->
+    margin: auto;
 
-        <section class="products-section light-section" id="women">
+    display: grid;
 
-            <div class="section-heading">
+    grid-template-columns: repeat(3, 1fr);
 
-                <span>WOMEN COLLECTION</span>
+    gap: 28px;
+}
 
-                <h2>WOMEN'S EDIT</h2>
 
-                <p>
-                    Refined pieces created for a distinctive look
-                </p>
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
 
-            </div>
+.product {
+    background: #ffffff;
 
+    border: 1px solid #e5e5e2;
 
-            <div class="products-grid">
+    transition: 0.4s;
 
+    overflow: hidden;
+}
 
-                <!-- PRODUCT 1 -->
+.product:hover {
+    transform: translateY(-8px);
 
-                <article class="product">
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.09);
+}
 
-                    <div class="product-image blouse">
 
-                        <div class="product-placeholder">
-                            BLOUSE
-                        </div>
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
 
-                        <span class="product-badge">
-                            NEW
-                        </span>
+.product-image {
+    height: 430px;
 
-                    </div>
+    position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                    <div class="product-info">
+    overflow: hidden;
+}
 
-                        <h3>
-                            Premium Blouse
-                        </h3
+
+/* Different product backgrounds */
+
+.shirt-blue {
+    background:
+        linear-gradient(
+            135deg,
+            #dfe7ec,
+            #71808c
+        );
+}
+
+.shirt-gray {
+    background:
+        linear-gradient(
+            135deg,
+            #e5e5e5,
+            #777777
+        );
+}
+
+.pants-dark {
+    background:
+        linear-gradient(
+            135deg,
+            #505050,
+            #111111
+        );
+}
+
+.blouse {
+    background:
+        linear-gradient(
+            135deg,
+            #eee9e2,
+            #9c9388
+        );
+}
+
+.jacket {
+    background:
+        linear-gradient(
+            135deg,
+            #77716b,
+            #242424
+        );
+}
+
+.elegant-jacket {
+    background:
+        linear-gradient(
+            135deg,
+            #d2c9bb,
+            #514b45
+        );
+}
+
+.sneaker {
+    background:
+        linear-gradient(
+            135deg,
+            #d9dde0,
+            #6d7378
+        );
+}
+
+.white-sneaker {
+    background:
+        linear-gradient(
+            135deg,
+            #f3f3f3,
+            #c1c1c1
+        );
+}
+
+.classic-sneaker {
+    background:
+        linear-gradient(
+            135deg,
+            #b7b0a5,
+            #292929
+        );
+}
+
+
+/* =========================================================
+   PRODUCT PLACEHOLDER
+   ========================================================= */
+
+.product-placeholder {
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    text-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+
+    transition: 0.5s;
+}
+
+.product:hover .product-placeholder {
+    transform: scale(1.08);
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   PRODUCT BADGE
+   ========================================================= */
+
+.product-badge {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    padding: 9px 13px;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PRODUCT INFO
+   ========================================================= */
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h3 {
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+}
+
+.pr
 ```
