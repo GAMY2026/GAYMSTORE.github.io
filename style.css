@@ -1,3 +1,4 @@
+```css
 /* =========================
    RESET
 ========================= */
@@ -54,7 +55,6 @@ body {
 
 .header {
     height: 80px;
-
     background: #062b52;
 
     display: flex;
@@ -89,7 +89,6 @@ body {
 .nav {
     display: flex;
     align-items: center;
-
     gap: 30px;
 }
 
@@ -133,7 +132,6 @@ body {
 
 .cart-button:hover {
     background: #d8b36a;
-
     transform: scale(1.05);
 }
 
@@ -886,7 +884,6 @@ footer p {
         padding: 0 10px;
     }
 
-
     .header {
         height: auto;
 
@@ -899,11 +896,9 @@ footer p {
         gap: 15px;
     }
 
-
     .logo {
         font-size: 20px;
     }
-
 
     .nav {
         width: 100%;
@@ -917,11 +912,9 @@ footer p {
         flex-wrap: wrap;
     }
 
-
     .nav a {
         font-size: 10px;
     }
-
 
     .cart-button {
         width: 42px;
@@ -929,11 +922,9 @@ footer p {
         height: 42px;
     }
 
-
     .home {
         height: 500px;
     }
-
 
     .home-content h1 {
         font-size: 38px;
@@ -941,13 +932,11 @@ footer p {
         letter-spacing: 2px;
     }
 
-
     .home-content h2 {
         font-size: 15px;
 
         letter-spacing: 1px;
     }
-
 
     .home-content p {
         font-size: 12px;
@@ -955,31 +944,25 @@ footer p {
         letter-spacing: 2px;
     }
 
-
     .categories {
         padding: 60px 20px;
     }
-
 
     .categories-container {
         grid-template-columns: 1fr;
     }
 
-
     .products {
         padding: 60px 20px;
     }
-
 
     .products-container {
         grid-template-columns: 1fr;
     }
 
-
     .product img {
         height: 350px;
     }
-
 
     .cart {
         width: 100%;
@@ -988,3 +971,4 @@ footer p {
     }
 
 }
+```
