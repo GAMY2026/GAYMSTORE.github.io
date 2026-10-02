@@ -1,101 +1,189 @@
 ```html
-<!-- =========================
-     HOME FULL SCREEN VIDEO
-========================= -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-<section class="home" id="home">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="home-video">
+    <title>GAMY STORE</title>
 
-        <iframe
-            src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1"
-            title="GAMY STORE"
-            frameborder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    </div>
+<body>
 
-</section>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
+    <header class="header">
 
-<style>
+        <div class="logo">
+            GAMY STORE
+        </div>
 
-/* =========================
-   HOME
-========================= */
+        <nav class="nav">
 
-.home {
-    width: 100%;
-    height: calc(100vh - 80px);
-    position: relative;
-    overflow: hidden;
-    background: #000;
-}
+            <a href="#home">HOME</a>
+            <a href="#categories">CATEGORIES</a>
+            <a href="#men">MEN</a>
+            <a href="#women">WOMEN</a>
+            <a href="#shoes">SHOES</a>
+            <a href="#contact">CONTACT</a>
 
+        </nav>
 
-/* =========================
-   VIDEO CONTAINER
-========================= */
+        <button class="cart-button" id="openCart">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
 
-.home-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
-}
+    </header>
 
 
-/* =========================
-   YOUTUBE VIDEO
-========================= */
+    <!-- =========================
+         HOME VIDEO
+    ========================= -->
 
-.home-video iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    <section class="home" id="home">
 
-    width: 100vw;
-    height: 56.25vw;
+        <div class="home-video">
 
-    min-width: 177.78vh;
-    min-height: 100vh;
+            <iframe
+                src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1"
+                title="GAMY STORE"
+                frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
 
-    transform: translate(-50%, -50%);
+        </div>
 
-    border: none;
-
-    pointer-events: none;
-}
+    </section>
 
 
-/* =========================
-   MOBILE
-========================= */
+    <!-- =========================
+         CATEGORIES
+    ========================= -->
 
-@media (max-width: 768px) {
+    <section class="categories" id="categories">
 
-    .home {
-        height: calc(100vh - 70px);
-    }
+        <div class="section-title">
 
-    .home-video iframe {
-        width: 177.78vh;
-        height: 100vh;
-        min-width: 177.78vh;
-        min-height: 100vh;
-    }
+            <h2>OUR CATEGORIES</h2>
 
-}
+            <p>
+                اكتشف أحدث تشكيلات GAMY STORE
+            </p>
 
-</style>
+        </div>
+
+
+        <div class="category-container">
+
+            <a href="#men" class="category-card">
+
+                <div class="category-image men-image">
+                    MEN
+                </div>
+
+                <h3>MEN</h3>
+
+            </a>
+
+
+            <a href="#women" class="category-card">
+
+                <div class="category-image women-image">
+                    WOMEN
+                </div>
+
+                <h3>WOMEN</h3>
+
+            </a>
+
+
+            <a href="#shoes" class="category-card">
+
+                <div class="category-image shoes-image">
+                    SHOES
+                </div>
+
+                <h3>SHOES</h3>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEN PRODUCTS
+    ========================= -->
+
+    <section class="products-section" id="men">
+
+        <div class="section-title">
+
+            <h2>MEN</h2>
+
+            <p>
+                أحدث ملابس الرجال
+            </p>
+
+        </div>
+
+
+        <div class="products-container">
+
+
+            <!-- T-SHIRT -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <div class="shirt blue-shirt">
+                        T-SHIRT
+                    </div>
+
+                </div>
+
+                <h3>تيشيرت رجالي</h3>
+
+                <p class="price">
+                    450 جنيه
+                </p>
+
+
+                <select class="color">
+
+                    <option value="">
+                        اختر اللون
+                    </option>
+
+                    <option value="أسود">
+                        أسود
+                    </option>
+
+                    <option value="أبيض">
+                        أبيض
+                    </option>
+
+                    <option value="أزرق">
+                        أزرق
+                    </option>
+
+                </select>
+
+
+                <select class="size">
+
+                    <option value="">
+                        اختر المقاس
+                    </option>
+
+                    <option value="S
 ```
-
-**مهم:** الكود ده يتحط في `index.html` مكان قسم الـ`HOME` القديم بالكامل.
-ولا تحط منه أي جزء داخل `script.js`.
-
-بعد اللصق: **Ctrl + S → Ctrl + R**.
