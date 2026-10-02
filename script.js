@@ -1,111 +1,121 @@
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       ELEMENTS
+    ========================= */
+
+    const elements = {
+        openCart: document.getElementById("openCart"),
+        closeCart: document.getElementById("closeCart"),
+        cart: document.getElementById("cart"),
+        overlay: document.getElementById("cartOverlay"),
+
+        cartItems: document.getElementById("cartItems"),
+        cartCount: document.getElementById("cartCount"),
+        cartTotal: document.getElementById("cartTotal"),
+
+        addButtons: document.querySelectorAll(".add-cart")
+    };
+
+
+    /* =========================
+       CART DATA
+    ========================= */
+
     let cart = [];
-
-    const openCart = document.getElementById("openCart");
-    const closeCart = document.getElementById("closeCart");
-    const cartElement = document.getElementById("cart");
-    const cartOverlay = document.getElementById("cartOverlay");
-
-    const cartItems = document.getElementById("cartItems");
-    const cartCount = document.getElementById("cartCount");
-    const cartTotal = document.getElementById("cartTotal");
-
-    const addButtons = document.querySelectorAll(".add-cart");
 
 
     /* =========================
        OPEN CART
     ========================= */
 
-    openCart.addEventListener("click", function () {
-
-        cartElement.classList.add("active");
-        cartOverlay.classList.add("active");
-
-    });
+    function openCart() {
+        elements.cart.classList.add("active");
+        elements.overlay.classList.add("active");
+    }
 
 
     /* =========================
        CLOSE CART
     ========================= */
 
-    closeCart.addEventListener("click", function () {
-
-        cartElement.classList.remove("active");
-        cartOverlay.classList.remove("active");
-
-    });
-
-
-    cartOverlay.addEventListener("click", function () {
-
-        cartElement.classList.remove("active");
-        cartOverlay.classList.remove("active");
-
-    });
+    function closeCart() {
+        elements.cart.classList.remove("active");
+        elements.overlay.classList.remove("active");
+    }
 
 
     /* =========================
        ADD PRODUCT
     ========================= */
 
-    addButtons.forEach(function (button) {
+    function addProduct(button) {
 
-        button.addEventListener("click", function () {
+        const product = button.closest(".product");
 
-            const product = button.closest(".product");
-
-            const name =
-                product.querySelector("h3").textContent.trim();
-
-            const priceText =
-                product.querySelector(".price").textContent;
-
-            const price =
-                parseInt(priceText.replace(/[^\d]/g, ""));
-
-            const color =
-                product.querySelector(".color").value;
-
-            const size =
-                product.querySelector(".size").value;
+        if (!product) {
+            return;
+        }
 
 
-            if (color === "") {
-
-                alert("من فضلك اختر اللون أولاً");
-
-                return;
-            }
+        const name =
+            product.querySelector("h3").textContent.trim();
 
 
-            if (size === "") {
-
-                alert("من فضلك اختر المقاس أولاً");
-
-                return;
-            }
+        const priceText =
+            product.querySelector(".price").textContent;
 
 
-            cart.push({
-                name: name,
-                price: price,
-                color: color,
-                size: size
-            });
+        const price =
+            parseInt(
+                priceText.replace(/[^\d]/g, ""),
+                10
+            );
 
 
-            updateCart();
+        const color =
+            product.querySelector(".color").value;
 
 
-            cartElement.classList.add("active");
-            cartOverlay.classList.add("active");
+        const size =
+            product.querySelector(".size").value;
 
+
+        /* CHECK COLOR */
+
+        if (color === "") {
+
+            alert("من فضلك اختر اللون أولاً");
+
+            return;
+        }
+
+
+        /* CHECK SIZE */
+
+        if (size === "") {
+
+            alert("من فضلك اختر المقاس أولاً");
+
+            return;
+        }
+
+
+        /* ADD TO CART */
+
+        cart.push({
+            name: name,
+            price: price,
+            color: color,
+            size: size
         });
 
-    });
+
+        updateCart();
+
+        openCart();
+    }
 
 
     /* =========================
@@ -114,21 +124,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateCart() {
 
-        cartItems.innerHTML = "";
+        elements.cartItems.innerHTML = "";
 
         let total = 0;
 
 
+        /* EMPTY CART */
+
         if (cart.length === 0) {
 
-            cartItems.innerHTML = `
+            elements.cartItems.innerHTML = `
                 <p class="empty-cart">
                     السلة فارغة حالياً
                 </p>
             `;
 
+            elements.cartCount.textContent = "0";
+            elements.cartTotal.textContent = "0 جنيه";
+
+            return;
         }
 
+
+        /* CART PRODUCTS */
 
         cart.forEach(function (item, index) {
 
@@ -138,11 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const cartItem =
                 document.createElement("div");
 
-            cartItem.classList.add("cart-item");
+            cartItem.className = "cart-item";
 
 
             cartItem.innerHTML = `
-
                 <div>
 
                     <h3>
@@ -168,55 +185,87 @@ document.addEventListener("DOMContentLoaded", function () {
                     data-index="${index}">
                     حذف
                 </button>
-
             `;
 
 
-            cartItems.appendChild(cartItem);
+            elements.cartItems.appendChild(cartItem);
 
         });
 
 
-        cartCount.textContent = cart.length;
+        /* UPDATE COUNT */
 
-        cartTotal.textContent =
+        elements.cartCount.textContent =
+            cart.length;
+
+
+        /* UPDATE TOTAL */
+
+        elements.cartTotal.textContent =
             total + " جنيه";
-
-
-        /* =========================
-           REMOVE PRODUCT
-        ========================= */
-
-        const removeButtons =
-            document.querySelectorAll(".remove-item");
-
-
-        removeButtons.forEach(function (button) {
-
-            button.addEventListener("click", function () {
-
-                const index =
-                    parseInt(
-                        button.getAttribute("data-index")
-                    );
-
-
-                cart.splice(index, 1);
-
-                updateCart();
-
-            });
-
-        });
-
     }
 
 
     /* =========================
-       INITIAL CART
+       REMOVE PRODUCT
     ========================= */
 
-    updateCart();
+    function removeProduct(index) {
 
-});
+        cart.splice(index, 1);
+
+        updateCart();
+    }
+
+
+    /* =========================
+       EVENTS
+    ========================= */
+
+    elements.openCart.addEventListener(
+        "click",
+        openCart
+    );
+
+
+    elements.closeCart.addEventListener(
+        "click",
+        closeCart
+    );
+
+
+    elements.overlay.addEventListener(
+        "click",
+        closeCart
+    );
+
+
+    /* ADD BUTTONS */
+
+    elements.addButtons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+                addProduct(button);
+            }
+        );
+
+    });
+
+
+    /* REMOVE BUTTONS */
+
+    elements.cartItems.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target.classList.contains(
+                    "remove-item"
+                )
+            ) {
+
+                const index =
+                    parseInt(
 ```
