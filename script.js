@@ -1,51 +1,28 @@
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       CART DATA
-    ========================= */
-
     let cart = [];
 
+    const openCart = document.getElementById("openCart");
+    const closeCart = document.getElementById("closeCart");
+    const cartElement = document.getElementById("cart");
+    const cartOverlay = document.getElementById("cartOverlay");
 
-    /* =========================
-       ELEMENTS
-    ========================= */
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
 
-    const cartButton =
-        document.getElementById("openCart");
-
-    const closeButton =
-        document.getElementById("closeCart");
-
-    const cartElement =
-        document.getElementById("cart");
-
-    const overlay =
-        document.getElementById("cartOverlay");
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
-    const addButtons =
-        document.querySelectorAll(".add-cart");
+    const addButtons = document.querySelectorAll(".add-cart");
 
 
     /* =========================
        OPEN CART
     ========================= */
 
-    cartButton.addEventListener("click", function () {
+    openCart.addEventListener("click", function () {
 
         cartElement.classList.add("active");
-
-        overlay.classList.add("active");
+        cartOverlay.classList.add("active");
 
     });
 
@@ -54,24 +31,18 @@ document.addEventListener("DOMContentLoaded", function () {
        CLOSE CART
     ========================= */
 
-    closeButton.addEventListener("click", function () {
+    closeCart.addEventListener("click", function () {
 
         cartElement.classList.remove("active");
-
-        overlay.classList.remove("active");
+        cartOverlay.classList.remove("active");
 
     });
 
 
-    /* =========================
-       CLOSE BY OVERLAY
-    ========================= */
-
-    overlay.addEventListener("click", function () {
+    cartOverlay.addEventListener("click", function () {
 
         cartElement.classList.remove("active");
-
-        overlay.classList.remove("active");
+        cartOverlay.classList.remove("active");
 
     });
 
@@ -84,41 +55,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         button.addEventListener("click", function () {
 
-            const product =
-                button.closest(".product");
-
-
-            /* PRODUCT NAME */
+            const product = button.closest(".product");
 
             const name =
-                product.querySelector("h3").textContent;
-
-
-            /* PRICE */
+                product.querySelector("h3").textContent.trim();
 
             const priceText =
                 product.querySelector(".price").textContent;
 
-
             const price =
-                parseInt(
-                    priceText.replace(/[^\d]/g, "")
-                );
-
-
-            /* COLOR */
+                parseInt(priceText.replace(/[^\d]/g, ""));
 
             const color =
                 product.querySelector(".color").value;
 
-
-            /* SIZE */
-
             const size =
                 product.querySelector(".size").value;
 
-
-            /* CHECK COLOR */
 
             if (color === "") {
 
@@ -128,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* CHECK SIZE */
-
             if (size === "") {
 
                 alert("من فضلك اختر المقاس أولاً");
@@ -138,31 +89,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* ADD TO CART */
-
             cart.push({
-
                 name: name,
-
                 price: price,
-
                 color: color,
-
                 size: size
-
             });
 
-
-            /* UPDATE */
 
             updateCart();
 
 
-            /* OPEN CART */
-
             cartElement.classList.add("active");
-
-            overlay.classList.add("active");
+            cartOverlay.classList.add("active");
 
         });
 
@@ -180,20 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
         let total = 0;
 
 
-        /* EMPTY CART */
-
         if (cart.length === 0) {
 
             cartItems.innerHTML = `
                 <p class="empty-cart">
-                    السلة فارغة
+                    السلة فارغة حالياً
                 </p>
             `;
 
         }
 
-
-        /* PRODUCTS */
 
         cart.forEach(function (item, index) {
 
@@ -202,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const cartItem =
                 document.createElement("div");
-
 
             cartItem.classList.add("cart-item");
 
@@ -229,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 </div>
 
-
                 <button
                     class="remove-item"
                     data-index="${index}">
@@ -244,20 +177,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* COUNT */
-
-        cartCount.textContent =
-            cart.length;
-
-
-        /* TOTAL */
+        cartCount.textContent = cart.length;
 
         cartTotal.textContent =
             total + " جنيه";
 
 
         /* =========================
-           REMOVE BUTTONS
+           REMOVE PRODUCT
         ========================= */
 
         const removeButtons =
@@ -275,7 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 cart.splice(index, 1);
-
 
                 updateCart();
 
