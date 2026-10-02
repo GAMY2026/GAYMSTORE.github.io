@@ -13,42 +13,25 @@
 
 <body>
 
-    <!-- الشريط العلوي -->
+    <!-- TOP BAR -->
     <div class="top-bar">
-
-        <div>GAMY STORE</div>
-        <div>NEW COLLECTION</div>
-
-        <div>
-            <a href="https://www.youtube.com/watch?v=zOc189jUqzg" target="_blank">
-                ORDER NOW
-            </a>
-        </div>
-
-        <div>FASHION CLOTHES</div>
-
-        <div>GAMY STORE</div>
-        <div>NEW COLLECTION</div>
-
-        <div>
-            <a href="https://www.youtube.com/watch?v=zOc189jUqzg" target="_blank">
-                ORDER NOW
-            </a>
-        </div>
-
-        <div>FASHION CLOTHES</div>
-
+        <span>GAMY STORE</span>
+        <span>NEW COLLECTION</span>
+        <a href="https://www.youtube.com/watch?v=zOc189jUqzg" target="_blank">
+            ORDER NOW
+        </a>
+        <span>FASHION CLOTHES</span>
     </div>
 
 
-    <!-- الهيدر -->
+    <!-- HEADER -->
     <header class="header">
 
         <div class="logo">
             GAMY STORE
         </div>
 
-        <nav>
+        <nav class="nav">
 
             <a href="#home">HOME</a>
             <a href="#categories">CATEGORIES</a>
@@ -59,10 +42,15 @@
 
         </nav>
 
+        <button class="cart-button" id="openCart">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
     </header>
 
 
-    <!-- الصفحة الرئيسية -->
+    <!-- HOME -->
     <section class="home" id="home">
 
         <div class="home-video">
@@ -81,17 +69,11 @@
 
         <div class="home-content">
 
-            <p>
-                THE NEW COLLECTION
-            </p>
+            <p>THE NEW COLLECTION</p>
 
-            <h1>
-                GAMY STORE
-            </h1>
+            <h1>GAMY STORE</h1>
 
-            <h2>
-                YOUR STYLE. YOUR IDENTITY.
-            </h2>
+            <h2>YOUR STYLE. YOUR IDENTITY.</h2>
 
             <a href="#categories">
                 SHOP NOW
@@ -102,7 +84,7 @@
     </section>
 
 
-    <!-- الأقسام -->
+    <!-- CATEGORIES -->
     <section class="categories" id="categories">
 
         <h2>OUR CATEGORIES</h2>
@@ -111,17 +93,17 @@
 
             <a href="#men" class="category-card">
                 <h3>MEN</h3>
-                <p>رجالي</p>
+                <p>ملابس رجالي</p>
             </a>
 
             <a href="#women" class="category-card">
                 <h3>WOMEN</h3>
-                <p>حريمي</p>
+                <p>ملابس حريمي</p>
             </a>
 
             <a href="#shoes" class="category-card">
                 <h3>SHOES</h3>
-                <p>كوتشات</p>
+                <p>كوتشات وأحذية</p>
             </a>
 
         </div>
@@ -129,14 +111,17 @@
     </section>
 
 
-    <!-- المنتجات الرجالي -->
+    <!-- MEN -->
     <section class="products" id="men">
 
         <h2>MEN COLLECTION</h2>
 
+        <p>أحدث الملابس الرجالي</p>
+
         <div class="products-container">
 
 
+            <!-- MEN PRODUCT 1 -->
             <div class="product">
 
                 <img
@@ -145,30 +130,35 @@
 
                 <h3>تيشيرت رجالي</h3>
 
-                <p class="price">
-                    450 جنيه
-                </p>
+                <p class="price">450 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="أزرق">أزرق</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- MEN PRODUCT 2 -->
             <div class="product">
 
                 <img
@@ -177,30 +167,35 @@
 
                 <h3>قميص رجالي</h3>
 
-                <p class="price">
-                    650 جنيه
-                </p>
+                <p class="price">650 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="أسود">أسود</option>
+                    <option value="رمادي">رمادي</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- MEN PRODUCT 3 -->
             <div class="product">
 
                 <img
@@ -209,25 +204,29 @@
 
                 <h3>بنطلون رجالي</h3>
 
-                <p class="price">
-                    800 جنيه
-                </p>
+                <p class="price">800 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="كحلي">كحلي</option>
+                    <option value="رمادي">رمادي</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="30">30</option>
                     <option value="32">32</option>
                     <option value="34">34</option>
                     <option value="36">36</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
@@ -237,14 +236,17 @@
     </section>
 
 
-    <!-- المنتجات الحريمي -->
+    <!-- WOMEN -->
     <section class="products" id="women">
 
         <h2>WOMEN COLLECTION</h2>
 
+        <p>أحدث الملابس الحريمي</p>
+
         <div class="products-container">
 
 
+            <!-- WOMEN PRODUCT 1 -->
             <div class="product">
 
                 <img
@@ -253,30 +255,35 @@
 
                 <h3>بلوزة حريمي</h3>
 
-                <p class="price">
-                    550 جنيه
-                </p>
+                <p class="price">550 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="أسود">أسود</option>
+                    <option value="بيج">بيج</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- WOMEN PRODUCT 2 -->
             <div class="product">
 
                 <img
@@ -285,30 +292,35 @@
 
                 <h3>جاكت حريمي</h3>
 
-                <p class="price">
-                    950 جنيه
-                </p>
+                <p class="price">950 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="بني">بني</option>
+                    <option value="بيج">بيج</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- WOMEN PRODUCT 3 -->
             <div class="product">
 
                 <img
@@ -317,24 +329,28 @@
 
                 <h3>جاكت أنيق</h3>
 
-                <p class="price">
-                    1200 جنيه
-                </p>
+                <p class="price">1200 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="بيج">بيج</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
@@ -344,14 +360,17 @@
     </section>
 
 
-    <!-- الأحذية -->
+    <!-- SHOES -->
     <section class="products" id="shoes">
 
         <h2>SHOES COLLECTION</h2>
 
+        <p>أحدث الكوتشات والأحذية</p>
+
         <div class="products-container">
 
 
+            <!-- SHOES PRODUCT 1 -->
             <div class="product">
 
                 <img
@@ -360,30 +379,35 @@
 
                 <h3>كوتش رياضي</h3>
 
-                <p class="price">
-                    1100 جنيه
-                </p>
+                <p class="price">1100 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="أحمر">أحمر</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="40">40</option>
                     <option value="41">41</option>
                     <option value="42">42</option>
                     <option value="43">43</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- SHOES PRODUCT 2 -->
             <div class="product">
 
                 <img
@@ -392,30 +416,34 @@
 
                 <h3>كوتش أبيض</h3>
 
-                <p class="price">
-                    1250 جنيه
-                </p>
+                <p class="price">1250 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أبيض">أبيض</option>
+                    <option value="أسود">أسود</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="40">40</option>
                     <option value="41">41</option>
                     <option value="42">42</option>
                     <option value="43">43</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
 
 
+            <!-- SHOES PRODUCT 3 -->
             <div class="product">
 
                 <img
@@ -424,25 +452,29 @@
 
                 <h3>كوتش كلاسيك</h3>
 
-                <p class="price">
-                    1350 جنيه
-                </p>
+                <p class="price">1350 جنيه</p>
+
+                <label>اللون</label>
+
+                <select class="color">
+                    <option value="">اختر اللون</option>
+                    <option value="أسود">أسود</option>
+                    <option value="بني">بني</option>
+                    <option value="أبيض">أبيض</option>
+                </select>
+
+                <label>المقاس</label>
 
                 <select class="size">
-
-                    <option value="">
-                        اختر المقاس
-                    </option>
-
+                    <option value="">اختر المقاس</option>
                     <option value="40">40</option>
                     <option value="41">41</option>
                     <option value="42">42</option>
                     <option value="43">43</option>
-
                 </select>
 
                 <button class="add-cart">
-                    أضف إلى السلة
+                    أضف للسلة
                 </button>
 
             </div>
@@ -452,12 +484,10 @@
     </section>
 
 
-    <!-- التواصل -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
 
-        <h2>
-            تواصل معنا
-        </h2>
+        <h2>تواصل معنا</h2>
 
         <p>
             تواصل معنا لمعرفة المزيد عن المنتجات والطلبات.
@@ -470,12 +500,10 @@
     </section>
 
 
-    <!-- الفوتر -->
+    <!-- FOOTER -->
     <footer>
 
-        <h3>
-            GAMY STORE
-        </h3>
+        <h3>GAMY STORE</h3>
 
         <p>
             جميع الحقوق محفوظة © 2026
@@ -484,61 +512,275 @@
     </footer>
 
 
-    <!-- زر السلة -->
-    <button id="openCart" class="cart-button">
-
-        🛒
-
-        <span id="cartCount">
-            0
-        </span>
-
-    </button>
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
 
 
-    <!-- خلفية السلة -->
-    <div id="cartOverlay" class="cart-overlay"></div>
-
-
-    <!-- السلة -->
-    <aside id="cart" class="cart">
+    <!-- CART -->
+    <aside class="cart" id="cart">
 
         <div class="cart-header">
 
-            <h2>
-                سلة المشتريات
-            </h2>
+            <h2>سلة المشتريات</h2>
 
             <button id="closeCart">
-                ×
+                ✕
             </button>
 
         </div>
 
 
-        <div id="cartItems">
-        </div>
+        <div id="cartItems"></div>
 
 
         <div class="cart-footer">
 
-            <strong>
+            <h3>
                 الإجمالي:
-            </strong>
-
-            <span id="cartTotal">
-                0 جنيه
-            </span>
+                <span id="cartTotal">0 جنيه</span>
+            </h3>
 
         </div>
 
     </aside>
 
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let cart = [];
+
+            const cartButton =
+                document.getElementById("openCart");
+
+            const closeButton =
+                document.getElementById("closeCart");
+
+            const cartElement =
+                document.getElementById("cart");
+
+            const overlay =
+                document.getElementById("cartOverlay");
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const cartTotal =
+                document.getElementById("cartTotal");
+
+            const addButtons =
+                document.querySelectorAll(".add-cart");
+
+
+            /* فتح السلة */
+
+            cartButton.addEventListener("click", function () {
+
+                cartElement.classList.add("active");
+
+                overlay.classList.add("active");
+
+            });
+
+
+            /* غلق السلة */
+
+            closeButton.addEventListener("click", function () {
+
+                cartElement.classList.remove("active");
+
+                overlay.classList.remove("active");
+
+            });
+
+
+            /* غلق السلة عند الضغط خارجها */
+
+            overlay.addEventListener("click", function () {
+
+                cartElement.classList.remove("active");
+
+                overlay.classList.remove("active");
+
+            });
+
+
+            /* إضافة المنتجات */
+
+            addButtons.forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const product =
+                        button.closest(".product");
+
+
+                    const name =
+                        product.querySelector("h3").textContent;
+
+
+                    const priceText =
+                        product.querySelector(".price").textContent;
+
+
+                    const price =
+                        parseInt(
+                            priceText.replace(/[^\d]/g, "")
+                        );
+
+
+                    const size =
+                        product.querySelector(".size").value;
+
+
+                    const color =
+                        product.querySelector(".color").value;
+
+
+                    if (color === "") {
+
+                        alert("من فضلك اختر اللون أولاً");
+
+                        return;
+
+                    }
+
+
+                    if (size === "") {
+
+                        alert("من فضلك اختر المقاس أولاً");
+
+                        return;
+
+                    }
+
+
+                    cart.push({
+
+                        name: name,
+
+                        price: price,
+
+                        color: color,
+
+                        size: size
+
+                    });
+
+
+                    updateCart();
+
+
+                    cartElement.classList.add("active");
+
+                    overlay.classList.add("active");
+
+                });
+
+            });
+
+
+            /* تحديث السلة */
+
+            function updateCart() {
+
+                cartItems.innerHTML = "";
+
+                let total = 0;
+
+
+                cart.forEach(function (item, index) {
+
+                    total += item.price;
+
+
+                    const cartItem =
+                        document.createElement("div");
+
+
+                    cartItem.classList.add("cart-item");
+
+
+                    cartItem.innerHTML = `
+
+                        <div>
+
+                            <h3>
+                                ${item.name}
+                            </h3>
+
+                            <p>
+                                اللون: ${item.color}
+                            </p>
+
+                            <p>
+                                المقاس: ${item.size}
+                            </p>
+
+                            <strong>
+                                ${item.price} جنيه
+                            </strong>
+
+                        </div>
+
+                        <button
+                            class="remove-item"
+                            data-index="${index}">
+                            حذف
+                        </button>
+
+                    `;
+
+
+                    cartItems.appendChild(cartItem);
+
+                });
+
+
+                cartCount.textContent =
+                    cart.length;
+
+
+                cartTotal.textContent =
+                    total + " جنيه";
+
+
+                /* أزرار الحذف */
+
+                const removeButtons =
+                    document.querySelectorAll(".remove-item");
+
+
+                removeButtons.forEach(function (button) {
+
+                    button.addEventListener("click", function () {
+
+                        const index =
+                            button.getAttribute("data-index");
+
+
+                        cart.splice(index, 1);
+
+
+                        updateCart();
+
+                    });
+
+                });
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
 </html>
 ```
+
