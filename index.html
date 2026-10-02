@@ -1,143 +1,1555 @@
-<!-- CHECKOUT MODAL -->
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="checkout-overlay" id="checkoutOverlay">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="checkout-modal">
+    <title>GAMY STORE | Luxury Fashion</title>
 
-        <button class="checkout-close" id="closeCheckout">
-            ×
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- =========================================
+         TOP BAR
+         ========================================= -->
+
+    <div class="top-bar">
+
+        <div class="top-bar-track">
+
+            <span>FASHION</span>
+            <b>•</b>
+
+            <span>GAMY STORE</span>
+            <b>•</b>
+
+            <span>ORDER NOW</span>
+            <b>•</b>
+
+            <span>NEW COLLECTION</span>
+            <b>•</b>
+
+            <span>LUXURY CLOTHING</span>
+            <b>•</b>
+
+            <span>DISCOVER MORE</span>
+            <b>•</b>
+
+            <span>FASHION</span>
+            <b>•</b>
+
+            <span>GAMY STORE</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <header class="header">
+
+        <a href="#home" class="logo">
+            GAMY <span>STORE</span>
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="#home">HOME</a>
+
+            <a href="#categories">
+                COLLECTIONS
+            </a>
+
+            <a href="#men">
+                MEN
+            </a>
+
+            <a href="#women">
+                WOMEN
+            </a>
+
+            <a href="#shoes">
+                SNEAKERS
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+        <button
+            class="cart-button"
+            id="openCart">
+
+            <span class="cart-icon">
+                🛍
+            </span>
+
+            <span>
+                CART
+            </span>
+
+            <span
+                class="cart-count"
+                id="cartCount">
+                0
+            </span>
+
         </button>
 
-        <div class="checkout-header">
+    </header>
 
-            <small>GAMY STORE</small>
 
-            <h2>CHECKOUT</h2>
 
-            <p>
-                COMPLETE YOUR ORDER
-            </p>
+    <!-- =========================================
+         MAIN
+         ========================================= -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+             ===================================== -->
+
+        <section
+            class="home"
+            id="home">
+
+            <div class="home-video">
+
+                <iframe
+                    src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
+                    title="GAMY STORE Luxury Fashion"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+            <div class="home-overlay"></div>
+
+
+            <div class="home-content">
+
+                <span class="hero-small">
+                    NEW COLLECTION
+                </span>
+
+                <h1>
+                    GAMY
+                    <span>STORE</span>
+                </h1>
+
+                <p>
+                    LUXURY FASHION
+                    <br>
+                    MADE FOR YOUR STYLE
+                </p>
+
+                <a
+                    href="#categories"
+                    class="home-button">
+
+                    EXPLORE COLLECTION
+
+                </a>
+
+            </div>
+
+
+            <div class="home-bottom">
+
+                <span>
+                    EST. 2026
+                </span>
+
+                <span>
+                    GAMY STORE
+                </span>
+
+                <span>
+                    CAIRO • EGYPT
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             COLLECTIONS
+             ===================================== -->
+
+        <section
+            class="categories"
+            id="categories">
+
+            <div class="section-heading">
+
+                <span>
+                    DISCOVER
+                </span>
+
+                <h2>
+                    OUR COLLECTIONS
+                </h2>
+
+                <p>
+                    Explore our latest fashion collections
+                </p>
+
+            </div>
+
+
+            <div class="categories-grid">
+
+
+                <a
+                    href="#men"
+                    class="category-card men-category">
+
+                    <div class="category-content">
+
+                        <small>
+                            01 / COLLECTION
+                        </small>
+
+                        <h3>
+                            MEN
+                        </h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a
+                    href="#women"
+                    class="category-card women-category">
+
+                    <div class="category-content">
+
+                        <small>
+                            02 / COLLECTION
+                        </small>
+
+                        <h3>
+                            WOMEN
+                        </h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a
+                    href="#shoes"
+                    class="category-card shoes-category">
+
+                    <div class="category-content">
+
+                        <small>
+                            03 / COLLECTION
+                        </small>
+
+                        <h3>
+                            SNEAKERS
+                        </h3>
+
+                        <span>
+                            EXPLORE COLLECTION →
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MEN
+             ===================================== -->
+
+        <section
+            class="products-section"
+            id="men">
+
+            <div class="section-heading">
+
+                <span>
+                    MEN COLLECTION
+                </span>
+
+                <h2>
+                    MEN'S EDIT
+                </h2>
+
+                <p>
+                    Contemporary pieces designed for everyday luxury
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product">
+
+                    <div class="product-image shirt-blue">
+
+                        <div class="product-placeholder">
+                            T-SHIRT
+                        </div>
+
+                        <span class="product-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Premium T-Shirt
+                        </h3>
+
+                        <p class="product-description">
+                            Modern essential with a clean luxury look
+                        </p>
+
+                        <div class="price">
+                            450 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLUE
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <article class="product">
+
+                    <div class="product-image shirt-gray">
+
+                        <div class="product-placeholder">
+                            SHIRT
+                        </div>
+
+                        <span class="product-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Premium Shirt
+                        </h3>
+
+                        <p class="product-description">
+                            Elegant shirt designed for every occasion
+                        </p>
+
+                        <div class="price">
+                            650 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        GREY
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <article class="product">
+
+                    <div class="product-image pants-dark">
+
+                        <div class="product-placeholder">
+                            PANTS
+                        </div>
+
+                        <span class="product-badge">
+                            BEST
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Premium Pants
+                        </h3>
+
+                        <p class="product-description">
+                            Modern fit with maximum everyday comfort
+                        </p>
+
+                        <div class="price">
+                            800 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        NAVY
+                                    </option>
+
+                                    <option>
+                                        GREY
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>30</option>
+                                    <option>32</option>
+                                    <option>34</option>
+                                    <option>36</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             WOMEN
+             ===================================== -->
+
+        <section
+            class="products-section light-section"
+            id="women">
+
+            <div class="section-heading">
+
+                <span>
+                    WOMEN COLLECTION
+                </span>
+
+                <h2>
+                    WOMEN'S EDIT
+                </h2>
+
+                <p>
+                    Refined pieces created for a distinctive look
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- BLOUSE -->
+
+                <article class="product">
+
+                    <div class="product-image blouse">
+
+                        <div class="product-placeholder">
+                            BLOUSE
+                        </div>
+
+                        <span class="product-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Premium Blouse
+                        </h3>
+
+                        <p class="product-description">
+                            Soft and elegant design for a refined style
+                        </p>
+
+                        <div class="price">
+                            550 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- JACKET -->
+
+                <article class="product">
+
+                    <div class="product-image jacket">
+
+                        <div class="product-placeholder">
+                            JACKET
+                        </div>
+
+                        <span class="product-badge">
+                            HOT
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Signature Jacket
+                        </h3>
+
+                        <p class="product-description">
+                            A statement piece for a sophisticated look
+                        </p>
+
+                        <div class="price">
+                            950 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BROWN
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+                                    <option>XL</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LUXURY JACKET -->
+
+                <article class="product">
+
+                    <div class="product-image elegant-jacket">
+
+                        <div class="product-placeholder">
+                            PREMIUM
+                        </div>
+
+                        <span class="product-badge">
+                            PREMIUM
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Luxury Jacket
+                        </h3>
+
+                        <p class="product-description">
+                            A premium piece for an elevated wardrobe
+                        </p>
+
+                        <div class="price">
+                            1200 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BEIGE
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>S</option>
+                                    <option>M</option>
+                                    <option>L</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SNEAKERS
+             ===================================== -->
+
+        <section
+            class="products-section"
+            id="shoes">
+
+            <div class="section-heading">
+
+                <span>
+                    SNEAKERS COLLECTION
+                </span>
+
+                <h2>
+                    THE SNEAKER EDIT
+                </h2>
+
+                <p>
+                    Step into comfort, style and everyday luxury
+                </p>
+
+            </div>
+
+
+            <div class="products-grid">
+
+
+                <!-- SNEAKER 1 -->
+
+                <article class="product">
+
+                    <div class="product-image sneaker">
+
+                        <div class="product-placeholder">
+                            SNEAKER
+                        </div>
+
+                        <span class="product-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Sport Sneaker
+                        </h3>
+
+                        <p class="product-description">
+                            Comfort and style in every step
+                        </p>
+
+                        <div class="price">
+                            1100 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        RED
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SNEAKER 2 -->
+
+                <article class="product">
+
+                    <div class="product-image white-sneaker">
+
+                        <div class="product-placeholder">
+                            WHITE
+                        </div>
+
+                        <span class="product-badge">
+                            BEST
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            White Sneaker
+                        </h3>
+
+                        <p class="product-description">
+                            Clean, minimal and effortlessly stylish
+                        </p>
+
+                        <div class="price">
+                            1250 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SNEAKER 3 -->
+
+                <article class="product">
+
+                    <div class="product-image classic-sneaker">
+
+                        <div class="product-placeholder">
+                            CLASSIC
+                        </div>
+
+                        <span class="product-badge">
+                            PREMIUM
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            Classic Sneaker
+                        </h3>
+
+                        <p class="product-description">
+                            Timeless design for a distinctive style
+                        </p>
+
+                        <div class="price">
+                            1350 EGP
+                        </div>
+
+
+                        <div class="options">
+
+                            <label>
+                                COLOR
+
+                                <select class="color">
+
+                                    <option value="">
+                                        SELECT COLOR
+                                    </option>
+
+                                    <option>
+                                        BLACK
+                                    </option>
+
+                                    <option>
+                                        BROWN
+                                    </option>
+
+                                    <option>
+                                        WHITE
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label>
+                                SIZE
+
+                                <select class="size">
+
+                                    <option value="">
+                                        SELECT SIZE
+                                    </option>
+
+                                    <option>40</option>
+                                    <option>41</option>
+                                    <option>42</option>
+                                    <option>43</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <button class="add-cart">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTACT
+             ===================================== -->
+
+        <section
+            class="contact"
+            id="contact">
+
+            <div class="contact-box">
+
+                <span>
+                    CONTACT US
+                </span>
+
+                <h2>
+                    READY TO DEFINE YOUR STYLE?
+                </h2>
+
+                <p>
+                    Have a question or want to place an order?
+                    Get in touch with GAMY STORE.
+                </p>
+
+                <a
+                    href="#"
+                    class="whatsapp-button">
+
+                    CONTACT US
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            GAMY STORE
+        </div>
+
+        <p>
+            © 2026 GAMY STORE — ALL RIGHTS RESERVED
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         CART OVERLAY
+         ========================================= -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay">
+    </div>
+
+
+
+    <!-- =========================================
+         SHOPPING CART
+         ========================================= -->
+
+    <aside
+        class="cart"
+        id="cart">
+
+
+        <div class="cart-header">
+
+            <div>
+
+                <small>
+                    GAMY STORE
+                </small>
+
+                <h2>
+                    SHOPPING BAG
+                </h2>
+
+            </div>
+
+
+            <button id="closeCart">
+                ×
+            </button>
 
         </div>
 
 
-        <form id="checkoutForm">
-
-            <div class="checkout-field">
-
-                <label>FULL NAME</label>
-
-                <input
-                    type="text"
-                    id="customerName"
-                    placeholder="Enter your full name"
-                    required>
-
-            </div>
+        <div
+            class="cart-items"
+            id="cartItems">
+        </div>
 
 
-            <div class="checkout-field">
+        <div class="cart-footer">
 
-                <label>PHONE NUMBER</label>
+            <div class="total-row">
 
-                <input
-                    type="tel"
-                    id="customerPhone"
-                    placeholder="Enter your phone number"
-                    required>
+                <span>
+                    TOTAL
+                </span>
 
-            </div>
-
-
-            <div class="checkout-row">
-
-                <div class="checkout-field">
-
-                    <label>GOVERNORATE</label>
-
-                    <input
-                        type="text"
-                        id="customerCity"
-                        placeholder="Cairo"
-                        required>
-
-                </div>
-
-
-                <div class="checkout-field">
-
-                    <label>AREA</label>
-
-                    <input
-                        type="text"
-                        id="customerArea"
-                        placeholder="Area"
-                        required>
-
-                </div>
-
-            </div>
-
-
-            <div class="checkout-field">
-
-                <label>FULL ADDRESS</label>
-
-                <textarea
-                    id="customerAddress"
-                    placeholder="Street, building, apartment..."
-                    required></textarea>
-
-            </div>
-
-
-            <div class="checkout-field">
-
-                <label>ORDER NOTES</label>
-
-                <textarea
-                    id="orderNotes"
-                    placeholder="Any special instructions?"></textarea>
-
-            </div>
-
-
-            <div class="checkout-summary">
-
-                <div>
-
-                    <span>ITEMS</span>
-
-                    <strong id="checkoutItemsCount">
-                        0
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>TOTAL</span>
-
-                    <strong id="checkoutTotal">
-                        0 EGP
-                    </strong>
-
-                </div>
+                <strong id="cartTotal">
+                    0 EGP
+                </strong>
 
             </div>
 
 
             <button
-                type="submit"
-                class="place-order-button">
+                class="checkout-button"
+                id="checkoutButton">
 
-                PLACE ORDER
+                CHECKOUT
 
             </button>
 
-        </form>
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         CHECKOUT MODAL
+         ========================================= -->
+
+    <div
+        class="checkout-overlay"
+        id="checkoutOverlay">
+
+
+        <div class="checkout-modal">
+
+
+            <button
+                class="checkout-close"
+                id="closeCheckout">
+
+                ×
+
+            </button>
+
+
+            <div class="checkout-header">
+
+                <small>
+                    GAMY STORE
+                </small>
+
+                <h2>
+                    CHECKOUT
+                </h2>
+
+                <p>
+                    COMPLETE YOUR ORDER
+                </p>
+
+            </div>
+
+
+
+            <form id="checkoutForm">
+
+
+                <!-- NAME -->
+
+                <div class="checkout-field">
+
+                    <label>
+                        FULL NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="checkout-field">
+
+                    <label>
+                        PHONE NUMBER
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Enter your phone number"
+                        required>
+
+                </div>
+
+
+
+                <!-- CITY + AREA -->
+
+                <div class="checkout-row">
+
+
+                    <div class="checkout-field">
+
+                        <label>
+                            GOVERNORATE
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerCity"
+                            placeholder="Cairo"
+                            required>
+
+                    </div>
+
+
+                    <div class="checkout-field">
+
+                        <label>
+                            AREA
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerArea"
+                            placeholder="Area"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="checkout-field">
+
+                    <label>
+                        FULL ADDRESS
+                    </label>
+
+                    <textarea
+                        id="customerAddress"
+                        placeholder="Street, building, apartment..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="checkout-field">
+
+                    <label>
+                        ORDER NOTES
+                    </label>
+
+                    <textarea
+                        id="orderNotes"
+                        placeholder="Any special instructions?"></textarea>
+
+                </div>
+
+
+
+                <!-- SUMMARY -->
+
+                <div class="checkout-summary">
+
+
+                    <div>
+
+                        <span>
+                            ITEMS
+                        </span>
+
+                        <strong id="checkoutItemsCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            TOTAL
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            0 EGP
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PLACE ORDER -->
+
+                <button
+                    type="submit"
+                    class="place-order-button">
+
+                    PLACE ORDER
+
+                </button>
+
+
+            </form>
+
+
+        </div>
 
     </div>
 
-</div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
