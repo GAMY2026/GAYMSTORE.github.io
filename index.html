@@ -2027,7 +2027,157 @@ body::after {
             cursor: pointer;
         }
 
+/* =====================================================
+   GAMY STORE - FULL AFRO DARK STYLE
+===================================================== */
 
+/* كل الصفحة بعد الـ Home */
+
+body {
+    background-color: #050505 !important;
+}
+
+
+/* الأقسام */
+
+section:not(.home) {
+    background: #050505 !important;
+    color: #ffffff !important;
+}
+
+
+/* العناوين والنصوص */
+
+section:not(.home) h1,
+section:not(.home) h2,
+section:not(.home) h3,
+section:not(.home) p,
+section:not(.home) span,
+section:not(.home) label {
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   PRODUCT CARDS
+===================================================== */
+
+.product-card {
+    background: #101010 !important;
+
+    border: 1px solid rgba(255,255,255,0.12) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.04) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* حركة بسيطة للكارت */
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(255,255,255,0.28) !important;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.7),
+        0 0 30px rgba(255,255,255,0.035) !important;
+}
+
+
+/* اسم المنتج */
+
+.product-card h3 {
+    color: #ffffff !important;
+}
+
+
+/* السعر */
+
+.product-card .price {
+    color: #ffffff !important;
+}
+
+
+/* اللون والمقاس */
+
+.product-card .color,
+.product-card .size {
+    color: #bdbdbd !important;
+}
+
+
+/* =====================================================
+   PRODUCT OPTIONS
+===================================================== */
+
+.product-card select {
+    background: #080808 !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #333 !important;
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.product-image {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+.product-card .add-cart {
+    background: #ffffff !important;
+
+    color: #050505 !important;
+
+    border: none !important;
+
+    transition: 0.3s ease;
+}
+
+.product-card .add-cart:hover {
+    background: #dcdcdc !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    background: #050505 !important;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #020202 !important;
+
+    color: #ffffff !important;
+
+    border-top: 1px solid #222;
+}
 </style>
 
 </head>
