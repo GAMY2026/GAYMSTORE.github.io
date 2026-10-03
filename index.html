@@ -1,1324 +1,381 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GAMY STORE | Luxury Fashion</title>
+```
+<title>GAMY STORE | Luxury Fashion</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
-    <div class="top-bar">
-        <div class="top-bar-track">
-            FASHION • GAMY STORE • ORDER NOW • NEW COLLECTION •
-            LUXURY CLOTHING • DISCOVER MORE •
-            FASHION • GAMY STORE • ORDER NOW • NEW COLLECTION •
-            LUXURY CLOTHING • DISCOVER MORE
-        </div>
+```
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="top-bar-track">
+        <span>FASHION</span>
+        <span>•</span>
+        <span>GAMY STORE</span>
+        <span>•</span>
+        <span>ORDER NOW</span>
+        <span>•</span>
+        <span>NEW COLLECTION</span>
+        <span>•</span>
+        <span>LUXURY CLOTHING</span>
+        <span>•</span>
+        <span>DISCOVER MORE</span>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+
+    <div class="logo">
+        GAMY STORE
     </div>
 
-    <header class="header">
-
-        <div class="logo">
-            GAMY STORE
-        </div>
-
-        <nav class="nav">
-            <a href="#home">HOME</a>
-            <a href="#categories">COLLECTIONS</a>
-            <a href="#men">MEN</a>
-            <a href="#women">WOMEN</a>
-            <a href="#shoes">SNEAKERS</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
-
-        <button
-            class="cart-button"
-            id="openCart">
-
-            <span class="cart-icon">🛍</span>
-
-            <span>CART</span>
-
-            <span
-                class="cart-count"
-                id="cartCount">
-                0
-            </span>
-
-        </button>
-
-    </header>
-
-
-    <section
-        class="home"
-        id="home">
-
-        <iframe
-            src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
-            title="GAMY STORE Luxury Fashion"
-            frameborder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-
-        <div class="hero-overlay">
-
-            <div class="hero-content">
-
-                <p>
-                    NEW COLLECTION
-                </p>
-
-                <h1>
-                    GAMY STORE
-                </h1>
-
-                <span>
-                    LUXURY FASHION
-                </span>
-
-                <a
-                    href="#men"
-                    class="hero-button">
-                    SHOP NOW
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        class="section"
-        id="categories">
-
-        <div class="section-title">
-
-            <span>
-                EXPLORE
-            </span>
-
-            <h2>
-                COLLECTIONS
-            </h2>
-
-            <p>
-                DISCOVER THE LATEST GAMY STORE COLLECTION
-            </p>
-
-        </div>
-
-        <div class="collection-grid">
-
-            <a
-                href="#men"
-                class="collection-card">
-
-                <div class="collection-image men-image">
-                    MEN
-                </div>
-
-                <div class="collection-content">
-                    <h3>MEN</h3>
-                    <span>DISCOVER COLLECTION</span>
-                </div>
-
-            </a>
-
-
-            <a
-                href="#women"
-                class="collection-card">
-
-                <div class="collection-image women-image">
-                    WOMEN
-                </div>
-
-                <div class="collection-content">
-                    <h3>WOMEN</h3>
-                    <span>DISCOVER COLLECTION</span>
-                </div>
-
-            </a>
-
-
-            <a
-                href="#shoes"
-                class="collection-card">
-
-                <div class="collection-image shoes-image">
-                    SNEAKERS
-                </div>
-
-                <div class="collection-content">
-                    <h3>SNEAKERS</h3>
-                    <span>DISCOVER COLLECTION</span>
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <section
-        class="section products-section"
-        id="men">
-
-        <div class="section-title">
-
-            <span>
-                MEN'S COLLECTION
-            </span>
-
-            <h2>
-                MEN
-            </h2>
-
-            <p>
-                PREMIUM MEN'S FASHION
-            </p>
-
-        </div>
-
-
-        <div class="products-container">
-
-
-            <div class="product">
-
-                <div class="product-image product-shirt">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Premium T-Shirt
-                    </h3>
-
-                    <div class="price">
-                        450 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Navy">
-                                NAVY
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-shirt-dark">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Premium Shirt
-                    </h3>
-
-                    <div class="price">
-                        650 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Gray">
-                                GRAY
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-pants">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Premium Pants
-                    </h3>
-
-                    <div class="price">
-                        800 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="Gray">
-                                GRAY
-                            </option>
-
-                            <option value="Navy">
-                                NAVY
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        class="section products-section"
-        id="women">
-
-        <div class="section-title">
-
-            <span>
-                WOMEN'S COLLECTION
-            </span>
-
-            <h2>
-                WOMEN
-            </h2>
-
-            <p>
-                PREMIUM WOMEN'S FASHION
-            </p>
-
-        </div>
-
-
-        <div class="products-container">
-
-
-            <div class="product">
-
-                <div class="product-image product-blouse">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Premium Blouse
-                    </h3>
-
-                    <div class="price">
-                        550 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Beige">
-                                BEIGE
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-jacket">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Signature Jacket
-                    </h3>
-
-                    <div class="price">
-                        950 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="Brown">
-                                BROWN
-                            </option>
-
-                            <option value="Beige">
-                                BEIGE
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-jacket-light">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Luxury Jacket
-                    </h3>
-
-                    <div class="price">
-                        1200 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Cream">
-                                CREAM
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        class="section products-section"
-        id="shoes">
-
-        <div class="section-title">
-
-            <span>
-                FOOTWEAR COLLECTION
-            </span>
-
-            <h2>
-                SNEAKERS
-            </h2>
-
-            <p>
-                PREMIUM SNEAKERS COLLECTION
-            </p>
-
-        </div>
-
-
-        <div class="products-container">
-
-
-            <div class="product">
-
-                <div class="product-image product-sneaker">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Sport Sneaker
-                    </h3>
-
-                    <div class="price">
-                        1100 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Gray">
-                                GRAY
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-sneaker-white">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        White Sneaker
-                    </h3>
-
-                    <div class="price">
-                        1250 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div class="product">
-
-                <div class="product-image product-sneaker-classic">
-                    GAMY
-                </div>
-
-                <div class="product-info">
-
-                    <h3>
-                        Classic Sneaker
-                    </h3>
-
-                    <div class="price">
-                        1350 EGP
-                    </div>
-
-                    <div class="options">
-
-                        <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Brown">
-                                BROWN
-                            </option>
-
-                        </select>
-
-
-                        <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <button class="add-cart">
-                        ADD TO CART
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        class="contact"
-        id="contact">
-
-        <div class="contact-content">
-
-            <span>
-                GAMY STORE
-            </span>
-
-            <h2>
-                CONTACT US
-            </h2>
-
-            <p>
-                FOR ORDERS AND INQUIRIES,
-                CONTACT GAMY STORE
-            </p>
-
-            <a
-                href="https://wa.me/201105178891"
-                target="_blank"
-                class="contact-button">
-
-                WHATSAPP
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <footer>
-
-        <div class="footer-logo">
-            GAMY STORE
-        </div>
-
-        <p>
-            © 2026 GAMY STORE.
-            ALL RIGHTS RESERVED.
-        </p>
-
-    </footer>
-
-
-    <div
-        class="cart-overlay"
-        id="cartOverlay">
+    <nav class="nav">
+        <a href="#home">HOME</a>
+        <a href="#categories">COLLECTIONS</a>
+        <a href="#men">MEN</a>
+        <a href="#women">WOMEN</a>
+        <a href="#shoes">SNEAKERS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="cart-button" id="openCart">
+        <span class="cart-icon">🛍</span>
+        <span>CART</span>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- HOME -->
+<section class="home" id="home">
+
+    <iframe
+        src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
+        title="GAMY STORE Luxury Fashion"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <div class="hero-content">
+        <p>NEW COLLECTION</p>
+        <h1>GAMY STORE</h1>
+        <span>Luxury Fashion For Every Style</span>
+
+        <a href="#categories" class="hero-button">
+            DISCOVER COLLECTION
+        </a>
     </div>
 
-
-    <aside
-        class="cart"
-        id="cart">
-
-        <div class="cart-header">
-
-            <h2>
-                YOUR CART
-            </h2>
-
-            <button
-                id="closeCart"
-                class="close-cart">
-                ×
-            </button>
-
-        </div>
+</section>
 
 
-        <div
-            class="cart-items"
-            id="cartItems">
-        </div>
+<!-- COLLECTIONS -->
+<section class="collections" id="categories">
+
+    <div class="section-title">
+        <span>EXPLORE</span>
+        <h2>OUR COLLECTIONS</h2>
+        <p>Discover the latest styles from GAMY STORE</p>
+    </div>
+
+    <div class="collection-grid">
+
+        <a href="#men" class="collection-card">
+            <div class="collection-image men-image">
+                <span>MEN</span>
+            </div>
+            <h3>MEN COLLECTION</h3>
+        </a>
+
+        <a href="#women" class="collection-card">
+            <div class="collection-image women-image">
+                <span>WOMEN</span>
+            </div>
+            <h3>WOMEN COLLECTION</h3>
+        </a>
+
+        <a href="#shoes" class="collection-card">
+            <div class="collection-image shoes-image">
+                <span>SNEAKERS</span>
+            </div>
+            <h3>SNEAKERS COLLECTION</h3>
+        </a>
+
+    </div>
+
+</section>
 
 
-        <div class="cart-footer">
+<!-- MEN -->
+<section class="products-section" id="men">
 
-            <div class="cart-total-row">
+    <div class="section-title">
+        <span>GAMY MEN</span>
+        <h2>MEN COLLECTION</h2>
+        <p>Premium pieces designed for your everyday style</p>
+    </div>
 
-                <span>
-                    TOTAL
-                </span>
+    <div class="products-container">
 
-                <strong id="cartTotal">
-                    0 EGP
-                </strong>
+        <div class="product">
 
+            <div class="product-image shirt-blue">
+                <span>GAMY</span>
             </div>
 
-            <button
-                id="checkoutButton"
-                class="checkout-button">
+            <div class="product-info">
+                <h3>Premium T-Shirt</h3>
+                <p class="price">450 EGP</p>
 
-                CHECKOUT
+                <div class="options">
 
-            </button>
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Navy">Navy</option>
+                    </select>
 
-        </div>
-
-    </aside>
-
-
-    <div
-        class="checkout-overlay"
-        id="checkoutOverlay">
-
-        <div class="checkout-modal">
-
-            <button
-                id="closeCheckout"
-                class="close-checkout">
-                ×
-            </button>
-
-            <div class="checkout-title">
-
-                <span>
-                    GAMY STORE
-                </span>
-
-                <h2>
-                    CHECKOUT
-                </h2>
-
-                <p>
-                    COMPLETE YOUR ORDER
-                </p>
-
-            </div>
-
-
-            <form
-                id="checkoutForm">
-
-
-                <div class="checkout-field">
-
-                    <label>
-                        FULL NAME
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerName"
-                        placeholder="YOUR FULL NAME"
-                        required>
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
 
                 </div>
 
-
-                <div class="checkout-field">
-
-                    <label>
-                        PHONE NUMBER
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="customerPhone"
-                        placeholder="YOUR PHONE NUMBER"
-                        required>
-
-                </div>
-
-
-                <div class="checkout-row">
-
-
-                    <div class="checkout-field">
-
-                        <label>
-                            GOVERNORATE
-                        </label>
-
-                        <select
-                            id="customerCity"
-                            required>
-
-                            <option value="">
-                                SELECT GOVERNORATE
-                            </option>
-
-                            <option value="Cairo">
-                                Cairo
-                            </option>
-
-                            <option value="Giza">
-                                Giza
-                            </option>
-
-                            <option value="Alexandria">
-                                Alexandria
-                            </option>
-
-                            <option value="Qalyubia">
-                                Qalyubia
-                            </option>
-
-                            <option value="Sharqia">
-                                Sharqia
-                            </option>
-
-                            <option value="Dakahlia">
-                                Dakahlia
-                            </option>
-
-                            <option value="Gharbia">
-                                Gharbia
-                            </option>
-
-                            <option value="Monufia">
-                                Monufia
-                            </option>
-
-                            <option value="Beheira">
-                                Beheira
-                            </option>
-
-                            <option value="Kafr El Sheikh">
-                                Kafr El Sheikh
-                            </option>
-
-                            <option value="Damietta">
-                                Damietta
-                            </option>
-
-                            <option value="Port Said">
-                                Port Said
-                            </option>
-
-                            <option value="Ismailia">
-                                Ismailia
-                            </option>
-
-                            <option value="Suez">
-                                Suez
-                            </option>
-
-                            <option value="Fayoum">
-                                Fayoum
-                            </option>
-
-                            <option value="Beni Suef">
-                                Beni Suef
-                            </option>
-
-                            <option value="Minya">
-                                Minya
-                            </option>
-
-                            <option value="Asyut">
-                                Asyut
-                            </option>
-
-                            <option value="Sohag">
-                                Sohag
-                            </option>
-
-                            <option value="Qena">
-                                Qena
-                            </option>
-
-                            <option value="Luxor">
-                                Luxor
-                            </option>
-
-                            <option value="Aswan">
-                                Aswan
-                            </option>
-
-                            <option value="Red Sea">
-                                Red Sea
-                            </option>
-
-                            <option value="New Valley">
-                                New Valley
-                            </option>
-
-                            <option value="Matrouh">
-                                Matrouh
-                            </option>
-
-                            <option value="North Sinai">
-                                North Sinai
-                            </option>
-
-                            <option value="South Sinai">
-                                South Sinai
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="checkout-field">
-
-                        <label>
-                            AREA
-                        </label>
-
-                        <select
-                            id="customerArea"
-                            required
-                            disabled>
-
-                            <option value="">
-                                SELECT AREA
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <div class="checkout-field">
-
-                    <label>
-                        FULL ADDRESS
-                    </label>
-
-                    <textarea
-                        id="customerAddress"
-                        rows="3"
-                        placeholder="STREET, BUILDING, FLOOR, APARTMENT"
-                        required></textarea>
-
-                </div>
-
-
-                <div class="checkout-field">
-
-                    <label>
-                        ORDER NOTES
-                    </label>
-
-                    <textarea
-                        id="orderNotes"
-                        rows="3"
-                        placeholder="OPTIONAL NOTES"></textarea>
-
-                </div>
-
-
-                <div class="checkout-summary">
-
-                    <div>
-                        <span>
-                            ITEMS
-                        </span>
-
-                        <strong id="checkoutItemsCount">
-                            0
-                        </strong>
-                    </div>
-
-                    <div>
-                        <span>
-                            TOTAL
-                        </span>
-
-                        <strong id="checkoutTotal">
-                            0 EGP
-                        </strong>
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="place-order-button">
-
-                    PLACE ORDER
-
+                <button class="add-cart">
+                    ADD TO CART
                 </button>
+            </div>
 
-            </form>
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image shirt-gray">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Shirt</h3>
+                <p class="price">650 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Gray">Gray</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image pants">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Pants</h3>
+                <p class="price">800 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                        <option value="36">36</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
 
         </div>
 
     </div>
 
+</section>
 
-    <script src="script.js"></script>
 
-</body>
+<!-- WOMEN -->
+<section class="products-section" id="women">
 
-</html>
+    <div class="section-title">
+        <span>GAMY WOMEN</span>
+        <h2>WOMEN COLLECTION</h2>
+        <p>Elegant styles made for modern women</p>
+    </div>
+
+    <div class="products-container">
+
+        <div class="product">
+
+            <div class="product-image blouse">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Blouse</h3>
+                <p class="price">550 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image jacket">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Signature Jacket</h3>
+                <p class="price">950 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image luxury-jacket">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Luxury Jacket</h3>
+                <p class="price">1200 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Camel">Camel</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SNEAKERS -->
+<section class="products-section" id="shoes">
+
+    <div class="section-title">
+        <span>GAMY SHOES</span>
+        <h2>SNEAKERS COLLECTION</h2>
+```
