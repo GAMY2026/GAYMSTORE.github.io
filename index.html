@@ -5284,6 +5284,55 @@
         );
 
     </script>
+</script>
+
+<!-- PRODUCT DETAILS MODAL -->
+
+<div id="productModal" class="product-modal">
+
+    <div class="product-modal-box">
+
+        <button id="closeProductModal" class="close-product-modal">
+            ×
+        </button>
+
+        <div class="product-modal-image">
+            <img id="modalProductImage" src="" alt="">
+        </div>
+
+        <div class="product-modal-info">
+
+            <h2 id="modalProductName"></h2>
+
+            <div id="modalProductPrice" class="modal-product-price"></div>
+
+            <div class="modal-option">
+                <label>COLOR</label>
+                <select id="modalProductColor"></select>
+            </div>
+
+            <div class="modal-option">
+                <label>SIZE</label>
+                <select id="modalProductSize"></select>
+            </div>
+
+            <div class="modal-quantity">
+                <button id="modalMinus" type="button">−</button>
+
+                <span id="modalQuantity">1</span>
+
+                <button id="modalPlus" type="button">+</button>
+            </div>
+
+            <button id="modalAddCart" class="modal-add-cart" type="button">
+                ADD TO CART
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 
