@@ -4405,44 +4405,42 @@
                 }
 
 
-                /* =================================================
-                   PRODUCT IMAGE CLICK
-                ================================================= */
+/* =================================================
+   PRODUCT IMAGE CLICK
+================================================= */
 
-                document
-                    .querySelectorAll(".product-image")
-                    .forEach(
-                        function (image) {
+document
+    .querySelectorAll(".product-image")
+    .forEach(
+        function (image) {
 
-                            image.addEventListener(
-                                "click",
-                                function () {
+            image.addEventListener(
+                "click",
+                function () {
 
-                                    const product =
-                                        image.closest(
-                                            ".product"
-                                        );
+                    const product =
+                        image.closest(
+                            ".product-card"
+                        );
 
+                    if (!product) {
+                        return;
+                    }
 
-                                    if (!product) {
-                                        return;
-                                    }
-
-
-                                    openProductModal(
-                                        product
-                                    );
-
-                                }
-                            );
-
-                        }
+                    openProductModal(
+                        product
                     );
 
+                }
+            );
 
-                /* =================================================
-                   MODAL CLOSE
-                ================================================= */
+        }
+    );
+
+
+/* =================================================
+   MODAL CLOSE
+================================================= */
 
                 closeProductModalButton.addEventListener(
                     "click",
