@@ -40,10 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================================
-       CLOSE CART BY OVERLAY
-       ========================================= */
-
     cartOverlay.addEventListener("click", function () {
 
         cart.classList.remove("active");
@@ -53,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       ADD PRODUCTS TO CART
+       ADD TO CART
        ========================================= */
 
     const addButtons =
@@ -74,11 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             const name =
-                product.querySelector("h3").textContent.trim();
+                product.querySelector("h3")
+                .textContent
+                .trim();
 
 
             const priceText =
-                product.querySelector(".price").textContent;
+                product.querySelector(".price")
+                .textContent;
 
 
             const price =
@@ -95,8 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 product.querySelector(".size").value;
 
 
-            /* CHECK OPTIONS */
-
             if (color === "" || size === "") {
 
                 alert(
@@ -107,8 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-
-            /* ADD PRODUCT */
 
             cartItemsArray.push({
 
@@ -125,8 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             updateCart();
 
-
-            /* OPEN CART */
 
             cart.classList.add("active");
 
@@ -148,73 +141,67 @@ document.addEventListener("DOMContentLoaded", function () {
         let total = 0;
 
 
-        cartItemsArray.forEach(function (item, index) {
+        cartItemsArray.forEach(
+            function (item, index) {
 
-            total += item.price;
-
-
-            const cartItem =
-                document.createElement("div");
+                total += item.price;
 
 
-            cartItem.className =
-                "cart-item";
+                const cartItem =
+                    document.createElement("div");
 
 
-            cartItem.innerHTML = `
-
-                <div class="cart-item-info">
-
-                    <h3>
-                        ${item.name}
-                    </h3>
-
-                    <p>
-                        COLOR: ${item.color}
-                    </p>
-
-                    <p>
-                        SIZE: ${item.size}
-                    </p>
-
-                    <strong>
-                        ${item.price} EGP
-                    </strong>
-
-                </div>
+                cartItem.className =
+                    "cart-item";
 
 
-                <button
-                    class="remove-item"
-                    data-index="${index}">
+                cartItem.innerHTML = `
 
-                    ×
+                    <div class="cart-item-info">
 
-                </button>
+                        <h3>
+                            ${item.name}
+                        </h3>
 
-            `;
+                        <p>
+                            COLOR: ${item.color}
+                        </p>
+
+                        <p>
+                            SIZE: ${item.size}
+                        </p>
+
+                        <strong>
+                            ${item.price} EGP
+                        </strong>
+
+                    </div>
 
 
-            cartItems.appendChild(cartItem);
+                    <button
+                        class="remove-item"
+                        data-index="${index}">
 
-        });
+                        ×
+
+                    </button>
+
+                `;
 
 
-        /* CART COUNT */
+                cartItems.appendChild(cartItem);
+
+            }
+        );
+
 
         cartCount.textContent =
             cartItemsArray.length;
 
 
-        /* CART TOTAL */
-
         cartTotal.textContent =
             total + " EGP";
 
-
-        /* =====================================
-           REMOVE ITEMS
-           ===================================== */
 
         const removeButtons =
             document.querySelectorAll(
@@ -250,6 +237,448 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+
+
+    /* =========================================
+       GOVERNORATES + AREAS
+       ========================================= */
+
+    const customerCity =
+        document.getElementById(
+            "customerCity"
+        );
+
+
+    const customerArea =
+        document.getElementById(
+            "customerArea"
+        );
+
+
+    const areasByGovernorate = {
+
+        "Cairo": [
+
+            "Nasr City",
+            "Heliopolis",
+            "Maadi",
+            "New Cairo",
+            "Fifth Settlement",
+            "Mokattam",
+            "Ain Shams",
+            "El Matareya",
+            "Shorouk",
+            "Badr",
+            "Downtown Cairo",
+            "Zamalek",
+            "Abbasia",
+            "Shubra",
+            "Misr El Kadima"
+
+        ],
+
+
+        "Giza": [
+
+            "Dokki",
+            "Mohandessin",
+            "Haram",
+            "Faisal",
+            "6th of October",
+            "Sheikh Zayed",
+            "Hadayek October",
+            "Imbaba",
+            "Agouza",
+            "Bulaq El Dakrour",
+            "Warraq",
+            "Kerdasa"
+
+        ],
+
+
+        "Alexandria": [
+
+            "Miami",
+            "Sidi Bishr",
+            "Smouha",
+            "Gleem",
+            "Stanley",
+            "Sporting",
+            "Roushdy",
+            "Mandara",
+            "Montaza",
+            "Agami",
+            "Borg El Arab",
+            "Moharam Bek",
+            "Kafr Abdo"
+
+        ],
+
+
+        "Qalyubia": [
+
+            "Banha",
+            "Shubra El Kheima",
+            "Qalyub",
+            "Obour City",
+            "Khanka",
+            "Khosous",
+            "Tukh",
+            "Qaha",
+            "Shebeen El Qanater"
+
+        ],
+
+
+        "Sharqia": [
+
+            "Zagazig",
+            "10th of Ramadan",
+            "Belbeis",
+            "Minya Al Qamh",
+            "Abu Kabir",
+            "Faqous",
+            "Hehia",
+            "Mashtoul El Souq"
+
+        ],
+
+
+        "Dakahlia": [
+
+            "Mansoura",
+            "Talkha",
+            "Mit Ghamr",
+            "Dekernes",
+            "Sherbin",
+            "Aga",
+            "Belqas",
+            "Manzala",
+            "Sinbillawin"
+
+        ],
+
+
+        "Gharbia": [
+
+            "Tanta",
+            "Mahalla El Kubra",
+            "Kafr El Zayat",
+            "Zefta",
+            "Santa",
+            "Basyoun",
+            "Qutour"
+
+        ],
+
+
+        "Monufia": [
+
+            "Shibin El Kom",
+            "Menouf",
+            "Ashmoun",
+            "Sadat City",
+            "Quesna",
+            "Tala",
+            "Berket El Sabe"
+
+        ],
+
+
+        "Beheira": [
+
+            "Damanhur",
+            "Kafr El Dawwar",
+            "Rashid",
+            "Edku",
+            "Abu Hummus",
+            "Hosh Essa",
+            "Kom Hamada",
+            "Mahmoudiyah"
+
+        ],
+
+
+        "Kafr El Sheikh": [
+
+            "Kafr El Sheikh",
+            "Desouk",
+            "Metoubes",
+            "Baltim",
+            "Fouh",
+            "Sidi Salem",
+            "Qallin"
+
+        ],
+
+
+        "Damietta": [
+
+            "Damietta",
+            "New Damietta",
+            "Ras El Bar",
+            "Faraskour",
+            "Kafr Saad",
+            "Zarqa"
+
+        ],
+
+
+        "Port Said": [
+
+            "Port Said",
+            "Port Fouad",
+            "Arab District",
+            "Zohour District",
+            "Dawahy District"
+
+        ],
+
+
+        "Ismailia": [
+
+            "Ismailia",
+            "Fayed",
+            "Qantara East",
+            "Qantara West",
+            "Tal El Kebir",
+            "Abu Suwir"
+
+        ],
+
+
+        "Suez": [
+
+            "Suez",
+            "Arbaeen",
+            "Ataqah",
+            "Faisal",
+            "Ganayen"
+
+        ],
+
+
+        "Fayoum": [
+
+            "Fayoum",
+            "Sinnuris",
+            "Tamiya",
+            "Ibshaway",
+            "Itsa",
+            "Yousef El Seddik"
+
+        ],
+
+
+        "Beni Suef": [
+
+            "Beni Suef",
+            "Al Wasta",
+            "Nasser",
+            "Biba",
+            "Samasta",
+            "Ihnasiya"
+
+        ],
+
+
+        "Minya": [
+
+            "Minya",
+            "Mallawi",
+            "Samalut",
+            "Maghagha",
+            "Beni Mazar",
+            "Abu Qurqas",
+            "Deir Mawas"
+
+        ],
+
+
+        "Asyut": [
+
+            "Asyut",
+            "Dairut",
+            "Manfalut",
+            "Qusiya",
+            "Abnub",
+            "Sahel Selim",
+            "El Badari"
+
+        ],
+
+
+        "Sohag": [
+
+            "Sohag",
+            "Akhmim",
+            "Girga",
+            "Tahta",
+            "Juhayna",
+            "Al Maragha",
+            "Al Monshah"
+
+        ],
+
+
+        "Qena": [
+
+            "Qena",
+            "Nag Hammadi",
+            "Qus",
+            "Dishna",
+            "Farshout",
+            "Abu Tesht"
+
+        ],
+
+
+        "Luxor": [
+
+            "Luxor",
+            "Esna",
+            "Armant",
+            "El Tod",
+            "Al Bayadiya"
+
+        ],
+
+
+        "Aswan": [
+
+            "Aswan",
+            "Kom Ombo",
+            "Edfu",
+            "Daraw",
+            "Abu Simbel"
+
+        ],
+
+
+        "Red Sea": [
+
+            "Hurghada",
+            "El Gouna",
+            "Safaga",
+            "Marsa Alam",
+            "Quseir"
+
+        ],
+
+
+        "New Valley": [
+
+            "Kharga",
+            "Dakhla",
+            "Farafra",
+            "Baris",
+            "Balat"
+
+        ],
+
+
+        "Matrouh": [
+
+            "Marsa Matrouh",
+            "El Alamein",
+            "Dabaa",
+            "Siwa",
+            "Salloum"
+
+        ],
+
+
+        "North Sinai": [
+
+            "Arish",
+            "Sheikh Zuweid",
+            "Rafah",
+            "Bir al-Abd"
+
+        ],
+
+
+        "South Sinai": [
+
+            "Sharm El Sheikh",
+            "Dahab",
+            "Nuweiba",
+            "Taba",
+            "Saint Catherine",
+            "El Tor"
+
+        ]
+
+    };
+
+
+    /* =========================================
+       CHANGE GOVERNORATE
+       ========================================= */
+
+    customerCity.addEventListener(
+        "change",
+        function () {
+
+            const selectedGovernorate =
+                customerCity.value;
+
+
+            customerArea.innerHTML = `
+                <option value="">
+                    SELECT AREA
+                </option>
+            `;
+
+
+            customerArea.disabled = true;
+
+
+            if (
+                selectedGovernorate === ""
+            ) {
+
+                return;
+
+            }
+
+
+            const areas =
+                areasByGovernorate[
+                    selectedGovernorate
+                ];
+
+
+            if (!areas) {
+                return;
+            }
+
+
+            areas.forEach(function (area) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value = area;
+
+                option.textContent = area;
+
+
+                customerArea.appendChild(
+                    option
+                );
+
+            });
+
+
+            customerArea.disabled = false;
+
+        }
+    );
 
 
 
@@ -302,10 +731,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function () {
 
-
-            /* CART EMPTY */
-
-            if (cartItemsArray.length === 0) {
+            if (
+                cartItemsArray.length === 0
+            ) {
 
                 alert(
                     "YOUR CART IS EMPTY"
@@ -316,13 +744,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* ITEMS COUNT */
-
             checkoutItemsCount.textContent =
                 cartItemsArray.length;
 
-
-            /* CALCULATE TOTAL */
 
             let total = 0;
 
@@ -340,8 +764,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 total + " EGP";
 
 
-            /* CLOSE CART */
-
             cart.classList.remove(
                 "active"
             );
@@ -351,8 +773,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 "active"
             );
 
-
-            /* OPEN CHECKOUT */
 
             checkoutOverlay.classList.add(
                 "active"
@@ -381,7 +801,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       CLOSE CHECKOUT BY CLICKING OUTSIDE
+       CLOSE CHECKOUT OUTSIDE
        ========================================= */
 
     checkoutOverlay.addEventListener(
@@ -415,8 +835,6 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
 
-            /* CUSTOMER DATA */
-
             const customerName =
                 document.getElementById(
                     "customerName"
@@ -429,16 +847,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 ).value.trim();
 
 
-            const customerCity =
-                document.getElementById(
-                    "customerCity"
-                ).value.trim();
+            const customerCityValue =
+                customerCity.value;
 
 
-            const customerArea =
-                document.getElementById(
-                    "customerArea"
-                ).value.trim();
+            const customerAreaValue =
+                customerArea.value;
 
 
             const customerAddress =
@@ -454,8 +868,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-            /* CALCULATE TOTAL */
-
             let total = 0;
 
 
@@ -469,36 +881,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-            /* =====================================
-               TEMPORARY SUCCESS MESSAGE
-               ===================================== */
+            /* TEMPORARY SUCCESS MESSAGE */
 
             alert(
                 "ORDER RECEIVED SUCCESSFULLY\n\n" +
-                "NAME: " + customerName + "\n" +
-                "PHONE: " + customerPhone + "\n" +
-                "TOTAL: " + total + " EGP"
+
+                "NAME: " +
+                customerName +
+                "\n" +
+
+                "PHONE: " +
+                customerPhone +
+                "\n" +
+
+                "GOVERNORATE: " +
+                customerCityValue +
+                "\n" +
+
+                "AREA: " +
+                customerAreaValue +
+                "\n" +
+
+                "TOTAL: " +
+                total +
+                " EGP"
             );
 
-
-            /* CLOSE CHECKOUT */
 
             checkoutOverlay.classList.remove(
                 "active"
             );
 
 
-            /* RESET FORM */
-
             checkoutForm.reset();
 
 
-            /*
-             * IMPORTANT:
-             * We are NOT clearing the cart yet.
-             * We will connect PLACE ORDER
-             * to WhatsApp in the next step.
-             */
+            customerArea.innerHTML = `
+                <option value="">
+                    SELECT AREA
+                </option>
+            `;
+
+
+            customerArea.disabled = true;
 
         }
     );
