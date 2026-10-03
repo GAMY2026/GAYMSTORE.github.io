@@ -21,6 +21,7 @@
         </div>
     </div>
 
+
     <header class="header">
 
         <div class="logo">
@@ -55,17 +56,27 @@
     </header>
 
 
+    <!-- ================================
+         HERO VIDEO
+    ================================= -->
+
     <section
         class="home"
         id="home">
 
-        <iframe
-            src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
-            title="GAMY STORE Luxury Fashion"
-            frameborder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+        <div class="hero-video">
+
+            <iframe
+                id="heroVideo"
+                src="https://www.youtube.com/embed/6HBxWrmI8OU?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0&iv_load_policy=3"
+                title="GAMY STORE Luxury Fashion"
+                frameborder="0"
+                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
 
         <div class="hero-overlay">
 
@@ -93,8 +104,40 @@
 
         </div>
 
+
+        <!-- VIDEO CONTROLS -->
+
+        <div class="video-controls">
+
+            <button
+                id="playButton"
+                class="video-control"
+                type="button">
+                ▶ PLAY
+            </button>
+
+            <button
+                id="soundButton"
+                class="video-control"
+                type="button">
+                🔇 SOUND OFF
+            </button>
+
+            <button
+                id="fullscreenButton"
+                class="video-control"
+                type="button">
+                ⛶ FULLSCREEN
+            </button>
+
+        </div>
+
     </section>
 
+
+    <!-- ================================
+         COLLECTIONS
+    ================================= -->
 
     <section
         class="section"
@@ -116,6 +159,7 @@
 
         </div>
 
+
         <div class="collection-grid">
 
             <a
@@ -127,8 +171,15 @@
                 </div>
 
                 <div class="collection-content">
-                    <h3>MEN</h3>
-                    <span>DISCOVER COLLECTION</span>
+
+                    <h3>
+                        MEN
+                    </h3>
+
+                    <span>
+                        DISCOVER COLLECTION
+                    </span>
+
                 </div>
 
             </a>
@@ -143,8 +194,15 @@
                 </div>
 
                 <div class="collection-content">
-                    <h3>WOMEN</h3>
-                    <span>DISCOVER COLLECTION</span>
+
+                    <h3>
+                        WOMEN
+                    </h3>
+
+                    <span>
+                        DISCOVER COLLECTION
+                    </span>
+
                 </div>
 
             </a>
@@ -159,8 +217,15 @@
                 </div>
 
                 <div class="collection-content">
-                    <h3>SNEAKERS</h3>
-                    <span>DISCOVER COLLECTION</span>
+
+                    <h3>
+                        SNEAKERS
+                    </h3>
+
+                    <span>
+                        DISCOVER COLLECTION
+                    </span>
+
                 </div>
 
             </a>
@@ -169,6 +234,10 @@
 
     </section>
 
+
+    <!-- ================================
+         MEN
+    ================================= -->
 
     <section
         class="section products-section"
@@ -193,6 +262,8 @@
 
         <div class="products-container">
 
+
+            <!-- MEN PRODUCT 1 -->
 
             <div class="product">
 
@@ -268,6 +339,8 @@
             </div>
 
 
+            <!-- MEN PRODUCT 2 -->
+
             <div class="product">
 
                 <div class="product-image product-shirt-dark">
@@ -341,6 +414,8 @@
 
             </div>
 
+
+            <!-- MEN PRODUCT 3 -->
 
             <div class="product">
 
@@ -420,6 +495,10 @@
     </section>
 
 
+    <!-- ================================
+         WOMEN
+    ================================= -->
+
     <section
         class="section products-section"
         id="women">
@@ -443,6 +522,8 @@
 
         <div class="products-container">
 
+
+            <!-- WOMEN PRODUCT 1 -->
 
             <div class="product">
 
@@ -518,6 +599,8 @@
             </div>
 
 
+            <!-- WOMEN PRODUCT 2 -->
+
             <div class="product">
 
                 <div class="product-image product-jacket">
@@ -591,6 +674,8 @@
 
             </div>
 
+
+            <!-- WOMEN PRODUCT 3 -->
 
             <div class="product">
 
@@ -670,6 +755,10 @@
     </section>
 
 
+    <!-- ================================
+         SNEAKERS
+    ================================= -->
+
     <section
         class="section products-section"
         id="shoes">
@@ -693,6 +782,8 @@
 
         <div class="products-container">
 
+
+            <!-- SNEAKER 1 -->
 
             <div class="product">
 
@@ -772,6 +863,8 @@
             </div>
 
 
+            <!-- SNEAKER 2 -->
+
             <div class="product">
 
                 <div class="product-image product-sneaker-white">
@@ -845,6 +938,8 @@
 
             </div>
 
+
+            <!-- SNEAKER 3 -->
 
             <div class="product">
 
@@ -928,6 +1023,10 @@
     </section>
 
 
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
     <section
         class="contact"
         id="contact">
@@ -961,6 +1060,10 @@
     </section>
 
 
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
     <footer>
 
         <div class="footer-logo">
@@ -975,11 +1078,19 @@
     </footer>
 
 
+    <!-- ================================
+         CART OVERLAY
+    ================================= -->
+
     <div
         class="cart-overlay"
         id="cartOverlay">
     </div>
 
+
+    <!-- ================================
+         CART
+    ================================= -->
 
     <aside
         class="cart"
@@ -1033,6 +1144,10 @@
     </aside>
 
 
+    <!-- ================================
+         CHECKOUT
+    ================================= -->
+
     <div
         class="checkout-overlay"
         id="checkoutOverlay">
@@ -1044,6 +1159,7 @@
                 class="close-checkout">
                 ×
             </button>
+
 
             <div class="checkout-title">
 
@@ -1280,6 +1396,7 @@
                 <div class="checkout-summary">
 
                     <div>
+
                         <span>
                             ITEMS
                         </span>
@@ -1287,9 +1404,12 @@
                         <strong id="checkoutItemsCount">
                             0
                         </strong>
+
                     </div>
 
+
                     <div>
+
                         <span>
                             TOTAL
                         </span>
@@ -1297,6 +1417,7 @@
                         <strong id="checkoutTotal">
                             0 EGP
                         </strong>
+
                     </div>
 
                 </div>
@@ -1316,6 +1437,10 @@
 
     </div>
 
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
 
     <script src="script.js"></script>
 
