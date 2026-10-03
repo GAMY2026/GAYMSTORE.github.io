@@ -1,6 +1,11 @@
+```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
     let cartItemsArray = [];
+
+    /* =========================================
+       CART ELEMENTS
+    ========================================= */
 
     const openCartButton =
         document.getElementById("openCart");
@@ -59,6 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkoutTotal =
         document.getElementById("checkoutTotal");
 
+
+    /* =========================================
+       AREAS BY GOVERNORATE
+    ========================================= */
 
     const areasByGovernorate = {
 
@@ -337,6 +346,10 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
+    /* =========================================
+       CART FUNCTIONS
+    ========================================= */
+
     function openCart() {
 
         cartElement.classList.add("active");
@@ -471,6 +484,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* =========================================
+       ADD PRODUCTS TO CART
+    ========================================= */
+
     document.querySelectorAll(
         ".add-cart"
     ).forEach(
@@ -562,6 +579,10 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =========================================
+       REMOVE CART ITEM
+    ========================================= */
+
     cartItemsContainer.addEventListener(
         "click",
         function (event) {
@@ -590,6 +611,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =========================================
+       CART BUTTONS
+    ========================================= */
 
     openCartButton.addEventListener(
         "click",
@@ -636,6 +661,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =========================================
+       GOVERNORATE / AREA
+    ========================================= */
 
     customerGovernorateSelect.addEventListener(
         "change",
@@ -700,6 +729,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =========================================
+       CHECKOUT / WHATSAPP
+    ========================================= */
 
     checkoutForm.addEventListener(
         "submit",
@@ -994,6 +1027,210 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =========================================
+       HERO YOUTUBE VIDEO CONTROLS
+    ========================================= */
+
+    const heroVideo =
+        document.getElementById("heroVideo");
+
+    const playButton =
+        document.getElementById("playButton");
+
+    const soundButton =
+        document.getElementById("soundButton");
+
+    const fullscreenButton =
+        document.getElementById("fullscreenButton");
+
+
+    let videoPlaying = true;
+
+    let videoMuted = true;
+
+
+    function sendYouTubeCommand(
+        command,
+        args = []
+    ) {
+
+        if (!heroVideo) {
+            return;
+        }
+
+
+        heroVideo.contentWindow.postMessage(
+
+            JSON.stringify({
+
+                event: "command",
+
+                func: command,
+
+                args: args
+
+            }),
+
+            "https://www.youtube.com"
+
+        );
+
+    }
+
+
+    /* PLAY / PAUSE */
+
+    if (playButton) {
+
+        playButton.addEventListener(
+            "click",
+            function () {
+
+                if (videoPlaying) {
+
+                    sendYouTubeCommand(
+                        "pauseVideo"
+                    );
+
+                    videoPlaying = false;
+
+                    playButton.textContent =
+                        "▶ PLAY";
+
+                } else {
+
+                    sendYouTubeCommand(
+                        "playVideo"
+                    );
+
+                    videoPlaying = true;
+
+                    playButton.textContent =
+                        "❚❚ PAUSE";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* SOUND ON / OFF */
+
+    if (soundButton) {
+
+        soundButton.addEventListener(
+            "click",
+            function () {
+
+                if (videoMuted) {
+
+                    sendYouTubeCommand(
+                        "unMute"
+                    );
+
+                    sendYouTubeCommand(
+                        "setVolume",
+                        [100]
+                    );
+
+                    videoMuted = false;
+
+                    soundButton.textContent =
+                        "🔊 SOUND ON";
+
+                } else {
+
+                    sendYouTubeCommand(
+                        "mute"
+                    );
+
+                    videoMuted = true;
+
+                    soundButton.textContent =
+                        "🔇 SOUND OFF";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* FULLSCREEN */
+
+    if (fullscreenButton) {
+
+        fullscreenButton.addEventListener(
+            "click",
+            function () {
+
+                if (!heroVideo) {
+                    return;
+                }
+
+
+                if (
+                    heroVideo.requestFullscreen
+                ) {
+
+                    heroVideo.requestFullscreen();
+
+                }
+
+                else if (
+                    heroVideo.webkitRequestFullscreen
+                ) {
+
+                    heroVideo.webkitRequestFullscreen();
+
+                }
+
+                else if (
+                    heroVideo.msRequestFullscreen
+                ) {
+
+                    heroVideo.msRequestFullscreen();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       START VIDEO MUTED
+    ========================================= */
+
+    if (heroVideo) {
+
+        setTimeout(
+            function () {
+
+                sendYouTubeCommand(
+                    "mute"
+                );
+
+                sendYouTubeCommand(
+                    "playVideo"
+                );
+
+            },
+            1000
+        );
+
+    }
+
+
+    /* =========================================
+       INITIAL CART
+    ========================================= */
+
     updateCart();
 
 });
+```
