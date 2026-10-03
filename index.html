@@ -4406,41 +4406,43 @@
 
 
 /* =================================================
-   PRODUCT IMAGE CLICK
+                   PRODUCT IMAGE CLICK
 ================================================= */
 
-document
-    .querySelectorAll(".product-image")
-    .forEach(
-        function (image) {
+                document
+                    .querySelectorAll(".product-image")
+                    .forEach(
+                        function (image) {
 
-            image.addEventListener(
-                "click",
-                function () {
+                            image.addEventListener(
+                                "click",
+                                function () {
 
-                    const product =
-                        image.closest(
-                            ".product-card"
-                        );
+                                    const product =
+                                        image.closest(
+                                            ".product"
+                                        );
 
-                    if (!product) {
-                        return;
-                    }
 
-                    openProductModal(
-                        product
+                                    if (!product) {
+                                        return;
+                                    }
+
+
+                                    openProductModal(
+                                        product
+                                    );
+
+                                }
+                            );
+
+                        }
                     );
 
-                }
-            );
 
-        }
-    );
-
-
-/* =================================================
-   MODAL CLOSE
-================================================= */
+                /* =================================================
+                   MODAL CLOSE
+                ================================================= */
 
                 closeProductModalButton.addEventListener(
                     "click",
