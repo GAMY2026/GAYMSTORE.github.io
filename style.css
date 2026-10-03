@@ -1,916 +1,716 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+<!DOCTYPE html>
 
-html {
-scroll-behavior: smooth;
-}
+<html lang="en">
 
-body {
-font-family: Arial, Tahoma, sans-serif;
-background: #f5f5f5;
-color: #111;
-}
-
-a {
-text-decoration: none;
-color: inherit;
-}
-
-button,
-select,
-input,
-textarea {
-font-family: inherit;
-}
-
-/* TOP BAR */
-
-.top-bar {
-height: 35px;
-background: #fff;
-color: #111;
-overflow: hidden;
-border-bottom: 1px solid #eee;
-}
-
-.top-bar-track {
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 22px;
-white-space: nowrap;
-font-size: 9px;
-letter-spacing: 2px;
-}
-
-/* HEADER */
-
-.header {
-height: 80px;
-padding: 0 40px;
-background: #080808;
-color: #fff;
-display: flex;
-align-items: center;
-justify-content: space-between;
-position: sticky;
-top: 0;
-z-index: 1000;
-border-bottom: 1px solid #222;
-}
-
-.logo {
-font-size: 21px;
-font-weight: bold;
-letter-spacing: 4px;
-white-space: nowrap;
-}
-
-.nav {
-display: flex;
-align-items: center;
-gap: 30px;
-}
-
-.nav a {
-color: #fff;
-font-size: 10px;
-letter-spacing: 2px;
-transition: 0.3s ease;
-}
-
-.nav a:hover {
-color: #b7a06b;
-}
-
-.cart-button {
-border: 1px solid #444;
-background: transparent;
-color: #fff;
-height: 42px;
-padding: 0 16px;
-display: flex;
-align-items: center;
-gap: 9px;
-cursor: pointer;
-font-size: 10px;
-letter-spacing: 1px;
-transition: 0.3s ease;
-}
-
-.cart-button:hover {
-background: #fff;
-color: #111;
-}
-
-.cart-icon {
-font-size: 15px;
-}
-
-.cart-count {
-min-width: 19px;
-height: 19px;
-border-radius: 50%;
-background: #fff;
-color: #111;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-font-size: 9px;
-}
-
-/* HERO */
-
-.home {
-height: 680px;
-position: relative;
-overflow: hidden;
-background: #000;
-}
-
-.home iframe {
-width: 100%;
-height: 100%;
-border: 0;
-pointer-events: none;
-transform: scale(1.02);
-}
-
-.hero-content {
-position: absolute;
-inset: 0;
-background: rgba(0, 0, 0, 0.32);
-color: #fff;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-}
-
-.hero-content p {
-font-size: 10px;
-letter-spacing: 5px;
-margin-bottom: 18px;
-}
-
-.hero-content h1 {
-font-size: clamp(45px, 8vw, 95px);
-letter-spacing: 10px;
-margin-bottom: 14px;
-}
-
-.hero-content span {
-font-size: 13px;
-letter-spacing: 3px;
-margin-bottom: 32px;
-}
-
-.hero-button {
-padding: 15px 28px;
-border: 1px solid #fff;
-font-size: 10px;
-letter-spacing: 2px;
-transition: 0.3s ease;
-}
-
-.hero-button:hover {
-background: #fff;
-color: #111;
-}
-
-/* SECTIONS */
-
-.collections,
-.products-section {
-padding: 100px 7%;
-}
-
-.section-title {
-text-align: center;
-margin-bottom: 55px;
-}
-
-.section-title > span {
-display: block;
-font-size: 9px;
-letter-spacing: 4px;
-color: #777;
-margin-bottom: 13px;
-}
-
-.section-title h2 {
-font-size: 34px;
-letter-spacing: 4px;
-font-weight: 500;
-}
-
-.section-title p {
-margin-top: 13px;
-color: #777;
-font-size: 12px;
-}
-
-/* COLLECTIONS */
-
-.collection-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 25px;
-}
-
-.collection-card {
-display: block;
-}
-
-.collection-image {
-height: 430px;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-padding-bottom: 35px;
-position: relative;
-overflow: hidden;
-background: #ddd;
-transition: 0.5s ease;
-}
-
-.collection-image::before {
-content: "";
-position: absolute;
-inset: 0;
-background: linear-gradient(
-to top,
-rgba(0, 0, 0, 0.55),
-rgba(0, 0, 0, 0.05)
-);
-}
-
-.collection-image span {
-position: relative;
-z-index: 2;
-color: #fff;
-font-size: 20px;
-letter-spacing: 5px;
-}
-
-.men-image {
-background: linear-gradient(135deg, #252525, #777);
-}
-
-.women-image {
-background: linear-gradient(135deg, #bdb0a2, #594d46);
-}
-
-.shoes-image {
-background: linear-gradient(135deg, #dedede, #333);
-}
-
-.collection-card:hover .collection-image {
-transform: translateY(-7px);
-}
-
-.collection-card h3 {
-text-align: center;
-padding-top: 18px;
-font-size: 12px;
-letter-spacing: 2px;
-}
-
-/* PRODUCTS */
-
-.products-section:nth-of-type(even) {
-background: #fff;
-}
-
-.products-container {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 28px;
-}
-
-.product {
-background: #fff;
-border: 1px solid #e8e8e8;
-transition: 0.35s ease;
-}
-
-.product:hover {
-transform: translateY(-6px);
-box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-}
-
-.product-image {
-height: 370px;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-}
-
-.product-image::before {
-content: "";
-width: 145px;
-height: 220px;
-border-radius: 15px 15px 30px 30px;
-background: rgba(255, 255, 255, 0.35);
-position: absolute;
-}
-
-.product-image span {
-position: relative;
-font-size: 12px;
-letter-spacing: 4px;
-color: rgba(255,255,255,0.75);
-}
-
-.shirt-blue {
-background: linear-gradient(135deg, #062b52, #49657e);
-}
-
-.shirt-gray {
-background: linear-gradient(135deg, #555, #aaa);
-}
-
-.pants {
-background: linear-gradient(135deg, #222, #555);
-}
-
-.blouse {
-background: linear-gradient(135deg, #b99d8c, #ead8cb);
-}
-
-.jacket {
-background: linear-gradient(135deg, #423a35, #9a887b);
-}
-
-.luxury-jacket {
-background: linear-gradient(135deg, #222, #806b55);
-}
-
-.sneaker-black {
-background: linear-gradient(135deg, #111, #555);
-}
-
-.sneaker-white {
-background: linear-gradient(135deg, #ddd, #fff);
-}
-
-.sneaker-classic {
-background: linear-gradient(135deg, #55463c, #b9a99e);
-}
-
-.sneaker-white span {
-color: #333;
-}
-
-.product-info {
-padding: 25px;
-}
-
-.product-info h3 {
-font-size: 14px;
-letter-spacing: 1px;
-margin-bottom: 9px;
-}
-
-.price {
-font-size: 13px;
-color: #555;
-margin-bottom: 20px;
-}
-
-.options {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 8px;
-margin-bottom: 15px;
-}
-
-.options select {
-height: 40px;
-border: 1px solid #ddd;
-background: #fff;
-padding: 0 10px;
-font-size: 9px;
-letter-spacing: 0.5px;
-outline: none;
-cursor: pointer;
-}
-
-.options select:focus {
-border-color: #111;
-}
-
-.add-cart {
-width: 100%;
-height: 45px;
-border: 1px solid #111;
-background: #111;
-color: #fff;
-font-size: 9px;
-letter-spacing: 2px;
-cursor: pointer;
-transition: 0.3s ease;
-}
-
-.add-cart:hover {
-background: #fff;
-color: #111;
-}
-
-/* CONTACT */
-
-.contact {
-background: #090909;
-color: #fff;
-padding: 110px 20px;
-text-align: center;
-}
-
-.contact-content > span {
-font-size: 9px;
-letter-spacing: 4px;
-color: #aaa;
-}
-
-.contact-content h2 {
-font-size: 42px;
-letter-spacing: 5px;
-font-weight: 400;
-margin: 20px 0;
-}
-
-.contact-content p {
-color: #aaa;
-font-size: 12px;
-margin-bottom: 30px;
-}
-
-.contact-button {
-display: inline-block;
-border: 1px solid #fff;
-padding: 15px 30px;
-font-size: 10px;
-letter-spacing: 2px;
-transition: 0.3s ease;
-}
-
-.contact-button:hover {
-background: #fff;
-color: #111;
-}
-
-/* FOOTER */
-
-footer {
-background: #050505;
-color: #fff;
-text-align: center;
-padding: 45px 20px;
-border-top: 1px solid #222;
-}
-
-.footer-logo {
-font-size: 18px;
-letter-spacing: 4px;
-margin-bottom: 12px;
-}
-
-footer p {
-color: #888;
-font-size: 10px;
-letter-spacing: 2px;
-margin-bottom: 18px;
-}
-
-footer small {
-color: #555;
-font-size: 9px;
-}
-
-/* CART */
-
-.cart-overlay {
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0.6);
-opacity: 0;
-visibility: hidden;
-z-index: 5000;
-transition: 0.3s ease;
-}
-
-.cart-overlay.active {
-opacity: 1;
-visibility: visible;
-}
-
-.cart {
-position: fixed;
-top: 0;
-right: -440px;
-width: min(440px, 100%);
-height: 100vh;
-background: #fff;
-z-index: 5001;
-display: flex;
-flex-direction: column;
-transition: 0.4s ease;
-box-shadow: -15px 0 50px rgba(0, 0, 0, 0.15);
-}
-
-.cart.active {
-right: 0;
-}
-
-.cart-header {
-height: 80px;
-padding: 0 25px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-border-bottom: 1px solid #eee;
-}
-
-.cart-header h2 {
-font-size: 13px;
-letter-spacing: 2px;
-}
-
-.cart-header button,
-.checkout-close {
-border: 0;
-background: transparent;
-font-size: 27px;
-cursor: pointer;
-color: #111;
-}
-
-.cart-items {
-flex: 1;
-overflow-y: auto;
-padding: 20px;
-}
-
-.empty-cart {
-text-align: center;
-color: #999;
-font-size: 11px;
-padding-top: 50px;
-letter-spacing: 1px;
-}
-
-.cart-item {
-padding: 18px 0;
-border-bottom: 1px solid #eee;
-}
-
-.cart-item-top {
-display: flex;
-justify-content: space-between;
-gap: 15px;
-}
-
-.cart-item h4 {
-font-size: 12px;
-margin-bottom: 7px;
-}
-
-.cart-item-details {
-color: #777;
-font-size: 10px;
-line-height: 1.8;
-}
-
-.cart-item-price {
-font-size: 11px;
-white-space: nowrap;
-}
-
-.remove-item {
-border: 0;
-background: transparent;
-color: #999;
-cursor: pointer;
-font-size: 9px;
-margin-top: 10px;
-letter-spacing: 1px;
-}
-
-.remove-item:hover {
-color: #111;
-}
-
-.cart-footer {
-padding: 25px;
-border-top: 1px solid #eee;
-}
-
-.cart-total-row {
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin-bottom: 20px;
-font-size: 11px;
-letter-spacing: 1px;
-}
-
-.cart-total-row strong {
-font-size: 15px;
-}
-
-.checkout-button {
-width: 100%;
-height: 50px;
-background: #111;
-color: #fff;
-border: 1px solid #111;
-cursor: pointer;
-font-size: 10px;
-letter-spacing: 2px;
-transition: 0.3s ease;
-}
-
-.checkout-button:hover {
-background: #fff;
-color: #111;
-}
-
-/* CHECKOUT */
-
-.checkout-overlay {
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0.78);
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 20px;
-opacity: 0;
-visibility: hidden;
-z-index: 10000;
-transition: 0.35s ease;
-}
-
-.checkout-overlay.active {
-opacity: 1;
-visibility: visible;
-}
-
-.checkout-modal {
-position: relative;
-width: min(620px, 100%);
-max-height: 92vh;
-overflow-y: auto;
-background: #fff;
-color: #111;
-padding: 40px;
-box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-transform: translateY(25px);
-transition: 0.35s ease;
-}
-
-.checkout-overlay.active .checkout-modal {
-transform: translateY(0);
-}
-
-.checkout-close {
-position: absolute;
-top: 15px;
-right: 20px;
-}
-
-.checkout-header {
-text-align: center;
-margin-bottom: 30px;
-}
-
-.checkout-header > span {
-font-size: 8px;
-letter-spacing: 4px;
-color: #777;
-}
-
-.checkout-header h2 {
-font-size: 25px;
-letter-spacing: 4px;
-font-weight: 500;
-margin: 10px 0;
-}
-
-.checkout-header p {
-color: #777;
-font-size: 11px;
-}
-
-.checkout-field {
-margin-bottom: 17px;
-}
-
-.checkout-field label {
-display: block;
-font-size: 9px;
-letter-spacing: 1px;
-margin-bottom: 8px;
-}
-
-.checkout-field input,
-.checkout-field textarea,
-.checkout-field select {
-width: 100%;
-border: 1px solid #ddd;
-background: #fff;
-color: #111;
-padding: 13px 14px;
-font-size: 11px;
-outline: none;
-transition: 0.3s ease;
-}
-
-.checkout-field select {
-height: 43px;
-cursor: pointer;
-}
-
-.checkout-field input:focus,
-.checkout-field textarea:focus,
-.checkout-field select:focus {
-border-color: #111;
-}
-
-.checkout-field textarea {
-resize: vertical;
-}
-
-.checkout-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 15px;
-}
-
-.checkout-summary {
-background: #f6f6f6;
-padding: 18px;
-display: flex;
-justify-content: space-between;
-margin: 22px 0;
-}
-
-.checkout-summary div {
-display: flex;
-flex-direction: column;
-gap: 7px;
-}
-
-.checkout-summary span {
-font-size: 8px;
-color: #777;
-letter-spacing: 1px;
-}
-
-.checkout-summary strong {
-font-size: 13px;
-}
-
-.place-order-button {
-width: 100%;
-height: 50px;
-border: 1px solid #111;
-background: #111;
-color: #fff;
-cursor: pointer;
-font-size: 10px;
-letter-spacing: 2px;
-transition: 0.3s ease;
-}
-
-.place-order-button:hover {
-background: #fff;
-color: #111;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-.header {
-    padding: 0 20px;
-}
+<title>GAMY STORE | Luxury Fashion</title>
 
-.nav {
-    gap: 13px;
-}
-
-.nav a {
-    font-size: 8px;
-}
-
-.collection-grid,
-.products-container {
-    grid-template-columns: repeat(2, 1fr);
-}
+<link rel="stylesheet" href="style.css">
 ```
 
-}
+</head>
 
-@media (max-width: 650px) {
+<body>
 
 ```
-.top-bar-track {
-    justify-content: flex-start;
-    padding-left: 20px;
-    width: max-content;
-    animation: ticker 20s linear infinite;
-}
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="top-bar-track">
+        <span>FASHION</span>
+        <span>•</span>
+        <span>GAMY STORE</span>
+        <span>•</span>
+        <span>ORDER NOW</span>
+        <span>•</span>
+        <span>NEW COLLECTION</span>
+        <span>•</span>
+        <span>LUXURY CLOTHING</span>
+        <span>•</span>
+        <span>DISCOVER MORE</span>
+    </div>
+</div>
 
-@keyframes ticker {
-    from {
-        transform: translateX(0);
-    }
+<!-- HEADER -->
+<header class="header">
 
-    to {
-        transform: translateX(-50%);
-    }
-}
+    <div class="logo">
+        GAMY STORE
+    </div>
 
-.header {
-    height: auto;
-    min-height: 75px;
-    padding: 15px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+    <nav class="nav">
+        <a href="#home">HOME</a>
+        <a href="#categories">COLLECTIONS</a>
+        <a href="#men">MEN</a>
+        <a href="#women">WOMEN</a>
+        <a href="#shoes">SNEAKERS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
 
-.logo {
-    font-size: 17px;
-}
+    <button class="cart-button" id="openCart">
+        <span class="cart-icon">🛍</span>
+        <span>CART</span>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
 
-.nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
+</header>
 
-.cart-button {
-    padding: 0 10px;
-}
 
-.home {
-    height: 560px;
-}
+<!-- HOME -->
+<section class="home" id="home">
 
-.hero-content h1 {
-    font-size: 43px;
-    letter-spacing: 5px;
-}
+    <iframe
+        src="https://www.youtube.com/embed/6HBxWrmI8OU?autoplay=1&mute=1&loop=1&playlist=6HBxWrmI8OU&controls=0&rel=0&modestbranding=1&playsinline=1&cc_load_policy=0"
+        title="GAMY STORE Luxury Fashion"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
 
-.hero-content span {
-    font-size: 10px;
-}
+    <div class="hero-content">
+        <p>NEW COLLECTION</p>
+        <h1>GAMY STORE</h1>
+        <span>Luxury Fashion For Every Style</span>
 
-.collections,
-.products-section {
-    padding: 70px 20px;
-}
+        <a href="#categories" class="hero-button">
+            DISCOVER COLLECTION
+        </a>
+    </div>
 
-.section-title h2 {
-    font-size: 25px;
-}
+</section>
 
-.collection-grid,
-.products-container {
-    grid-template-columns: 1fr;
-}
 
-.collection-image {
-    height: 350px;
-}
+<!-- COLLECTIONS -->
+<section class="collections" id="categories">
 
-.product-image {
-    height: 350px;
-}
+    <div class="section-title">
+        <span>EXPLORE</span>
+        <h2>OUR COLLECTIONS</h2>
+        <p>Discover the latest styles from GAMY STORE</p>
+    </div>
 
-.checkout-modal {
-    padding: 30px 20px;
-}
+    <div class="collection-grid">
 
-.checkout-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-}
+        <a href="#men" class="collection-card">
+            <div class="collection-image men-image">
+                <span>MEN</span>
+            </div>
+            <h3>MEN COLLECTION</h3>
+        </a>
 
-.contact-content h2 {
-    font-size: 30px;
-}
+        <a href="#women" class="collection-card">
+            <div class="collection-image women-image">
+                <span>WOMEN</span>
+            </div>
+            <h3>WOMEN COLLECTION</h3>
+        </a>
+
+        <a href="#shoes" class="collection-card">
+            <div class="collection-image shoes-image">
+                <span>SNEAKERS</span>
+            </div>
+            <h3>SNEAKERS COLLECTION</h3>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MEN -->
+<section class="products-section" id="men">
+
+    <div class="section-title">
+        <span>GAMY MEN</span>
+        <h2>MEN COLLECTION</h2>
+        <p>Premium pieces designed for your everyday style</p>
+    </div>
+
+    <div class="products-container">
+
+        <div class="product">
+
+            <div class="product-image shirt-blue">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium T-Shirt</h3>
+                <p class="price">450 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Navy">Navy</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image shirt-gray">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Shirt</h3>
+                <p class="price">650 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Gray">Gray</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image pants">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Pants</h3>
+                <p class="price">800 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                        <option value="36">36</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WOMEN -->
+<section class="products-section" id="women">
+
+    <div class="section-title">
+        <span>GAMY WOMEN</span>
+        <h2>WOMEN COLLECTION</h2>
+        <p>Elegant styles made for modern women</p>
+    </div>
+
+    <div class="products-container">
+
+        <div class="product">
+
+            <div class="product-image blouse">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Premium Blouse</h3>
+                <p class="price">550 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image jacket">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Signature Jacket</h3>
+                <p class="price">950 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Beige">Beige</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image luxury-jacket">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Luxury Jacket</h3>
+                <p class="price">1200 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Camel">Camel</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SNEAKERS -->
+<section class="products-section" id="shoes">
+
+    <div class="section-title">
+        <span>GAMY SHOES</span>
+        <h2>SNEAKERS COLLECTION</h2>
+        <p>Complete your look with premium sneakers</p>
+    </div>
+
+    <div class="products-container">
+
+        <div class="product">
+
+            <div class="product-image sneaker-black">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Sport Sneaker</h3>
+                <p class="price">1100 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Gray">Gray</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image sneaker-white">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>White Sneaker</h3>
+                <p class="price">1250 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image sneaker-classic">
+                <span>GAMY</span>
+            </div>
+
+            <div class="product-info">
+                <h3>Classic Sneaker</h3>
+                <p class="price">1350 EGP</p>
+
+                <div class="options">
+
+                    <select class="color">
+                        <option value="">SELECT COLOR</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="Brown">Brown</option>
+                    </select>
+
+                    <select class="size">
+                        <option value="">SELECT SIZE</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+
+                </div>
+
+                <button class="add-cart">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="contact-content">
+
+        <span>CONTACT GAMY STORE</span>
+
+        <h2>READY TO ORDER?</h2>
+
+        <p>
+            For inquiries and orders, contact us directly.
+        </p>
+
+        <a
+            href="https://wa.me/201105178891"
+            target="_blank"
+            class="contact-button">
+            WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        GAMY STORE
+    </div>
+
+    <p>
+        Luxury Fashion • Premium Style
+    </p>
+
+    <small>
+        © 2026 GAMY STORE. All Rights Reserved.
+    </small>
+
+</footer>
+
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>YOUR CART</h2>
+
+        <button id="closeCart">
+            ×
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="empty-cart">
+            YOUR CART IS EMPTY
+        </p>
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total-row">
+            <span>TOTAL</span>
+            <strong id="cartTotal">0 EGP</strong>
+        </div>
+
+        <button class="checkout-button" id="checkoutButton">
+            CHECKOUT
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- CHECKOUT -->
+<div class="checkout-overlay" id="checkoutOverlay">
+
+    <div class="checkout-modal">
+
+        <button class="checkout-close" id="closeCheckout">
+            ×
+        </button>
+
+        <div class="checkout-header">
+            <span>GAMY STORE</span>
+            <h2>CHECKOUT</h2>
+            <p>Complete your information to place your order.</p>
+        </div>
+
+        <form id="checkoutForm">
+
+            <div class="checkout-field">
+                <label>FULL NAME</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required>
+            </div>
+
+            <div class="checkout-field">
+                <label>PHONE NUMBER</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="01XXXXXXXXX"
+                    required>
+            </div>
+
+            <div class="checkout-row">
+
+                <div class="checkout-field">
+                    <label>GOVERNORATE</label>
+
+                    <select id="customerCity" required>
+                        <option value="">SELECT GOVERNORATE</option>
+                        <option value="Cairo">Cairo</option>
+                        <option value="Giza">Giza</option>
+                        <option value="Alexandria">Alexandria</option>
+                        <option value="Qalyubia">Qalyubia</option>
+                        <option value="Sharqia">Sharqia</option>
+                        <option value="Dakahlia">Dakahlia</option>
+                        <option value="Gharbia">Gharbia</option>
+                        <option value="Monufia">Monufia</option>
+                        <option value="Beheira">Beheira</option>
+                        <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                        <option value="Damietta">Damietta</option>
+                        <option value="Port Said">Port Said</option>
+                        <option value="Ismailia">Ismailia</option>
+                        <option value="Suez">Suez</option>
+                        <option value="Fayoum">Fayoum</option>
+                        <option value="Beni Suef">Beni Suef</option>
+                        <option value="Minya">Minya</option>
+                        <option value="Asyut">Asyut</option>
+                        <option value="Sohag">Sohag</option>
+                        <option value="Qena">Qena</option>
+                        <option value="Luxor">Luxor</option>
+                        <option value="Aswan">Aswan</option>
+                        <option value="Red Sea">Red Sea</option>
+                        <option value="New Valley">New Valley</option>
+                        <option value="Matrouh">Matrouh</option>
+                        <option value="North Sinai">North Sinai</option>
+                        <option value="South Sinai">South Sinai</option>
+                    </select>
+
+                </div>
+
+                <div class="checkout-field">
+                    <label>AREA</label>
+
+                    <select id="customerArea" required disabled>
+                        <option value="">SELECT AREA</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="checkout-field">
+                <label>FULL ADDRESS</label>
+
+                <textarea
+                    id="customerAddress"
+                    rows="3"
+                    placeholder="Street, building, apartment..."
+                    required></textarea>
+            </div>
+
+            <div class="checkout-field">
+                <label>ORDER NOTES</label>
+
+                <textarea
+                    id="orderNotes"
+                    rows="3"
+                    placeholder="Optional notes..."></textarea>
+            </div>
+
+            <div class="checkout-summary">
+
+                <div>
+                    <span>ITEMS</span>
+                    <strong id="checkoutItemsCount">0</strong>
+                </div>
+
+                <div>
+                    <span>TOTAL</span>
+                    <strong id="checkoutTotal">0 EGP</strong>
+                </div>
+
+            </div>
+
+            <button type="submit" class="place-order-button">
+                PLACE ORDER
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
 ```
 
-}
+</body>
+
+</html>
