@@ -3,26 +3,59 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 let cartItemsArray = [];
 
-const cartButton = document.getElementById("openCart");
-const closeButton = document.getElementById("closeCart");
-const cartElement = document.getElementById("cart");
-const overlay = document.getElementById("cartOverlay");
 
-const cartItems = document.getElementById("cartItems");
-const cartCount = document.getElementById("cartCount");
-const cartTotal = document.getElementById("cartTotal");
+/* =========================
+   CART ELEMENTS
+========================== */
 
-const checkoutButton = document.getElementById("checkoutButton");
-const checkoutOverlay = document.getElementById("checkoutOverlay");
-const closeCheckout = document.getElementById("closeCheckout");
+const cartButton =
+    document.getElementById("openCart");
 
-const checkoutForm = document.getElementById("checkoutForm");
+const closeButton =
+    document.getElementById("closeCart");
+
+const cartElement =
+    document.getElementById("cart");
+
+const overlay =
+    document.getElementById("cartOverlay");
+
+const cartItems =
+    document.getElementById("cartItems");
+
+const cartCount =
+    document.getElementById("cartCount");
+
+const cartTotal =
+    document.getElementById("cartTotal");
+
+
+/* =========================
+   CHECKOUT ELEMENTS
+========================== */
+
+const checkoutButton =
+    document.getElementById("checkoutButton");
+
+const checkoutOverlay =
+    document.getElementById("checkoutOverlay");
+
+const closeCheckout =
+    document.getElementById("closeCheckout");
+
+const checkoutForm =
+    document.getElementById("checkoutForm");
 
 const checkoutItemsCount =
     document.getElementById("checkoutItemsCount");
 
 const checkoutTotal =
     document.getElementById("checkoutTotal");
+
+
+/* =========================
+   LOCATION ELEMENTS
+========================== */
 
 const customerCity =
     document.getElementById("customerCity");
@@ -32,7 +65,136 @@ const customerArea =
 
 
 /* =========================
-   GOVERNORATES + AREAS
+   HERO VIDEO
+========================== */
+
+const heroVideo =
+    document.getElementById("heroVideo");
+
+const playButton =
+    document.getElementById("playButton");
+
+const soundButton =
+    document.getElementById("soundButton");
+
+const fullscreenButton =
+    document.getElementById("fullscreenButton");
+
+
+let videoPlaying = true;
+let videoMuted = true;
+
+
+function sendYouTubeCommand(command) {
+
+    if (!heroVideo) return;
+
+    heroVideo.contentWindow.postMessage(
+        JSON.stringify({
+            event: "command",
+            func: command,
+            args: []
+        }),
+        "*"
+    );
+
+}
+
+
+/* PLAY / PAUSE */
+
+if (playButton) {
+
+    playButton.addEventListener("click", function () {
+
+        if (videoPlaying) {
+
+            sendYouTubeCommand("pauseVideo");
+
+            playButton.textContent = "▶ PLAY";
+
+            videoPlaying = false;
+
+        } else {
+
+            sendYouTubeCommand("playVideo");
+
+            playButton.textContent = "❚❚ PAUSE";
+
+            videoPlaying = true;
+
+        }
+
+    });
+
+}
+
+
+/* SOUND */
+
+if (soundButton) {
+
+    soundButton.addEventListener("click", function () {
+
+        if (videoMuted) {
+
+            sendYouTubeCommand("unMute");
+
+            soundButton.textContent =
+                "🔊 SOUND ON";
+
+            videoMuted = false;
+
+        } else {
+
+            sendYouTubeCommand("mute");
+
+            soundButton.textContent =
+                "🔇 SOUND OFF";
+
+            videoMuted = true;
+
+        }
+
+    });
+
+}
+
+
+/* FULLSCREEN */
+
+if (fullscreenButton) {
+
+    fullscreenButton.addEventListener("click", function () {
+
+        const hero =
+            document.querySelector(".home");
+
+        if (!document.fullscreenElement) {
+
+            if (hero.requestFullscreen) {
+
+                hero.requestFullscreen();
+
+            }
+
+        } else {
+
+            if (document.exitFullscreen) {
+
+                document.exitFullscreen();
+
+            }
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   GOVERNORATES
 ========================== */
 
 const areasByGovernorate = {
@@ -319,6 +481,7 @@ const areasByGovernorate = {
 cartButton.addEventListener("click", function () {
 
     cartElement.classList.add("active");
+
     overlay.classList.add("active");
 
 });
@@ -331,73 +494,98 @@ cartButton.addEventListener("click", function () {
 function closeCart() {
 
     cartElement.classList.remove("active");
+
     overlay.classList.remove("active");
 
 }
 
-closeButton.addEventListener("click", closeCart);
-overlay.addEventListener("click", closeCart);
+
+closeButton.addEventListener(
+    "click",
+    closeCart
+);
+
+overlay.addEventListener(
+    "click",
+    closeCart
+);
 
 
 /* =========================
    ADD TO CART
 ========================== */
 
-const addButtons =
-    document.querySelectorAll(".add-cart");
+document
+    .querySelectorAll(".add-cart")
+    .forEach(function (button) {
 
-addButtons.forEach(function (button) {
+        button.addEventListener(
+            "click",
+            function () {
 
-    button.addEventListener("click", function () {
+                const product =
+                    button.closest(".product");
 
-        const product = button.closest(".product");
+                const name =
+                    product.querySelector("h3").textContent;
 
-        const productName =
-            product.querySelector("h3").textContent;
+                const priceText =
+                    product.querySelector(".price").textContent;
 
-        const priceText =
-            product.querySelector(".price").textContent;
+                const price =
+                    parseInt(
+                        priceText.replace(/[^\d]/g, ""),
+                        10
+                    );
 
-        const price =
-            parseInt(priceText.replace(/[^\d]/g, ""), 10);
+                const color =
+                    product.querySelector(".color").value;
 
-        const colorSelect =
-            product.querySelector(".color");
-
-        const sizeSelect =
-            product.querySelector(".size");
-
-        const color = colorSelect.value;
-        const size = sizeSelect.value;
-
-
-        if (!color) {
-            alert("Please select a color.");
-            return;
-        }
-
-        if (!size) {
-            alert("Please select a size.");
-            return;
-        }
+                const size =
+                    product.querySelector(".size").value;
 
 
-        cartItemsArray.push({
-            name: productName,
-            price: price,
-            color: color,
-            size: size
-        });
+                if (!color) {
+
+                    alert("Please select a color.");
+
+                    return;
+
+                }
 
 
-        updateCart();
+                if (!size) {
 
-        cartElement.classList.add("active");
-        overlay.classList.add("active");
+                    alert("Please select a size.");
+
+                    return;
+
+                }
+
+
+                cartItemsArray.push({
+
+                    name: name,
+
+                    price: price,
+
+                    color: color,
+
+                    size: size
+
+                });
+
+
+                updateCart();
+
+                cartElement.classList.add("active");
+
+                overlay.classList.add("active");
+
+            }
+        );
 
     });
-
-});
 
 
 /* =========================
@@ -408,6 +596,7 @@ function updateCart() {
 
     cartItems.innerHTML = "";
 
+
     if (cartItemsArray.length === 0) {
 
         cartItems.innerHTML =
@@ -415,61 +604,86 @@ function updateCart() {
 
     } else {
 
-        cartItemsArray.forEach(function (item, index) {
+        cartItemsArray.forEach(
+            function (item, index) {
 
-            const itemElement =
-                document.createElement("div");
+                const itemElement =
+                    document.createElement("div");
 
-            itemElement.className = "cart-item";
+                itemElement.className =
+                    "cart-item";
 
-            itemElement.innerHTML = `
 
-                <div class="cart-item-top">
+                itemElement.innerHTML = `
 
-                    <div>
+                    <div class="cart-item-top">
 
-                        <h4>${item.name}</h4>
+                        <div>
 
-                        <div class="cart-item-details">
-                            COLOR: ${item.color}<br>
-                            SIZE: ${item.size}
+                            <h4>
+                                ${item.name}
+                            </h4>
+
+                            <div class="cart-item-details">
+
+                                COLOR: ${item.color}
+                                <br>
+
+                                SIZE: ${item.size}
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cart-item-price">
+
+                            ${item.price} EGP
+
                         </div>
 
                     </div>
 
-                    <div class="cart-item-price">
-                        ${item.price} EGP
-                    </div>
 
-                </div>
+                    <button
+                        class="remove-item"
+                        data-index="${index}">
+                        REMOVE
+                    </button>
 
-                <button
-                    class="remove-item"
-                    data-index="${index}">
-                    REMOVE
-                </button>
+                `;
 
-            `;
 
-            cartItems.appendChild(itemElement);
+                cartItems.appendChild(
+                    itemElement
+                );
 
-        });
+            }
+        );
 
 
         document
             .querySelectorAll(".remove-item")
             .forEach(function (button) {
 
-                button.addEventListener("click", function () {
+                button.addEventListener(
+                    "click",
+                    function () {
 
-                    const index =
-                        Number(button.dataset.index);
+                        const index =
+                            Number(
+                                button.dataset.index
+                            );
 
-                    cartItemsArray.splice(index, 1);
+                        cartItemsArray.splice(
+                            index,
+                            1
+                        );
 
-                    updateCart();
+                        updateCart();
 
-                });
+                    }
+                );
 
             });
 
@@ -477,11 +691,14 @@ function updateCart() {
 
 
     const total =
-        cartItemsArray.reduce(function (sum, item) {
+        cartItemsArray.reduce(
+            function (sum, item) {
 
-            return sum + item.price;
+                return sum + item.price;
 
-        }, 0);
+            },
+            0
+        );
 
 
     cartCount.textContent =
@@ -503,161 +720,196 @@ function updateCart() {
    GOVERNORATE CHANGE
 ========================== */
 
-customerCity.addEventListener("change", function () {
+customerCity.addEventListener(
+    "change",
+    function () {
 
-    const selectedGovernorate =
-        customerCity.value;
+        const governorate =
+            customerCity.value;
 
-    customerArea.innerHTML =
-        '<option value="">SELECT AREA</option>';
+        customerArea.innerHTML =
+            '<option value="">SELECT AREA</option>';
 
-    customerArea.disabled = true;
+        customerArea.disabled = true;
 
 
-    if (
-        selectedGovernorate &&
-        areasByGovernorate[selectedGovernorate]
-    ) {
+        if (
+            governorate &&
+            areasByGovernorate[governorate]
+        ) {
 
-        areasByGovernorate[selectedGovernorate]
-            .forEach(function (area) {
+            areasByGovernorate[
+                governorate
+            ].forEach(function (area) {
 
                 const option =
                     document.createElement("option");
 
                 option.value = area;
+
                 option.textContent = area;
 
-                customerArea.appendChild(option);
+                customerArea.appendChild(
+                    option
+                );
 
             });
 
-        customerArea.disabled = false;
+            customerArea.disabled = false;
+
+        }
 
     }
-
-});
+);
 
 
 /* =========================
    OPEN CHECKOUT
 ========================== */
 
-checkoutButton.addEventListener("click", function () {
+checkoutButton.addEventListener(
+    "click",
+    function () {
 
-    if (cartItemsArray.length === 0) {
+        if (cartItemsArray.length === 0) {
 
-        alert("YOUR CART IS EMPTY.");
-        return;
+            alert("YOUR CART IS EMPTY.");
+
+            return;
+
+        }
+
+        checkoutOverlay.classList.add(
+            "active"
+        );
 
     }
-
-    checkoutItemsCount.textContent =
-        cartItemsArray.length;
-
-    const total =
-        cartItemsArray.reduce(function (sum, item) {
-            return sum + item.price;
-        }, 0);
-
-    checkoutTotal.textContent =
-        total + " EGP";
-
-    checkoutOverlay.classList.add("active");
-
-});
+);
 
 
 /* =========================
    CLOSE CHECKOUT
 ========================== */
 
-closeCheckout.addEventListener("click", function () {
+closeCheckout.addEventListener(
+    "click",
+    function () {
 
-    checkoutOverlay.classList.remove("active");
-
-});
-
-
-checkoutOverlay.addEventListener("click", function (event) {
-
-    if (event.target === checkoutOverlay) {
-
-        checkoutOverlay.classList.remove("active");
+        checkoutOverlay.classList.remove(
+            "active"
+        );
 
     }
+);
 
-});
+
+checkoutOverlay.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target === checkoutOverlay
+        ) {
+
+            checkoutOverlay.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
 
 
 /* =========================
-   CHECKOUT
+   CHECKOUT / WHATSAPP
 ========================== */
 
-checkoutForm.addEventListener("submit", function (event) {
+checkoutForm.addEventListener(
+    "submit",
+    function (event) {
 
-    event.preventDefault();
-
-
-    if (cartItemsArray.length === 0) {
-
-        alert("YOUR CART IS EMPTY.");
-        return;
-
-    }
+        event.preventDefault();
 
 
-    const customerName =
-        document.getElementById("customerName").value.trim();
+        if (cartItemsArray.length === 0) {
 
-    const customerPhone =
-        document.getElementById("customerPhone").value.trim();
+            alert("YOUR CART IS EMPTY.");
 
-    const governorate =
-        document.getElementById("customerCity").value;
+            return;
 
-    const area =
-        document.getElementById("customerArea").value;
-
-    const address =
-        document.getElementById("customerAddress").value.trim();
-
-    const notes =
-        document.getElementById("orderNotes").value.trim();
+        }
 
 
-    const total =
-        cartItemsArray.reduce(function (sum, item) {
+        const customerName =
+            document
+                .getElementById("customerName")
+                .value
+                .trim();
 
-            return sum + item.price;
+        const customerPhone =
+            document
+                .getElementById("customerPhone")
+                .value
+                .trim();
 
-        }, 0);
+        const governorate =
+            customerCity.value;
 
+        const area =
+            customerArea.value;
 
-    const orderNumber =
-        "GAMY-" + String(Date.now()).slice(-6);
+        const address =
+            document
+                .getElementById("customerAddress")
+                .value
+                .trim();
 
-
-    let productsText = "";
-
-
-    cartItemsArray.forEach(function (item, index) {
-
-        productsText +=
-            `${index + 1}. ${item.name}\n` +
-            `Color: ${item.color}\n` +
-            `Size: ${item.size}\n` +
-            `Price: ${item.price} EGP\n\n`;
-
-    });
-
-
-    const whatsappNumber =
-        "201105178891";
+        const notes =
+            document
+                .getElementById("orderNotes")
+                .value
+                .trim();
 
 
-    const confirmMessage =
-        `GAMY STORE - ORDER CONFIRMATION
+        const total =
+            cartItemsArray.reduce(
+                function (sum, item) {
+
+                    return sum + item.price;
+
+                },
+                0
+            );
+
+
+        const orderNumber =
+            "GAMY-" +
+            String(Date.now()).slice(-6);
+
+
+        let productsText = "";
+
+
+        cartItemsArray.forEach(
+            function (item, index) {
+
+                productsText +=
+                    `${index + 1}. ${item.name}\n` +
+                    `Color: ${item.color}\n` +
+                    `Size: ${item.size}\n` +
+                    `Price: ${item.price} EGP\n\n`;
+
+            }
+        );
+
+
+        const whatsappNumber =
+            "201105178891";
+
+
+        const confirmMessage =
+            `GAMY STORE - ORDER CONFIRMATION
 ```
 
 Order Number: ${orderNumber}
@@ -671,10 +923,10 @@ Area: ${area}
 Address:
 ${address}
 
-Order:
+ORDER:
 ${productsText}
 
-Total: ${total} EGP
+TOTAL: ${total} EGP
 
 Notes:
 ${notes || "None"}
@@ -682,8 +934,8 @@ ${notes || "None"}
 CUSTOMER CONFIRMS THIS ORDER.`;
 
 ```
-    const rejectMessage =
-        `GAMY STORE - ORDER REJECTION
+        const rejectMessage =
+            `GAMY STORE - ORDER REJECTION
 ```
 
 Order Number: ${orderNumber}
@@ -694,143 +946,166 @@ Phone: ${customerPhone}
 CUSTOMER REJECTS THIS ORDER.`;
 
 ```
-    const confirmURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(confirmMessage);
+        const confirmURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(
+                confirmMessage
+            );
 
 
-    const rejectURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(rejectMessage);
+        const rejectURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(
+                rejectMessage
+            );
 
 
-    const resultOverlay =
-        document.createElement("div");
-
-    resultOverlay.style.cssText = `
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,.82);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        z-index: 20000;
-    `;
+        const resultOverlay =
+            document.createElement("div");
 
 
-    resultOverlay.innerHTML = `
+        resultOverlay.style.cssText = `
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,.82);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+            z-index:20000;
+        `;
 
-        <div style="
-            background:#fff;
-            width:min(480px,100%);
-            padding:40px 30px;
-            text-align:center;
-            color:#111;
-            box-shadow:0 25px 70px rgba(0,0,0,.4);
-        ">
+
+        resultOverlay.innerHTML = `
 
             <div style="
-                font-size:10px;
-                letter-spacing:4px;
-                color:#777;
-                margin-bottom:12px;
+                background:#fff;
+                width:min(480px,100%);
+                padding:40px 30px;
+                text-align:center;
+                color:#111;
+                box-shadow:0 25px 70px rgba(0,0,0,.4);
             ">
-                GAMY STORE
+
+                <div style="
+                    font-size:10px;
+                    letter-spacing:4px;
+                    color:#777;
+                    margin-bottom:12px;
+                ">
+                    GAMY STORE
+                </div>
+
+
+                <h2 style="
+                    font-size:25px;
+                    letter-spacing:3px;
+                    margin-bottom:12px;
+                ">
+                    ORDER READY
+                </h2>
+
+
+                <p style="
+                    color:#666;
+                    font-size:12px;
+                    line-height:1.8;
+                    margin-bottom:25px;
+                ">
+                    Order ${orderNumber} has been created.
+                    Please choose your action.
+                </p>
+
+
+                <a
+                    href="${confirmURL}"
+                    target="_blank"
+                    style="
+                        display:block;
+                        width:100%;
+                        padding:15px;
+                        background:#111;
+                        color:#fff;
+                        text-decoration:none;
+                        font-size:10px;
+                        letter-spacing:2px;
+                        margin-bottom:10px;
+                    ">
+                    CONFIRM ORDER
+                </a>
+
+
+                <a
+                    href="${rejectURL}"
+                    target="_blank"
+                    style="
+                        display:block;
+                        width:100%;
+                        padding:15px;
+                        background:#fff;
+                        color:#111;
+                        border:1px solid #111;
+                        text-decoration:none;
+                        font-size:10px;
+                        letter-spacing:2px;
+                        margin-bottom:15px;
+                    ">
+                    REJECT ORDER
+                </a>
+
+
+                <button
+                    id="closeOrderResult"
+                    style="
+                        border:0;
+                        background:transparent;
+                        color:#777;
+                        cursor:pointer;
+                        font-size:9px;
+                        letter-spacing:2px;
+                    ">
+                    CLOSE
+                </button>
+
             </div>
 
-            <h2 style="
-                font-size:25px;
-                letter-spacing:3px;
-                margin-bottom:12px;
-            ">
-                ORDER READY
-            </h2>
-
-            <p style="
-                color:#666;
-                font-size:12px;
-                line-height:1.8;
-                margin-bottom:25px;
-            ">
-                Order ${orderNumber} has been created.
-                Please choose your action.
-            </p>
-
-            <a
-                href="${confirmURL}"
-                target="_blank"
-                style="
-                    display:block;
-                    width:100%;
-                    padding:15px;
-                    background:#111;
-                    color:#fff;
-                    text-decoration:none;
-                    font-size:10px;
-                    letter-spacing:2px;
-                    margin-bottom:10px;
-                ">
-                CONFIRM ORDER
-            </a>
-
-            <a
-                href="${rejectURL}"
-                target="_blank"
-                style="
-                    display:block;
-                    width:100%;
-                    padding:15px;
-                    background:#fff;
-                    color:#111;
-                    border:1px solid #111;
-                    text-decoration:none;
-                    font-size:10px;
-                    letter-spacing:2px;
-                    margin-bottom:15px;
-                ">
-                REJECT ORDER
-            </a>
-
-            <button
-                id="closeOrderResult"
-                style="
-                    border:0;
-                    background:transparent;
-                    color:#777;
-                    cursor:pointer;
-                    font-size:9px;
-                    letter-spacing:2px;
-                ">
-                CLOSE
-            </button>
-
-        </div>
-    `;
+        `;
 
 
-    document.body.appendChild(resultOverlay);
+        document.body.appendChild(
+            resultOverlay
+        );
 
 
-    document
-        .getElementById("closeOrderResult")
-        .addEventListener("click", function () {
+        document
+            .getElementById(
+                "closeOrderResult"
+            )
+            .addEventListener(
+                "click",
+                function () {
 
-            resultOverlay.remove();
+                    resultOverlay.remove();
 
-        });
-
-
-    checkoutOverlay.classList.remove("active");
-
-});
+                }
+            );
 
 
-/* INITIAL */
+        checkoutOverlay.classList.remove(
+            "active"
+        );
+
+    }
+);
+
+
+/* =========================
+   INITIAL CART
+========================== */
 
 updateCart();
 ```
