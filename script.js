@@ -1,265 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================================
-       CART
-       ========================================= */
-
     let cartItemsArray = [];
 
-    const openCart = document.getElementById("openCart");
-    const closeCart = document.getElementById("closeCart");
-    const cart = document.getElementById("cart");
+    const openCartButton = document.getElementById("openCart");
+    const closeCartButton = document.getElementById("closeCart");
+    const cartElement = document.getElementById("cart");
     const cartOverlay = document.getElementById("cartOverlay");
 
-    const cartItems = document.getElementById("cartItems");
-    const cartCount = document.getElementById("cartCount");
-    const cartTotal = document.getElementById("cartTotal");
-
-
-    /* =========================================
-       OPEN CART
-       ========================================= */
-
-    openCart.addEventListener("click", function () {
-
-        cart.classList.add("active");
-        cartOverlay.classList.add("active");
-
-    });
-
-
-    /* =========================================
-       CLOSE CART
-       ========================================= */
-
-    closeCart.addEventListener("click", function () {
-
-        cart.classList.remove("active");
-        cartOverlay.classList.remove("active");
-
-    });
-
-
-    cartOverlay.addEventListener("click", function () {
-
-        cart.classList.remove("active");
-        cartOverlay.classList.remove("active");
-
-    });
-
-
-    /* =========================================
-       ADD TO CART
-       ========================================= */
-
-    const addButtons =
-        document.querySelectorAll(".add-cart");
-
-
-    addButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            const product =
-                button.closest(".product");
-
-
-            if (!product) {
-                return;
-            }
-
-
-            const name =
-                product.querySelector("h3")
-                .textContent
-                .trim();
-
-
-            const priceText =
-                product.querySelector(".price")
-                .textContent;
-
-
-            const price =
-                parseInt(
-                    priceText.replace(/[^\d]/g, "")
-                );
-
-
-            const color =
-                product.querySelector(".color").value;
-
-
-            const size =
-                product.querySelector(".size").value;
-
-
-            if (color === "" || size === "") {
-
-                alert(
-                    "PLEASE SELECT COLOR AND SIZE"
-                );
-
-                return;
-
-            }
-
-
-            cartItemsArray.push({
-
-                name: name,
-
-                price: price,
-
-                color: color,
-
-                size: size
-
-            });
-
-
-            updateCart();
-
-
-            cart.classList.add("active");
-
-            cartOverlay.classList.add("active");
-
-        });
-
-    });
-
-
-    /* =========================================
-       UPDATE CART
-       ========================================= */
-
-    function updateCart() {
-
-        cartItems.innerHTML = "";
-
-        let total = 0;
-
-
-        cartItemsArray.forEach(
-            function (item, index) {
-
-                total += item.price;
-
-
-                const cartItem =
-                    document.createElement("div");
-
-
-                cartItem.className =
-                    "cart-item";
-
-
-                cartItem.innerHTML = `
-
-                    <div class="cart-item-info">
-
-                        <h3>
-                            ${item.name}
-                        </h3>
-
-                        <p>
-                            COLOR: ${item.color}
-                        </p>
-
-                        <p>
-                            SIZE: ${item.size}
-                        </p>
-
-                        <strong>
-                            ${item.price} EGP
-                        </strong>
-
-                    </div>
-
-
-                    <button
-                        class="remove-item"
-                        data-index="${index}">
-
-                        ×
-
-                    </button>
-
-                `;
-
-
-                cartItems.appendChild(cartItem);
-
-            }
-        );
-
-
-        cartCount.textContent =
-            cartItemsArray.length;
-
-
-        cartTotal.textContent =
-            total + " EGP";
-
-
-        const removeButtons =
-            document.querySelectorAll(
-                ".remove-item"
-            );
-
-
-        removeButtons.forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const index =
-                        parseInt(
-                            button.getAttribute(
-                                "data-index"
-                            )
-                        );
-
-
-                    cartItemsArray.splice(
-                        index,
-                        1
-                    );
-
-
-                    updateCart();
-
-                }
-            );
-
-        });
-
-    }
-
-
-
-    /* =========================================
-       GOVERNORATES + AREAS
-       ========================================= */
-
-    const customerCity =
-        document.getElementById(
-            "customerCity"
-        );
-
-
-    const customerArea =
-        document.getElementById(
-            "customerArea"
-        );
-
+    const cartItemsContainer = document.getElementById("cartItems");
+    const cartCountElement = document.getElementById("cartCount");
+    const cartTotalElement = document.getElementById("cartTotal");
+
+    const checkoutButton = document.getElementById("checkoutButton");
+    const checkoutOverlay = document.getElementById("checkoutOverlay");
+    const closeCheckoutButton = document.getElementById("closeCheckout");
+
+    const checkoutForm = document.getElementById("checkoutForm");
+
+    const customerNameInput = document.getElementById("customerName");
+    const customerPhoneInput = document.getElementById("customerPhone");
+    const customerGovernorateSelect =
+        document.getElementById("customerCity");
+    const customerAreaSelect =
+        document.getElementById("customerArea");
+    const customerAddressInput =
+        document.getElementById("customerAddress");
+    const orderNotesInput =
+        document.getElementById("orderNotes");
+
+    const checkoutItemsCount =
+        document.getElementById("checkoutItemsCount");
+    const checkoutTotal =
+        document.getElementById("checkoutTotal");
 
     const areasByGovernorate = {
 
         "Cairo": [
-
             "Nasr City",
             "Heliopolis",
             "Maadi",
@@ -275,12 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Abbasia",
             "Shubra",
             "Misr El Kadima"
-
         ],
 
-
         "Giza": [
-
             "Dokki",
             "Mohandessin",
             "Haram",
@@ -293,12 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Bulaq El Dakrour",
             "Warraq",
             "Kerdasa"
-
         ],
 
-
         "Alexandria": [
-
             "Miami",
             "Sidi Bishr",
             "Smouha",
@@ -312,12 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Borg El Arab",
             "Moharam Bek",
             "Kafr Abdo"
-
         ],
 
-
         "Qalyubia": [
-
             "Banha",
             "Shubra El Kheima",
             "Qalyub",
@@ -327,12 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Tukh",
             "Qaha",
             "Shebeen El Qanater"
-
         ],
 
-
         "Sharqia": [
-
             "Zagazig",
             "10th of Ramadan",
             "Belbeis",
@@ -341,12 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Faqous",
             "Hehia",
             "Mashtoul El Souq"
-
         ],
 
-
         "Dakahlia": [
-
             "Mansoura",
             "Talkha",
             "Mit Ghamr",
@@ -356,12 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Belqas",
             "Manzala",
             "Sinbillawin"
-
         ],
 
-
         "Gharbia": [
-
             "Tanta",
             "Mahalla El Kubra",
             "Kafr El Zayat",
@@ -369,12 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Santa",
             "Basyoun",
             "Qutour"
-
         ],
 
-
         "Monufia": [
-
             "Shibin El Kom",
             "Menouf",
             "Ashmoun",
@@ -382,12 +137,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Quesna",
             "Tala",
             "Berket El Sabe"
-
         ],
 
-
         "Beheira": [
-
             "Damanhur",
             "Kafr El Dawwar",
             "Rashid",
@@ -396,12 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Hosh Essa",
             "Kom Hamada",
             "Mahmoudiyah"
-
         ],
 
-
         "Kafr El Sheikh": [
-
             "Kafr El Sheikh",
             "Desouk",
             "Metoubes",
@@ -409,82 +158,61 @@ document.addEventListener("DOMContentLoaded", function () {
             "Fouh",
             "Sidi Salem",
             "Qallin"
-
         ],
 
-
         "Damietta": [
-
             "Damietta",
             "New Damietta",
             "Ras El Bar",
             "Faraskour",
             "Kafr Saad",
             "Zarqa"
-
         ],
 
-
         "Port Said": [
-
             "Port Said",
             "Port Fouad",
             "Arab District",
             "Zohour District",
             "Dawahy District"
-
         ],
 
-
         "Ismailia": [
-
             "Ismailia",
             "Fayed",
             "Qantara East",
             "Qantara West",
             "Tal El Kebir",
             "Abu Suwir"
-
         ],
 
-
         "Suez": [
-
             "Suez",
             "Arbaeen",
             "Ataqah",
             "Faisal",
             "Ganayen"
-
         ],
 
-
         "Fayoum": [
-
             "Fayoum",
             "Sinnuris",
             "Tamiya",
             "Ibshaway",
             "Itsa",
             "Yousef El Seddik"
-
         ],
 
-
         "Beni Suef": [
-
             "Beni Suef",
             "Al Wasta",
             "Nasser",
             "Biba",
             "Samasta",
             "Ihnasiya"
-
         ],
 
-
         "Minya": [
-
             "Minya",
             "Mallawi",
             "Samalut",
@@ -492,12 +220,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Beni Mazar",
             "Abu Qurqas",
             "Deir Mawas"
-
         ],
 
-
         "Asyut": [
-
             "Asyut",
             "Dairut",
             "Manfalut",
@@ -505,12 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Abnub",
             "Sahel Selim",
             "El Badari"
-
         ],
 
-
         "Sohag": [
-
             "Sohag",
             "Akhmim",
             "Girga",
@@ -518,414 +240,467 @@ document.addEventListener("DOMContentLoaded", function () {
             "Juhayna",
             "Al Maragha",
             "Al Monshah"
-
         ],
 
-
         "Qena": [
-
             "Qena",
             "Nag Hammadi",
             "Qus",
             "Dishna",
             "Farshout",
             "Abu Tesht"
-
         ],
 
-
         "Luxor": [
-
             "Luxor",
             "Esna",
             "Armant",
             "El Tod",
             "Al Bayadiya"
-
         ],
 
-
         "Aswan": [
-
             "Aswan",
             "Kom Ombo",
             "Edfu",
             "Daraw",
             "Abu Simbel"
-
         ],
 
-
         "Red Sea": [
-
             "Hurghada",
             "El Gouna",
             "Safaga",
             "Marsa Alam",
             "Quseir"
-
         ],
 
-
         "New Valley": [
-
             "Kharga",
             "Dakhla",
             "Farafra",
             "Baris",
             "Balat"
-
         ],
 
-
         "Matrouh": [
-
             "Marsa Matrouh",
             "El Alamein",
             "Dabaa",
             "Siwa",
             "Salloum"
-
         ],
 
-
         "North Sinai": [
-
             "Arish",
             "Sheikh Zuweid",
             "Rafah",
             "Bir al-Abd"
-
         ],
 
-
         "South Sinai": [
-
             "Sharm El Sheikh",
             "Dahab",
             "Nuweiba",
             "Taba",
             "Saint Catherine",
             "El Tor"
-
         ]
-
     };
 
+    function openCart() {
+        cartElement.classList.add("active");
+        cartOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
 
-    /* =========================================
-       CHANGE GOVERNORATE
-       ========================================= */
+    function closeCart() {
+        cartElement.classList.remove("active");
+        cartOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
 
-    customerCity.addEventListener(
-        "change",
-        function () {
+    function openCheckout() {
+        if (cartItemsArray.length === 0) {
+            alert("YOUR CART IS EMPTY");
+            return;
+        }
 
-            const selectedGovernorate =
-                customerCity.value;
+        checkoutOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
 
+        updateCheckoutSummary();
+    }
 
-            customerArea.innerHTML = `
-                <option value="">
-                    SELECT AREA
-                </option>
+    function closeCheckout() {
+        checkoutOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    function updateCart() {
+
+        cartItemsContainer.innerHTML = "";
+
+        let total = 0;
+
+        cartItemsArray.forEach(function (item, index) {
+
+            total += item.price;
+
+            const cartItem = document.createElement("div");
+
+            cartItem.className = "cart-item";
+
+            cartItem.innerHTML = `
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+
+                    <p>
+                        COLOR: ${item.color}
+                    </p>
+
+                    <p>
+                        SIZE: ${item.size}
+                    </p>
+
+                    <strong>
+                        ${item.price} EGP
+                    </strong>
+                </div>
+
+                <button
+                    class="remove-cart-item"
+                    data-index="${index}">
+                    REMOVE
+                </button>
             `;
 
+            cartItemsContainer.appendChild(cartItem);
+        });
 
-            customerArea.disabled = true;
+        cartCountElement.textContent = cartItemsArray.length;
 
+        cartTotalElement.textContent =
+            total.toLocaleString() + " EGP";
+
+        updateCheckoutSummary();
+    }
+
+    function updateCheckoutSummary() {
+
+        if (!checkoutItemsCount || !checkoutTotal) {
+            return;
+        }
+
+        let total = 0;
+
+        cartItemsArray.forEach(function (item) {
+            total += item.price;
+        });
+
+        checkoutItemsCount.textContent =
+            cartItemsArray.length;
+
+        checkoutTotal.textContent =
+            total.toLocaleString() + " EGP";
+    }
+
+    document.querySelectorAll(".add-cart").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const productElement =
+                button.closest(".product");
+
+            if (!productElement) {
+                return;
+            }
+
+            const productName =
+                productElement.querySelector("h3").textContent;
+
+            const productPriceText =
+                productElement.querySelector(".price").textContent;
+
+            const productPrice =
+                parseInt(
+                    productPriceText.replace(/[^\d]/g, ""),
+                    10
+                );
+
+            const colorSelect =
+                productElement.querySelector(".color");
+
+            const sizeSelect =
+                productElement.querySelector(".size");
+
+            const selectedColor =
+                colorSelect ? colorSelect.value : "N/A";
+
+            const selectedSize =
+                sizeSelect ? sizeSelect.value : "N/A";
 
             if (
-                selectedGovernorate === ""
+                colorSelect &&
+                !selectedColor
+            ) {
+                alert("PLEASE SELECT A COLOR");
+                return;
+            }
+
+            if (
+                sizeSelect &&
+                !selectedSize
+            ) {
+                alert("PLEASE SELECT A SIZE");
+                return;
+            }
+
+            const cartItem = {
+                name: productName,
+                price: productPrice,
+                color: selectedColor,
+                size: selectedSize
+            };
+
+            cartItemsArray.push(cartItem);
+
+            updateCart();
+
+            openCart();
+        });
+    });
+
+    cartItemsContainer.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target.classList.contains(
+                    "remove-cart-item"
+                )
             ) {
 
-                return;
-
-            }
-
-
-            const areas =
-                areasByGovernorate[
-                    selectedGovernorate
-                ];
-
-
-            if (!areas) {
-                return;
-            }
-
-
-            areas.forEach(function (area) {
-
-                const option =
-                    document.createElement(
-                        "option"
+                const itemIndex =
+                    parseInt(
+                        event.target.dataset.index,
+                        10
                     );
 
-
-                option.value = area;
-
-                option.textContent = area;
-
-
-                customerArea.appendChild(
-                    option
+                cartItemsArray.splice(
+                    itemIndex,
+                    1
                 );
 
-            });
-
-
-            customerArea.disabled = false;
-
+                updateCart();
+            }
         }
     );
 
-
-
-    /* =========================================
-       CHECKOUT
-       ========================================= */
-
-    const checkoutButton =
-        document.getElementById(
-            "checkoutButton"
+    if (openCartButton) {
+        openCartButton.addEventListener(
+            "click",
+            openCart
         );
+    }
 
-
-    const checkoutOverlay =
-        document.getElementById(
-            "checkoutOverlay"
+    if (closeCartButton) {
+        closeCartButton.addEventListener(
+            "click",
+            closeCart
         );
+    }
 
-
-    const closeCheckout =
-        document.getElementById(
-            "closeCheckout"
+    if (cartOverlay) {
+        cartOverlay.addEventListener(
+            "click",
+            closeCart
         );
+    }
 
-
-    const checkoutForm =
-        document.getElementById(
-            "checkoutForm"
+    if (checkoutButton) {
+        checkoutButton.addEventListener(
+            "click",
+            openCheckout
         );
+    }
 
-
-    const checkoutItemsCount =
-        document.getElementById(
-            "checkoutItemsCount"
+    if (closeCheckoutButton) {
+        closeCheckoutButton.addEventListener(
+            "click",
+            closeCheckout
         );
+    }
 
+    if (checkoutOverlay) {
 
-    const checkoutTotal =
-        document.getElementById(
-            "checkoutTotal"
+        checkoutOverlay.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === checkoutOverlay
+                ) {
+                    closeCheckout();
+                }
+            }
         );
+    }
 
+    if (customerGovernorateSelect) {
 
+        customerGovernorateSelect.addEventListener(
+            "change",
+            function () {
 
-    /* =========================================
-       OPEN CHECKOUT
-       ========================================= */
+                const selectedGovernorate =
+                    customerGovernorateSelect.value;
 
-    checkoutButton.addEventListener(
-        "click",
-        function () {
+                customerAreaSelect.innerHTML = `
+                    <option value="">
+                        SELECT AREA
+                    </option>
+                `;
 
-            if (
-                cartItemsArray.length === 0
-            ) {
+                customerAreaSelect.disabled = true;
+
+                if (!selectedGovernorate) {
+                    return;
+                }
+
+                const availableAreas =
+                    areasByGovernorate[
+                        selectedGovernorate
+                    ];
+
+                if (!availableAreas) {
+                    return;
+                }
+
+                availableAreas.forEach(
+                    function (area) {
+
+                        const areaOption =
+                            document.createElement(
+                                "option"
+                            );
+
+                        areaOption.value = area;
+                        areaOption.textContent = area;
+
+                        customerAreaSelect.appendChild(
+                            areaOption
+                        );
+                    }
+                );
+
+                customerAreaSelect.disabled = false;
+            }
+        );
+    }
+
+    if (checkoutForm) {
+
+        checkoutForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                if (cartItemsArray.length === 0) {
+                    alert("YOUR CART IS EMPTY");
+                    return;
+                }
+
+                const customerName =
+                    customerNameInput.value.trim();
+
+                const customerPhone =
+                    customerPhoneInput.value.trim();
+
+                const governorate =
+                    customerGovernorateSelect.value;
+
+                const area =
+                    customerAreaSelect.value;
+
+                const customerAddress =
+                    customerAddressInput.value.trim();
+
+                const orderNotes =
+                    orderNotesInput.value.trim();
+
+                let total = 0;
+
+                cartItemsArray.forEach(
+                    function (item) {
+                        total += item.price;
+                    }
+                );
+
+                let orderDetails = "";
+
+                cartItemsArray.forEach(
+                    function (item, index) {
+
+                        orderDetails +=
+                            (index + 1) +
+                            ". " +
+                            item.name +
+                            " | COLOR: " +
+                            item.color +
+                            " | SIZE: " +
+                            item.size +
+                            " | PRICE: " +
+                            item.price +
+                            " EGP\n";
+                    }
+                );
 
                 alert(
-                    "YOUR CART IS EMPTY"
+                    "ORDER RECEIVED SUCCESSFULLY\n\n" +
+                    "NAME: " +
+                    customerName +
+                    "\n" +
+                    "PHONE: " +
+                    customerPhone +
+                    "\n" +
+                    "GOVERNORATE: " +
+                    governorate +
+                    "\n" +
+                    "AREA: " +
+                    area +
+                    "\n" +
+                    "ADDRESS: " +
+                    customerAddress +
+                    "\n\n" +
+                    "ITEMS:\n" +
+                    orderDetails +
+                    "\nTOTAL: " +
+                    total +
+                    " EGP"
                 );
 
-                return;
+                cartItemsArray = [];
 
+                updateCart();
+
+                checkoutForm.reset();
+
+                customerAreaSelect.innerHTML = `
+                    <option value="">
+                        SELECT AREA
+                    </option>
+                `;
+
+                customerAreaSelect.disabled = true;
+
+                closeCheckout();
+                closeCart();
             }
+        );
+    }
 
-
-            checkoutItemsCount.textContent =
-                cartItemsArray.length;
-
-
-            let total = 0;
-
-
-            cartItemsArray.forEach(
-                function (item) {
-
-                    total += item.price;
-
-                }
-            );
-
-
-            checkoutTotal.textContent =
-                total + " EGP";
-
-
-            cart.classList.remove(
-                "active"
-            );
-
-
-            cartOverlay.classList.remove(
-                "active"
-            );
-
-
-            checkoutOverlay.classList.add(
-                "active"
-            );
-
-        }
-    );
-
-
-
-    /* =========================================
-       CLOSE CHECKOUT
-       ========================================= */
-
-    closeCheckout.addEventListener(
-        "click",
-        function () {
-
-            checkoutOverlay.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-
-    /* =========================================
-       CLOSE CHECKOUT OUTSIDE
-       ========================================= */
-
-    checkoutOverlay.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-                event.target ===
-                checkoutOverlay
-            ) {
-
-                checkoutOverlay.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-    );
-
-
-
-    /* =========================================
-       PLACE ORDER
-       ========================================= */
-
-    checkoutForm.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
-
-
-            const customerName =
-                document.getElementById(
-                    "customerName"
-                ).value.trim();
-
-
-            const customerPhone =
-                document.getElementById(
-                    "customerPhone"
-                ).value.trim();
-
-
-            const customerCityValue =
-                customerCity.value;
-
-
-            const customerAreaValue =
-                customerArea.value;
-
-
-            const customerAddress =
-                document.getElementById(
-                    "customerAddress"
-                ).value.trim();
-
-
-            const orderNotes =
-                document.getElementById(
-                    "orderNotes"
-                ).value.trim();
-
-
-
-            let total = 0;
-
-
-            cartItemsArray.forEach(
-                function (item) {
-
-                    total += item.price;
-
-                }
-            );
-
-
-
-            /* TEMPORARY SUCCESS MESSAGE */
-
-            alert(
-                "ORDER RECEIVED SUCCESSFULLY\n\n" +
-
-                "NAME: " +
-                customerName +
-                "\n" +
-
-                "PHONE: " +
-                customerPhone +
-                "\n" +
-
-                "GOVERNORATE: " +
-                customerCityValue +
-                "\n" +
-
-                "AREA: " +
-                customerAreaValue +
-                "\n" +
-
-                "TOTAL: " +
-                total +
-                " EGP"
-            );
-
-
-            checkoutOverlay.classList.remove(
-                "active"
-            );
-
-
-            checkoutForm.reset();
-
-
-            customerArea.innerHTML = `
-                <option value="">
-                    SELECT AREA
-                </option>
-            `;
-
-
-            customerArea.disabled = true;
-
-        }
-    );
+    updateCart();
 
 });
