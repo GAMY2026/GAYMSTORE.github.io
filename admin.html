@@ -1,0 +1,604 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GAMY STORE — Orders</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: #050505;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .admin-header {
+            height: 80px;
+            background: #0b0b0b;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .admin-title {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #aaa;
+        }
+
+        .admin-container {
+            width: min(1400px, 94%);
+            margin: 40px auto;
+        }
+
+        .page-title {
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #101010;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 25px;
+        }
+
+        .stat-card span {
+            display: block;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card strong {
+            font-size: 28px;
+        }
+
+        .orders-box {
+            background: #101010;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th {
+            background: #161616;
+            color: #aaa;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-align: left;
+            padding: 18px;
+        }
+
+        td {
+            padding: 18px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            font-size: 13px;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 70px 20px;
+            color: #777;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 7px 12px;
+            background: #1c1c1c;
+            border: 1px solid rgba(255,255,255,0.12);
+            font-size: 11px;
+        }
+
+        .view-button {
+            background: #fff;
+            color: #111;
+            border: none;
+            padding: 9px 14px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .view-button:hover {
+            background: #c8a96b;
+            color: #fff;
+        }
+
+        @media (max-width: 800px) {
+
+            .admin-header {
+                padding: 0 20px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .admin-container {
+                width: 94%;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <div class="logo">
+            GAMY STORE
+        </div>
+
+        <div class="admin-title">
+            ORDERS MANAGEMENT
+        </div>
+
+    </header>
+
+
+    <main class="admin-container">
+
+        <div class="page-title">
+
+            <h1>
+                ORDERS
+            </h1>
+
+            <p>
+                Manage and review customer orders
+            </p>
+
+        </div>
+
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span>
+                    TOTAL ORDERS
+                </span>
+
+                <strong id="totalOrders">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    NEW ORDERS
+                </span>
+
+                <strong id="newOrders">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    CONFIRMED
+                </span>
+
+                <strong id="confirmedOrders">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>
+                    DELIVERED
+                </span>
+
+                <strong id="deliveredOrders">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <section class="orders-box">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ORDER
+                        </th>
+
+                        <th>
+                            CUSTOMER
+                        </th>
+
+                        <th>
+                            PHONE
+                        </th>
+
+                        <th>
+                            TOTAL
+                        </th>
+
+                        <th>
+                            STATUS
+                        </th>
+
+                        <th>
+                            DATE
+                        </th>
+
+                        <th>
+                            ACTION
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="ordersTable">
+
+                    <tr>
+
+                        <td
+                            colspan="7"
+                            class="empty"
+                        >
+                            No orders yet
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const ORDERS_STORAGE_KEY =
+            "gamyStoreOrders";
+
+
+        function loadOrders() {
+
+            try {
+
+                const savedOrders =
+                    localStorage.getItem(
+                        ORDERS_STORAGE_KEY
+                    );
+
+                if (!savedOrders) {
+
+                    return [];
+
+                }
+
+                const orders =
+                    JSON.parse(
+                        savedOrders
+                    );
+
+                if (
+                    Array.isArray(orders)
+                ) {
+
+                    return orders;
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Could not load orders:",
+                    error
+                );
+
+            }
+
+            return [];
+
+        }
+
+
+        function updateDashboard() {
+
+            const orders =
+                loadOrders();
+
+
+            document.getElementById(
+                "totalOrders"
+            ).textContent =
+                orders.length;
+
+
+            document.getElementById(
+                "newOrders"
+            ).textContent =
+                orders.filter(
+                    order =>
+                        order.status ===
+                        "NEW"
+                ).length;
+
+
+            document.getElementById(
+                "confirmedOrders"
+            ).textContent =
+                orders.filter(
+                    order =>
+                        order.status ===
+                        "CONFIRMED"
+                ).length;
+
+
+            document.getElementById(
+                "deliveredOrders"
+            ).textContent =
+                orders.filter(
+                    order =>
+                        order.status ===
+                        "DELIVERED"
+                ).length;
+
+        }
+
+
+        function renderOrders() {
+
+            const orders =
+                loadOrders();
+
+            const table =
+                document.getElementById(
+                    "ordersTable"
+                );
+
+
+            if (!orders.length) {
+
+                table.innerHTML = `
+
+                    <tr>
+
+                        <td
+                            colspan="7"
+                            class="empty"
+                        >
+                            No orders yet
+                        </td>
+
+                    </tr>
+
+                `;
+
+                updateDashboard();
+
+                return;
+
+            }
+
+
+            table.innerHTML =
+                orders.map(
+                    (order, index) => `
+
+                        <tr>
+
+                            <td>
+                                #${index + 1}
+                            </td>
+
+                            <td>
+                                ${
+                                    order.customerName ||
+                                    "-"
+                                }
+                            </td>
+
+                            <td>
+                                ${
+                                    order.phone ||
+                                    "-"
+                                }
+                            </td>
+
+                            <td>
+                                ${
+                                    order.total ||
+                                    0
+                                } EGP
+                            </td>
+
+                            <td>
+
+                                <span class="status">
+
+                                    ${
+                                        order.status ||
+                                        "NEW"
+                                    }
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                ${
+                                    order.date ||
+                                    "-"
+                                }
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-button"
+                                    onclick="viewOrder(${index})"
+                                >
+                                    VIEW
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    `
+                )
+                .join("");
+
+
+            updateDashboard();
+
+        }
+
+
+        function viewOrder(index) {
+
+            const orders =
+                loadOrders();
+
+            const order =
+                orders[index];
+
+
+            if (!order) {
+
+                return;
+
+            }
+
+
+            alert(
+
+                "ORDER DETAILS\n\n" +
+
+                "Customer: " +
+                (order.customerName || "-") +
+
+                "\nPhone: " +
+                (order.phone || "-") +
+
+                "\nAddress: " +
+                (order.address || "-") +
+
+                "\nTotal: " +
+                (order.total || 0) +
+                " EGP" +
+
+                "\nStatus: " +
+                (order.status || "NEW")
+
+            );
+
+        }
+
+
+        renderOrders();
+
+
+        window.addEventListener(
+            "storage",
+            function(event) {
+
+                if (
+                    event.key ===
+                    ORDERS_STORAGE_KEY
+                ) {
+
+                    renderOrders();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
+```
