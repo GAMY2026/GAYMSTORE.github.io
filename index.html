@@ -5436,7 +5436,61 @@ saveCart();
                             encodeURIComponent(
                                 rejectMessage
                             );
+const savedOrders =
+    JSON.parse(
+        localStorage.getItem("gamyStoreOrders") || "[]"
+    );
 
+savedOrders.push({
+
+    orderNumber: orderNumber,
+
+    customerName: customerName,
+
+    phone: customerPhone,
+
+    governorate: governorate,
+
+    area: area,
+
+    address: customerAddress,
+
+    notes: orderNotes,
+
+    items: cartItemsArray.map(
+        function (item) {
+
+            return {
+
+                name: item.name,
+
+                price: item.price,
+
+                color: item.color,
+
+                size: item.size,
+
+                quantity: item.quantity || 1
+
+            };
+
+        }
+    ),
+
+    totalItems: totalItems,
+
+    total: total,
+
+    status: "NEW",
+
+    date: new Date().toLocaleString("en-EG")
+
+});
+
+localStorage.setItem(
+    "gamyStoreOrders",
+    JSON.stringify(savedOrders)
+);
 
                         const orderResultOverlay =
                             document.createElement(
