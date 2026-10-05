@@ -73,11 +73,6 @@
             overflow-x: hidden;
         }
 
-
-        /* =========================
-           TOP BAR
-        ========================= */
-
         .top-bar {
             width: 100%;
             height: 34px;
@@ -90,11 +85,6 @@
             letter-spacing: 3px;
             border-bottom: 1px solid #222;
         }
-
-
-        /* =========================
-           HEADER
-        ========================= */
 
         .header {
             width: 100%;
@@ -111,7 +101,6 @@
             border-bottom: 1px solid #222;
         }
 
-
         .logo {
             font-size: 24px;
             font-weight: bold;
@@ -119,13 +108,11 @@
             white-space: nowrap;
         }
 
-
         .menu {
             display: flex;
             align-items: center;
             gap: 28px;
         }
-
 
         .menu a {
             color: #fff;
@@ -136,11 +123,9 @@
             transition: 0.3s;
         }
 
-
         .menu a:hover {
             color: #bbb;
         }
-
 
         .back-home {
             border: 1px solid #555;
@@ -148,22 +133,15 @@
             transition: 0.3s;
         }
 
-
         .back-home:hover {
             background: #fff;
             color: #000 !important;
         }
 
-
-        /* =========================
-           PAGE TITLE
-        ========================= */
-
         .page-title {
             text-align: center;
             padding: 75px 20px 50px;
         }
-
 
         .page-title p {
             font-size: 10px;
@@ -172,13 +150,11 @@
             margin-bottom: 15px;
         }
 
-
         .page-title h1 {
             font-size: clamp(38px, 6vw, 65px);
             letter-spacing: 8px;
             font-weight: 700;
         }
-
 
         .page-title span {
             display: block;
@@ -188,11 +164,6 @@
             letter-spacing: 3px;
         }
 
-
-        /* =========================
-           PRODUCTS
-        ========================= */
-
         .products-container {
             width: min(1400px, 92%);
             margin: 0 auto 100px;
@@ -200,7 +171,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
         }
-
 
         .product-card {
             background: #101010;
@@ -218,7 +188,6 @@
                 border-color 0.3s ease;
         }
 
-
         .product-card:hover {
             transform: translateY(-6px);
 
@@ -228,11 +197,6 @@
                 0 25px 60px rgba(0,0,0,0.7),
                 0 0 30px rgba(255,255,255,0.04);
         }
-
-
-        /* =========================
-           PRODUCT IMAGE
-        ========================= */
 
         .product-image {
             width: 100%;
@@ -249,20 +213,13 @@
             transition: transform 0.5s ease;
         }
 
-
         .product-card:hover .product-image {
             transform: scale(1.02);
         }
 
-
-        /* =========================
-           PRODUCT INFO
-        ========================= */
-
         .product-info {
             padding: 24px;
         }
-
 
         .product-info h3 {
             color: #fff;
@@ -271,14 +228,12 @@
             margin-bottom: 12px;
         }
 
-
         .price {
             color: #fff;
             font-size: 17px;
             font-weight: bold;
             margin-bottom: 20px;
         }
-
 
         .option-label {
             display: block;
@@ -287,7 +242,6 @@
             letter-spacing: 2px;
             margin-bottom: 7px;
         }
-
 
         select {
             width: 100%;
@@ -300,15 +254,9 @@
             cursor: pointer;
         }
 
-
         select:focus {
             border-color: #777;
         }
-
-
-        /* =========================
-           QUANTITY
-        ========================= */
 
         .quantity-box {
             display: flex;
@@ -322,7 +270,6 @@
 
             margin: 5px 0 18px;
         }
-
 
         .quantity-box button {
             width: 42px;
@@ -338,23 +285,16 @@
             cursor: pointer;
         }
 
-
         .quantity-box button:hover {
             background: #fff;
             color: #000;
         }
-
 
         .quantity-box span {
             width: 45px;
             text-align: center;
             font-size: 13px;
         }
-
-
-        /* =========================
-           ADD CART
-        ========================= */
 
         .add-cart {
             width: 100%;
@@ -375,16 +315,10 @@
             transition: 0.3s;
         }
 
-
         .add-cart:hover {
             background: #dcdcdc;
             transform: translateY(-2px);
         }
-
-
-        /* =========================
-           CART BUTTON
-        ========================= */
 
         .cart-button {
             position: fixed;
@@ -410,15 +344,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-
         .cart-button span {
             margin-left: 6px;
         }
-
-
-        /* =========================
-           CART
-        ========================= */
 
         .cart-overlay {
             position: fixed;
@@ -432,11 +360,9 @@
             display: none;
         }
 
-
         .cart-overlay.active {
             display: block;
         }
-
 
         .cart {
             position: fixed;
@@ -464,11 +390,9 @@
             flex-direction: column;
         }
 
-
         .cart.active {
             right: 0;
         }
-
 
         .cart-header {
             height: 75px;
@@ -484,12 +408,10 @@
             border-bottom: 1px solid #292929;
         }
 
-
         .cart-header h2 {
             font-size: 16px;
             letter-spacing: 3px;
         }
-
 
         .close-cart {
             background: none;
@@ -499,25 +421,21 @@
             cursor: pointer;
         }
 
-
         .cart-items {
             flex: 1;
             overflow-y: auto;
             padding: 20px;
         }
 
-
         .cart-item {
             border-bottom: 1px solid #292929;
             padding: 15px 0;
         }
 
-
         .cart-item h4 {
             margin-bottom: 8px;
             font-size: 14px;
         }
-
 
         .cart-item p {
             color: #999;
@@ -525,12 +443,10 @@
             margin: 5px 0;
         }
 
-
         .cart-footer {
             padding: 20px;
             border-top: 1px solid #292929;
         }
-
 
         .cart-total {
             display: flex;
@@ -539,17 +455,11 @@
             font-weight: bold;
         }
 
-
         .empty-cart {
             color: #888;
             text-align: center;
             padding: 50px 10px;
         }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
 
         footer {
             background: #020202;
@@ -561,11 +471,6 @@
             letter-spacing: 3px;
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
-
         @media (max-width: 1000px) {
 
             .products-container {
@@ -573,7 +478,6 @@
             }
 
         }
-
 
         @media (max-width: 700px) {
 
@@ -585,29 +489,24 @@
                 gap: 18px;
             }
 
-
             .menu {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
 
-
             .menu a {
                 font-size: 9px;
             }
-
 
             .products-container {
                 grid-template-columns: 1fr;
                 width: 90%;
             }
 
-
             .product-image {
                 height: 450px;
             }
-
 
             .page-title {
                 padding-top: 50px;
@@ -615,13 +514,11 @@
 
         }
 
-
         @media (max-width: 450px) {
 
             .product-image {
                 height: 400px;
             }
-
 
             .product-info {
                 padding: 20px;
@@ -633,18 +530,11 @@
 
 </head>
 
-
 <body>
-
-
-    <!-- TOP BAR -->
 
     <div class="top-bar">
         GAMY STORE ✦ NEW COLLECTION ✦ SHOP NOW
     </div>
-
-
-    <!-- HEADER -->
 
     <header class="header">
 
@@ -652,43 +542,25 @@
             GAMY STORE
         </div>
 
-
         <nav class="menu">
 
-            <a href="index.html#home">
-                HOME
-            </a>
+            <a href="index.html#home">HOME</a>
 
-            <a href="index.html#categories">
-                COLLECTIONS
-            </a>
+            <a href="index.html#categories">COLLECTIONS</a>
 
-            <a href="index.html#men">
-                MEN
-            </a>
+            <a href="index.html#men">MEN</a>
 
-            <a href="index.html#women">
-                WOMEN
-            </a>
+            <a href="index.html#women">WOMEN</a>
 
-            <a href="index.html#shoes">
-                SNEAKERS
-            </a>
+            <a href="index.html#shoes">SNEAKERS</a>
 
-            <a href="product.html">
-                PRODUCT
-            </a>
+            <a href="product.html">PRODUCT</a>
 
-            <a href="index.html#contact">
-                CONTACT
-            </a>
+            <a href="index.html#contact">CONTACT</a>
 
         </nav>
 
     </header>
-
-
-    <!-- PAGE TITLE -->
 
     <section class="page-title">
 
@@ -706,14 +578,9 @@
 
     </section>
 
-
-    <!-- PRODUCTS -->
-
     <main class="products-container">
 
-
         <!-- 1 -->
-
         <div class="product-card">
 
             <div
@@ -723,17 +590,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Premium T-Shirt
-                </h3>
+                <h3>Premium T-Shirt</h3>
 
-                <div class="price">
-                    450 EGP
-                </div>
+                <div class="price">450 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -741,9 +602,7 @@
                     <option>NAVY</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>S</option>
@@ -754,17 +613,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -776,9 +629,7 @@
 
         </div>
 
-
         <!-- 2 -->
-
         <div class="product-card">
 
             <div
@@ -788,17 +639,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Premium Shirt
-                </h3>
+                <h3>Premium Shirt</h3>
 
-                <div class="price">
-                    650 EGP
-                </div>
+                <div class="price">650 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -806,9 +651,7 @@
                     <option>GRAY</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>S</option>
@@ -819,17 +662,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -841,9 +678,7 @@
 
         </div>
 
-
         <!-- 3 -->
-
         <div class="product-card">
 
             <div
@@ -853,17 +688,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Premium Pants
-                </h3>
+                <h3>Premium Pants</h3>
 
-                <div class="price">
-                    800 EGP
-                </div>
+                <div class="price">800 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -871,9 +700,7 @@
                     <option>NAVY</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>30</option>
@@ -884,17 +711,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -906,9 +727,7 @@
 
         </div>
 
-
         <!-- 4 -->
-
         <div class="product-card">
 
             <div
@@ -918,17 +737,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Premium Blouse
-                </h3>
+                <h3>Premium Blouse</h3>
 
-                <div class="price">
-                    550 EGP
-                </div>
+                <div class="price">550 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -936,9 +749,7 @@
                     <option>BEIGE</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>S</option>
@@ -949,17 +760,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -971,9 +776,7 @@
 
         </div>
 
-
         <!-- 5 -->
-
         <div class="product-card">
 
             <div
@@ -983,17 +786,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Signature Jacket
-                </h3>
+                <h3>Signature Jacket</h3>
 
-                <div class="price">
-                    950 EGP
-                </div>
+                <div class="price">950 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -1001,9 +798,7 @@
                     <option>BEIGE</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>S</option>
@@ -1014,17 +809,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -1036,9 +825,7 @@
 
         </div>
 
-
         <!-- 6 -->
-
         <div class="product-card">
 
             <div
@@ -1048,17 +835,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Luxury Jacket
-                </h3>
+                <h3>Luxury Jacket</h3>
 
-                <div class="price">
-                    1200 EGP
-                </div>
+                <div class="price">1200 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -1066,9 +847,7 @@
                     <option>CREAM</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>S</option>
@@ -1079,17 +858,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -1101,9 +874,7 @@
 
         </div>
 
-
         <!-- 7 -->
-
         <div class="product-card">
 
             <div
@@ -1113,17 +884,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Sport Sneaker
-                </h3>
+                <h3>Sport Sneaker</h3>
 
-                <div class="price">
-                    1100 EGP
-                </div>
+                <div class="price">1100 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -1131,9 +896,7 @@
                     <option>GRAY</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>40</option>
@@ -1145,17 +908,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -1167,9 +924,7 @@
 
         </div>
 
-
         <!-- 8 -->
-
         <div class="product-card">
 
             <div
@@ -1179,26 +934,18 @@
 
             <div class="product-info">
 
-                <h3>
-                    White Sneaker
-                </h3>
+                <h3>White Sneaker</h3>
 
-                <div class="price">
-                    1250 EGP
-                </div>
+                <div class="price">1250 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>WHITE</option>
                     <option>BLACK</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>40</option>
@@ -1210,17 +957,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -1232,9 +973,7 @@
 
         </div>
 
-
         <!-- 9 -->
-
         <div class="product-card">
 
             <div
@@ -1244,17 +983,11 @@
 
             <div class="product-info">
 
-                <h3>
-                    Classic Sneaker
-                </h3>
+                <h3>Classic Sneaker</h3>
 
-                <div class="price">
-                    1350 EGP
-                </div>
+                <div class="price">1350 EGP</div>
 
-                <label class="option-label">
-                    COLOR
-                </label>
+                <label class="option-label">COLOR</label>
 
                 <select class="color-select">
                     <option>BLACK</option>
@@ -1262,9 +995,7 @@
                     <option>BROWN</option>
                 </select>
 
-                <label class="option-label">
-                    SIZE
-                </label>
+                <label class="option-label">SIZE</label>
 
                 <select class="size-select">
                     <option>40</option>
@@ -1276,17 +1007,11 @@
 
                 <div class="quantity-box">
 
-                    <button type="button" class="minus">
-                        −
-                    </button>
+                    <button type="button" class="minus">−</button>
 
-                    <span class="quantity">
-                        1
-                    </span>
+                    <span class="quantity">1</span>
 
-                    <button type="button" class="plus">
-                        +
-                    </button>
+                    <button type="button" class="plus">+</button>
 
                 </div>
 
@@ -1298,11 +1023,7 @@
 
         </div>
 
-
     </main>
-
-
-    <!-- CART BUTTON -->
 
     <button id="openCart" class="cart-button">
 
@@ -1314,13 +1035,7 @@
 
     </button>
 
-
-    <!-- CART OVERLAY -->
-
     <div id="cartOverlay" class="cart-overlay"></div>
-
-
-    <!-- CART -->
 
     <aside id="cart" class="cart">
 
@@ -1341,7 +1056,6 @@
 
         </div>
 
-
         <div id="cartItems" class="cart-items">
 
             <div class="empty-cart">
@@ -1349,7 +1063,6 @@
             </div>
 
         </div>
-
 
         <div class="cart-footer">
 
@@ -1375,23 +1088,82 @@
 
     </aside>
 
-
-    <!-- FOOTER -->
-
     <footer>
-
         © 2026 GAMY STORE — ALL RIGHTS RESERVED
-
     </footer>
-
 
     <script>
 
         /* =========================
-           CART
+           SHARED CART
         ========================= */
 
+        const CART_STORAGE_KEY = "gamyStoreCart";
+
         let cartItemsArray = [];
+
+
+        /* =========================
+           LOAD CART
+        ========================= */
+
+        function loadCart() {
+
+            try {
+
+                const savedCart =
+                    localStorage.getItem(CART_STORAGE_KEY);
+
+                if (savedCart) {
+
+                    const parsedCart =
+                        JSON.parse(savedCart);
+
+                    if (Array.isArray(parsedCart)) {
+
+                        cartItemsArray = parsedCart;
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Could not load cart:",
+                    error
+                );
+
+                cartItemsArray = [];
+
+            }
+
+        }
+
+
+        /* =========================
+           SAVE CART
+        ========================= */
+
+        function saveCart() {
+
+            try {
+
+                localStorage.setItem(
+                    CART_STORAGE_KEY,
+                    JSON.stringify(cartItemsArray)
+                );
+
+            } catch (error) {
+
+                console.error(
+                    "Could not save cart:",
+                    error
+                );
+
+            }
+
+        }
 
 
         const openCartButton =
@@ -1422,153 +1194,190 @@
             document.getElementById("cartTotal");
 
 
-        openCartButton.addEventListener("click", function () {
+        openCartButton.addEventListener(
+            "click",
+            function () {
 
-            cart.classList.add("active");
+                cart.classList.add("active");
 
-            cartOverlay.classList.add("active");
+                cartOverlay.classList.add("active");
 
-        });
-
-
-        closeCartButton.addEventListener("click", function () {
-
-            cart.classList.remove("active");
-
-            cartOverlay.classList.remove("active");
-
-        });
+            }
+        );
 
 
-        cartOverlay.addEventListener("click", function () {
+        closeCartButton.addEventListener(
+            "click",
+            function () {
 
-            cart.classList.remove("active");
+                cart.classList.remove("active");
 
-            cartOverlay.classList.remove("active");
+                cartOverlay.classList.remove("active");
 
-        });
+            }
+        );
+
+
+        cartOverlay.addEventListener(
+            "click",
+            function () {
+
+                cart.classList.remove("active");
+
+                cartOverlay.classList.remove("active");
+
+            }
+        );
 
 
         /* =========================
            QUANTITY
         ========================= */
 
-        document.querySelectorAll(".product-card").forEach(function (card) {
+        document
+            .querySelectorAll(".product-card")
+            .forEach(function (card) {
 
-            const minus =
-                card.querySelector(".minus");
+                const minus =
+                    card.querySelector(".minus");
 
-            const plus =
-                card.querySelector(".plus");
+                const plus =
+                    card.querySelector(".plus");
 
-            const quantity =
-                card.querySelector(".quantity");
-
-
-            let currentQuantity = 1;
+                const quantity =
+                    card.querySelector(".quantity");
 
 
-            minus.addEventListener("click", function () {
+                let currentQuantity = 1;
 
-                if (currentQuantity > 1) {
 
-                    currentQuantity--;
+                minus.addEventListener(
+                    "click",
+                    function () {
 
-                    quantity.textContent =
-                        currentQuantity;
+                        if (currentQuantity > 1) {
 
-                }
+                            currentQuantity--;
+
+                            quantity.textContent =
+                                currentQuantity;
+
+                        }
+
+                    }
+                );
+
+
+                plus.addEventListener(
+                    "click",
+                    function () {
+
+                        currentQuantity++;
+
+                        quantity.textContent =
+                            currentQuantity;
+
+                    }
+                );
+
+
+                /* =========================
+                   ADD TO CART
+                ========================= */
+
+                const addButton =
+                    card.querySelector(".add-cart");
+
+
+                addButton.addEventListener(
+                    "click",
+                    function () {
+
+                        const name =
+                            card
+                                .querySelector("h3")
+                                .textContent
+                                .trim();
+
+
+                        const priceText =
+                            card
+                                .querySelector(".price")
+                                .textContent;
+
+
+                        const price =
+                            parseInt(
+                                priceText.replace(
+                                    /[^\d]/g,
+                                    ""
+                                )
+                            );
+
+
+                        const color =
+                            card
+                                .querySelector(".color-select")
+                                .value;
+
+
+                        const size =
+                            card
+                                .querySelector(".size-select")
+                                .value;
+
+
+                        const existingItem =
+                            cartItemsArray.find(
+                                function (item) {
+
+                                    return (
+                                        item.name === name &&
+                                        item.color === color &&
+                                        item.size === size
+                                    );
+
+                                }
+                            );
+
+
+                        if (existingItem) {
+
+                            existingItem.quantity +=
+                                currentQuantity;
+
+                        } else {
+
+                            cartItemsArray.push({
+
+                                name: name,
+
+                                price: price,
+
+                                color: color,
+
+                                size: size,
+
+                                quantity: currentQuantity
+
+                            });
+
+                        }
+
+
+                        saveCart();
+
+                        updateCart();
+
+
+                        cart.classList.add("active");
+
+                        cartOverlay.classList.add("active");
+
+                    }
+                );
 
             });
-
-
-            plus.addEventListener("click", function () {
-
-                currentQuantity++;
-
-                quantity.textContent =
-                    currentQuantity;
-
-            });
-
-
-            /* =========================
-               ADD TO CART
-            ========================= */
-
-            const addButton =
-                card.querySelector(".add-cart");
-
-
-            addButton.addEventListener("click", function () {
-
-                const name =
-                    card.querySelector("h3").textContent.trim();
-
-
-                const priceText =
-                    card.querySelector(".price").textContent;
-
-
-                const price =
-                    parseInt(
-                        priceText.replace(/[^\d]/g, "")
-                    );
-
-
-                const color =
-                    card.querySelector(".color-select").value;
-
-
-                const size =
-                    card.querySelector(".size-select").value;
-
-
-                const existingItem =
-                    cartItemsArray.find(function (item) {
-
-                        return (
-                            item.name === name &&
-                            item.color === color &&
-                            item.size === size
-                        );
-
-                    });
-
-
-                if (existingItem) {
-
-                    existingItem.quantity += currentQuantity;
-
-                } else {
-
-                    cartItemsArray.push({
-
-                        name: name,
-
-                        price: price,
-
-                        color: color,
-
-                        size: size,
-
-                        quantity: currentQuantity
-
-                    });
-
-                }
-
-
-                updateCart();
-
-
-                cart.classList.add("active");
-
-                cartOverlay.classList.add("active");
-
-            });
-
-        });
 
 
         /* =========================
@@ -1592,6 +1401,8 @@
 
                 cartTotal.textContent = "0";
 
+                saveCart();
+
                 return;
 
             }
@@ -1602,73 +1413,78 @@
             let count = 0;
 
 
-            cartItemsArray.forEach(function (item, index) {
+            cartItemsArray.forEach(
+                function (item, index) {
 
-                const itemTotal =
-                    item.price * item.quantity;
-
-
-                total += itemTotal;
-
-                count += item.quantity;
+                    const itemTotal =
+                        item.price *
+                        item.quantity;
 
 
-                const itemElement =
-                    document.createElement("div");
+                    total += itemTotal;
+
+                    count += item.quantity;
 
 
-                itemElement.className =
-                    "cart-item";
+                    const itemElement =
+                        document.createElement("div");
 
 
-                itemElement.innerHTML = `
-
-                    <h4>
-                        ${item.name}
-                    </h4>
-
-                    <p>
-                        COLOR: ${item.color}
-                    </p>
-
-                    <p>
-                        SIZE: ${item.size}
-                    </p>
-
-                    <p>
-                        QUANTITY: ${item.quantity}
-                    </p>
-
-                    <p>
-                        PRICE: ${item.price} EGP
-                    </p>
-
-                    <p>
-                        TOTAL: ${itemTotal} EGP
-                    </p>
-
-                    <button
-                        type="button"
-                        onclick="removeCartItem(${index})"
-                        style="
-                            margin-top:10px;
-                            background:none;
-                            border:1px solid #555;
-                            color:#fff;
-                            padding:7px 12px;
-                            cursor:pointer;
-                            font-size:9px;
-                        "
-                    >
-                        REMOVE
-                    </button>
-
-                `;
+                    itemElement.className =
+                        "cart-item";
 
 
-                cartItems.appendChild(itemElement);
+                    itemElement.innerHTML = `
 
-            });
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+                        <p>
+                            COLOR: ${item.color}
+                        </p>
+
+                        <p>
+                            SIZE: ${item.size}
+                        </p>
+
+                        <p>
+                            QUANTITY: ${item.quantity}
+                        </p>
+
+                        <p>
+                            PRICE: ${item.price} EGP
+                        </p>
+
+                        <p>
+                            TOTAL: ${itemTotal} EGP
+                        </p>
+
+                        <button
+                            type="button"
+                            onclick="removeCartItem(${index})"
+                            style="
+                                margin-top:10px;
+                                background:none;
+                                border:1px solid #555;
+                                color:#fff;
+                                padding:7px 12px;
+                                cursor:pointer;
+                                font-size:9px;
+                            "
+                        >
+                            REMOVE
+                        </button>
+
+                    `;
+
+
+                    cartItems.appendChild(
+                        itemElement
+                    );
+
+                }
+            );
 
 
             cartCount.textContent =
@@ -1677,6 +1493,9 @@
 
             cartTotal.textContent =
                 total;
+
+
+            saveCart();
 
         }
 
@@ -1687,14 +1506,51 @@
 
         function removeCartItem(index) {
 
-            cartItemsArray.splice(index, 1);
+            cartItemsArray.splice(
+                index,
+                1
+            );
+
+            saveCart();
 
             updateCart();
 
         }
 
-    </script>
 
+        /* =========================
+           START
+        ========================= */
+
+        loadCart();
+
+        updateCart();
+
+
+        /* =========================
+           SYNC IF ANOTHER PAGE
+           CHANGES THE CART
+        ========================= */
+
+        window.addEventListener(
+            "storage",
+            function (event) {
+
+                if (
+                    event.key ===
+                    CART_STORAGE_KEY
+                ) {
+
+                    loadCart();
+
+                    updateCart();
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 
