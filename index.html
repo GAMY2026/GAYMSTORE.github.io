@@ -3829,7 +3829,42 @@ footer {
                 ================================================= */
 
                 let cartItemsArray = [];
+const CART_STORAGE_KEY = "gamyStoreCart";
 
+function loadCart() {
+
+    try {
+
+        const savedCart =
+            localStorage.getItem(
+                CART_STORAGE_KEY
+            );
+
+        if (savedCart) {
+
+            const parsedCart =
+                JSON.parse(savedCart);
+
+            if (Array.isArray(parsedCart)) {
+
+                cartItemsArray = parsedCart;
+
+            }
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "Could not load cart:",
+            error
+        );
+
+        cartItemsArray = [];
+
+    }
+
+}
 
                 const openCartButton =
                     document.getElementById("openCart");
@@ -4914,6 +4949,10 @@ function saveCart() {
 
 saveCart();
 
+
+closeProductModal();
+
+openCart();
 updateCart();
 
                         closeProductModal();
@@ -5823,6 +5862,8 @@ localStorage.setItem(
             }
 
         );
+        loadCart();
+updateCart();
         </script>
         <!-- PRODUCT DETAILS MODAL -->
 
