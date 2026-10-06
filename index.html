@@ -338,7 +338,7 @@ body::after {
 
             transform: translate(-50%, -50%);
 
-           pointer-events: auto;
+          pointer-events: none;
         }
 
         .hero-overlay {
@@ -5754,7 +5754,7 @@ localStorage.setItem(
                 );
 
 
-             /* SOUND */
+           /* SOUND */
 
 soundButton.addEventListener(
     "click",
@@ -5763,26 +5763,18 @@ soundButton.addEventListener(
         if (videoMuted) {
 
             sendYouTubeCommand(
-                "playVideo"
+                "unMute"
             );
 
-            setTimeout(function () {
+            sendYouTubeCommand(
+                "setVolume",
+                [100]
+            );
 
-                sendYouTubeCommand(
-                    "unMute"
-                );
+            videoMuted = false;
 
-                sendYouTubeCommand(
-                    "setVolume",
-                    [100]
-                );
-
-                videoMuted = false;
-
-                soundButton.textContent =
-                    "🔊 SOUND ON";
-
-            }, 200);
+            soundButton.textContent =
+                "🔊 SOUND ON";
 
         }
 
