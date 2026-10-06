@@ -5754,49 +5754,53 @@ localStorage.setItem(
                 );
 
 
-                /* SOUND */
+             /* SOUND */
 
-                soundButton.addEventListener(
-                    "click",
-                    function () {
+soundButton.addEventListener(
+    "click",
+    function () {
 
-                        if (
-                            videoMuted
-                        ) {
+        if (videoMuted) {
 
-                            sendYouTubeCommand(
-                                "unMute"
-                            );
+            sendYouTubeCommand(
+                "playVideo"
+            );
 
+            setTimeout(function () {
 
-                            sendYouTubeCommand(
-                                "setVolume",
-                                [100]
-                            );
+                sendYouTubeCommand(
+                    "unMute"
+                );
 
+                sendYouTubeCommand(
+                    "setVolume",
+                    [100]
+                );
 
-                            videoMuted = false;
+                videoMuted = false;
 
+                soundButton.textContent =
+                    "🔊 SOUND ON";
 
-                            soundButton.textContent =
-                                "🔊 SOUND ON";
+            }, 200);
 
-                        }
+        }
 
-                        else {
+        else {
 
-                        sendYouTubeCommand(
-    "mute"
+            sendYouTubeCommand(
+                "mute"
+            );
+
+            videoMuted = true;
+
+            soundButton.textContent =
+                "🔇 SOUND OFF";
+
+        }
+
+    }
 );
-
-
-videoMuted = true;
-
-
-soundButton.textContent =
-    "🔇 SOUND OFF";
-
-}
 
                 /* FULLSCREEN */
 
