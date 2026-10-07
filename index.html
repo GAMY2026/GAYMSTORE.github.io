@@ -2266,13 +2266,25 @@ footer {
                 </span>
 
                 <a
-                    href="#men"
-                    class="hero-button">
+                    <a
+    href="#men"
+    class="hero-button">
 
-                    SHOP NOW
+    SHOP NOW
 
-                </a>
+</a>
 
+<button
+
+    id="homeCheckoutButton"
+    class="hero-button home-checkout-button"
+    type="button"
+    style="display: none;">
+
+    CHECKOUT
+
+
+</button>
             </div>
 
         </div>
@@ -4485,7 +4497,17 @@ function saveCart() {
                     cartTotalElement.textContent =
                         total.toLocaleString() +
                         " EGP";
+const homeCheckoutButton =
+    document.getElementById("homeCheckoutButton");
 
+if (homeCheckoutButton) {
+
+    homeCheckoutButton.style.display =
+        cartItemsArray.length > 0
+            ? "inline-block"
+            : "none";
+
+}
 
                     updateCheckoutSummary();
 
@@ -5123,6 +5145,14 @@ saveCart();
                     openCheckout
                 );
 
+
+const homeCheckoutButton =
+    document.getElementById("homeCheckoutButton");
+
+homeCheckoutButton.addEventListener(
+    "click",
+    openCheckout
+);
 
                 closeCheckoutButton.addEventListener(
                     "click",
