@@ -5754,13 +5754,17 @@ localStorage.setItem(
                 );
 
 
-           /* SOUND */
+      /* SOUND */
 
 soundButton.addEventListener(
     "click",
     function () {
 
         if (videoMuted) {
+
+            sendYouTubeCommand(
+                "playVideo"
+            );
 
             sendYouTubeCommand(
                 "unMute"
@@ -5778,6 +5782,21 @@ soundButton.addEventListener(
 
         }
 
+        else {
+
+            sendYouTubeCommand(
+                "mute"
+            );
+
+            videoMuted = true;
+
+            soundButton.textContent =
+                "🔇 SOUND OFF";
+
+        }
+
+    }
+);
         else {
 
             sendYouTubeCommand(
