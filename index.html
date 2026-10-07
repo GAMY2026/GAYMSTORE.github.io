@@ -340,7 +340,15 @@ body::after {
 
           pointer-events: none;
         }
-
+.hero-video img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -2269,16 +2277,10 @@ footer {
 
         <div class="hero-video">
 
-            <iframe
-                id="heroVideo"
-               src="https://www.youtube.com/embed/vvcsRpP0z70?enablejsapi=1&origin=https%3A%2F%2Fgamy2026.github.io&autoplay=1&mute=1&loop=1&playlist=vvcsRpP0z70&controls=0&rel=0&modestbranding=1&playsinline=1"
-                title="GAMY STORE Luxury Fashion"
-                frameborder="0"
-                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                allowfullscreen>
-            </iframe>
-
-        </div>
+           <img
+    id="heroVideo"
+    src="https://cdn.phototourl.com/member/2026-10-07-7d6064b7-6fdf-4a2a-86bd-78273e399de3.jpg"
+    alt="GAMY STORE">
 
 
         <div class="hero-overlay">
