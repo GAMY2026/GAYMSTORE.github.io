@@ -1416,97 +1416,434 @@ body::after {
             letter-spacing: 1px;
         }
 
-        .checkout-field {
-            margin-bottom: 17px;
-        }
+       /* =====================================================
+   GAMY STORE — LUXURY CHECKOUT
+===================================================== */
 
-        .checkout-field label {
-            display: block;
+.checkout-field {
+    margin-bottom: 18px;
+}
 
-            font-size: 9px;
-            font-weight: bold;
+.checkout-field label {
+    display: block;
 
-            letter-spacing: 1px;
+    font-size: 9px;
+    font-weight: 600;
 
-            margin-bottom: 7px;
-        }
+    color: #222;
 
-        .checkout-field input,
-        .checkout-field select,
-        .checkout-field textarea {
-            width: 100%;
+    letter-spacing: 2px;
 
-            border: 1px solid #ddd;
+    margin-bottom: 8px;
+}
 
-            padding: 12px;
+.checkout-field input,
+.checkout-field select,
+.checkout-field textarea {
+    width: 100%;
 
-            outline: none;
+    box-sizing: border-box;
 
-            font-size: 11px;
+    border: 1px solid #d8d1c4;
 
-            resize: vertical;
-        }
+    background: #fafafa;
 
-        .checkout-field input:focus,
-        .checkout-field select:focus,
-        .checkout-field textarea:focus {
-            border-color: #111;
-        }
+    color: #111;
 
-        .checkout-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+    padding: 14px;
 
-        .checkout-summary {
-            display: flex;
-            justify-content: space-between;
+    outline: none;
 
-            background: #f5f5f5;
+    font-family: Arial, sans-serif;
 
-            padding: 18px;
+    font-size: 11px;
 
-            margin: 20px 0;
-        }
+    letter-spacing: 1px;
 
-        .checkout-summary div {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
+    border-radius: 0;
 
-        .checkout-summary span {
-            font-size: 9px;
-            color: #777;
-            letter-spacing: 1px;
-        }
+    resize: vertical;
 
-        .checkout-summary strong {
-            font-size: 15px;
-        }
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
 
-        .place-order-button {
-            width: 100%;
+.checkout-field input::placeholder,
+.checkout-field textarea::placeholder {
+    color: #999;
 
-            padding: 16px;
+    font-size: 9px;
 
-            background: #111;
-            color: #fff;
+    letter-spacing: 1.5px;
+}
 
-            border: 0;
+.checkout-field input:focus,
+.checkout-field select:focus,
+.checkout-field textarea:focus {
+    border-color: #c8a96b;
 
-            cursor: pointer;
+    background: #fff;
 
-            font-size: 10px;
-            font-weight: bold;
+    box-shadow:
+        0 0 0 1px rgba(200,169,107,0.15);
+}
 
-            letter-spacing: 2px;
-        }
 
-        .place-order-button:hover {
-            background: #c8a96b;
-        }
+/* =====================================================
+   TWO COLUMNS
+===================================================== */
+
+.checkout-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* =====================================================
+   ORDER SUMMARY
+===================================================== */
+
+.checkout-summary {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #171717
+        );
+
+    color: #fff;
+
+    padding: 20px;
+
+    margin: 24px 0;
+
+    border: 1px solid #c8a96b;
+
+    position: relative;
+}
+
+.checkout-summary::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: #c8a96b;
+}
+
+.checkout-summary div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.checkout-summary span {
+    font-size: 8px;
+
+    color: #c8a96b;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+.checkout-summary strong {
+    font-size: 16px;
+
+    color: #fff;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ORDER RESULT
+===================================================== */
+
+.order-result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.82);
+    backdrop-filter: blur(5px);
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.order-result-box {
+    width: min(430px, 100%);
+    background: linear-gradient(145deg, #ffffff, #f7f5f1);
+    padding: 42px 30px;
+    text-align: center;
+    border: 1px solid #c8a96b;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+}
+
+.order-success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #050505;
+    color: #c8a96b;
+    border: 1px solid #c8a96b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.order-result-box h2 {
+    font-size: 21px;
+    letter-spacing: 4px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.order-number {
+    margin: 15px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #c8a96b;
+    letter-spacing: 2px;
+}
+
+.order-result-box p {
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+}
+/* =====================================================
+   ORDER RESULT
+===================================================== */
+
+.order-result-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.82);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.order-result-box {
+    width: min(430px, 100%);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7f5f1
+        );
+
+    padding: 42px 30px;
+
+    text-align: center;
+
+    border: 1px solid #c8a96b;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.45);
+}
+
+.order-success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #050505;
+
+    color: #c8a96b;
+
+    border: 1px solid #c8a96b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    font-weight: 300;
+}
+
+.order-result-box h2 {
+    font-size: 21px;
+
+    letter-spacing: 4px;
+
+    color: #111;
+
+    margin-bottom: 8px;
+}
+
+.order-number {
+    margin: 15px 0;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #c8a96b;
+
+    letter-spacing: 2px;
+}
+
+.order-result-box p {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   CONFIRM / REJECT
+===================================================== */
+
+.confirm-order-button,
+.reject-order-button {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.confirm-order-button {
+    background: #050505;
+
+    color: #fff;
+
+    border: 1px solid #c8a96b;
+}
+
+.confirm-order-button:hover {
+    background: #c8a96b;
+
+    color: #050505;
+}
+
+.reject-order-button {
+    background: transparent;
+
+    color: #111;
+
+    border: 1px solid #ccc;
+}
+
+.reject-order-button:hover {
+    background: #eee;
+}
+/* =====================================================
+   CLOSE RESULT
+===================================================== */
+
+.close-order-result {
+    width: 100%;
+    margin-top: 15px;
+    padding: 13px;
+    background: transparent;
+    color: #555;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.close-order-result:hover {
+    border-color: #c8a96b;
+    color: #c8a96b;
+}
+
+
+/* =====================================================
+   MOBILE CHECKOUT
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .checkout-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-summary {
+        padding: 17px;
+    }
+
+    .place-order-button {
+        padding: 16px;
+    }
+
+    .order-result-box {
+        padding: 35px 22px;
+    }
+
+}
 
 
         /* =====================================================
