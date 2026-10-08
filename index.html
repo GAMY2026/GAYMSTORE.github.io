@@ -10,8 +10,7 @@
 
     <title>GAMY STORE | Luxury Fashion</title>
 
-
-</style>
+    <style>
 
         /* =====================================================
            RESET
@@ -1298,28 +1297,53 @@ body::after {
             background: #111;
             color: #fff;
         }
-<div class="cart-footer">
 
-    <div class="cart-total-row">
-        <span>TOTAL</span>
+        .cart-footer {
+            
+    padding: 22px;
 
-        <strong id="cartTotal">
-            0 EGP
-        </strong>
-    </div>
+    border-top: 1px solid #eee;
 
-    <button
-        id="checkoutButton"
-        class="checkout-button"
-        type="button"
-        onclick="document.getElementById('checkoutOverlay').classList.add('active'); document.body.style.overflow='hidden';">
+    flex-shrink: 0;
+}
 
-        CHECKOUT
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
 
-    </button>
+            margin-bottom: 18px;
 
-</div>
-     
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .cart-total-row strong {
+            font-size: 15px;
+        }
+
+        .checkout-button {
+            width: 100%;
+
+            padding: 15px;
+
+            background: #111;
+            color: #fff;
+
+            border: 0;
+
+            cursor: pointer;
+
+            font-size: 10px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .checkout-button:hover {
+            background: #c8a96b;
+        }
+
+
         /* =====================================================
            CHECKOUT
         ===================================================== */
