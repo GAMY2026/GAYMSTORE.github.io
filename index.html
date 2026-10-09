@@ -488,16 +488,26 @@ body::after {
            COLLECTIONS
         ===================================================== */
 
-        .collection-grid {
-            max-width: 1200px;
-            margin: auto;
+       
+.collection-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
 
-            display: grid;
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
+    position: relative;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.60)
+        ),
+        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
+        center center / cover no-repeat !important;
+    padding: 35px;
+    box-sizing: border-box;
+}
 
         .collection-card {
             background: #111;
@@ -658,7 +668,27 @@ body::after {
             letter-spacing: 2px;
         }
 
+/* GAMY STORE — BACKGROUND BEHIND ALL COLLECTION CARDS */
 
+.collection-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+
+    position: relative;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.60)
+        ),
+        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
+        center center / cover no-repeat !important;
+    padding: 35px;
+    box-sizing: border-box;
+}
         /* =====================================================
            PRODUCTS
         ===================================================== */
