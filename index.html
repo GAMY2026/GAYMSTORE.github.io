@@ -2554,15 +2554,24 @@ footer {
     cursor: pointer !important;
 }
         
-/* GAMY STORE — COLLECTIONS BACKGROUND */
+
+/* GAMY STORE — FULL COLLECTIONS BACKGROUND */
 .section:has(.collection-grid) {
-    background:
+    background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.58),
-            rgba(0, 0, 0, 0.72)
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.62)
         ),
-        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
-        center center / cover no-repeat !important;
+        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
+
+.section:has(.collection-grid) .collection-content {
+    background: rgba(0, 0, 0, 0.78);
 }
 </style>
 </head>
