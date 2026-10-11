@@ -4368,8 +4368,12 @@ function loadCart() {
 
                 const checkoutTotal =
                     document.getElementById("checkoutTotal");
-
-
+window.addEventListener("storage", function(event) {
+    if (event.key === CART_STORAGE_KEY) {
+        loadCart();
+        updateCart();
+    }
+});
                 /* =================================================
                    PRODUCT MODAL ELEMENTS
                 ================================================= */
