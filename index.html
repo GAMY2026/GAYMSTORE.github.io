@@ -4754,77 +4754,72 @@ function openCart() {
                    CHECKOUT
                 ================================================= */
 
-                function openCheckout() {
+            
+/* =====================================================
+   CHECKOUT FUNCTIONS
+===================================================== */
 
-                    if (
-                        cartItemsArray.length === 0
-                    ) {
+function openCheckout() {
 
-                        alert(
-                            "YOUR CART IS EMPTY"
-                        );
+    loadCart();
 
-                        return;
+    if (
+        !Array.isArray(cartItemsArray) ||
+        cartItemsArray.length === 0
+    ) {
+        alert("YOUR CART IS EMPTY");
+        return;
+    }
 
-                    }
+    if (!checkoutOverlay) {
+        console.error("checkoutOverlay was not found.");
+        alert("CHECKOUT is not available. Please check the checkout HTML.");
+        return;
+    }
 
-                    checkoutOverlay.classList.add(
-                        "active"
-                    );
+    updateCheckoutSummary();
 
-                    document.body.style.overflow =
-                        "hidden";
+    checkoutOverlay.classList.add("active");
 
-                    updateCheckoutSummary();
-
-                }
-
-
-                function closeCheckout() {
-
-                    checkoutOverlay.classList.remove(
-                        "active"
-                    );
-
-                    document.body.style.overflow =
-                        "";
-
-                }
+    document.body.style.overflow = "hidden";
+}
 
 
-                function updateCheckoutSummary() {
+function closeCheckout() {
 
-                    let total = 0;
+    if (checkoutOverlay) {
+        checkoutOverlay.classList.remove("active");
+    }
 
-                    let totalItems = 0;
-
-
-                    cartItemsArray.forEach(
-                        function (item) {
-
-                            const quantity =
-                                item.quantity || 1;
-
-                            total +=
-                                item.price *
-                                quantity;
-
-                            totalItems +=
-                                quantity;
-
-                        }
-                    );
+    document.body.style.overflow = "";
+}
 
 
-                    checkoutItemsCount.textContent =
-                        totalItems;
+function updateCheckoutSummary() {
 
+    let total = 0;
+    let totalItems = 0;
 
-                    checkoutTotal.textContent =
-                        total.toLocaleString() +
-                        " EGP";
+    cartItemsArray.forEach(function (item) {
 
-                }
+        const quantity = Number(item.quantity) || 1;
+        const price = Number(item.price) || 0;
+
+        total += price * quantity;
+        totalItems += quantity;
+
+    });
+
+    if (checkoutItemsCount) {
+        checkoutItemsCount.textContent = totalItems;
+    }
+
+    if (checkoutTotal) {
+        checkoutTotal.textContent =
+            total.toLocaleString() + " EGP";
+    }
+
+}
 
 
                 /* =================================================
@@ -5386,24 +5381,32 @@ if (homeCheckoutButton) {
                         }
 
 
+
+if (
+    !productName ||
+    !Number.isFinite(Number(productPrice)) ||
+    Number(productPrice) <= 0 ||
+    !selectedColor ||
+    !selectedSize ||
+    !Number.isFinite(Number(currentModalQuantity)) ||
+    Number(currentModalQuantity) < 1
+) {
+    alert("Please select a valid product, color, size, and quantity.");
+    return;
+}
+
 cartItemsArray.push({
     name: productName,
-    price: productPrice,
+    price: Number(productPrice),
     color: selectedColor,
     size: selectedSize,
-    quantity: currentModalQuantity
+    quantity: Math.floor(Number(currentModalQuantity))
 });
 
 saveCart();
-
 updateCart();
-
 closeProductModal();
-
 openCart();
-
-}
-);
 
                 /* =================================================
                    ADD TO CART - ORIGINAL BUTTONS
