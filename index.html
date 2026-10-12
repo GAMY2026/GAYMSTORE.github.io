@@ -4721,18 +4721,15 @@ window.addEventListener("storage", function(event) {
                 /* =================================================
                    OPEN CART
                 ================================================= */
+function openCart() {
 
-                function openCart() {
+    cartElement.classList.add("active");
 
-                    cartElement.classList.add("active");
+    cartOverlay.classList.add("active");
 
-                    cartOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
 
-                    document.body.style.overflow =
-                        "hidden";
-
-                }
-
+}
 
                 /* =================================================
                    CLOSE CART
