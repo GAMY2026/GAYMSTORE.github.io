@@ -5383,43 +5383,24 @@ if (homeCheckoutButton) {
                         }
 
 
-                        cartItemsArray.push({
-
-                           cartItemsArray.push({
-
-    name:
-        productName,
-
-    price:
-        productPrice,
-
-    color:
-        selectedColor,
-
-    size:
-        selectedSize,
-
-    quantity:
-        currentModalQuantity
-
+cartItemsArray.push({
+    name: productName,
+    price: productPrice,
+    color: selectedColor,
+    size: selectedSize,
+    quantity: currentModalQuantity
 });
 
 saveCart();
 
+updateCart();
 
 closeProductModal();
 
 openCart();
-updateCart();
 
-                        closeProductModal();
-
-
-                        openCart();
-
-                    }
-                );
-
+}
+);
 
                 /* =================================================
                    ADD TO CART - ORIGINAL BUTTONS
