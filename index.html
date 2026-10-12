@@ -4246,110 +4246,137 @@ footer {
             function () {
 
 
-                /* =================================================
-                   CART
-                ================================================= */
+               
+/* =================================================
+   CART STORAGE
+================================================= */
 
-                let cartItemsArray = [];
+let cartItemsArray = [];
+
 const CART_STORAGE_KEY = "gamyStoreCart";
 
+
 function loadCart() {
-
     try {
-
-        const savedCart =
-            localStorage.getItem(
-                CART_STORAGE_KEY
-            );
+        const savedCart = localStorage.getItem(CART_STORAGE_KEY);
 
         if (savedCart) {
-
-            const parsedCart =
-                JSON.parse(savedCart);
+            const parsedCart = JSON.parse(savedCart);
 
             if (Array.isArray(parsedCart)) {
-
                 cartItemsArray = parsedCart;
-
+            } else {
+                cartItemsArray = [];
             }
-
+        } else {
+            cartItemsArray = [];
         }
 
     } catch (error) {
-
-        console.error(
-            "Could not load cart:",
-            error
-        );
-
+        console.error("Could not load cart:", error);
         cartItemsArray = [];
-
     }
-
 }
 
-                const openCartButton =
-                    document.getElementById("openCart");
 
-                const closeCartButton =
-                    document.getElementById("closeCart");
+/* =================================================
+   CART ELEMENTS
+================================================= */
 
-                const cartElement =
-                    document.getElementById("cart");
+const openCartButton =
+    document.getElementById("openCart");
 
-                const cartOverlay =
-                    document.getElementById("cartOverlay");
+const closeCartButton =
+    document.getElementById("closeCart");
 
-                const cartItemsContainer =
-                    document.getElementById("cartItems");
+const cartElement =
+    document.getElementById("cart");
 
-                const cartCountElement =
-                    document.getElementById("cartCount");
+const cartOverlay =
+    document.getElementById("cartOverlay");
 
-                const cartTotalElement =
-                    document.getElementById("cartTotal");
+const cartItemsContainer =
+    document.getElementById("cartItems");
 
-                const checkoutButton =
-                    document.getElementById("checkoutButton");
+const cartCountElement =
+    document.getElementById("cartCount");
 
-                const checkoutOverlay =
-                    document.getElementById("checkoutOverlay");
+const cartTotalElement =
+    document.getElementById("cartTotal");
 
-                const closeCheckoutButton =
-                    document.getElementById("closeCheckout");
 
-                const checkoutForm =
-                    document.getElementById("checkoutForm");
+/* =================================================
+   CHECKOUT ELEMENTS
+================================================= */
 
-                const customerNameInput =
-                    document.getElementById("customerName");
+const checkoutButton =
+    document.getElementById("checkoutButton");
 
-                const customerPhoneInput =
-                    document.getElementById("customerPhone");
+const checkoutOverlay =
+    document.getElementById("checkoutOverlay");
 
-                const customerGovernorateSelect =
-                    document.getElementById("customerCity");
+const closeCheckoutButton =
+    document.getElementById("closeCheckout");
 
-                const customerAreaSelect =
-                    document.getElementById("customerArea");
+const checkoutForm =
+    document.getElementById("checkoutForm");
 
-                const customerAddressInput =
-                    document.getElementById("customerAddress");
+const customerNameInput =
+    document.getElementById("customerName");
 
-                const orderNotesInput =
-                    document.getElementById("orderNotes");
+const customerPhoneInput =
+    document.getElementById("customerPhone");
 
-                const checkoutItemsCount =
-                    document.getElementById("checkoutItemsCount");
+const customerGovernorateSelect =
+    document.getElementById("customerCity");
 
-                const checkoutTotal =
-                    document.getElementById("checkoutTotal");
-window.addEventListener("storage", function(event) {
+const customerAreaSelect =
+    document.getElementById("customerArea");
+
+const customerAddressInput =
+    document.getElementById("customerAddress");
+
+const orderNotesInput =
+    document.getElementById("orderNotes");
+
+const checkoutItemsCount =
+    document.getElementById("checkoutItemsCount");
+
+const checkoutTotal =
+    document.getElementById("checkoutTotal");
+
+
+/* =================================================
+   HOME CHECKOUT BUTTON
+================================================= */
+
+const homeCheckoutButton =
+    document.getElementById("homeCheckoutButton");
+
+
+/* =================================================
+   SYNC CART BETWEEN TABS
+================================================= */
+
+window.addEventListener("storage", function (event) {
+
     if (event.key === CART_STORAGE_KEY) {
         loadCart();
-        updateCart();
+
+        if (typeof updateCart === "function") {
+            updateCart();
+        }
     }
+
 });
+
+
+/* =================================================
+   INITIAL CART LOAD
+================================================= */
+
+loadCart();
+
                 /* =================================================
                    PRODUCT MODAL ELEMENTS
                 ================================================= */
@@ -5546,61 +5573,75 @@ saveCart();
                    CART BUTTONS
                 ================================================= */
 
-                openCartButton.addEventListener(
-                    "click",
-                    openCart
-                );
+/* =================================================
+   CART BUTTONS
+================================================= */
+
+openCartButton.addEventListener("click", openCart);
+
+closeCartButton.addEventListener("click", closeCart);
+
+cartOverlay.addEventListener("click", closeCart);
 
 
-                closeCartButton.addEventListener(
-                    "click",
-                    closeCart
-                );
+/* =================================================
+   CHECKOUT BUTTONS
+================================================= */
+
+checkoutButton.addEventListener("click", function () {
+
+    if (
+        !Array.isArray(cartItemsArray) ||
+        cartItemsArray.length === 0
+    ) {
+        alert("YOUR CART IS EMPTY");
+        return;
+    }
+
+    openCheckout();
+
+});
 
 
-                cartOverlay.addEventListener(
-                    "click",
-                    closeCart
-                );
-
-
-                checkoutButton.addEventListener(
-                    "click",
-                    openCheckout
-                );
-
+/* =================================================
+   HOME CHECKOUT BUTTON
+================================================= */
 
 const homeCheckoutButton =
     document.getElementById("homeCheckoutButton");
 
 if (homeCheckoutButton) {
-    homeCheckoutButton.addEventListener(
-        "click",
-        openCheckout
-    );
+
+    homeCheckoutButton.addEventListener("click", function () {
+
+        if (
+            !Array.isArray(cartItemsArray) ||
+            cartItemsArray.length === 0
+        ) {
+            alert("YOUR CART IS EMPTY");
+            return;
+        }
+
+        openCheckout();
+
+    });
+
 }
-                closeCheckoutButton.addEventListener(
-                    "click",
-                    closeCheckout
-                );
 
 
-                checkoutOverlay.addEventListener(
-                    "click",
-                    function (event) {
+/* =================================================
+   CLOSE CHECKOUT
+================================================= */
 
-                        if (
-                            event.target ===
-                            checkoutOverlay
-                        ) {
+closeCheckoutButton.addEventListener("click", closeCheckout);
 
-                            closeCheckout();
+checkoutOverlay.addEventListener("click", function (event) {
 
-                        }
+    if (event.target === checkoutOverlay) {
+        closeCheckout();
+    }
 
-                    }
-                );
-
+});
 
                 /* =================================================
                    GOVERNORATE
