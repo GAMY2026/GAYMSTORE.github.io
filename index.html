@@ -4353,6 +4353,22 @@ const checkoutTotal =
 const homeCheckoutButton =
     document.getElementById("homeCheckoutButton");
 
+if (homeCheckoutButton) {
+    homeCheckoutButton.addEventListener("click", function () {
+        loadCart();
+
+        if (
+            !Array.isArray(cartItemsArray) ||
+            cartItemsArray.length === 0
+        ) {
+            alert("YOUR CART IS EMPTY");
+            return;
+        }
+
+        window.location.href = "checkout.html";
+    });
+}
+
 
 /* =================================================
    SYNC CART BETWEEN TABS
@@ -5587,23 +5603,29 @@ closeCartButton.addEventListener("click", closeCart);
 cartOverlay.addEventListener("click", closeCart);
 
 
+
 /* =================================================
-   CHECKOUT BUTTONS
+   CHECKOUT BUTTON
 ================================================= */
 
-checkoutButton.addEventListener("click", function () {
+if (checkoutButton) {
+    checkoutButton.addEventListener("click", function () {
 
-    if (
-        !Array.isArray(cartItemsArray) ||
-        cartItemsArray.length === 0
-    ) {
-        alert("YOUR CART IS EMPTY");
-        return;
-    }
+        loadCart();
 
-    openCheckout();
+        if (
+            !Array.isArray(cartItemsArray) ||
+            cartItemsArray.length === 0
+        ) {
+            alert("YOUR CART IS EMPTY");
+            return;
+        }
 
-});
+        window.location.href = "checkout.html";
+
+    });
+}
+
 
 
 /* =================================================
