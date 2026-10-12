@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | GAMY STORE</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f5f5;
+            color: #111;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 22px;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+        }
+
+        .panel {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px #0000000d;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+
+        .item p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        button, .back-link {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #111;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        button:hover, .back-link:hover {
+            background: #333;
+        }
+
+        .back-link {
+            margin-top: 12px;
+            background: #e5e5e5;
+            color: #111;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .empty a {
+            color: #111;
+        }
+
+        .notice {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px auto;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>GAMY STORE — CHECKOUT</header>
+
+<main class="container">
+
+    <section class="panel">
+        <h2>Customer Information</h2>
+
+        <form id="checkoutForm">
+
+            <div class="field">
+                <label for="customerName">Full Name</label>
+                <input id="customerName" name="customerName"
+                       type="text" required>
+            </div>
+
+            <div class="field">
+                <label for="customerPhone">Phone Number</label>
+                <input id="customerPhone" name="customerPhone"
+                       type="tel" required>
+            </div>
+
+            <div class="field">
+                <label for="customerCity">Governorate</label>
+                <input id="customerCity" name="customerCity"
+                       type="text" required>
+            </div>
+
+            <div class="field">
+                <label for="customerArea">Area</label>
+                <input id="customerArea" name="customerArea"
+                       type="text" required>
+            </div>
+
+            <div class="field">
+                <label for="customerAddress">Full Address</label>
+                <textarea id="customerAddress" name="customerAddress"
+                          required></textarea>
+            </div>
+
+            <div class="field">
+                <label for="orderNotes">Order Notes (Optional)</label>
+                <textarea id="orderNotes" name="orderNotes"></textarea>
+            </div>
+
+            <button type="submit" id="confirmOrder">
+                CONFIRM ORDER
+            </button>
+
+            <p class="notice">
+                This form prepares your order details. It does not
+                process an online payment or send the order to the store.
+            </p>
+
+        </form>
+    </section>
+
+    <aside class="panel">
+        <h2>Your Order</h2>
+
+        <div id="checkoutItems"></div>
+
+        <div id="orderTotal" class="total-row">
+            <span>TOTAL</span>
+            <span>0 EGP</span>
+        </div>
+
+        <a class="back-link" href="index.html">
+            BACK TO STORE
+        </a>
+    </aside>
+
+</main>
+
+<script>
+    const CART_STORAGE_KEY = "gamyStoreCart";
+
+    const itemsContainer = document.getElementById("checkoutItems");
+    const orderTotal = document.getElementById("orderTotal");
+    const checkoutForm = document.getElementById("checkoutForm");
+    const confirmButton = document.getElementById("confirmOrder");
+
+    let cartItemsArray = [];
+
+    function loadCart() {
+        try {
+            const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+            const parsedCart = savedCart ? JSON.parse(savedCart) : [];
+
+            cartItemsArray = Array.isArray(parsedCart) ? parsedCart : [];
+        } catch (error) {
+            console.error("Could not load cart:", error);
+            cartItemsArray = [];
+        }
+    }
+
+    function renderCheckout() {
+        loadCart();
+        itemsContainer.innerHTML = "";
+
+        let total = 0;
+        let totalItems = 0;
+
+        if (cartItemsArray.length === 0) {
+            itemsContainer.innerHTML = `
+                <div class="empty">
+                    <p>Your cart is empty.</p>
+                    <a href="index.html">Return to the store</a>
+                </div>
+            `;
+
+            orderTotal.innerHTML = `
+                <span>TOTAL</span>
+                <span>0 EGP</span>
+            `;
+
+            confirmButton.disabled = true;
+            confirmButton.style.opacity = "0.5";
+            return;
+        }
+
+        cartItemsArray.forEach(function(item) {
+            const price = Number(item.price) || 0;
+            const quantity = Math.max(1, Number(item.quantity) || 1);
+            const itemTotal = price * quantity;
+
+            total += itemTotal;
+            totalItems += quantity;
+
+            const row = document.createElement("div");
+            row.className = "item";
+
+            const name = document.createElement("h3");
+            name.textContent = item.name || "Product";
+
+            const details = document.createElement("p");
+            details.textContent =
+                "Color: " + (item.color || "-") +
+                " | Size: " + (item.size || "-");
+
+            const qty = document.createElement("p");
+            qty.textContent = "Quantity: " + quantity;
+
+            const priceText = document.createElement("strong");
+            priceText.textContent =
+                itemTotal.toLocaleString() + " EGP";
+
+            row.append(name, details, qty, priceText);
+            itemsContainer.appendChild(row);
+        });
+
+        orderTotal.innerHTML = `
+            <span>TOTAL (${totalItems} items)</span>
+            <span>${total.toLocaleString()} EGP</span>
+        `;
+
+        confirmButton.disabled = false;
+        confirmButton.style.opacity = "1";
+    }
+
+    checkoutForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        loadCart();
+
+        if (cartItemsArray.length === 0) {
+            alert("Your cart is empty.");
+            renderCheckout();
+            return;
+        }
+
+        alert(
+            "Your details are ready, but the order has not been sent. " +
+            "Connect an order destination before accepting real orders."
+        );
+    });
+
+    window.addEventListener("storage", function(event) {
+        if (event.key === CART_STORAGE_KEY) {
+            renderCheckout();
+        }
+    });
+
+    renderCheckout();
+</script>
+
+</body>
+</html>
