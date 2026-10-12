@@ -5616,11 +5616,12 @@ saveCart();
 const homeCheckoutButton =
     document.getElementById("homeCheckoutButton");
 
-homeCheckoutButton.addEventListener(
-    "click",
-    openCheckout
-);
-
+if (homeCheckoutButton) {
+    homeCheckoutButton.addEventListener(
+        "click",
+        openCheckout
+    );
+}
                 closeCheckoutButton.addEventListener(
                     "click",
                     closeCheckout
