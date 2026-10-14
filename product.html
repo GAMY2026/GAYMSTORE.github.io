@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,47 +26,12 @@
             color: #fff;
 
             background:
-                radial-gradient(
-                    circle at 50% 5%,
-                    rgba(255,255,255,0.13) 0,
-                    rgba(255,255,255,0.045) 22%,
-                    transparent 45%
-                ),
-
-                radial-gradient(
-                    circle at 100% 45%,
-                    rgba(255,255,255,0.075) 0,
-                    transparent 38%
-                ),
-
-                radial-gradient(
-                    circle at 0% 75%,
-                    rgba(255,255,255,0.06) 0,
-                    transparent 40%
-                ),
-
-                repeating-linear-gradient(
-                    45deg,
-                    transparent 0,
-                    transparent 38px,
-                    rgba(255,255,255,0.018) 39px,
-                    transparent 40px
-                ),
-
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent 0,
-                    transparent 38px,
-                    rgba(255,255,255,0.018) 39px,
-                    transparent 40px
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #030303 0%,
-                    #101010 45%,
-                    #050505 100%
-                );
+                radial-gradient(circle at 50% 5%, rgba(255,255,255,0.13) 0, rgba(255,255,255,0.045) 22%, transparent 45%),
+                radial-gradient(circle at 100% 45%, rgba(255,255,255,0.075) 0, transparent 38%),
+                radial-gradient(circle at 0% 75%, rgba(255,255,255,0.06) 0, transparent 40%),
+                repeating-linear-gradient(45deg, transparent 0, transparent 38px, rgba(255,255,255,0.018) 39px, transparent 40px),
+                repeating-linear-gradient(-45deg, transparent 0, transparent 38px, rgba(255,255,255,0.018) 39px, transparent 40px),
+                linear-gradient(135deg, #030303 0%, #101010 45%, #050505 100%);
 
             background-attachment: fixed;
             overflow-x: hidden;
@@ -177,39 +141,24 @@
             border: 1px solid rgba(255,255,255,0.12);
             overflow: hidden;
             color: #fff;
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,0.55),
-                inset 0 1px 0 rgba(255,255,255,0.04);
-
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .product-card:hover {
             transform: translateY(-6px);
-
             border-color: rgba(255,255,255,0.30);
-
-            box-shadow:
-                0 25px 60px rgba(0,0,0,0.7),
-                0 0 30px rgba(255,255,255,0.04);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 30px rgba(255,255,255,0.04);
         }
 
         .product-image {
             width: 100%;
             height: 430px;
-
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             border-bottom: 1px solid rgba(255,255,255,0.08);
-
             cursor: pointer;
-
             transition: transform 0.5s ease;
         }
 
@@ -262,26 +211,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
             width: 130px;
             height: 42px;
-
             border: 1px solid #333;
-
             margin: 5px 0 18px;
         }
 
         .quantity-box button {
             width: 42px;
             height: 40px;
-
             border: none;
-
             background: #111;
             color: #fff;
-
             font-size: 20px;
-
             cursor: pointer;
         }
 
@@ -298,20 +240,14 @@
 
         .add-cart {
             width: 100%;
-
             background: #fff;
             color: #050505;
-
             border: none;
-
             padding: 15px;
-
             font-size: 10px;
             font-weight: bold;
             letter-spacing: 2px;
-
             cursor: pointer;
-
             transition: 0.3s;
         }
 
@@ -322,25 +258,17 @@
 
         .cart-button {
             position: fixed;
-
             right: 25px;
             bottom: 25px;
-
             z-index: 2000;
-
             background: #fff;
             color: #000;
-
             border: none;
-
             padding: 15px 20px;
-
             font-size: 10px;
             font-weight: bold;
             letter-spacing: 2px;
-
             cursor: pointer;
-
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -350,13 +278,9 @@
 
         .cart-overlay {
             position: fixed;
-
             inset: 0;
-
             background: rgba(0,0,0,0.7);
-
             z-index: 2999;
-
             display: none;
         }
 
@@ -366,27 +290,16 @@
 
         .cart {
             position: fixed;
-
             top: 0;
-
             right: -430px;
-
             width: 430px;
-
             max-width: 90%;
-
             height: 100vh;
-
             background: #0c0c0c;
-
             border-left: 1px solid #333;
-
             z-index: 3000;
-
             transition: right 0.4s ease;
-
             display: flex;
-
             flex-direction: column;
         }
 
@@ -396,15 +309,10 @@
 
         .cart-header {
             height: 75px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             padding: 0 25px;
-
             border-bottom: 1px solid #292929;
         }
 
@@ -446,6 +354,7 @@
         .cart-footer {
             padding: 20px;
             border-top: 1px solid #292929;
+            flex-shrink: 0;
         }
 
         .cart-total {
@@ -453,6 +362,23 @@
             justify-content: space-between;
             margin-bottom: 15px;
             font-weight: bold;
+        }
+
+        .checkout-button {
+            width: 100%;
+            background: #fff;
+            color: #050505;
+            border: none;
+            padding: 15px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .checkout-button:hover {
+            background: #c8a96b;
         }
 
         .empty-cart {
@@ -564,17 +490,11 @@
 
     <section class="page-title">
 
-        <p>
-            GAMY STORE
-        </p>
+        <p>GAMY STORE</p>
 
-        <h1>
-            PRODUCTS
-        </h1>
+        <h1>PRODUCTS</h1>
 
-        <span>
-            PREMIUM COLLECTION
-        </span>
+        <span>PREMIUM COLLECTION</span>
 
     </section>
 
@@ -612,16 +532,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -661,16 +577,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -710,16 +622,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -759,16 +667,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -808,16 +712,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -857,16 +757,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -907,16 +803,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -956,16 +848,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -1006,16 +894,12 @@
                 </select>
 
                 <div class="quantity-box">
-
                     <button type="button" class="minus">−</button>
-
                     <span class="quantity">1</span>
-
                     <button type="button" class="plus">+</button>
-
                 </div>
 
-                <button class="add-cart">
+                <button class="add-cart" type="button">
                     ADD TO CART
                 </button>
 
@@ -1025,13 +909,11 @@
 
     </main>
 
-    <button id="openCart" class="cart-button">
+    <button id="openCart" class="cart-button" type="button">
 
         CART
 
-        <span id="cartCount">
-            0
-        </span>
+        <span id="cartCount">0</span>
 
     </button>
 
@@ -1041,9 +923,7 @@
 
         <div class="cart-header">
 
-            <h2>
-                YOUR CART
-            </h2>
+            <h2>YOUR CART</h2>
 
             <button
                 id="closeCart"
@@ -1068,21 +948,23 @@
 
             <div class="cart-total">
 
-                <span>
-                    TOTAL
-                </span>
+                <span>TOTAL</span>
 
                 <span>
-
-                    <span id="cartTotal">
-                        0
-                    </span>
-
+                    <span id="cartTotal">0</span>
                     EGP
-
                 </span>
 
             </div>
+
+            <button
+                id="checkoutButton"
+                class="checkout-button"
+                type="button">
+
+                CHECKOUT
+
+            </button>
 
         </div>
 
@@ -1096,54 +978,32 @@
 
         /* =========================
            SHARED CART
+           (same key + same item format as index.html)
         ========================= */
 
-        const CART_STORAGE_KEY = "gamyStoreCart";
+        var CART_STORAGE_KEY = "gamyStoreCart";
 
-        let cartItemsArray = [];
-
-
-        /* =========================
-           LOAD CART
-        ========================= */
+        var cartItemsArray = [];
 
         function loadCart() {
 
             try {
 
-                const savedCart =
-                    localStorage.getItem(CART_STORAGE_KEY);
+                var savedCart = localStorage.getItem(CART_STORAGE_KEY);
 
-                if (savedCart) {
+                var parsedCart = savedCart ? JSON.parse(savedCart) : [];
 
-                    const parsedCart =
-                        JSON.parse(savedCart);
-
-                    if (Array.isArray(parsedCart)) {
-
-                        cartItemsArray = parsedCart;
-
-                    }
-
-                }
+                cartItemsArray = Array.isArray(parsedCart) ? parsedCart : [];
 
             } catch (error) {
 
-                console.error(
-                    "Could not load cart:",
-                    error
-                );
+                console.error("Could not load cart:", error);
 
                 cartItemsArray = [];
 
             }
 
         }
-
-
-        /* =========================
-           SAVE CART
-        ========================= */
 
         function saveCart() {
 
@@ -1156,228 +1016,173 @@
 
             } catch (error) {
 
-                console.error(
-                    "Could not save cart:",
-                    error
-                );
+                console.error("Could not save cart:", error);
 
             }
 
         }
 
+        function escapeHTML(value) {
 
-        const openCartButton =
-            document.getElementById("openCart");
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
 
-
-        const closeCartButton =
-            document.getElementById("closeCart");
-
-
-        const cart =
-            document.getElementById("cart");
+        }
 
 
-        const cartOverlay =
-            document.getElementById("cartOverlay");
+        var openCartButton = document.getElementById("openCart");
+        var closeCartButton = document.getElementById("closeCart");
+        var cart = document.getElementById("cart");
+        var cartOverlay = document.getElementById("cartOverlay");
+        var cartItems = document.getElementById("cartItems");
+        var cartCount = document.getElementById("cartCount");
+        var cartTotal = document.getElementById("cartTotal");
+        var checkoutButton = document.getElementById("checkoutButton");
 
 
-        const cartItems =
-            document.getElementById("cartItems");
+        function openCart() {
 
+            cart.classList.add("active");
 
-        const cartCount =
-            document.getElementById("cartCount");
+            cartOverlay.classList.add("active");
 
+        }
 
-        const cartTotal =
-            document.getElementById("cartTotal");
+        function closeCart() {
 
+            cart.classList.remove("active");
 
-        openCartButton.addEventListener(
-            "click",
-            function () {
+            cartOverlay.classList.remove("active");
 
-                cart.classList.add("active");
+        }
 
-                cartOverlay.classList.add("active");
+        openCartButton.addEventListener("click", function () {
 
-            }
-        );
+            loadCart();
 
+            updateCart();
 
-        closeCartButton.addEventListener(
-            "click",
-            function () {
+            openCart();
 
-                cart.classList.remove("active");
+        });
 
-                cartOverlay.classList.remove("active");
+        closeCartButton.addEventListener("click", closeCart);
 
-            }
-        );
-
-
-        cartOverlay.addEventListener(
-            "click",
-            function () {
-
-                cart.classList.remove("active");
-
-                cartOverlay.classList.remove("active");
-
-            }
-        );
+        cartOverlay.addEventListener("click", closeCart);
 
 
         /* =========================
-           QUANTITY
+           CHECKOUT
+           opens the checkout form on index.html
         ========================= */
 
-        document
-            .querySelectorAll(".product-card")
-            .forEach(function (card) {
+        checkoutButton.addEventListener("click", function () {
 
-                const minus =
-                    card.querySelector(".minus");
+            loadCart();
 
-                const plus =
-                    card.querySelector(".plus");
+            if (cartItemsArray.length === 0) {
 
-                const quantity =
-                    card.querySelector(".quantity");
+                alert("YOUR CART IS EMPTY");
 
+                return;
 
-                let currentQuantity = 1;
+            }
 
+            window.location.href = "index.html?checkout=1";
 
-                minus.addEventListener(
-                    "click",
-                    function () {
-
-                        if (currentQuantity > 1) {
-
-                            currentQuantity--;
-
-                            quantity.textContent =
-                                currentQuantity;
-
-                        }
-
-                    }
-                );
+        });
 
 
-                plus.addEventListener(
-                    "click",
-                    function () {
+        /* =========================
+           QUANTITY + ADD TO CART
+        ========================= */
 
-                        currentQuantity++;
+        document.querySelectorAll(".product-card").forEach(function (card) {
 
-                        quantity.textContent =
-                            currentQuantity;
+            var minus = card.querySelector(".minus");
+            var plus = card.querySelector(".plus");
+            var quantity = card.querySelector(".quantity");
 
-                    }
-                );
+            var currentQuantity = 1;
 
+            minus.addEventListener("click", function () {
 
-                /* =========================
-                   ADD TO CART
-                ========================= */
+                if (currentQuantity > 1) {
 
-                const addButton =
-                    card.querySelector(".add-cart");
+                    currentQuantity--;
 
+                    quantity.textContent = currentQuantity;
 
-                addButton.addEventListener(
-                    "click",
-                    function () {
-
-                        const name =
-                            card
-                                .querySelector("h3")
-                                .textContent
-                                .trim();
-
-
-                        const priceText =
-                            card
-                                .querySelector(".price")
-                                .textContent;
-
-
-                        const price =
-                            parseInt(
-                                priceText.replace(
-                                    /[^\d]/g,
-                                    ""
-                                )
-                            );
-
-
-                        const color =
-                            card
-                                .querySelector(".color-select")
-                                .value;
-
-
-                        const size =
-                            card
-                                .querySelector(".size-select")
-                                .value;
-
-
-                        const existingItem =
-                            cartItemsArray.find(
-                                function (item) {
-
-                                    return (
-                                        item.name === name &&
-                                        item.color === color &&
-                                        item.size === size
-                                    );
-
-                                }
-                            );
-
-
-                        if (existingItem) {
-
-                            existingItem.quantity +=
-                                currentQuantity;
-
-                        } else {
-
-                            cartItemsArray.push({
-
-                                name: name,
-
-                                price: price,
-
-                                color: color,
-
-                                size: size,
-
-                                quantity: currentQuantity
-
-                            });
-
-                        }
-
-
-                        saveCart();
-
-                        updateCart();
-
-
-                        cart.classList.add("active");
-
-                        cartOverlay.classList.add("active");
-
-                    }
-                );
+                }
 
             });
+
+            plus.addEventListener("click", function () {
+
+                if (currentQuantity < 99) {
+
+                    currentQuantity++;
+
+                    quantity.textContent = currentQuantity;
+
+                }
+
+            });
+
+            card.querySelector(".add-cart").addEventListener("click", function () {
+
+                var name = card.querySelector("h3").textContent.trim();
+
+                var price = parseInt(
+                    card.querySelector(".price").textContent.replace(/[^\d]/g, ""),
+                    10
+                );
+
+                var color = card.querySelector(".color-select").value;
+
+                var size = card.querySelector(".size-select").value;
+
+                loadCart();
+
+                var existingItem = cartItemsArray.find(function (item) {
+
+                    return (
+                        item.name === name &&
+                        item.color === color &&
+                        item.size === size
+                    );
+
+                });
+
+                if (existingItem) {
+
+                    existingItem.quantity =
+                        (Number(existingItem.quantity) || 1) + currentQuantity;
+
+                } else {
+
+                    cartItemsArray.push({
+                        name: name,
+                        price: price,
+                        color: color,
+                        size: size,
+                        quantity: currentQuantity
+                    });
+
+                }
+
+                saveCart();
+
+                updateCart();
+
+                openCart();
+
+            });
+
+        });
 
 
         /* =========================
@@ -1388,114 +1193,53 @@
 
             cartItems.innerHTML = "";
 
-
             if (cartItemsArray.length === 0) {
 
-                cartItems.innerHTML = `
-                    <div class="empty-cart">
-                        YOUR CART IS EMPTY
-                    </div>
-                `;
+                cartItems.innerHTML =
+                    '<div class="empty-cart">YOUR CART IS EMPTY</div>';
 
                 cartCount.textContent = "0";
 
                 cartTotal.textContent = "0";
 
-                saveCart();
-
                 return;
 
             }
 
+            var total = 0;
+            var count = 0;
 
-            let total = 0;
+            cartItemsArray.forEach(function (item, index) {
 
-            let count = 0;
+                var quantity = Number(item.quantity) || 1;
+                var price = Number(item.price) || 0;
+                var itemTotal = price * quantity;
 
+                total += itemTotal;
+                count += quantity;
 
-            cartItemsArray.forEach(
-                function (item, index) {
+                var itemElement = document.createElement("div");
 
-                    const itemTotal =
-                        item.price *
-                        item.quantity;
+                itemElement.className = "cart-item";
 
+                itemElement.innerHTML =
+                    '<h4>' + escapeHTML(item.name) + '</h4>' +
+                    '<p>COLOR: ' + escapeHTML(item.color) + '</p>' +
+                    '<p>SIZE: ' + escapeHTML(item.size) + '</p>' +
+                    '<p>QUANTITY: ' + quantity + '</p>' +
+                    '<p>PRICE: ' + price + ' EGP</p>' +
+                    '<p>TOTAL: ' + itemTotal + ' EGP</p>' +
+                    '<button type="button" class="remove-item" data-index="' + index + '" ' +
+                    'style="margin-top:10px;background:none;border:1px solid #555;color:#fff;padding:7px 12px;cursor:pointer;font-size:9px;">' +
+                    'REMOVE</button>';
 
-                    total += itemTotal;
+                cartItems.appendChild(itemElement);
 
-                    count += item.quantity;
+            });
 
+            cartCount.textContent = count;
 
-                    const itemElement =
-                        document.createElement("div");
-
-
-                    itemElement.className =
-                        "cart-item";
-
-
-                    itemElement.innerHTML = `
-
-                        <h4>
-                            ${item.name}
-                        </h4>
-
-                        <p>
-                            COLOR: ${item.color}
-                        </p>
-
-                        <p>
-                            SIZE: ${item.size}
-                        </p>
-
-                        <p>
-                            QUANTITY: ${item.quantity}
-                        </p>
-
-                        <p>
-                            PRICE: ${item.price} EGP
-                        </p>
-
-                        <p>
-                            TOTAL: ${itemTotal} EGP
-                        </p>
-
-                        <button
-                            type="button"
-                            onclick="removeCartItem(${index})"
-                            style="
-                                margin-top:10px;
-                                background:none;
-                                border:1px solid #555;
-                                color:#fff;
-                                padding:7px 12px;
-                                cursor:pointer;
-                                font-size:9px;
-                            "
-                        >
-                            REMOVE
-                        </button>
-
-                    `;
-
-
-                    cartItems.appendChild(
-                        itemElement
-                    );
-
-                }
-            );
-
-
-            cartCount.textContent =
-                count;
-
-
-            cartTotal.textContent =
-                total;
-
-
-            saveCart();
+            cartTotal.textContent = total;
 
         }
 
@@ -1504,18 +1248,21 @@
            REMOVE ITEM
         ========================= */
 
-        function removeCartItem(index) {
+        cartItems.addEventListener("click", function (event) {
 
-            cartItemsArray.splice(
-                index,
-                1
-            );
+            if (event.target.classList.contains("remove-item")) {
 
-            saveCart();
+                var index = parseInt(event.target.dataset.index, 10);
 
-            updateCart();
+                cartItemsArray.splice(index, 1);
 
-        }
+                saveCart();
+
+                updateCart();
+
+            }
+
+        });
 
 
         /* =========================
@@ -1532,27 +1279,20 @@
            CHANGES THE CART
         ========================= */
 
-        window.addEventListener(
-            "storage",
-            function (event) {
+        window.addEventListener("storage", function (event) {
 
-                if (
-                    event.key ===
-                    CART_STORAGE_KEY
-                ) {
+            if (event.key === CART_STORAGE_KEY) {
 
-                    loadCart();
+                loadCart();
 
-                    updateCart();
-
-                }
+                updateCart();
 
             }
-        );
+
+        });
 
     </script>
 
 </body>
 
 </html>
-```
