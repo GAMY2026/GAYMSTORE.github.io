@@ -6243,7 +6243,8 @@ localStorage.setItem(
                 );
 
 
-      /* SOUND */
+     
+/* SOUND */
 
 soundButton.addEventListener(
     "click",
@@ -6251,51 +6252,21 @@ soundButton.addEventListener(
 
         if (videoMuted) {
 
-            sendYouTubeCommand(
-                "playVideo"
-            );
-
-            sendYouTubeCommand(
-                "unMute"
-            );
-
-            sendYouTubeCommand(
-                "setVolume",
-                [100]
-            );
+            sendYouTubeCommand("playVideo");
+            sendYouTubeCommand("unMute");
+            sendYouTubeCommand("setVolume", [100]);
 
             videoMuted = false;
 
-            soundButton.textContent =
-                "🔊 SOUND ON";
+            soundButton.textContent = "🔊 SOUND ON";
 
-        }
+        } else {
 
-        else {
-
-            sendYouTubeCommand(
-                "mute"
-            );
+            sendYouTubeCommand("mute");
 
             videoMuted = true;
 
-            soundButton.textContent =
-                "🔇 SOUND OFF";
-
-        }
-
-    }
-);
-        else {
-
-            sendYouTubeCommand(
-                "mute"
-            );
-
-            videoMuted = true;
-
-            soundButton.textContent =
-                "🔇 SOUND OFF";
+            soundButton.textContent = "🔇 SOUND OFF";
 
         }
 
