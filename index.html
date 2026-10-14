@@ -26,129 +26,74 @@
             scroll-behavior: smooth;
         }
 
-        html {
-    scroll-behavior: smooth;
-}
+        /* =====================================================
+           GAMY STORE - AFRO FASHION BACKGROUND
+        ===================================================== */
 
-/* =====================================================
-   GAMY STORE - AFRO FASHION BACKGROUND
-===================================================== */
-        
-body {
-    font-family: Arial, Tahoma, sans-serif;
-    color: #24211d;
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            color: #24211d;
+            background-color: #f7f4ee;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.35) 35%, transparent 65%),
+                linear-gradient(180deg, #faf8f3 0%, #f3efe7 55%, #eee8dd 100%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    background-color: #f7f4ee;
+        /* LARGE AFRO CIRCLE - RIGHT */
 
-    background-image:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255, 255, 255, 0.95) 0%,
-            rgba(255, 255, 255, 0.35) 35%,
-            transparent 65%
-        ),
-        linear-gradient(
-            180deg,
-            #faf8f3 0%,
-            #f3efe7 55%,
-            #eee8dd 100%
-        );
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: 120px;
+            right: -420px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.07);
+            box-shadow:
+                0 0 0 35px rgba(255,255,255,0.018),
+                0 0 0 70px rgba(255,255,255,0.012),
+                0 0 0 105px rgba(255,255,255,0.008);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    background-attachment: fixed;
+        /* LARGE AFRO CIRCLE - LEFT */
 
-    position: relative;
+        body::after {
+            content: "";
+            position: fixed;
+            width: 520px;
+            height: 520px;
+            bottom: -330px;
+            left: -300px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.065);
+            box-shadow:
+                0 0 0 35px rgba(255,255,255,0.017),
+                0 0 0 70px rgba(255,255,255,0.010);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    overflow-x: hidden;
-}
+        /* SOFT WHITE LIGHT - LEFT */
 
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            bottom: -250px;
+            left: -280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.035) 30%, rgba(255,255,255,0.01) 55%, transparent 72%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-/* =====================================================
-   LARGE AFRO CIRCLE - RIGHT
-===================================================== */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    width: 650px;
-    height: 650px;
-
-    top: 120px;
-    right: -420px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255,255,255,0.07);
-
-    box-shadow:
-        0 0 0 35px rgba(255,255,255,0.018),
-        0 0 0 70px rgba(255,255,255,0.012),
-        0 0 0 105px rgba(255,255,255,0.008);
-
-    pointer-events: none;
-
-    z-index: 0;
-}
-
-
-/* =====================================================
-   LARGE AFRO CIRCLE - LEFT
-===================================================== */
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 520px;
-    height: 520px;
-
-    bottom: -330px;
-    left: -300px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255,255,255,0.065);
-
-    box-shadow:
-        0 0 0 35px rgba(255,255,255,0.017),
-        0 0 0 70px rgba(255,255,255,0.010);
-
-    pointer-events: none;
-
-    z-index: 0;
-}
-/* =====================================================
-   SOFT WHITE LIGHT - LEFT
-===================================================== */
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    width: 500px;
-    height: 500px;
-
-    bottom: -250px;
-    left: -280px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.09) 0%,
-            rgba(255, 255, 255, 0.035) 30%,
-            rgba(255, 255, 255, 0.01) 55%,
-            transparent 72%
-        );
-
-    pointer-events: none;
-
-    z-index: 0;
-}
         /* =====================================================
            TOP BAR
         ===================================================== */
@@ -171,138 +116,127 @@ body::after {
         }
 
         @keyframes ticker {
-
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
-
 
         /* =====================================================
            HEADER
         ===================================================== */
 
-       .header {
-    width: 100%;
-    height: 78px;
-    background: #fff;
-    color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 45px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #e5e5e5;
-}
+        .header {
+            width: 100%;
+            height: 78px;
+            background: #fff;
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 45px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e5e5e5;
+        }
 
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    white-space: nowrap;
-    color: #111;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            white-space: nowrap;
+            color: #111;
+        }
 
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-}
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
 
-.nav a {
-    position: relative;
-    color: #111;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 8px 0;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+        .nav a {
+            position: relative;
+            color: #111;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 8px 0;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-/* خط فاخر يظهر تحت الكلمة */
-.nav a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: #c8a96b;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-}
-.nav a:hover {
-    color: #c8a96b;
-    transform: translateY(-1px);
-}
-.nav a:hover::after {
-    width: 100%;
-}
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: #c8a96b;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
 
+        .nav a:hover {
+            color: #c8a96b;
+            transform: translateY(-1px);
+        }
 
+        .nav a:hover::after {
+            width: 100%;
+        }
 
+        .cart-button {
+            border: 1px solid #111;
+            background: #fff;
+            color: #111;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
 
-.cart-button {
-    border: 1px solid #111;
-    background: #fff;
-    color: #111;
-    padding: 10px 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    transition: 0.3s;
-    white-space: nowrap;
-}
+        .cart-button:hover {
+            background: #111;
+            color: #fff;
+        }
 
-.cart-button:hover {
-    background: #111;
-    color: #fff;
-}
+        .cart-icon {
+            font-size: 15px;
+        }
 
-.cart-icon {
-    font-size: 15px;
-}
-
-.cart-count {
-    min-width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #c8a96b;
-    color: #111;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    font-weight: bold;
-}
+        .cart-count {
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #c8a96b;
+            color: #111;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+        }
 
         /* =====================================================
            HERO
            DO NOT CHANGE
         ===================================================== */
 
-   
-.home {
-    width: 100%;
-    height: 570px;
-    position: relative;
-    overflow: hidden;
-    background: url("https://cdn.phototourl.com/member/2026-10-12-29391411-89ce-4406-b319-acda56a8ec79.png") center center / cover no-repeat !important;
-}
+        .home {
+            width: 100%;
+            height: 570px;
+            position: relative;
+            overflow: hidden;
+            background: url("https://cdn.phototourl.com/member/2026-10-12-29391411-89ce-4406-b319-acda56a8ec79.png") center center / cover no-repeat !important;
+        }
 
         .hero-video {
             position: absolute;
@@ -318,46 +252,35 @@ body::after {
             position: absolute;
             top: 50%;
             left: 50%;
-
             width: 100vw;
             height: 56.25vw;
-
             min-width: 100%;
             min-height: 100%;
-
             border: 0;
-
             transform: translate(-50%, -50%);
-
-          pointer-events: none;
+            pointer-events: none;
         }
-.hero-video img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-}
+
+        .hero-video img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
             z-index: 2;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.45),
-                    rgba(0,0,0,0.45)
-                );
-
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
             color: #fff;
-
             pointer-events: none;
         }
 
@@ -403,14 +326,11 @@ body::after {
             color: #fff;
         }
 
-
-        /* =====================================================
-           HERO CONTROLS
-        ===================================================== */
+        /* HERO CONTROLS */
 
         .video-controls {
-    display: none;
-}
+            display: none;
+        }
 
         /* =====================================================
            GENERAL SECTIONS
@@ -451,31 +371,25 @@ body::after {
             letter-spacing: 2px;
         }
 
-
         /* =====================================================
            COLLECTIONS
         ===================================================== */
 
-       
-.collection-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-
-    position: relative;
-    isolation: isolate;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.60)
-        ),
-        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
-        center center / cover no-repeat !important;
-    padding: 35px;
-    box-sizing: border-box;
-}
+        .collection-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            position: relative;
+            isolation: isolate;
+            background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.60)),
+                url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
+                center center / cover no-repeat !important;
+            padding: 35px;
+            box-sizing: border-box;
+        }
 
         .collection-card {
             background: #111;
@@ -486,37 +400,33 @@ body::after {
 
         .collection-image {
             height: 390px;
-
             display: flex;
             align-items: flex-end;
             justify-content: center;
-
-            padding-bottom: 30px;
-
-            font-size: 28px;
+            padding-bottom: 35px;
+            font-size: 25px;
             font-weight: bold;
             letter-spacing: 5px;
-
             background-size: cover;
             background-position: center;
-
             position: relative;
-
-            transition: 0.5s;
+            transition: transform 0.5s ease;
+            text-shadow: 0 2px 10px #000;
+            isolation: isolate;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            z-index: 1;
         }
 
         .collection-image::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                transparent 35%,
-                rgba(0,0,0,0.75)
-            );
-        }
-
-        .collection-image {
-            text-shadow: 0 2px 10px #000;
+            background: linear-gradient(transparent 35%, rgba(0,0,0,0.75));
+            z-index: 1;
+            pointer-events: none;
         }
 
         .collection-image::before {
@@ -524,209 +434,79 @@ body::after {
             position: absolute;
             inset: 0;
             background: rgba(0,0,0,0.08);
-        }
-
-        .collection-image {
-            isolation: isolate;
-        }
-
-        .collection-image::after {
-            z-index: 1;
-        }
-
-        .collection-image {
-            color: #fff;
-        }
-
-        .collection-image {
-            padding-bottom: 35px;
-        }
-
-        .collection-image::before {
             z-index: 0;
-        }
-
-        .collection-image {
-            position: relative;
-        }
-
-        .collection-image {
-            text-align: center;
-        }
-
-        .collection-image {
-            font-family: Arial, sans-serif;
-        }
-
-        .collection-image {
-            overflow: hidden;
-        }
-
-        .collection-image {
-            transition:
-                transform 0.5s ease;
         }
 
         .collection-card:hover .collection-image {
             transform: scale(1.04);
         }
 
-        .collection-image {
-            display: flex;
-        }
-
-        .collection-image {
-            z-index: 1;
-        }
-
-        .collection-image::after {
-            pointer-events: none;
-        }
-
-        .collection-image {
-            font-size: 25px;
-        }
-
-      
-.men-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-99795646-9305-4718-962c-2365a0ace3f9.jpg");
-}
-
-.women-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-dc084a01-5985-4d1a-b7f8-9f802a755767.jpg");
-}
-
-.shoes-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-a1897a59-c36e-449a-9bae-c11b3ad4d23d.jpg");
-}
-
-.slippers-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-d3e328a8-1112-4ae9-8e94-4a4449cf1e2a.jpg");
-}
-
-.jeans-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-6e5a5edd-7ad5-4a70-881f-5bde7f382e5e.jpg");
-}
-
-.jacket-image {
-    background-image:
-        url("https://cdn.phototourl.com/member/2026-10-12-c74d5b89-7390-4475-9560-f8294938c954.jpg");
-}
-
+        .men-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-99795646-9305-4718-962c-2365a0ace3f9.jpg"); }
+        .women-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-dc084a01-5985-4d1a-b7f8-9f802a755767.jpg"); }
+        .shoes-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-a1897a59-c36e-449a-9bae-c11b3ad4d23d.jpg"); }
+        .slippers-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-d3e328a8-1112-4ae9-8e94-4a4449cf1e2a.jpg"); }
+        .jeans-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-6e5a5edd-7ad5-4a70-881f-5bde7f382e5e.jpg"); }
+        .jacket-image { background-image: url("https://cdn.phototourl.com/member/2026-10-12-c74d5b89-7390-4475-9560-f8294938c954.jpg"); }
 
         .collection-image {
             font-size: 0;
         }
 
-        .collection-image::after {
-            content: "";
+        .collection-content {
+            background: #111;
+            padding: 20px;
+            text-align: center;
         }
 
-        .collection-image::before {
-            content: "";
+        .collection-content h3 {
+            font-size: 17px;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
         }
 
-  
+        .collection-content span {
+            font-size: 9px;
+            color: #ffffff !important;
+            letter-spacing: 2px;
+        }
 
-.collection-content {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-}
-
-.collection-content h3 {
-    font-size: 17px;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-    color: #ffffff !important;
-}
-
-.collection-content span {
-    font-size: 9px;
-    color: #ffffff !important;
-    letter-spacing: 2px;
-}
-
-
-/* GAMY STORE — BACKGROUND BEHIND ALL COLLECTION CARDS */
-
-.collection-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-
-    position: relative;
-    isolation: isolate;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.60)
-        ),
-        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg")
-        center center / cover no-repeat !important;
-    padding: 35px;
-    box-sizing: border-box;
-}
         /* =====================================================
            PRODUCTS
         ===================================================== */
 
         .products-container {
             max-width: 1200px;
-          
             margin: auto;
-
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .product {
             background: #fff;
             overflow: hidden;
-
-            box-shadow:
-                0 5px 25px rgba(0,0,0,0.07);
-
+            box-shadow: 0 5px 25px rgba(0,0,0,0.07);
             transition: 0.3s;
         }
 
         .product:hover {
             transform: translateY(-5px);
-
-            box-shadow:
-                0 12px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
         }
 
         .product-image {
             width: 100%;
             height: 390px;
-
             background-size: cover;
             background-position: center;
-
             display: flex;
             align-items: flex-end;
             justify-content: center;
-
             padding-bottom: 25px;
-
             color: #fff;
-
             font-size: 0;
-
             position: relative;
-
             cursor: pointer;
         }
 
@@ -734,51 +514,19 @@ body::after {
             content: "";
             position: absolute;
             inset: 0;
-
-            background:
-                linear-gradient(
-                    transparent 50%,
-                    rgba(0,0,0,0.18)
-                );
-
+            background: linear-gradient(transparent 50%, rgba(0,0,0,0.18));
             pointer-events: none;
         }
 
-        .product-shirt {
-    background-image: url("https://cdn.phototourl.com/member/2026-10-03-39a5c3c9-e97a-4a2f-b0d8-449e25069193.jpg");
-}
-
-.product-shirt-dark {
-    background-image: url("https://cdn.phototourl.com/member/2026-10-03-c9407b78-d69f-4ce1-92a4-404859054c20.jpg");
-}
-
-.product-pants {
-    background-image: url("https://cdn.phototourl.com/member/2026-10-03-4e0d7392-2aa8-47f0-9356-6478c2a7e4ee.jpg");
-}
-
-.product-blouse {
-    background-image: url("https://cdn.phototourl.com/member/2026-10-03-38cbd716-c977-4b11-9acf-ef1fc6d25d1e.jpg");
-}
-
-.product-jacket {
-    background-image: url("https://cdn.phototourl.com/member/2026-10-03-fb4dccab-efcb-47cc-89a6-72f9eb9e99cf.jpg");
-}
-
-.product-jacket-light {
-    background-image: url("https://cdn.imagetourls.com/uploads/tyImg/1aMCM8Na2.jpg");
-}
-
-.product-sneaker {
-    background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85");
-}
-
-.product-sneaker-white {
-    background-image: url("https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85");
-}
-
-.product-sneaker-classic {
-    background-image: url("https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85");
-}
+        .product-shirt { background-image: url("https://cdn.phototourl.com/member/2026-10-03-39a5c3c9-e97a-4a2f-b0d8-449e25069193.jpg"); }
+        .product-shirt-dark { background-image: url("https://cdn.phototourl.com/member/2026-10-03-c9407b78-d69f-4ce1-92a4-404859054c20.jpg"); }
+        .product-pants { background-image: url("https://cdn.phototourl.com/member/2026-10-03-4e0d7392-2aa8-47f0-9356-6478c2a7e4ee.jpg"); }
+        .product-blouse { background-image: url("https://cdn.phototourl.com/member/2026-10-03-38cbd716-c977-4b11-9acf-ef1fc6d25d1e.jpg"); }
+        .product-jacket { background-image: url("https://cdn.phototourl.com/member/2026-10-03-fb4dccab-efcb-47cc-89a6-72f9eb9e99cf.jpg"); }
+        .product-jacket-light { background-image: url("https://cdn.imagetourls.com/uploads/tyImg/1aMCM8Na2.jpg"); }
+        .product-sneaker { background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"); }
+        .product-sneaker-white { background-image: url("https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85"); }
+        .product-sneaker-classic { background-image: url("https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85"); }
 
         .product-info {
             padding: 23px;
@@ -807,13 +555,10 @@ body::after {
         .options select {
             width: 100%;
             padding: 11px 8px;
-
             background: #fff;
             border: 1px solid #ddd;
-
             font-size: 9px;
             letter-spacing: 0.5px;
-
             outline: none;
             cursor: pointer;
         }
@@ -824,21 +569,14 @@ body::after {
 
         .add-cart {
             width: 100%;
-
             padding: 13px;
-
             background: #111;
             color: #fff;
-
             border: 1px solid #111;
-
             cursor: pointer;
-
             font-size: 9px;
             font-weight: bold;
-
             letter-spacing: 2px;
-
             transition: 0.3s;
         }
 
@@ -847,251 +585,20 @@ body::after {
             border-color: #c8a96b;
         }
 
-
-        /* =====================================================
-           PRODUCT DETAILS MODAL
-        ===================================================== */
-
-        .product-modal {
-            position: fixed;
-            inset: 0;
-
-            background: rgba(0,0,0,0.78);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-
-            opacity: 0;
-            visibility: hidden;
-
-            z-index: 4000;
-
-            transition: 0.3s;
-        }
-
-        .product-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .product-modal-box {
-            width: min(900px, 100%);
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            background: #fff;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            position: relative;
-
-            box-shadow:
-                0 20px 70px rgba(0,0,0,0.35);
-        }
-
-        .product-modal-image {
-            width: 100%;
-            min-height: 600px;
-
-            background: #f2f2f2;
-
-            overflow: hidden;
-        }
-
-        .product-modal-image img {
-            width: 100%;
-            height: 100%;
-
-            min-height: 600px;
-
-            display: block;
-
-            object-fit: cover;
-        }
-
-        .product-modal-info {
-            padding: 55px 45px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-modal-info h2 {
-            font-size: 30px;
-            letter-spacing: 3px;
-
-            margin-bottom: 15px;
-        }
-
-        .modal-product-price {
-            font-size: 22px;
-            font-weight: bold;
-
-            margin-bottom: 35px;
-        }
-
-        .modal-option {
-            margin-bottom: 22px;
-        }
-
-        .modal-option label {
-            display: block;
-
-            font-size: 9px;
-            font-weight: bold;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 8px;
-        }
-
-        .modal-option select {
-            width: 100%;
-
-            padding: 14px;
-
-            border: 1px solid #ddd;
-
-            background: #fff;
-
-            font-size: 10px;
-
-            outline: none;
-
-            cursor: pointer;
-        }
-
-        .modal-option select:focus {
-            border-color: #111;
-        }
-
-        .modal-quantity {
-            display: flex;
-
-            align-items: center;
-
-            width: max-content;
-
-            border: 1px solid #ddd;
-
-            margin-top: 5px;
-            margin-bottom: 25px;
-        }
-
-        .modal-quantity button {
-            width: 45px;
-            height: 45px;
-
-            border: 0;
-
-            background: #fff;
-
-            cursor: pointer;
-
-            font-size: 20px;
-        }
-
-        .modal-quantity button:hover {
-            background: #f2f2f2;
-        }
-
-        .modal-quantity span {
-            min-width: 45px;
-
-            text-align: center;
-
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .modal-add-cart {
-            width: 100%;
-
-            padding: 16px;
-
-            background: #111;
-            color: #fff;
-
-            border: 1px solid #111;
-
-            cursor: pointer;
-
-            font-size: 10px;
-            font-weight: bold;
-
-            letter-spacing: 2px;
-
-            transition: 0.3s;
-        }
-
-        .modal-add-cart:hover {
-            background: #c8a96b;
-            border-color: #c8a96b;
-        }
-
-        .close-product-modal {
-            position: absolute;
-
-            top: 12px;
-            right: 15px;
-
-            width: 40px;
-            height: 40px;
-
-            border: 0;
-
-            background: rgba(255,255,255,0.92);
-
-            color: #111;
-
-            font-size: 28px;
-
-            cursor: pointer;
-
-            z-index: 10;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-product-modal:hover {
-            background: #111;
-            color: #fff;
-        }
-
-
         /* =====================================================
            CONTACT
         ===================================================== */
 
         .contact {
             min-height: 420px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             color: #fff;
-
             background:
-                linear-gradient(
-                    rgba(0,0,0,0.72),
-                    rgba(0,0,0,0.72)
-                ),
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
                 url("https://cdn.imagetourls.com/uploads/tyImg/Ftog4wiE.jpg");
-
-
             background-size: cover;
             background-position: center;
         }
@@ -1116,17 +623,12 @@ body::after {
 
         .contact-button {
             display: inline-block;
-
             padding: 14px 30px;
-
             background: #fff;
             color: #111;
-
             font-size: 10px;
             font-weight: bold;
-
             letter-spacing: 2px;
-
             transition: 0.3s;
         }
 
@@ -1134,7 +636,6 @@ body::after {
             background: #c8a96b;
             color: #fff;
         }
-
 
         /* =====================================================
            FOOTER
@@ -1160,7 +661,6 @@ body::after {
             letter-spacing: 1px;
         }
 
-
         /* =====================================================
            CART OVERLAY
         ===================================================== */
@@ -1168,14 +668,10 @@ body::after {
         .cart-overlay {
             position: fixed;
             inset: 0;
-
             background: rgba(0,0,0,0.6);
-
             opacity: 0;
             visibility: hidden;
-
             z-index: 1998;
-
             transition: 0.3s;
         }
 
@@ -1184,31 +680,22 @@ body::after {
             visibility: visible;
         }
 
-
         /* =====================================================
            CART
         ===================================================== */
 
         .cart {
             position: fixed;
-
             top: 0;
             right: -430px;
-
             width: min(430px, 92vw);
             height: 100vh;
-
             background: #fff;
-
             z-index: 1999;
-
             display: flex;
             flex-direction: column;
-
             transition: 0.35s ease;
-
-            box-shadow:
-                -10px 0 40px rgba(0,0,0,0.2);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.2);
         }
 
         .cart.active {
@@ -1217,13 +704,10 @@ body::after {
 
         .cart-header {
             height: 75px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             padding: 0 25px;
-
             border-bottom: 1px solid #eee;
         }
 
@@ -1236,29 +720,22 @@ body::after {
         .close-checkout {
             border: 0;
             background: transparent;
-
             font-size: 30px;
             font-weight: 300;
-
             cursor: pointer;
-
             color: #111;
         }
 
         .cart-items {
             flex: 1;
-
             overflow-y: auto;
-
             padding: 20px;
         }
 
         .cart-empty {
             text-align: center;
             color: #888;
-
             padding: 60px 20px;
-
             font-size: 11px;
             letter-spacing: 1px;
         }
@@ -1267,9 +744,7 @@ body::after {
             display: flex;
             justify-content: space-between;
             gap: 15px;
-
             border-bottom: 1px solid #eee;
-
             padding: 18px 0;
         }
 
@@ -1297,14 +772,10 @@ body::after {
 
         .remove-cart-item {
             height: max-content;
-
             border: 1px solid #ddd;
             background: #fff;
-
             padding: 8px;
-
             cursor: pointer;
-
             font-size: 8px;
             letter-spacing: 1px;
         }
@@ -1315,20 +786,15 @@ body::after {
         }
 
         .cart-footer {
-            
-    padding: 22px;
-
-    border-top: 1px solid #eee;
-
-    flex-shrink: 0;
-}
+            padding: 22px;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+        }
 
         .cart-total-row {
             display: flex;
             justify-content: space-between;
-
             margin-bottom: 18px;
-
             font-size: 11px;
             letter-spacing: 1px;
         }
@@ -1339,26 +805,19 @@ body::after {
 
         .checkout-button {
             width: 100%;
-
             padding: 15px;
-
             background: #111;
             color: #fff;
-
             border: 0;
-
             cursor: pointer;
-
             font-size: 10px;
             font-weight: bold;
-
             letter-spacing: 2px;
         }
 
         .checkout-button:hover {
             background: #c8a96b;
         }
-
 
         /* =====================================================
            CHECKOUT
@@ -1367,20 +826,14 @@ body::after {
         .checkout-overlay {
             position: fixed;
             inset: 0;
-
             background: rgba(0,0,0,0.72);
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             padding: 20px;
-
             opacity: 0;
             visibility: hidden;
-
             z-index: 3000;
-
             transition: 0.3s;
         }
 
@@ -1391,15 +844,10 @@ body::after {
 
         .checkout-modal {
             width: min(700px, 100%);
-
             max-height: 92vh;
-
             overflow-y: auto;
-
             background: #fff;
-
             padding: 35px;
-
             position: relative;
         }
 
@@ -1432,435 +880,124 @@ body::after {
             letter-spacing: 1px;
         }
 
-       /* =====================================================
-   GAMY STORE — LUXURY CHECKOUT
-===================================================== */
-
-.checkout-field {
-    margin-bottom: 18px;
-}
-
-.checkout-field label {
-    display: block;
-
-    font-size: 9px;
-    font-weight: 600;
-
-    color: #222;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 8px;
-}
-
-.checkout-field input,
-.checkout-field select,
-.checkout-field textarea {
-    width: 100%;
-
-    box-sizing: border-box;
-
-    border: 1px solid #d8d1c4;
-
-    background: #fafafa;
-
-    color: #111;
-
-    padding: 14px;
-
-    outline: none;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    border-radius: 0;
-
-    resize: vertical;
-
-    transition:
-        border-color 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.checkout-field input::placeholder,
-.checkout-field textarea::placeholder {
-    color: #999;
-
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
-}
-
-.checkout-field input:focus,
-.checkout-field select:focus,
-.checkout-field textarea:focus {
-    border-color: #c8a96b;
-
-    background: #fff;
-
-    box-shadow:
-        0 0 0 1px rgba(200,169,107,0.15);
-}
-
-
-/* =====================================================
-   TWO COLUMNS
-===================================================== */
-
-.checkout-row {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 16px;
-}
-
-
-/* =====================================================
-   ORDER SUMMARY
-===================================================== */
-
-.checkout-summary {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #050505,
-            #171717
-        );
-
-    color: #fff;
-
-    padding: 20px;
-
-    margin: 24px 0;
-
-    border: 1px solid #c8a96b;
-
-    position: relative;
-}
-
-.checkout-summary::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 3px;
-    height: 100%;
-
-    background: #c8a96b;
-}
-
-.checkout-summary div {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.checkout-summary span {
-    font-size: 8px;
-
-    color: #c8a96b;
-
-    letter-spacing: 2px;
-
-    font-weight: 600;
-}
-
-.checkout-summary strong {
-    font-size: 16px;
-
-    color: #fff;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   ORDER RESULT
-===================================================== */
-
-.order-result-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.82);
-    backdrop-filter: blur(5px);
-    z-index: 5000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.order-result-box {
-    width: min(430px, 100%);
-    background: linear-gradient(145deg, #ffffff, #f7f5f1);
-    padding: 42px 30px;
-    text-align: center;
-    border: 1px solid #c8a96b;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.45);
-}
-
-.order-success-icon {
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    background: #050505;
-    color: #c8a96b;
-    border: 1px solid #c8a96b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 300;
-}
-
-.order-result-box h2 {
-    font-size: 21px;
-    letter-spacing: 4px;
-    color: #111;
-    margin-bottom: 8px;
-}
-
-.order-number {
-    margin: 15px 0;
-    font-size: 13px;
-    font-weight: bold;
-    color: #c8a96b;
-    letter-spacing: 2px;
-}
-
-.order-result-box p {
-    color: #777;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    margin-bottom: 22px;
-}
-/* =====================================================
-   ORDER RESULT
-===================================================== */
-
-.order-result-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0,0,0,0.82);
-
-    backdrop-filter: blur(5px);
-
-    z-index: 5000;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.order-result-box {
-    width: min(430px, 100%);
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #f7f5f1
-        );
-
-    padding: 42px 30px;
-
-    text-align: center;
-
-    border: 1px solid #c8a96b;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,0.45);
-}
-
-.order-success-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
-    background: #050505;
-
-    color: #c8a96b;
-
-    border: 1px solid #c8a96b;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 28px;
-
-    font-weight: 300;
-}
-
-.order-result-box h2 {
-    font-size: 21px;
-
-    letter-spacing: 4px;
-
-    color: #111;
-
-    margin-bottom: 8px;
-}
-
-.order-number {
-    margin: 15px 0;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    color: #c8a96b;
-
-    letter-spacing: 2px;
-}
-
-.order-result-box p {
-    color: #777;
-
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 22px;
-}
-
-
-/* =====================================================
-   CONFIRM / REJECT
-===================================================== */
-
-.confirm-order-button,
-.reject-order-button {
-    display: block;
-
-    width: 100%;
-
-    box-sizing: border-box;
-
-    padding: 14px;
-
-    margin-top: 10px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    text-decoration: none;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.confirm-order-button {
-    background: #050505;
-
-    color: #fff;
-
-    border: 1px solid #c8a96b;
-}
-
-.confirm-order-button:hover {
-    background: #c8a96b;
-
-    color: #050505;
-}
-
-.reject-order-button {
-    background: transparent;
-
-    color: #111;
-
-    border: 1px solid #ccc;
-}
-
-.reject-order-button:hover {
-    background: #eee;
-}
-/* =====================================================
-   CLOSE RESULT
-===================================================== */
-
-.close-order-result {
-    width: 100%;
-    margin-top: 15px;
-    padding: 13px;
-    background: transparent;
-    color: #555;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    font-size: 9px;
-    letter-spacing: 2px;
-
-    transition:
-        border-color 0.3s ease,
-        color 0.3s ease;
-}
-
-.close-order-result:hover {
-    border-color: #c8a96b;
-    color: #c8a96b;
-}
-
-
-/* =====================================================
-   MOBILE CHECKOUT
-===================================================== */
-
-@media (max-width: 600px) {
-
-    .checkout-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .checkout-summary {
-        padding: 17px;
-    }
-
-    .place-order-button {
-        padding: 16px;
-    }
-
-    .order-result-box {
-        padding: 35px 22px;
-    }
-
-}
-
+        /* GAMY STORE — LUXURY CHECKOUT */
+
+        .checkout-field {
+            margin-bottom: 18px;
+        }
+
+        .checkout-field label {
+            display: block;
+            font-size: 9px;
+            font-weight: 600;
+            color: #222;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .checkout-field input,
+        .checkout-field select,
+        .checkout-field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #d8d1c4;
+            background: #fafafa;
+            color: #111;
+            padding: 14px;
+            outline: none;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-radius: 0;
+            resize: vertical;
+            transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .checkout-field input::placeholder,
+        .checkout-field textarea::placeholder {
+            color: #999;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+        }
+
+        .checkout-field input:focus,
+        .checkout-field select:focus,
+        .checkout-field textarea:focus {
+            border-color: #c8a96b;
+            background: #fff;
+            box-shadow: 0 0 0 1px rgba(200,169,107,0.15);
+        }
+
+        /* TWO COLUMNS */
+
+        .checkout-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* ORDER SUMMARY */
+
+        .checkout-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #050505, #171717);
+            color: #fff;
+            padding: 20px;
+            margin: 24px 0;
+            border: 1px solid #c8a96b;
+            position: relative;
+        }
+
+        .checkout-summary::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: #c8a96b;
+        }
+
+        .checkout-summary div {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .checkout-summary span {
+            font-size: 8px;
+            color: #c8a96b;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .checkout-summary strong {
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* PLACE ORDER BUTTON */
+
+        .place-order-button {
+            width: 100%;
+            padding: 16px;
+            background: #111;
+            color: #fff;
+            border: 1px solid #c8a96b;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .place-order-button:hover {
+            background: #c8a96b;
+            color: #111;
+        }
 
         /* =====================================================
            ORDER RESULT
@@ -1869,114 +1006,142 @@ body::after {
         .order-result-overlay {
             position: fixed;
             inset: 0;
-
-            background: rgba(0,0,0,0.75);
-
+            background: rgba(0,0,0,0.82);
+            backdrop-filter: blur(5px);
             z-index: 5000;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             padding: 20px;
         }
 
         .order-result-box {
             width: min(430px, 100%);
-
-            background: #fff;
-
-            padding: 40px 30px;
-
+            background: linear-gradient(145deg, #ffffff, #f7f5f1);
+            padding: 42px 30px;
             text-align: center;
+            border: 1px solid #c8a96b;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.45);
         }
 
         .order-success-icon {
             width: 65px;
             height: 65px;
-
             margin: 0 auto 20px;
-
             border-radius: 50%;
-
-            background: #111;
-            color: #fff;
-
+            background: #050505;
+            color: #c8a96b;
+            border: 1px solid #c8a96b;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-size: 30px;
+            font-size: 28px;
+            font-weight: 300;
         }
 
         .order-result-box h2 {
-            font-size: 22px;
-            letter-spacing: 3px;
+            font-size: 21px;
+            letter-spacing: 4px;
+            color: #111;
+            margin-bottom: 8px;
         }
 
         .order-number {
             margin: 15px 0;
-
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-
+            color: #c8a96b;
             letter-spacing: 2px;
         }
 
         .order-result-box p {
             color: #777;
-
-            font-size: 10px;
-
+            font-size: 9px;
+            letter-spacing: 1.5px;
             margin-bottom: 22px;
         }
+
+        /* CONFIRM / REJECT */
 
         .confirm-order-button,
         .reject-order-button {
             display: block;
-
             width: 100%;
-
-            padding: 13px;
-
+            box-sizing: border-box;
+            padding: 14px;
             margin-top: 10px;
-
             font-size: 9px;
             font-weight: bold;
-
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .confirm-order-button {
-            background: #111;
+            background: #050505;
             color: #fff;
+            border: 1px solid #c8a96b;
+        }
+
+        .confirm-order-button:hover {
+            background: #c8a96b;
+            color: #050505;
         }
 
         .reject-order-button {
-            background: #eee;
+            background: transparent;
             color: #111;
+            border: 1px solid #ccc;
         }
+
+        .reject-order-button:hover {
+            background: #eee;
+        }
+
+        /* CLOSE RESULT */
 
         .close-order-result {
             width: 100%;
-
             margin-top: 15px;
-
-            padding: 12px;
-
+            padding: 13px;
             background: transparent;
-
+            color: #555;
             border: 1px solid #ddd;
-
             cursor: pointer;
-
             font-size: 9px;
-
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
 
+        .close-order-result:hover {
+            border-color: #c8a96b;
+            color: #c8a96b;
+        }
 
-       /* =====================================================
+        /* MOBILE CHECKOUT */
+
+        @media (max-width: 600px) {
+
+            .checkout-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .checkout-summary {
+                padding: 17px;
+            }
+
+            .place-order-button {
+                padding: 16px;
+            }
+
+            .order-result-box {
+                padding: 35px 22px;
+            }
+
+        }
+
+        /* =====================================================
            RESPONSIVE
         ===================================================== */
 
@@ -2000,7 +1165,6 @@ body::after {
             }
 
         }
-
 
         @media (max-width: 700px) {
 
@@ -2028,8 +1192,6 @@ body::after {
             .nav a {
                 white-space: nowrap;
             }
-
-            /* HOME */
 
             .home {
                 height: 500px;
@@ -2067,8 +1229,6 @@ body::after {
                 font-size: 7px;
             }
 
-            /* SECTIONS */
-
             .section {
                 padding: 65px 5%;
             }
@@ -2087,8 +1247,6 @@ body::after {
                 height: 430px;
             }
 
-            /* CHECKOUT */
-
             .checkout-row {
                 grid-template-columns: 1fr;
                 gap: 0;
@@ -2098,13 +1256,9 @@ body::after {
                 padding: 25px 18px;
             }
 
-            /* CONTACT */
-
             .contact-content h2 {
                 font-size: 35px;
             }
-
-            /* PRODUCT MODAL MOBILE */
 
             .product-modal {
                 padding: 12px;
@@ -2146,7 +1300,6 @@ body::after {
             }
 
         }
-
 
         @media (max-width: 450px) {
 
@@ -2195,7 +1348,6 @@ body::after {
 
         }
 
-
         /* =================================================
            PRODUCT DETAILS MODAL
         ================================================= */
@@ -2205,7 +1357,7 @@ body::after {
             inset: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.78);
+            background: rgba(0,0,0,0.78);
             display: none;
             align-items: center;
             justify-content: center;
@@ -2226,7 +1378,7 @@ body::after {
             display: grid;
             grid-template-columns: 1fr 1fr;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
         }
 
         .product-modal-image {
@@ -2368,229 +1520,153 @@ body::after {
             cursor: pointer;
         }
 
-/* =====================================================
-   GAMY STORE - FULL AFRO DARK STYLE
-===================================================== */
+        /* =====================================================
+           GAMY STORE - FULL AFRO DARK STYLE
+        ===================================================== */
 
-/* كل الصفحة بعد الـ Home */
-body {
-    background-color: #f7f4ee !important;
-}
+        body {
+            background-color: #f7f4ee !important;
+        }
 
+        section:not(.home) {
+            background: #f7f4ee !important;
+            color: #24211d !important;
+        }
 
+        section:not(.home) h1,
+        section:not(.home) h2,
+        section:not(.home) h3,
+        section:not(.home) p,
+        section:not(.home) span,
+        section:not(.home) label {
+            color: #24211d !important;
+        }
 
-/* الأقسام */
+        /* PRODUCT CARDS */
 
-section:not(.home) {
-    background: #f7f4ee !important;
-    color: #24211d !important;
-}
+        .product-card {
+            background: #101010 !important;
+            border: 1px solid rgba(255,255,255,0.12) !important;
+            border-radius: 0 !important;
+            overflow: hidden;
+            color: #ffffff !important;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
 
-/* العناوين والنصوص */
-        
-section:not(.home) h1,
-section:not(.home) h2,
-section:not(.home) h3,
-section:not(.home) p,
-section:not(.home) span,
-section:not(.home) label {
-    color: #24211d !important;
-}
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.30) !important;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.7), 0 0 30px rgba(255,255,255,0.04) !important;
+        }
 
-/* =====================================================
-   PRODUCT CARDS
-===================================================== */
+        .product-card h3 { color: #ffffff !important; }
+        .product-card .price { color: #ffffff !important; }
+        .product-card .color,
+        .product-card .size { color: #bdbdbd !important; }
 
-.product-card {
-    background: #101010 !important;
+        .product-card select {
+            background: #080808 !important;
+            color: #ffffff !important;
+            border: 1px solid #333 !important;
+        }
 
-    border: 1px solid rgba(255,255,255,0.12) !important;
+        .product-image {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
 
-    border-radius: 0 !important;
+        .product-card .add-cart {
+            background: #ffffff !important;
+            color: #050505 !important;
+            border: none !important;
+            transition: 0.3s ease;
+        }
 
-    overflow: hidden;
+        .product-card .add-cart:hover {
+            background: #dcdcdc !important;
+            transform: translateY(-2px);
+        }
 
-    color: #ffffff !important;
+        .contact {
+            background: #050505 !important;
+        }
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.55),
-        inset 0 1px 0 rgba(255,255,255,0.04) !important;
+        footer {
+            background: #020202 !important;
+            color: #ffffff !important;
+            border-top: 1px solid #222;
+        }
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(255,255,255,0.30) !important;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,0.7),
-        0 0 30px rgba(255,255,255,0.04) !important;
-}
-
-/* اسم المنتج */
-
-.product-card h3 {
-    color: #ffffff !important;
-}
-
-
-/* السعر */
-
-.product-card .price {
-    color: #ffffff !important;
-}
-
-
-/* اللون والمقاس */
-
-.product-card .color,
-.product-card .size {
-    color: #bdbdbd !important;
-}
-
-
-/* =====================================================
-   PRODUCT OPTIONS
-===================================================== */
-
-.product-card select {
-    background: #080808 !important;
-
-    color: #ffffff !important;
-
-    border: 1px solid #333 !important;
-}
-
-
-/* =====================================================
-   PRODUCT IMAGE
-===================================================== */
-
-.product-image {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
-
-.product-card .add-cart {
-    background: #ffffff !important;
-
-    color: #050505 !important;
-
-    border: none !important;
-
-    transition: 0.3s ease;
-}
-
-.product-card .add-cart:hover {
-    background: #dcdcdc !important;
-
-    transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact {
-    background: #050505 !important;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    background: #020202 !important;
-
-    color: #ffffff !important;
-
-    border-top: 1px solid #222;
-}
         .gamy-image-banner {
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-}
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+        }
 
-.gamy-image-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-    ```css
-@media (max-width: 768px) {
-    .gamy-image-banner {
-        height: 420px;
-    }
-}
+        .gamy-image-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
 
-.gamy-location-marker {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: #050505;
-    border: 2px solid #c8a96b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #c8a96b;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow:
-        0 0 0 5px rgba(200,169,107,0.15),
-        0 8px 25px rgba(0,0,0,0.45);
-}
+        @media (max-width: 768px) {
+            .gamy-image-banner {
+                height: 420px;
+            }
+        }
 
-#checkoutButton {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    min-height: 45px !important;
-    background: #111 !important;
-    color: #fff !important;
-    border: 1px solid #c8a96b !important;
-    cursor: pointer !important;
-}
-        
+        .gamy-location-marker {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #050505;
+            border: 2px solid #c8a96b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c8a96b;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 0 0 5px rgba(200,169,107,0.15), 0 8px 25px rgba(0,0,0,0.45);
+        }
 
-/* GAMY STORE — FULL COLLECTIONS BACKGROUND */
-.section:has(.collection-grid) {
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.48),
-            rgba(0, 0, 0, 0.62)
-        ),
-        url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg") !important;
+        #checkoutButton {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100% !important;
+            min-height: 45px !important;
+            background: #111 !important;
+            color: #fff !important;
+            border: 1px solid #c8a96b !important;
+            cursor: pointer !important;
+        }
 
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important;
-}
+        /* GAMY STORE — FULL COLLECTIONS BACKGROUND */
 
-.section:has(.collection-grid) .collection-content h3,
-.section:has(.collection-grid) .collection-content span {
-    color: #ffffff !important;
-}
-</style>
+        .section:has(.collection-grid) {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.62)),
+                url("https://cdn.phototourl.com/member/2026-10-09-243ced36-5818-4291-971e-3576ff5c4a25.jpg") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: scroll !important;
+        }
+
+        .section:has(.collection-grid) .collection-content h3,
+        .section:has(.collection-grid) .collection-content span {
+            color: #ffffff !important;
+        }
+
+    </style>
 </head>
 
+<body>
 
     <!-- =====================================================
          TOP BAR
@@ -2599,7 +1675,6 @@ footer {
 
         <div class="top-bar-track">
 
-           
             GAMY STORE • SHOP NOW — UPGRADE YOUR STYLE •
             DON'T MISS OUT — GET YOUR LOOK TODAY •
             PREMIUM QUALITY — EXCEPTIONAL STYLE •
@@ -2644,59 +1719,38 @@ footer {
             GAMY STORE
         </div>
 
-
         <nav class="nav">
-            
-            <a href="#home">
-                HOME
-            </a>
 
-            <a href="#categories">
-                COLLECTIONS
-            </a>
+            <a href="#home">HOME</a>
 
-            <a href="#men">
-                MEN
-            </a>
+            <a href="#categories">COLLECTIONS</a>
 
-            <a href="#women">
-                WOMEN
-            </a>
+            <a href="#men">MEN</a>
 
-            <a href="#shoes">
-                SNEAKERS
-            </a>
-<a href="product.html">
-    PRODUCT
-</a>
-            <a href="#contact">
-                CONTACT
-            </a>
+            <a href="#women">WOMEN</a>
+
+            <a href="#shoes">SNEAKERS</a>
+
+            <a href="product.html">PRODUCT</a>
+
+            <a href="#contact">CONTACT</a>
 
         </nav>
-
 
         <button
             class="cart-button"
             id="openCart"
             type="button">
 
-            <span class="cart-icon">
-                🛍
-            </span>
+            <span class="cart-icon">🛍</span>
 
-            <span>
-                CART
-            </span>
+            <span>CART</span>
 
             <span
                 class="cart-count"
-                id="cartCount">
-                0
-            </span>
+                id="cartCount">0</span>
 
         </button>
-
 
     </header>
 
@@ -2709,56 +1763,46 @@ footer {
         class="home"
         id="home">
 
-
         <div class="hero-video">
 
-           <img
-  
-    id="heroVideo"
-    src="https://cdn.phototourl.com/member/2026-10-12-7c0e8092-6bb5-4216-963e-f685f655ab21.jpg"
-    alt="GAMY STORE">
+            <img
+                id="heroVideo"
+                src="https://cdn.phototourl.com/member/2026-10-12-7c0e8092-6bb5-4216-963e-f685f655ab21.jpg"
+                alt="GAMY STORE">
 
+        </div>
 
         <div class="hero-overlay">
 
             <div class="hero-content">
 
-                <p>
-                    NEW COLLECTION
-                </p>
+                <p>NEW COLLECTION</p>
 
-                <h1>
-                    GAMY STORE
-                </h1>
+                <h1>GAMY STORE</h1>
 
-                <span>
-                    LUXURY FASHION
-                </span>
+                <span>LUXURY FASHION</span>
 
                 <a
-                    <a
-    href="#men"
-    class="hero-button">
+                    href="#men"
+                    class="hero-button">
 
-    SHOP NOW
+                    SHOP NOW
 
-</a>
+                </a>
 
-<button
+                <button
+                    id="homeCheckoutButton"
+                    class="hero-button home-checkout-button"
+                    type="button"
+                    style="display: none; border: 0; cursor: pointer;">
 
-    id="homeCheckoutButton"
-    class="hero-button home-checkout-button"
-    type="button"
-    style="display: none;">
+                    CHECKOUT
 
-    CHECKOUT
+                </button>
 
-
-</button>
             </div>
 
         </div>
-
 
         <div class="video-controls">
 
@@ -2771,7 +1815,6 @@ footer {
 
             </button>
 
-
             <button
                 id="soundButton"
                 class="video-control"
@@ -2780,7 +1823,6 @@ footer {
                 🔇 SOUND OFF
 
             </button>
-
 
             <button
                 id="fullscreenButton"
@@ -2806,137 +1848,59 @@ footer {
 
         <div class="section-title">
 
-            <span>
-                EXPLORE
-            </span>
+            <span>EXPLORE</span>
 
-            <h2>
-                COLLECTIONS
-            </h2>
+            <h2>COLLECTIONS</h2>
 
-            <p>
-                DISCOVER THE LATEST GAMY STORE COLLECTION
-            </p>
+            <p>DISCOVER THE LATEST GAMY STORE COLLECTION</p>
 
         </div>
 
-
         <div class="collection-grid">
 
-
-            <a
-                href="#men"
-                class="collection-card">
-
-                <div class="collection-image men-image">
-                </div>
-
+            <a href="#men" class="collection-card">
+                <div class="collection-image men-image"></div>
                 <div class="collection-content">
-
-                    <h3>
-                        MEN
-                    </h3>
-
-                    <span>
-                        DISCOVER COLLECTION
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <a
-                href="#women"
-                class="collection-card">
-
-                <div class="collection-image women-image">
-                </div>
-
-                <div class="collection-content">
-
-                    <h3>
-                        WOMEN
-                    </h3>
-
-                    <span>
-                        DISCOVER COLLECTION
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <a
-                href="#shoes"
-                class="collection-card">
-
-                <div class="collection-image shoes-image">
-                </div>
-
-                <div class="collection-content">
-
-                    <h3>
-                        SNEAKERS
-                    </h3>
-
-                    <span>
-                        DISCOVER COLLECTION
-                    </span>
-
-                </div>
-
-            </a>
-
-            <a
-                href="#slippers"
-                class="collection-card">
-
-                <div class="collection-image slippers-image">
-                </div>
-
-                <div class="collection-content">
-
-                    <h3>
-                        SLIPPERS
-                    </h3>
-
-                    <span>
-                        DISCOVER COLLECTION
-                    </span>
-
-                </div>
-
-            </a>
-
-            <a
-                href="#jeans"
-                class="collection-card">
-
-                <div class="collection-image jeans-image">
-                </div>
-
-                <div class="collection-content">
-
-                    <h3>
-                                      <h3>
-                        JEANS DENIM
-                    </h3>
-
-                    <span>
-                        DISCOVER COLLECTION
-                    </span>
-
+                    <h3>MEN</h3>
+                    <span>DISCOVER COLLECTION</span>
                 </div>
             </a>
 
-           
+            <a href="#women" class="collection-card">
+                <div class="collection-image women-image"></div>
+                <div class="collection-content">
+                    <h3>WOMEN</h3>
+                    <span>DISCOVER COLLECTION</span>
+                </div>
+            </a>
+
+            <a href="#shoes" class="collection-card">
+                <div class="collection-image shoes-image"></div>
+                <div class="collection-content">
+                    <h3>SNEAKERS</h3>
+                    <span>DISCOVER COLLECTION</span>
+                </div>
+            </a>
+
+            <a href="#slippers" class="collection-card">
+                <div class="collection-image slippers-image"></div>
+                <div class="collection-content">
+                    <h3>SLIPPERS</h3>
+                    <span>DISCOVER COLLECTION</span>
+                </div>
+            </a>
+
+            <a href="#jeans" class="collection-card">
+                <div class="collection-image jeans-image"></div>
+                <div class="collection-content">
+                    <h3>JEANS DENIM</h3>
+                    <span>DISCOVER COLLECTION</span>
+                </div>
+            </a>
 
             <!-- كارت الجاكيت الجديد -->
             <a href="#jackets" class="collection-card">
                 <div class="collection-image jacket-image"></div>
-
                 <div class="collection-content">
                     <h3>JACKETS</h3>
                     <span>DISCOVER COLLECTION</span>
@@ -2947,191 +1911,154 @@ footer {
 
     </section>
 
+
     <!-- =====================================================
-     MEN
-===================================================== -->
+         MEN
+    ===================================================== -->
 
-<section
-    class="section products-section"
-    id="men"
-    style="
-        position: relative;
-        isolation: isolate;
-        background-image:
-            linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-            url('https://cdn.phototourl.com/member/2026-10-12-7ba24626-f168-4cf8-990c-233ea43e33d6.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    ">
+    <section
+        class="section products-section"
+        id="men"
+        style="
+            position: relative;
+            isolation: isolate;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('https://cdn.phototourl.com/member/2026-10-12-7ba24626-f168-4cf8-990c-233ea43e33d6.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        ">
 
-    <div class="section-title">
+        <div class="section-title">
 
-        <span>
-            MEN'S COLLECTION
-        </span>
+            <span>MEN'S COLLECTION</span>
 
-        <h2>
-            MEN
-        </h2>
+            <h2>MEN</h2>
 
-        <p>
-            PREMIUM MEN'S FASHION
-        </p>
+            <p>PREMIUM MEN'S FASHION</p>
 
-    </div>
+        </div>
 
-    <div class="products-container">
+        <div class="products-container">
 
-        <!-- MEN 1 -->
+            <!-- MEN 1 -->
 
-        <div class="product">
+            <div class="product">
 
-            <div class="product-image product-shirt">
+                <div class="product-image product-shirt"></div>
+
+                <div class="product-info">
+
+                    <h3>Premium T-Shirt</h3>
+
+                    <div class="price">450 EGP</div>
+
+                    <div class="options">
+
+                        <select class="color">
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Navy">NAVY</option>
+                        </select>
+
+                        <select class="size">
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-cart" type="button">ADD TO CART</button>
+
+                </div>
+
             </div>
 
-            <div class="product-info">
+            <!-- MEN 2 -->
 
-                <h3>
-                    Premium T-Shirt
-                </h3>
+            <div class="product">
 
-                <div class="price">
-                    450 EGP
+                <div class="product-image product-shirt-dark"></div>
+
+                <div class="product-info">
+
+                    <h3>Premium Shirt</h3>
+
+                    <div class="price">650 EGP</div>
+
+                    <div class="options">
+
+                        <select class="color">
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Gray">GRAY</option>
+                        </select>
+
+                        <select class="size">
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-cart" type="button">ADD TO CART</button>
+
                 </div>
 
-                <div class="options">
+            </div>
 
-                    <select class="color">
+            <!-- MEN 3 -->
 
-                        <option value="">SELECT COLOR</option>
-                        <option value="Black">BLACK</option>
-                        <option value="White">WHITE</option>
-                        <option value="Navy">NAVY</option>
+            <div class="product">
 
-                    </select>
+                <div class="product-image product-pants"></div>
 
-                    <select class="size">
+                <div class="product-info">
 
-                        <option value="">SELECT SIZE</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
+                    <h3>Premium Pants</h3>
 
-                    </select>
+                    <div class="price">800 EGP</div>
+
+                    <div class="options">
+
+                        <select class="color">
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="Gray">GRAY</option>
+                            <option value="Navy">NAVY</option>
+                        </select>
+
+                        <select class="size">
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+
+                    </div>
+
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
-
-                <button class="add-cart" type="button">
-                    ADD TO CART
-                </button>
 
             </div>
 
         </div>
 
-        <!-- MEN 2 -->
+    </section>
 
-        <div class="product">
 
-            <div class="product-image product-shirt-dark">
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Premium Shirt
-                </h3>
-
-                <div class="price">
-                    650 EGP
-                </div>
-
-                <div class="options">
-
-                    <select class="color">
-
-                        <option value="">SELECT COLOR</option>
-                        <option value="Black">BLACK</option>
-                        <option value="White">WHITE</option>
-                        <option value="Gray">GRAY</option>
-
-                    </select>
-
-                    <select class="size">
-
-                        <option value="">SELECT SIZE</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-
-                    </select>
-
-                </div>
-
-                <button class="add-cart" type="button">
-                    ADD TO CART
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- MEN 3 -->
-
-        <div class="product">
-
-            <div class="product-image product-pants">
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Premium Pants
-                </h3>
-
-                <div class="price">
-                    800 EGP
-                </div>
-
-                <div class="options">
-
-                    <select class="color">
-
-                        <option value="">SELECT COLOR</option>
-                        <option value="Black">BLACK</option>
-                        <option value="Gray">GRAY</option>
-                        <option value="Navy">NAVY</option>
-
-                    </select>
-
-                    <select class="size">
-
-                        <option value="">SELECT SIZE</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-
-                    </select>
-
-                </div>
-
-                <button class="add-cart" type="button">
-                    ADD TO CART
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-      <!-- =====================================================
+    <!-- =====================================================
          WOMEN
     ===================================================== -->
 
@@ -3141,258 +2068,122 @@ footer {
 
         <div class="section-title">
 
-            <span>
-                WOMEN'S COLLECTION
-            </span>
+            <span>WOMEN'S COLLECTION</span>
 
-            <h2>
-                WOMEN
-            </h2>
+            <h2>WOMEN</h2>
 
-            <p>
-                PREMIUM WOMEN'S FASHION
-            </p>
+            <p>PREMIUM WOMEN'S FASHION</p>
 
         </div>
 
-
         <div class="products-container">
-
 
             <!-- WOMEN 1 -->
 
             <div class="product">
 
-                <div class="product-image product-blouse">
-                </div>
+                <div class="product-image product-blouse"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        Premium Blouse
-                    </h3>
+                    <h3>Premium Blouse</h3>
 
-                    <div class="price">
-                        550 EGP
-                    </div>
+                    <div class="price">550 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Beige">
-                                BEIGE
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Beige">BEIGE</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
             </div>
-
 
             <!-- WOMEN 2 -->
 
             <div class="product">
 
-                <div class="product-image product-jacket">
-                </div>
+                <div class="product-image product-jacket"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        Signature Jacket
-                    </h3>
+                    <h3>Signature Jacket</h3>
 
-                    <div class="price">
-                        950 EGP
-                    </div>
+                    <div class="price">950 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="Brown">
-                                BROWN
-                            </option>
-
-                            <option value="Beige">
-                                BEIGE
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="Brown">BROWN</option>
+                            <option value="Beige">BEIGE</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
             </div>
 
-
             <!-- WOMEN 3 -->
 
             <div class="product">
 
-                <div class="product-image product-jacket-light">
-                </div>
+                <div class="product-image product-jacket-light"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        Luxury Jacket
-                    </h3>
+                    <h3>Luxury Jacket</h3>
 
-                    <div class="price">
-                        1200 EGP
-                    </div>
+                    <div class="price">1200 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Cream">
-                                CREAM
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Cream">CREAM</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="S">
-                                S
-                            </option>
-
-                            <option value="M">
-                                M
-                            </option>
-
-                            <option value="L">
-                                L
-                            </option>
-
-                            <option value="XL">
-                                XL
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
@@ -3413,266 +2204,124 @@ footer {
 
         <div class="section-title">
 
-            <span>
-                FOOTWEAR COLLECTION
-            </span>
+            <span>FOOTWEAR COLLECTION</span>
 
-            <h2>
-                SNEAKERS
-            </h2>
+            <h2>SNEAKERS</h2>
 
-            <p>
-                PREMIUM SNEAKERS COLLECTION
-            </p>
+            <p>PREMIUM SNEAKERS COLLECTION</p>
 
         </div>
 
-
         <div class="products-container">
-
 
             <!-- SNEAKER 1 -->
 
             <div class="product">
 
-                <div class="product-image product-sneaker">
-                </div>
+                <div class="product-image product-sneaker"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        Sport Sneaker
-                    </h3>
+                    <h3>Sport Sneaker</h3>
 
-                    <div class="price">
-                        1100 EGP
-                    </div>
+                    <div class="price">1100 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Gray">
-                                GRAY
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Gray">GRAY</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
             </div>
-
 
             <!-- SNEAKER 2 -->
 
             <div class="product">
 
-                <div class="product-image product-sneaker-white">
-                </div>
+                <div class="product-image product-sneaker-white"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        White Sneaker
-                    </h3>
+                    <h3>White Sneaker</h3>
 
-                    <div class="price">
-                        1250 EGP
-                    </div>
+                    <div class="price">1250 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="White">WHITE</option>
+                            <option value="Black">BLACK</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
             </div>
 
-
             <!-- SNEAKER 3 -->
 
             <div class="product">
 
-                <div class="product-image product-sneaker-classic">
-                </div>
+                <div class="product-image product-sneaker-classic"></div>
 
                 <div class="product-info">
 
-                    <h3>
-                        Classic Sneaker
-                    </h3>
+                    <h3>Classic Sneaker</h3>
 
-                    <div class="price">
-                        1350 EGP
-                    </div>
+                    <div class="price">1350 EGP</div>
 
                     <div class="options">
 
                         <select class="color">
-
-                            <option value="">
-                                SELECT COLOR
-                            </option>
-
-                            <option value="Black">
-                                BLACK
-                            </option>
-
-                            <option value="White">
-                                WHITE
-                            </option>
-
-                            <option value="Brown">
-                                BROWN
-                            </option>
-
+                            <option value="">SELECT COLOR</option>
+                            <option value="Black">BLACK</option>
+                            <option value="White">WHITE</option>
+                            <option value="Brown">BROWN</option>
                         </select>
 
-
                         <select class="size">
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="40">
-                                40
-                            </option>
-
-                            <option value="41">
-                                41
-                            </option>
-
-                            <option value="42">
-                                42
-                            </option>
-
-                            <option value="43">
-                                43
-                            </option>
-
-                            <option value="44">
-                                44
-                            </option>
-
+                            <option value="">SELECT SIZE</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
                         </select>
 
                     </div>
 
-
-                    <button
-                        class="add-cart"
-                        type="button">
-
-                        ADD TO CART
-
-                    </button>
+                    <button class="add-cart" type="button">ADD TO CART</button>
 
                 </div>
 
@@ -3684,28 +2333,26 @@ footer {
 
 
     <!-- =====================================================
-         CONTACT
+         BANNER + CONTACT
     ===================================================== -->
-<section class="gamy-image-banner">
 
-    <img
-        src="https://i.ibb.co/wN0g91FB/Marques-Samaritaine.jpg"
-        alt="GAMY STORE">
+    <section class="gamy-image-banner">
 
-</section>
+        <img
+            src="https://i.ibb.co/wN0g91FB/Marques-Samaritaine.jpg"
+            alt="GAMY STORE">
+
+    </section>
+
     <section
         class="contact"
         id="contact">
 
         <div class="contact-content">
 
-            <span>
-                GAMY STORE
-            </span>
+            <span>GAMY STORE</span>
 
-            <h2>
-                CONTACT US
-            </h2>
+            <h2>CONTACT US</h2>
 
             <p>
                 FOR ORDERS AND INQUIRIES,
@@ -3764,9 +2411,7 @@ footer {
 
         <div class="cart-header">
 
-            <h2>
-                YOUR CART
-            </h2>
+            <h2>YOUR CART</h2>
 
             <button
                 id="closeCart"
@@ -3779,34 +2424,25 @@ footer {
 
         </div>
 
-
         <div
             class="cart-items"
             id="cartItems">
-
         </div>
-
 
         <div class="cart-footer">
 
             <div class="cart-total-row">
 
-                <span>
-                    TOTAL
-                </span>
+                <span>TOTAL</span>
 
-                <strong id="cartTotal">
-                    0 EGP
-                </strong>
+                <strong id="cartTotal">0 EGP</strong>
 
             </div>
 
-
-           <button
-    id="checkoutButton"
-    class="checkout-button"
-    type="button"
-    onclick="document.getElementById('checkoutOverlay').classList.add('active'); document.body.style.overflow='hidden';">
+            <button
+                id="checkoutButton"
+                class="checkout-button"
+                type="button">
 
                 CHECKOUT
 
@@ -3836,32 +2472,21 @@ footer {
 
             </button>
 
-
             <div class="checkout-title">
 
-                <span>
-                    GAMY STORE
-                </span>
+                <span>GAMY STORE</span>
 
-                <h2>
-                    CHECKOUT
-                </h2>
+                <h2>CHECKOUT</h2>
 
-                <p>
-                    COMPLETE YOUR ORDER
-                </p>
+                <p>COMPLETE YOUR ORDER</p>
 
             </div>
 
-
             <form id="checkoutForm">
-
 
                 <div class="checkout-field">
 
-                    <label>
-                        FULL NAME
-                    </label>
+                    <label>FULL NAME</label>
 
                     <input
                         type="text"
@@ -3871,12 +2496,9 @@ footer {
 
                 </div>
 
-
                 <div class="checkout-field">
 
-                    <label>
-                        PHONE NUMBER
-                    </label>
+                    <label>PHONE NUMBER</label>
 
                     <input
                         type="tel"
@@ -3886,151 +2508,59 @@ footer {
 
                 </div>
 
-
                 <div class="checkout-row">
-
 
                     <div class="checkout-field">
 
-                        <label>
-                            GOVERNORATE
-                        </label>
+                        <label>GOVERNORATE</label>
 
                         <select
                             id="customerCity"
                             required>
 
-                            <option value="">
-                                SELECT GOVERNORATE
-                            </option>
-
-                            <option value="Cairo">
-                                Cairo
-                            </option>
-
-                            <option value="Giza">
-                                Giza
-                            </option>
-
-                            <option value="Alexandria">
-                                Alexandria
-                            </option>
-
-                            <option value="Qalyubia">
-                                Qalyubia
-                            </option>
-
-                            <option value="Sharqia">
-                                Sharqia
-                            </option>
-
-                            <option value="Dakahlia">
-                                Dakahlia
-                            </option>
-
-                            <option value="Gharbia">
-                                Gharbia
-                            </option>
-
-                            <option value="Monufia">
-                                Monufia
-                            </option>
-
-                            <option value="Beheira">
-                                Beheira
-                            </option>
-
-                            <option value="Kafr El Sheikh">
-                                Kafr El Sheikh
-                            </option>
-
-                            <option value="Damietta">
-                                Damietta
-                            </option>
-
-                            <option value="Port Said">
-                                Port Said
-                            </option>
-
-                            <option value="Ismailia">
-                                Ismailia
-                            </option>
-
-                            <option value="Suez">
-                                Suez
-                            </option>
-
-                            <option value="Fayoum">
-                                Fayoum
-                            </option>
-
-                            <option value="Beni Suef">
-                                Beni Suef
-                            </option>
-
-                            <option value="Minya">
-                                Minya
-                            </option>
-
-                            <option value="Asyut">
-                                Asyut
-                            </option>
-
-                            <option value="Sohag">
-                                Sohag
-                            </option>
-
-                            <option value="Qena">
-                                Qena
-                            </option>
-
-                            <option value="Luxor">
-                                Luxor
-                            </option>
-
-                            <option value="Aswan">
-                                Aswan
-                            </option>
-
-                            <option value="Red Sea">
-                                Red Sea
-                            </option>
-
-                            <option value="New Valley">
-                                New Valley
-                            </option>
-
-                            <option value="Matrouh">
-                                Matrouh
-                            </option>
-
-                            <option value="North Sinai">
-                                North Sinai
-                            </option>
-
-                            <option value="South Sinai">
-                                South Sinai
-                            </option>
+                            <option value="">SELECT GOVERNORATE</option>
+                            <option value="Cairo">Cairo</option>
+                            <option value="Giza">Giza</option>
+                            <option value="Alexandria">Alexandria</option>
+                            <option value="Qalyubia">Qalyubia</option>
+                            <option value="Sharqia">Sharqia</option>
+                            <option value="Dakahlia">Dakahlia</option>
+                            <option value="Gharbia">Gharbia</option>
+                            <option value="Monufia">Monufia</option>
+                            <option value="Beheira">Beheira</option>
+                            <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                            <option value="Damietta">Damietta</option>
+                            <option value="Port Said">Port Said</option>
+                            <option value="Ismailia">Ismailia</option>
+                            <option value="Suez">Suez</option>
+                            <option value="Fayoum">Fayoum</option>
+                            <option value="Beni Suef">Beni Suef</option>
+                            <option value="Minya">Minya</option>
+                            <option value="Asyut">Asyut</option>
+                            <option value="Sohag">Sohag</option>
+                            <option value="Qena">Qena</option>
+                            <option value="Luxor">Luxor</option>
+                            <option value="Aswan">Aswan</option>
+                            <option value="Red Sea">Red Sea</option>
+                            <option value="New Valley">New Valley</option>
+                            <option value="Matrouh">Matrouh</option>
+                            <option value="North Sinai">North Sinai</option>
+                            <option value="South Sinai">South Sinai</option>
 
                         </select>
 
                     </div>
 
-
                     <div class="checkout-field">
 
-                        <label>
-                            AREA
-                        </label>
+                        <label>AREA</label>
 
                         <select
                             id="customerArea"
                             required
                             disabled>
 
-                            <option value="">
-                                SELECT AREA
-                            </option>
+                            <option value="">SELECT AREA</option>
 
                         </select>
 
@@ -4038,12 +2568,9 @@ footer {
 
                 </div>
 
-
                 <div class="checkout-field">
 
-                    <label>
-                        FULL ADDRESS
-                    </label>
+                    <label>FULL ADDRESS</label>
 
                     <textarea
                         id="customerAddress"
@@ -4053,12 +2580,9 @@ footer {
 
                 </div>
 
-
                 <div class="checkout-field">
 
-                    <label>
-                        ORDER NOTES
-                    </label>
+                    <label>ORDER NOTES</label>
 
                     <textarea
                         id="orderNotes"
@@ -4067,36 +2591,19 @@ footer {
 
                 </div>
 
-
                 <div class="checkout-summary">
 
                     <div>
-
-                        <span>
-                            ITEMS
-                        </span>
-
-                        <strong id="checkoutItemsCount">
-                            0
-                        </strong>
-
+                        <span>ITEMS</span>
+                        <strong id="checkoutItemsCount">0</strong>
                     </div>
 
-
                     <div>
-
-                        <span>
-                            TOTAL
-                        </span>
-
-                        <strong id="checkoutTotal">
-                            0 EGP
-                        </strong>
-
+                        <span>TOTAL</span>
+                        <strong id="checkoutTotal">0 EGP</strong>
                     </div>
 
                 </div>
-
 
                 <button
                     type="submit"
@@ -4123,7 +2630,6 @@ footer {
 
         <div class="product-modal-box">
 
-
             <button
                 id="closeProductModal"
                 class="close-product-modal"
@@ -4132,7 +2638,6 @@ footer {
                 ×
 
             </button>
-
 
             <div class="product-modal-image">
 
@@ -4143,49 +2648,34 @@ footer {
 
             </div>
 
-
             <div class="product-modal-info">
 
-
-                <h2 id="modalProductName">
-                </h2>
-
+                <h2 id="modalProductName"></h2>
 
                 <div
                     id="modalProductPrice"
                     class="modal-product-price">
                 </div>
 
-
                 <!-- COLOR -->
 
                 <div class="modal-option">
 
-                    <label for="modalProductColor">
-                        COLOR
-                    </label>
+                    <label for="modalProductColor">COLOR</label>
 
-                    <select
-                        id="modalProductColor">
-                    </select>
+                    <select id="modalProductColor"></select>
 
                 </div>
-
 
                 <!-- SIZE -->
 
                 <div class="modal-option">
 
-                    <label for="modalProductSize">
-                        SIZE
-                    </label>
+                    <label for="modalProductSize">SIZE</label>
 
-                    <select
-                        id="modalProductSize">
-                    </select>
+                    <select id="modalProductSize"></select>
 
                 </div>
-
 
                 <!-- QUANTITY -->
 
@@ -4199,11 +2689,7 @@ footer {
 
                     </button>
 
-
-                    <span id="modalQuantity">
-                        1
-                    </span>
-
+                    <span id="modalQuantity">1</span>
 
                     <button
                         id="modalPlus"
@@ -4215,7 +2701,6 @@ footer {
 
                 </div>
 
-
                 <!-- ADD TO CART -->
 
                 <button
@@ -4226,7 +2711,6 @@ footer {
                     ADD TO CART
 
                 </button>
-
 
             </div>
 
@@ -4241,2168 +2725,896 @@ footer {
 
     <script>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
+        /* =================================================
+           CART STORAGE
+        ================================================= */
 
-               
-/* =================================================
-   CART STORAGE
-================================================= */
+        var cartItemsArray = [];
 
-let cartItemsArray = [];
+        var CART_STORAGE_KEY = "gamyStoreCart";
 
-const CART_STORAGE_KEY = "gamyStoreCart";
-
-
-function loadCart() {
-    try {
-        const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-
-        if (savedCart) {
-            const parsedCart = JSON.parse(savedCart);
-
-            if (Array.isArray(parsedCart)) {
-                cartItemsArray = parsedCart;
-            } else {
+        function loadCart() {
+            try {
+                var savedCart = localStorage.getItem(CART_STORAGE_KEY);
+                var parsedCart = savedCart ? JSON.parse(savedCart) : [];
+                cartItemsArray = Array.isArray(parsedCart) ? parsedCart : [];
+            } catch (error) {
+                console.error("Could not load cart:", error);
                 cartItemsArray = [];
             }
-        } else {
-            cartItemsArray = [];
         }
 
-    } catch (error) {
-        console.error("Could not load cart:", error);
-        cartItemsArray = [];
-    }
-}
-
-
-/* =================================================
-   CART ELEMENTS
-================================================= */
-
-const openCartButton =
-    document.getElementById("openCart");
-
-const closeCartButton =
-    document.getElementById("closeCart");
-
-const cartElement =
-    document.getElementById("cart");
-
-const cartOverlay =
-    document.getElementById("cartOverlay");
-
-const cartItemsContainer =
-    document.getElementById("cartItems");
-
-const cartCountElement =
-    document.getElementById("cartCount");
-
-const cartTotalElement =
-    document.getElementById("cartTotal");
-
-
-/* =================================================
-   CHECKOUT ELEMENTS
-================================================= */
-
-const checkoutButton =
-    document.getElementById("checkoutButton");
-
-const checkoutOverlay =
-    document.getElementById("checkoutOverlay");
-
-const closeCheckoutButton =
-    document.getElementById("closeCheckout");
-
-const checkoutForm =
-    document.getElementById("checkoutForm");
-
-const customerNameInput =
-    document.getElementById("customerName");
-
-const customerPhoneInput =
-    document.getElementById("customerPhone");
-
-const customerGovernorateSelect =
-    document.getElementById("customerCity");
-
-const customerAreaSelect =
-    document.getElementById("customerArea");
-
-const customerAddressInput =
-    document.getElementById("customerAddress");
-
-const orderNotesInput =
-    document.getElementById("orderNotes");
-
-const checkoutItemsCount =
-    document.getElementById("checkoutItemsCount");
-
-const checkoutTotal =
-    document.getElementById("checkoutTotal");
-
-
-/* =================================================
-   HOME CHECKOUT BUTTON
-================================================= */
-
-const homeCheckoutButton =
-    document.getElementById("homeCheckoutButton");
-
-if (homeCheckoutButton) {
-    homeCheckoutButton.addEventListener("click", function () {
-        loadCart();
-
-        if (
-            !Array.isArray(cartItemsArray) ||
-            cartItemsArray.length === 0
-        ) {
-            alert("YOUR CART IS EMPTY");
-            return;
-        }
-
-        window.location.href = "checkout.html";
-    });
-}
-
-
-/* =================================================
-   SYNC CART BETWEEN TABS
-================================================= */
-
-window.addEventListener("storage", function (event) {
-
-    if (event.key === CART_STORAGE_KEY) {
-        loadCart();
-
-        if (typeof updateCart === "function") {
-            updateCart();
-        }
-    }
-
-});
-
-
-/* =================================================
-   INITIAL CART LOAD
-================================================= */
-
-loadCart();
-
-                /* =================================================
-                   PRODUCT MODAL ELEMENTS
-                ================================================= */
-
-                const productModal =
-                    document.getElementById("productModal");
-
-                const closeProductModalButton =
-                    document.getElementById(
-                        "closeProductModal"
-                    );
-
-                const modalProductImage =
-                    document.getElementById(
-                        "modalProductImage"
-                    );
-
-                const modalProductName =
-                    document.getElementById(
-                        "modalProductName"
-                    );
-
-                const modalProductPrice =
-                    document.getElementById(
-                        "modalProductPrice"
-                    );
-
-                const modalProductColor =
-                    document.getElementById(
-                        "modalProductColor"
-                    );
-
-                const modalProductSize =
-                    document.getElementById(
-                        "modalProductSize"
-                    );
-
-                const modalMinus =
-                    document.getElementById(
-                        "modalMinus"
-                    );
-
-                const modalPlus =
-                    document.getElementById(
-                        "modalPlus"
-                    );
-
-                const modalQuantity =
-                    document.getElementById(
-                        "modalQuantity"
-                    );
-
-                const modalAddCart =
-                    document.getElementById(
-                        "modalAddCart"
-                    );
-
-
-                let currentModalProduct = null;
-
-                let currentModalQuantity = 1;
-
-
-                /* =================================================
-                   AREAS
-                ================================================= */
-
-                const areasByGovernorate = {
-
-                    "Cairo": [
-                        "Nasr City",
-                        "Heliopolis",
-                        "Maadi",
-                        "New Cairo",
-                        "Fifth Settlement",
-                        "Mokattam",
-                        "Ain Shams",
-                        "El Matareya",
-                        "Shorouk",
-                        "Badr",
-                        "Downtown Cairo",
-                        "Zamalek",
-                        "Abbasia",
-                        "Shubra",
-                        "Misr El Kadima"
-                    ],
-
-                    "Giza": [
-                        "Dokki",
-                        "Mohandessin",
-                        "Haram",
-                        "Faisal",
-                        "6th of October",
-                        "Sheikh Zayed",
-                        "Hadayek October",
-                        "Imbaba",
-                        "Agouza",
-                        "Bulaq El Dakrour",
-                        "Warraq",
-                        "Kerdasa"
-                    ],
-
-                    "Alexandria": [
-                        "Miami",
-                        "Sidi Bishr",
-                        "Smouha",
-                        "Gleem",
-                        "Stanley",
-                        "Sporting",
-                        "Roushdy",
-                        "Mandara",
-                        "Montaza",
-                        "Agami",
-                        "Borg El Arab",
-                        "Moharam Bek",
-                        "Kafr Abdo"
-                    ],
-
-                    "Qalyubia": [
-                        "Banha",
-                        "Shubra El Kheima",
-                        "Qalyub",
-                        "Obour City",
-                        "Khanka",
-                        "Khosous",
-                        "Tukh",
-                        "Qaha",
-                        "Shebeen El Qanater"
-                    ],
-
-                    "Sharqia": [
-                        "Zagazig",
-                        "10th of Ramadan",
-                        "Belbeis",
-                        "Minya Al Qamh",
-                        "Abu Kabir",
-                        "Faqous",
-                        "Hehia",
-                        "Mashtoul El Souq"
-                    ],
-
-                    "Dakahlia": [
-                        "Mansoura",
-                        "Talkha",
-                        "Mit Ghamr",
-                        "Dekernes",
-                        "Sherbin",
-                        "Aga",
-                        "Belqas",
-                        "Manzala",
-                        "Sinbillawin"
-                    ],
-
-                    "Gharbia": [
-                        "Tanta",
-                        "Mahalla El Kubra",
-                        "Kafr El Zayat",
-                        "Zefta",
-                        "Santa",
-                        "Basyoun",
-                        "Qutour"
-                    ],
-
-                    "Monufia": [
-                        "Shibin El Kom",
-                        "Menouf",
-                        "Ashmoun",
-                        "Sadat City",
-                        "Quesna",
-                        "Tala",
-                        "Berket El Sabe"
-                    ],
-
-                    "Beheira": [
-                        "Damanhur",
-                        "Kafr El Dawwar",
-                        "Rashid",
-                        "Edku",
-                        "Abu Hummus",
-                        "Hosh Essa",
-                        "Kom Hamada",
-                        "Mahmoudiyah"
-                    ],
-
-                    "Kafr El Sheikh": [
-                        "Kafr El Sheikh",
-                        "Desouk",
-                        "Metoubes",
-                        "Baltim",
-                        "Fouh",
-                        "Sidi Salem",
-                        "Qallin"
-                    ],
-
-                    "Damietta": [
-                        "Damietta",
-                        "New Damietta",
-                        "Ras El Bar",
-                        "Faraskour",
-                        "Kafr Saad",
-                        "Zarqa"
-                    ],
-
-                    "Port Said": [
-                        "Port Said",
-                        "Port Fouad",
-                        "Arab District",
-                        "Zohour District",
-                        "Dawahy District"
-                    ],
-
-                    "Ismailia": [
-                        "Ismailia",
-                        "Fayed",
-                        "Qantara East",
-                        "Qantara West",
-                        "Tal El Kebir",
-                        "Abu Suwir"
-                    ],
-
-                    "Suez": [
-                        "Suez",
-                        "Arbaeen",
-                        "Ataqah",
-                        "Faisal",
-                        "Ganayen"
-                    ],
-
-                    "Fayoum": [
-                        "Fayoum",
-                        "Sinnuris",
-                        "Tamiya",
-                        "Ibshaway",
-                        "Itsa",
-                        "Yousef El Seddik"
-                    ],
-
-                    "Beni Suef": [
-                        "Beni Suef",
-                        "Al Wasta",
-                        "Nasser",
-                        "Biba",
-                        "Samasta",
-                        "Ihnasiya"
-                    ],
-
-                    "Minya": [
-                        "Minya",
-                        "Mallawi",
-                        "Samalut",
-                        "Maghagha",
-                        "Beni Mazar",
-                        "Abu Qurqas",
-                        "Deir Mawas"
-                    ],
-
-                    "Asyut": [
-                        "Asyut",
-                        "Dairut",
-                        "Manfalut",
-                        "Qusiya",
-                        "Abnub",
-                        "Sahel Selim",
-                        "El Badari"
-                    ],
-
-                    "Sohag": [
-                        "Sohag",
-                        "Akhmim",
-                        "Girga",
-                        "Tahta",
-                        "Juhayna",
-                        "Al Maragha",
-                        "Al Monshah"
-                    ],
-
-                    "Qena": [
-                        "Qena",
-                        "Nag Hammadi",
-                        "Qus",
-                        "Dishna",
-                        "Farshout",
-                        "Abu Tesht"
-                    ],
-
-                    "Luxor": [
-                        "Luxor",
-                        "Esna",
-                        "Armant",
-                        "El Tod",
-                        "Al Bayadiya"
-                    ],
-
-                    "Aswan": [
-                        "Aswan",
-                        "Kom Ombo",
-                        "Edfu",
-                        "Daraw",
-                        "Abu Simbel"
-                    ],
-
-                    "Red Sea": [
-                        "Hurghada",
-                        "El Gouna",
-                        "Safaga",
-                        "Marsa Alam",
-                        "Quseir"
-                    ],
-
-                    "New Valley": [
-                        "Kharga",
-                        "Dakhla",
-                        "Farafra",
-                        "Baris",
-                        "Balat"
-                    ],
-
-                    "Matrouh": [
-                        "Marsa Matrouh",
-                        "El Alamein",
-                        "Dabaa",
-                        "Siwa",
-                        "Salloum"
-                    ],
-
-                    "North Sinai": [
-                        "Arish",
-                        "Sheikh Zuweid",
-                        "Rafah",
-                        "Bir al-Abd"
-                    ],
-
-                    "South Sinai": [
-                        "Sharm El Sheikh",
-                        "Dahab",
-                        "Nuweiba",
-                        "Taba",
-                        "Saint Catherine",
-                        "El Tor"
-                    ]
-
-                };
-
-
-                /* =================================================
-                   OPEN CART
-                ================================================= */
-function openCart() {
-
-    cartElement.classList.add("active");
-
-    cartOverlay.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-                /* =================================================
-                   CLOSE CART
-                ================================================= */
-
-                function closeCart() {
-
-                    cartElement.classList.remove("active");
-
-                    cartOverlay.classList.remove("active");
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-
-
-                /* =================================================
-                   CHECKOUT
-                ================================================= */
-
-            
-/* =====================================================
-   CHECKOUT FUNCTIONS
-===================================================== */
-
-function openCheckout() {
-
-    loadCart();
-
-    if (
-        !Array.isArray(cartItemsArray) ||
-        cartItemsArray.length === 0
-    ) {
-        alert("YOUR CART IS EMPTY");
-        return;
-    }
-
-    if (!checkoutOverlay) {
-        console.error("checkoutOverlay was not found.");
-        alert("CHECKOUT is not available. Please check the checkout HTML.");
-        return;
-    }
-
-    updateCheckoutSummary();
-
-    checkoutOverlay.classList.add("active");
-
-    document.body.style.overflow = "hidden";
-}
-
-
-function closeCheckout() {
-
-    if (checkoutOverlay) {
-        checkoutOverlay.classList.remove("active");
-    }
-
-    document.body.style.overflow = "";
-}
-
-
-function updateCheckoutSummary() {
-
-    let total = 0;
-    let totalItems = 0;
-
-    cartItemsArray.forEach(function (item) {
-
-        const quantity = Number(item.quantity) || 1;
-        const price = Number(item.price) || 0;
-
-        total += price * quantity;
-        totalItems += quantity;
-
-    });
-
-    if (checkoutItemsCount) {
-        checkoutItemsCount.textContent = totalItems;
-    }
-
-    if (checkoutTotal) {
-        checkoutTotal.textContent =
-            total.toLocaleString() + " EGP";
-    }
-
-}
-
-
-                /* =================================================
-                   UPDATE CART
-                ================================================= */
-
-                function loadCart() {
-    try {
-        const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-
-        if (savedCart) {
-            const parsedCart = JSON.parse(savedCart);
-
-            if (Array.isArray(parsedCart)) {
-                cartItemsArray = parsedCart;
+        function saveCart() {
+            try {
+                localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItemsArray));
+            } catch (error) {
+                console.error("Could not save cart:", error);
             }
         }
-    } catch (error) {
-        console.error("Could not load cart:", error);
-        cartItemsArray = [];
-    }
-}
 
-function saveCart() {
-    try {
-        localStorage.setItem(
-            CART_STORAGE_KEY,
-            JSON.stringify(cartItemsArray)
-        );
-    } catch (error) {
-        console.error("Could not save cart:", error);
-    }
-}
-                function updateCart() {
-
-                    cartItemsContainer.innerHTML = "";
-
-                    let total = 0;
-
-                    let totalItems = 0;
+        function escapeHTML(value) {
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
 
 
-                    if (
-                        cartItemsArray.length === 0
-                    ) {
+        /* =================================================
+           ELEMENTS
+        ================================================= */
 
-                        cartItemsContainer.innerHTML = `
+        var openCartButton = document.getElementById("openCart");
+        var closeCartButton = document.getElementById("closeCart");
+        var cartElement = document.getElementById("cart");
+        var cartOverlay = document.getElementById("cartOverlay");
+        var cartItemsContainer = document.getElementById("cartItems");
+        var cartCountElement = document.getElementById("cartCount");
+        var cartTotalElement = document.getElementById("cartTotal");
 
-                            <div class="cart-empty">
+        var checkoutButton = document.getElementById("checkoutButton");
+        var homeCheckoutButton = document.getElementById("homeCheckoutButton");
+        var checkoutOverlay = document.getElementById("checkoutOverlay");
+        var closeCheckoutButton = document.getElementById("closeCheckout");
+        var checkoutForm = document.getElementById("checkoutForm");
+        var customerNameInput = document.getElementById("customerName");
+        var customerPhoneInput = document.getElementById("customerPhone");
+        var customerGovernorateSelect = document.getElementById("customerCity");
+        var customerAreaSelect = document.getElementById("customerArea");
+        var customerAddressInput = document.getElementById("customerAddress");
+        var orderNotesInput = document.getElementById("orderNotes");
+        var checkoutItemsCount = document.getElementById("checkoutItemsCount");
+        var checkoutTotal = document.getElementById("checkoutTotal");
 
-                                YOUR CART IS EMPTY
+        var productModal = document.getElementById("productModal");
+        var closeProductModalButton = document.getElementById("closeProductModal");
+        var modalProductImage = document.getElementById("modalProductImage");
+        var modalProductName = document.getElementById("modalProductName");
+        var modalProductPrice = document.getElementById("modalProductPrice");
+        var modalProductColor = document.getElementById("modalProductColor");
+        var modalProductSize = document.getElementById("modalProductSize");
+        var modalMinus = document.getElementById("modalMinus");
+        var modalPlus = document.getElementById("modalPlus");
+        var modalQuantity = document.getElementById("modalQuantity");
+        var modalAddCart = document.getElementById("modalAddCart");
 
-                            </div>
-
-                        `;
-
-                    }
-
-
-                    cartItemsArray.forEach(
-                        function (item, index) {
-
-                            const quantity =
-                                item.quantity || 1;
-
-
-                            const itemTotal =
-                                item.price *
-                                quantity;
-
-
-                            total += itemTotal;
-
-                            totalItems += quantity;
-
-
-                            const cartItem =
-                                document.createElement(
-                                    "div"
-                                );
-
-
-                            cartItem.className =
-                                "cart-item";
+        var currentModalProduct = null;
+        var currentModalQuantity = 1;
 
 
-                            cartItem.innerHTML = `
+        /* =================================================
+           AREAS
+        ================================================= */
 
-                                <div class="cart-item-info">
+        var areasByGovernorate = {
 
-                                    <h4>
-                                        ${item.name}
-                                    </h4>
+            "Cairo": ["Nasr City", "Heliopolis", "Maadi", "New Cairo", "Fifth Settlement", "Mokattam", "Ain Shams", "El Matareya", "Shorouk", "Badr", "Downtown Cairo", "Zamalek", "Abbasia", "Shubra", "Misr El Kadima"],
 
-                                    <p>
-                                        COLOR:
-                                        ${item.color}
-                                    </p>
+            "Giza": ["Dokki", "Mohandessin", "Haram", "Faisal", "6th of October", "Sheikh Zayed", "Hadayek October", "Imbaba", "Agouza", "Bulaq El Dakrour", "Warraq", "Kerdasa"],
 
-                                    <p>
-                                        SIZE:
-                                        ${item.size}
-                                    </p>
+            "Alexandria": ["Miami", "Sidi Bishr", "Smouha", "Gleem", "Stanley", "Sporting", "Roushdy", "Mandara", "Montaza", "Agami", "Borg El Arab", "Moharam Bek", "Kafr Abdo"],
 
-                                    <p>
-                                        QUANTITY:
-                                        ${quantity}
-                                    </p>
+            "Qalyubia": ["Banha", "Shubra El Kheima", "Qalyub", "Obour City", "Khanka", "Khosous", "Tukh", "Qaha", "Shebeen El Qanater"],
 
-                                    <strong>
-                                        ${itemTotal.toLocaleString()} EGP
-                                    </strong>
+            "Sharqia": ["Zagazig", "10th of Ramadan", "Belbeis", "Minya Al Qamh", "Abu Kabir", "Faqous", "Hehia", "Mashtoul El Souq"],
 
-                                </div>
+            "Dakahlia": ["Mansoura", "Talkha", "Mit Ghamr", "Dekernes", "Sherbin", "Aga", "Belqas", "Manzala", "Sinbillawin"],
 
-                                <button
-                                    class="remove-cart-item"
-                                    data-index="${index}"
-                                    type="button">
+            "Gharbia": ["Tanta", "Mahalla El Kubra", "Kafr El Zayat", "Zefta", "Santa", "Basyoun", "Qutour"],
 
-                                    REMOVE
+            "Monufia": ["Shibin El Kom", "Menouf", "Ashmoun", "Sadat City", "Quesna", "Tala", "Berket El Sabe"],
 
-                                </button>
+            "Beheira": ["Damanhur", "Kafr El Dawwar", "Rashid", "Edku", "Abu Hummus", "Hosh Essa", "Kom Hamada", "Mahmoudiyah"],
 
-                            `;
+            "Kafr El Sheikh": ["Kafr El Sheikh", "Desouk", "Metoubes", "Baltim", "Fouh", "Sidi Salem", "Qallin"],
+
+            "Damietta": ["Damietta", "New Damietta", "Ras El Bar", "Faraskour", "Kafr Saad", "Zarqa"],
+
+            "Port Said": ["Port Said", "Port Fouad", "Arab District", "Zohour District", "Dawahy District"],
+
+            "Ismailia": ["Ismailia", "Fayed", "Qantara East", "Qantara West", "Tal El Kebir", "Abu Suwir"],
+
+            "Suez": ["Suez", "Arbaeen", "Ataqah", "Faisal", "Ganayen"],
+
+            "Fayoum": ["Fayoum", "Sinnuris", "Tamiya", "Ibshaway", "Itsa", "Yousef El Seddik"],
+
+            "Beni Suef": ["Beni Suef", "Al Wasta", "Nasser", "Biba", "Samasta", "Ihnasiya"],
+
+            "Minya": ["Minya", "Mallawi", "Samalut", "Maghagha", "Beni Mazar", "Abu Qurqas", "Deir Mawas"],
+
+            "Asyut": ["Asyut", "Dairut", "Manfalut", "Qusiya", "Abnub", "Sahel Selim", "El Badari"],
+
+            "Sohag": ["Sohag", "Akhmim", "Girga", "Tahta", "Juhayna", "Al Maragha", "Al Monshah"],
+
+            "Qena": ["Qena", "Nag Hammadi", "Qus", "Dishna", "Farshout", "Abu Tesht"],
+
+            "Luxor": ["Luxor", "Esna", "Armant", "El Tod", "Al Bayadiya"],
+
+            "Aswan": ["Aswan", "Kom Ombo", "Edfu", "Daraw", "Abu Simbel"],
+
+            "Red Sea": ["Hurghada", "El Gouna", "Safaga", "Marsa Alam", "Quseir"],
+
+            "New Valley": ["Kharga", "Dakhla", "Farafra", "Baris", "Balat"],
+
+            "Matrouh": ["Marsa Matrouh", "El Alamein", "Dabaa", "Siwa", "Salloum"],
+
+            "North Sinai": ["Arish", "Sheikh Zuweid", "Rafah", "Bir al-Abd"],
+
+            "South Sinai": ["Sharm El Sheikh", "Dahab", "Nuweiba", "Taba", "Saint Catherine", "El Tor"]
+
+        };
 
 
-                            cartItemsContainer.appendChild(
-                                cartItem
-                            );
+        /* =================================================
+           OPEN / CLOSE CART
+        ================================================= */
 
-                        }
-                    );
+        function openCart() {
+            cartElement.classList.add("active");
+            cartOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeCart() {
+            cartElement.classList.remove("active");
+            cartOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
 
 
-                    cartCountElement.textContent =
-                        totalItems;
+        /* =================================================
+           CHECKOUT
+        ================================================= */
+
+        function updateCheckoutSummary() {
+
+            var total = 0;
+            var totalItems = 0;
+
+            cartItemsArray.forEach(function (item) {
+
+                var quantity = Number(item.quantity) || 1;
+                var price = Number(item.price) || 0;
+
+                total += price * quantity;
+                totalItems += quantity;
+
+            });
+
+            if (checkoutItemsCount) {
+                checkoutItemsCount.textContent = totalItems;
+            }
+
+            if (checkoutTotal) {
+                checkoutTotal.textContent = total.toLocaleString() + " EGP";
+            }
+
+        }
+
+        function openCheckout() {
+
+            loadCart();
+
+            if (!Array.isArray(cartItemsArray) || cartItemsArray.length === 0) {
+                alert("YOUR CART IS EMPTY");
+                return;
+            }
+
+            updateCheckoutSummary();
+
+            closeCart();
+
+            checkoutOverlay.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeCheckout() {
+            checkoutOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
 
 
-                    cartTotalElement.textContent =
-                        total.toLocaleString() +
-                        " EGP";
-const homeCheckoutButton =
-    document.getElementById("homeCheckoutButton");
+        /* =================================================
+           UPDATE CART
+        ================================================= */
 
-if (homeCheckoutButton) {
+        function updateCart() {
 
-    homeCheckoutButton.style.display =
-        cartItemsArray.length > 0
-            ? "inline-block"
-            : "none";
+            cartItemsContainer.innerHTML = "";
 
-}
+            var total = 0;
+            var totalItems = 0;
 
-                    updateCheckoutSummary();
+            if (cartItemsArray.length === 0) {
 
+                cartItemsContainer.innerHTML =
+                    '<div class="cart-empty">YOUR CART IS EMPTY</div>';
+
+            }
+
+            cartItemsArray.forEach(function (item, index) {
+
+                var quantity = Number(item.quantity) || 1;
+                var price = Number(item.price) || 0;
+                var itemTotal = price * quantity;
+
+                total += itemTotal;
+                totalItems += quantity;
+
+                var cartItem = document.createElement("div");
+
+                cartItem.className = "cart-item";
+
+                cartItem.innerHTML =
+                    '<div class="cart-item-info">' +
+                        '<h4>' + escapeHTML(item.name) + '</h4>' +
+                        '<p>COLOR: ' + escapeHTML(item.color) + '</p>' +
+                        '<p>SIZE: ' + escapeHTML(item.size) + '</p>' +
+                        '<p>QUANTITY: ' + quantity + '</p>' +
+                        '<strong>' + itemTotal.toLocaleString() + ' EGP</strong>' +
+                    '</div>' +
+                    '<button class="remove-cart-item" data-index="' + index + '" type="button">REMOVE</button>';
+
+                cartItemsContainer.appendChild(cartItem);
+
+            });
+
+            cartCountElement.textContent = totalItems;
+
+            cartTotalElement.textContent = total.toLocaleString() + " EGP";
+
+            if (homeCheckoutButton) {
+                homeCheckoutButton.style.display =
+                    cartItemsArray.length > 0 ? "inline-block" : "none";
+            }
+
+            updateCheckoutSummary();
+
+        }
+
+
+        /* =================================================
+           ADD ITEM TO CART
+        ================================================= */
+
+        function addToCart(name, price, color, size, quantity) {
+
+            loadCart();
+
+            cartItemsArray.push({
+                name: name,
+                price: Number(price),
+                color: color,
+                size: size,
+                quantity: Math.floor(Number(quantity)) || 1
+            });
+
+            saveCart();
+            updateCart();
+            openCart();
+
+        }
+
+
+        /* =================================================
+           COPY SELECT OPTIONS TO MODAL
+        ================================================= */
+
+        function fillModalSelect(modalSelect, originalSelect) {
+
+            modalSelect.innerHTML = "";
+
+            Array.from(originalSelect.options).forEach(function (option) {
+
+                if (!option.value) {
+                    return;
                 }
 
+                var newOption = document.createElement("option");
 
-                /* =================================================
-                   COPY SELECT OPTIONS TO MODAL
-                ================================================= */
+                newOption.value = option.value;
+                newOption.textContent = option.textContent.trim();
 
-                function fillModalSelect(
-                    modalSelect,
-                    originalSelect
-                ) {
+                modalSelect.appendChild(newOption);
 
-                    modalSelect.innerHTML = "";
+            });
 
-
-                    Array.from(
-                        originalSelect.options
-                    ).forEach(
-                        function (option) {
-
-                            if (!option.value) {
-                                return;
-                            }
+        }
 
 
-                            const newOption =
-                                document.createElement(
-                                    "option"
-                                );
+        /* =================================================
+           OPEN / CLOSE PRODUCT MODAL
+        ================================================= */
+
+        function openProductModal(product) {
+
+            currentModalProduct = product;
+            currentModalQuantity = 1;
+            modalQuantity.textContent = currentModalQuantity;
+
+            var productName = product.querySelector("h3").textContent.trim();
+
+            var productPrice = parseInt(
+                product.querySelector(".price").textContent.replace(/[^\d]/g, ""),
+                10
+            );
+
+            var productImage = product.querySelector(".product-image");
+
+            var imageURL = window.getComputedStyle(productImage).backgroundImage;
+
+            imageURL = imageURL
+                .replace(/^url\(["']?/, "")
+                .replace(/["']?\)$/, "");
+
+            modalProductImage.src = imageURL;
+            modalProductImage.alt = productName;
+            modalProductName.textContent = productName;
+            modalProductPrice.textContent = productPrice.toLocaleString() + " EGP";
+
+            var originalColor = product.querySelector(".color");
+            var originalSize = product.querySelector(".size");
+
+            fillModalSelect(modalProductColor, originalColor);
+            fillModalSelect(modalProductSize, originalSize);
+
+            if (originalColor.value) {
+                modalProductColor.value = originalColor.value;
+            } else {
+                modalProductColor.selectedIndex = 0;
+            }
+
+            if (originalSize.value) {
+                modalProductSize.value = originalSize.value;
+            } else {
+                modalProductSize.selectedIndex = 0;
+            }
+
+            productModal.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+        function closeProductModal() {
+
+            productModal.classList.remove("active");
+
+            currentModalProduct = null;
+            currentModalQuantity = 1;
+
+            document.body.style.overflow = "";
+
+        }
 
 
-                            newOption.value =
-                                option.value;
+        /* =================================================
+           PRODUCT IMAGE CLICK
+        ================================================= */
 
+        document.querySelectorAll(".product-image").forEach(function (image) {
 
-                            newOption.textContent =
-                                option.textContent.trim();
+            image.addEventListener("click", function () {
 
+                var product = image.closest(".product");
 
-                            modalSelect.appendChild(
-                                newOption
-                            );
-
-                        }
-                    );
-
+                if (!product) {
+                    return;
                 }
 
+                openProductModal(product);
 
-                /* =================================================
-                   OPEN PRODUCT MODAL
-                ================================================= */
+            });
 
-                function openProductModal(
-                    product
-                ) {
+        });
 
-                    currentModalProduct =
-                        product;
 
+        /* =================================================
+           MODAL BUTTONS
+        ================================================= */
 
-                    currentModalQuantity = 1;
+        closeProductModalButton.addEventListener("click", closeProductModal);
 
+        productModal.addEventListener("click", function (event) {
+            if (event.target === productModal) {
+                closeProductModal();
+            }
+        });
 
-                    modalQuantity.textContent =
-                        currentModalQuantity;
+        modalMinus.addEventListener("click", function () {
+            if (currentModalQuantity > 1) {
+                currentModalQuantity--;
+                modalQuantity.textContent = currentModalQuantity;
+            }
+        });
 
+        modalPlus.addEventListener("click", function () {
+            if (currentModalQuantity < 99) {
+                currentModalQuantity++;
+                modalQuantity.textContent = currentModalQuantity;
+            }
+        });
 
-                    const productName =
-                        product
-                            .querySelector("h3")
-                            .textContent
-                            .trim();
+        /* MODAL ADD TO CART */
 
+        modalAddCart.addEventListener("click", function () {
 
-                    const productPriceText =
-                        product
-                            .querySelector(".price")
-                            .textContent
-                            .trim();
+            if (!currentModalProduct) {
+                return;
+            }
 
+            var productName = currentModalProduct.querySelector("h3").textContent.trim();
 
-                    const productPrice =
-                        parseInt(
-                            productPriceText.replace(
-                                /[^\d]/g,
-                                ""
-                            ),
-                            10
-                        );
+            var productPrice = parseInt(
+                currentModalProduct.querySelector(".price").textContent.replace(/[^\d]/g, ""),
+                10
+            );
 
+            var selectedColor = modalProductColor.value;
+            var selectedSize = modalProductSize.value;
 
-                    const productImage =
-                        product.querySelector(
-                            ".product-image"
-                        );
+            if (!selectedColor) {
+                alert("PLEASE SELECT A COLOR");
+                return;
+            }
 
+            if (!selectedSize) {
+                alert("PLEASE SELECT A SIZE");
+                return;
+            }
 
-                    const computedStyle =
-                        window.getComputedStyle(
-                            productImage
-                        );
+            if (!productName || !Number.isFinite(productPrice) || productPrice <= 0) {
+                alert("Please select a valid product, color, size, and quantity.");
+                return;
+            }
 
+            addToCart(productName, productPrice, selectedColor, selectedSize, currentModalQuantity);
 
-                    let imageURL =
-                        computedStyle.backgroundImage;
+            closeProductModal();
 
+            openCart();
 
-                    imageURL =
-                        imageURL
-                            .replace(
-                                /^url\(["']?/,
-                                ""
-                            )
-                            .replace(
-                                /["']?\)$/,
-                                ""
-                            );
+        });
 
 
-                    modalProductImage.src =
-                        imageURL;
+        /* =================================================
+           ADD TO CART - ORIGINAL BUTTONS
+        ================================================= */
 
+        document.querySelectorAll(".add-cart").forEach(function (button) {
 
-                    modalProductImage.alt =
-                        productName;
+            button.addEventListener("click", function () {
 
+                var product = button.closest(".product");
 
-                    modalProductName.textContent =
-                        productName;
+                var productName = product.querySelector("h3").textContent.trim();
 
-
-                    modalProductPrice.textContent =
-                        productPrice.toLocaleString() +
-                        " EGP";
-
-
-                    const originalColor =
-                        product.querySelector(
-                            ".color"
-                        );
-
-
-                    const originalSize =
-                        product.querySelector(
-                            ".size"
-                        );
-
-
-                    fillModalSelect(
-                        modalProductColor,
-                        originalColor
-                    );
-
-
-                    fillModalSelect(
-                        modalProductSize,
-                        originalSize
-                    );
-
-
-                    if (
-                        originalColor.value
-                    ) {
-
-                        modalProductColor.value =
-                            originalColor.value;
-
-                    }
-
-                    else {
-
-                        modalProductColor.selectedIndex =
-                            0;
-
-                    }
-
-
-                    if (
-                        originalSize.value
-                    ) {
-
-                        modalProductSize.value =
-                            originalSize.value;
-
-                    }
-
-                    else {
-
-                        modalProductSize.selectedIndex =
-                            0;
-
-                    }
-
-
-                    productModal.classList.add(
-                        "active"
-                    );
-
-
-                    document.body.style.overflow =
-                        "hidden";
-
-                }
-
-
-                /* =================================================
-                   CLOSE PRODUCT MODAL
-                ================================================= */
-
-                function closeProductModal() {
-
-                    productModal.classList.remove(
-                        "active"
-                    );
-
-                    currentModalProduct =
-                        null;
-
-                    currentModalQuantity = 1;
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-
-
-/* =================================================
-                   PRODUCT IMAGE CLICK
-================================================= */
-
-                document
-                    .querySelectorAll(".product-image")
-                    .forEach(
-                        function (image) {
-
-                            image.addEventListener(
-                                "click",
-                                function () {
-
-                                    const product =
-                                        image.closest(
-                                            ".product"
-                                        );
-
-
-                                    if (!product) {
-                                        return;
-                                    }
-
-
-                                    openProductModal(
-                                        product
-                                    );
-
-                                }
-                            );
-
-                        }
-                    );
-
-
-                /* =================================================
-                   MODAL CLOSE
-                ================================================= */
-
-                closeProductModalButton.addEventListener(
-                    "click",
-                    closeProductModal
-                );
-
-
-                productModal.addEventListener(
-                    "click",
-                    function (event) {
-
-                        if (
-                            event.target ===
-                            productModal
-                        ) {
-
-                            closeProductModal();
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   MODAL QUANTITY MINUS
-                ================================================= */
-
-                modalMinus.addEventListener(
-                    "click",
-                    function () {
-
-                        if (
-                            currentModalQuantity > 1
-                        ) {
-
-                            currentModalQuantity--;
-
-                            modalQuantity.textContent =
-                                currentModalQuantity;
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   MODAL QUANTITY PLUS
-                ================================================= */
-
-                modalPlus.addEventListener(
-                    "click",
-                    function () {
-
-                        if (
-                            currentModalQuantity < 99
-                        ) {
-
-                            currentModalQuantity++;
-
-                            modalQuantity.textContent =
-                                currentModalQuantity;
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   MODAL ADD TO CART
-                ================================================= */
-
-                modalAddCart.addEventListener(
-                    "click",
-                    function () {
-
-                        if (
-                            !currentModalProduct
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        const productName =
-                            currentModalProduct
-                                .querySelector("h3")
-                                .textContent
-                                .trim();
-
-
-                        const productPriceText =
-                            currentModalProduct
-                                .querySelector(".price")
-                                .textContent;
-
-
-                        const productPrice =
-                            parseInt(
-                                productPriceText.replace(
-                                    /[^\d]/g,
-                                    ""
-                                ),
-                                10
-                            );
-
-
-                        const selectedColor =
-                            modalProductColor.value;
-
-
-                        const selectedSize =
-                            modalProductSize.value;
-
-
-                        if (!selectedColor) {
-
-                            alert(
-                                "PLEASE SELECT A COLOR"
-                            );
-
-                            return;
-
-                        }
-
-
-                        if (!selectedSize) {
-
-                            alert(
-                                "PLEASE SELECT A SIZE"
-                            );
-
-                            return;
-
-                        }
-
-
-
-if (
-    !productName ||
-    !Number.isFinite(Number(productPrice)) ||
-    Number(productPrice) <= 0 ||
-    !selectedColor ||
-    !selectedSize ||
-    !Number.isFinite(Number(currentModalQuantity)) ||
-    Number(currentModalQuantity) < 1
-) {
-    alert("Please select a valid product, color, size, and quantity.");
-    return;
-}
-
-cartItemsArray.push({
-    name: productName,
-    price: Number(productPrice),
-    color: selectedColor,
-    size: selectedSize,
-    quantity: Math.floor(Number(currentModalQuantity))
-});
-
-saveCart();
-updateCart();
-closeProductModal();
-openCart();
-
-                /* =================================================
-                   ADD TO CART - ORIGINAL BUTTONS
-                ================================================= */
-
-                document
-                    .querySelectorAll(".add-cart")
-                    .forEach(
-                        function (button) {
-
-                            button.addEventListener(
-                                "click",
-                                function () {
-
-
-                                    const product =
-                                        button.closest(
-                                            ".product"
-                                        );
-
-
-                                    const productName =
-                                        product
-                                            .querySelector(
-                                                "h3"
-                                            )
-                                            .textContent
-                                            .trim();
-
-
-                                    const productPriceText =
-                                        product
-                                            .querySelector(
-                                                ".price"
-                                            )
-                                            .textContent;
-
-
-                                    const productPrice =
-                                        parseInt(
-                                            productPriceText
-                                                .replace(
-                                                    /[^\d]/g,
-                                                    ""
-                                                ),
-                                            10
-                                        );
-
-
-                                    const colorSelect =
-                                        product
-                                            .querySelector(
-                                                ".color"
-                                            );
-
-
-                                    const sizeSelect =
-                                        product
-                                            .querySelector(
-                                                ".size"
-                                            );
-
-
-                                    const selectedColor =
-                                        colorSelect.value;
-
-
-                                    const selectedSize =
-                                        sizeSelect.value;
-
-
-                                    if (
-                                        !selectedColor
-                                    ) {
-
-                                        alert(
-                                            "PLEASE SELECT A COLOR"
-                                        );
-
-                                        return;
-
-                                    }
-
-
-                                    if (
-                                        !selectedSize
-                                    ) {
-
-                                        alert(
-                                            "PLEASE SELECT A SIZE"
-                                        );
-
-                                        return;
-
-                                    }
-
-
-                                    cartItemsArray.push({
-
-                                        name:
-    productName,
-
-price:
-    productPrice,
-
-color:
-    selectedColor,
-
-size:
-    selectedSize,
-
-quantity:
-    1
-
-});
-
-saveCart();
-
-
-                                    updateCart();
-
-                                    openCart();
-
-                                }
-                            );
-
-                        }
-                    );
-
-
-                /* =================================================
-                   REMOVE ITEM
-                ================================================= */
-
-        cartItemsContainer.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target.classList.contains(
-                "remove-cart-item"
-            )
-        ) {
-
-            const index =
-                parseInt(
-                    event.target
-                        .dataset
-                        .index,
+                var productPrice = parseInt(
+                    product.querySelector(".price").textContent.replace(/[^\d]/g, ""),
                     10
                 );
 
-            cartItemsArray.splice(
-                index,
-                1
-            );
-
-            saveCart();
-
-            updateCart();
-
-        }
-
-    }
-);
-                /* =================================================
-                   CART BUTTONS
-                ================================================= */
-
-/* =================================================
-   CART BUTTONS
-================================================= */
-
-openCartButton.addEventListener("click", openCart);
-
-closeCartButton.addEventListener("click", closeCart);
-
-cartOverlay.addEventListener("click", closeCart);
-
-
-
-/* =================================================
-   CHECKOUT BUTTON
-================================================= */
-
-if (checkoutButton) {
-    checkoutButton.addEventListener("click", function () {
-
-        loadCart();
-
-        if (
-            !Array.isArray(cartItemsArray) ||
-            cartItemsArray.length === 0
-        ) {
-            alert("YOUR CART IS EMPTY");
-            return;
-        }
-
-        window.location.href = "checkout.html";
-
-    });
-}
-
-
-
-/* =================================================
-   HOME CHECKOUT BUTTON
-================================================= */
-
-const homeCheckoutButton =
-    document.getElementById("homeCheckoutButton");
-
-if (homeCheckoutButton) {
-
-    homeCheckoutButton.addEventListener("click", function () {
-
-        if (
-            !Array.isArray(cartItemsArray) ||
-            cartItemsArray.length === 0
-        ) {
-            alert("YOUR CART IS EMPTY");
-            return;
-        }
-
-        openCheckout();
-
-    });
-
-}
-
-
-/* =================================================
-   CLOSE CHECKOUT
-================================================= */
-
-closeCheckoutButton.addEventListener("click", closeCheckout);
-
-checkoutOverlay.addEventListener("click", function (event) {
-
-    if (event.target === checkoutOverlay) {
-        closeCheckout();
-    }
-
-});
-
-                /* =================================================
-                   GOVERNORATE
-                ================================================= */
-
-                customerGovernorateSelect.addEventListener(
-                    "change",
-                    function () {
-
-                        const selectedGovernorate =
-                            customerGovernorateSelect.value;
-
-
-                        customerAreaSelect.innerHTML = `
-
-                            <option value="">
-                                SELECT AREA
-                            </option>
-
-                        `;
-
-
-                        customerAreaSelect.disabled =
-                            true;
-
-
-                        if (
-                            !selectedGovernorate
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        const areas =
-                            areasByGovernorate[
-                                selectedGovernorate
-                            ];
-
-
-                        if (!areas) {
-
-                            return;
-
-                        }
-
-
-                        areas.forEach(
-                            function (area) {
-
-                                const option =
-                                    document.createElement(
-                                        "option"
-                                    );
-
-
-                                option.value =
-                                    area;
-
-
-                                option.textContent =
-                                    area;
-
-
-                                customerAreaSelect.appendChild(
-                                    option
-                                );
-
-                            }
-                        );
-
-
-                        customerAreaSelect.disabled =
-                            false;
-
-                    }
-                );
-
-
-                /* =================================================
-                   PLACE ORDER
-                ================================================= */
-
-                checkoutForm.addEventListener(
-                    "submit",
-                    function (event) {
-
-                        event.preventDefault();
-
-
-                        if (
-                            cartItemsArray.length ===
-                            0
-                        ) {
-
-                            alert(
-                                "YOUR CART IS EMPTY"
-                            );
-
-                            return;
-
-                        }
-
-
-                        const customerName =
-                            customerNameInput.value.trim();
-
-
-                        const customerPhone =
-                            customerPhoneInput.value.trim();
-
-
-                        const governorate =
-                            customerGovernorateSelect.value;
-
-
-                        const area =
-                            customerAreaSelect.value;
-
-
-                        const customerAddress =
-                            customerAddressInput.value.trim();
-
-
-                        const orderNotes =
-                            orderNotesInput.value.trim();
-
-
-                        let total = 0;
-
-                        let totalItems = 0;
-
-                        let orderDetails = "";
-
-
-                        cartItemsArray.forEach(
-                            function (item, index) {
-
-                                const quantity =
-                                    item.quantity || 1;
-
-
-                                const itemTotal =
-                                    item.price *
-                                    quantity;
-
-
-                                total += itemTotal;
-
-                                totalItems += quantity;
-
-
-                                orderDetails +=
-
-                                    (index + 1) +
-                                    ". " +
-                                    item.name +
-                                    "\n" +
-
-                                    "COLOR: " +
-                                    item.color +
-                                    "\n" +
-
-                                    "SIZE: " +
-                                    item.size +
-                                    "\n" +
-
-                                    "QUANTITY: " +
-                                    quantity +
-                                    "\n" +
-
-                                    "UNIT PRICE: " +
-                                    item.price +
-                                    " EGP\n" +
-
-                                    "ITEM TOTAL: " +
-                                    itemTotal +
-                                    " EGP\n\n";
-
-                            }
-                        );
-
-
-                        const orderNumber =
-                            "GAMY-" +
-                            Date.now()
-                                .toString()
-                                .slice(-6);
-
-
-                        const whatsappNumber =
-                            "201105178891";
-
-
-                        const confirmMessage =
-
-                            "🟢 GAMY STORE - ORDER CONFIRMED\n\n" +
-
-                            "ORDER NUMBER: " +
-                            orderNumber +
-                            "\n\n" +
-
-                            "CUSTOMER DETAILS\n" +
-
-                            "NAME: " +
-                            customerName +
-                            "\n" +
-
-                            "PHONE: " +
-                            customerPhone +
-                            "\n\n" +
-
-                            "DELIVERY DETAILS\n" +
-
-                            "GOVERNORATE: " +
-                            governorate +
-                            "\n" +
-
-                            "AREA: " +
-                            area +
-                            "\n" +
-
-                            "ADDRESS: " +
-                            customerAddress +
-                            "\n\n" +
-
-                            "ORDER DETAILS\n" +
-
-                            orderDetails +
-
-                            "TOTAL ITEMS: " +
-                            totalItems +
-                            "\n" +
-
-                            "TOTAL: " +
-                            total +
-                            " EGP\n\n" +
-
-                            "NOTES: " +
-                            (
-                                orderNotes ||
-                                "No notes"
-                            ) +
-
-                            "\n\n" +
-
-                            "✅ CUSTOMER CONFIRMS THIS ORDER.";
-
-
-                        const rejectMessage =
-
-                            "🔴 GAMY STORE - ORDER REJECTED\n\n" +
-
-                            "ORDER NUMBER: " +
-                            orderNumber +
-                            "\n\n" +
-
-                            "CUSTOMER DETAILS\n" +
-
-                            "NAME: " +
-                            customerName +
-                            "\n" +
-
-                            "PHONE: " +
-                            customerPhone +
-                            "\n\n" +
-
-                            "TOTAL ITEMS: " +
-                            totalItems +
-                            "\n" +
-
-                            "TOTAL: " +
-                            total +
-                            " EGP\n\n" +
-
-                            "❌ CUSTOMER REJECTS THIS ORDER.";
-
-
-                        const confirmURL =
-
-                            "https://wa.me/" +
-                            whatsappNumber +
-                            "?text=" +
-                            encodeURIComponent(
-                                confirmMessage
-                            );
-
-
-                        const rejectURL =
-
-                            "https://wa.me/" +
-                            whatsappNumber +
-                            "?text=" +
-                            encodeURIComponent(
-                                rejectMessage
-                            );
-const savedOrders =
-    JSON.parse(
-        localStorage.getItem("gamyStoreOrders") || "[]"
-    );
-
-savedOrders.push({
-
-    orderNumber: orderNumber,
-
-    customerName: customerName,
-
-    phone: customerPhone,
-
-    governorate: governorate,
-
-    area: area,
-
-    address: customerAddress,
-
-    notes: orderNotes,
-
-    items: cartItemsArray.map(
-        function (item) {
-
-            return {
-
-                name: item.name,
-
-                price: item.price,
-
-                color: item.color,
-
-                size: item.size,
-
-                quantity: item.quantity || 1
-
-            };
-
-        }
-    ),
-
-    totalItems: totalItems,
-
-    total: total,
-
-    status: "NEW",
-
-    date: new Date().toLocaleString("en-EG")
-
-});
-
-localStorage.setItem(
-    "gamyStoreOrders",
-    JSON.stringify(savedOrders)
-);
-
-                        const orderResultOverlay =
-                            document.createElement(
-                                "div"
-                            );
-
-
-                        orderResultOverlay.className =
-                            "order-result-overlay";
-
-
-                        orderResultOverlay.innerHTML = `
-
-                            <div class="order-result-box">
-
-                                <div
-                                    class="order-success-icon">
-
-                                    ✓
-
-                                </div>
-
-                                <h2>
-                                    ORDER RECEIVED
-                                </h2>
-
-                                <div class="order-number">
-                                    ${orderNumber}
-                                </div>
-
-                                <p>
-                                    PLEASE CHOOSE AN OPTION
-                                </p>
-
-
-                                <a
-                                    href="${confirmURL}"
-                                    target="_blank"
-                                    class="confirm-order-button">
-
-                                    ✓ CONFIRM ORDER
-
-                                </a>
-
-
-                                <a
-                                    href="${rejectURL}"
-                                    target="_blank"
-                                    class="reject-order-button">
-
-                                    ✕ REJECT ORDER
-
-                                </a>
-
-
-                                <button
-                                    type="button"
-                                    class="close-order-result">
-
-                                    CLOSE
-
-                                </button>
-
-                            </div>
-
-                        `;
-
-
-                        document.body.appendChild(
-                            orderResultOverlay
-                        );
-
-
-                        const closeOrderResult =
-                            orderResultOverlay
-                                .querySelector(
-                                    ".close-order-result"
-                                );
-
-
-                        closeOrderResult.addEventListener(
-                            "click",
-                            function () {
-
-                                orderResultOverlay.remove();
-
-
-                                cartItemsArray = [];
-
-
-                                updateCart();
-
-
-                                checkoutForm.reset();
-
-
-                                customerAreaSelect.innerHTML = `
-
-                                    <option value="">
-                                        SELECT AREA
-                                    </option>
-
-                                `;
-
-
-                                customerAreaSelect.disabled =
-                                    true;
-
-
-                                closeCheckout();
-
-                                closeCart();
-
-                            }
-                        );
-
-                    }
-                );
-
-
-                /* =================================================
-                   YOUTUBE CONTROLS
-                ================================================= */
-
-                const heroVideo =
-                    document.getElementById(
-                        "heroVideo"
-                    );
-
-
-                const playButton =
-                    document.getElementById(
-                        "playButton"
-                    );
-
-
-                const soundButton =
-                    document.getElementById(
-                        "soundButton"
-                    );
-
-
-                const fullscreenButton =
-                    document.getElementById(
-                        "fullscreenButton"
-                    );
-
-
-                let videoPlaying = true;
-
-                let videoMuted = true;
-
-
-                function sendYouTubeCommand(
-                    command,
-                    args = []
-                ) {
-
-                    if (!heroVideo) {
-                        return;
-                    }
-
-
-                    heroVideo.contentWindow.postMessage(
-
-                        JSON.stringify({
-
-                            event: "command",
-
-                            func: command,
-
-                            args: args
-
-                        }),
-
-                       "*"
-
-                    );
-
+                var selectedColor = product.querySelector(".color").value;
+                var selectedSize = product.querySelector(".size").value;
+
+                if (!selectedColor) {
+                    alert("PLEASE SELECT A COLOR");
+                    return;
                 }
 
+                if (!selectedSize) {
+                    alert("PLEASE SELECT A SIZE");
+                    return;
+                }
 
-                /* PLAY / PAUSE */
+                addToCart(productName, productPrice, selectedColor, selectedSize, 1);
 
-                playButton.addEventListener(
-                    "click",
-                    function () {
+            });
 
-                        if (
-                            videoPlaying
-                        ) {
-
-                            sendYouTubeCommand(
-                                "pauseVideo"
-                            );
+        });
 
 
-                            videoPlaying = false;
+        /* =================================================
+           REMOVE ITEM
+        ================================================= */
 
+        cartItemsContainer.addEventListener("click", function (event) {
 
-                            playButton.textContent =
-                                "▶ PLAY";
+            if (event.target.classList.contains("remove-cart-item")) {
 
-                        }
+                var index = parseInt(event.target.dataset.index, 10);
 
-                        else {
+                cartItemsArray.splice(index, 1);
 
-                            sendYouTubeCommand(
-                                "playVideo"
-                            );
-
-
-                            videoPlaying = true;
-
-
-                            playButton.textContent =
-                                "❚❚ PAUSE";
-
-                        }
-
-                    }
-                );
-
-
-     
-/* SOUND */
-
-soundButton.addEventListener(
-    "click",
-    function () {
-
-        if (videoMuted) {
-
-            sendYouTubeCommand("playVideo");
-            sendYouTubeCommand("unMute");
-            sendYouTubeCommand("setVolume", [100]);
-
-            videoMuted = false;
-
-            soundButton.textContent = "🔊 SOUND ON";
-
-        } else {
-
-            sendYouTubeCommand("mute");
-
-            videoMuted = true;
-
-            soundButton.textContent = "🔇 SOUND OFF";
-
-        }
-
-    }
-);
-
-                /* FULLSCREEN */
-
-                fullscreenButton.addEventListener(
-                    "click",
-                    function () {
-
-                        if (!heroVideo) {
-                            return;
-                        }
-
-
-                        if (
-                            heroVideo.requestFullscreen
-                        ) {
-
-                            heroVideo.requestFullscreen();
-
-                        }
-
-                        else if (
-                            heroVideo.webkitRequestFullscreen
-                        ) {
-
-                            heroVideo.webkitRequestFullscreen();
-
-                        }
-
-                    }
-                );
-
-
-                /* =================================================
-                   START VIDEO
-                ================================================= */
-
-                setTimeout(
-                    function () {
-
-                        sendYouTubeCommand(
-                            "mute"
-                        );
-
-                        sendYouTubeCommand(
-                            "playVideo"
-                        );
-
-                    },
-                    1200
-                );
-
-
-                /* =================================================
-                   INITIAL CART
-                ================================================= */
+                saveCart();
 
                 updateCart();
 
             }
 
-        );
+        });
+
+
+        /* =================================================
+           CART BUTTONS
+        ================================================= */
+
+        openCartButton.addEventListener("click", function () {
+            loadCart();
+            updateCart();
+            openCart();
+        });
+
+        closeCartButton.addEventListener("click", closeCart);
+
+        cartOverlay.addEventListener("click", closeCart);
+
+
+        /* =================================================
+           CHECKOUT BUTTONS
+        ================================================= */
+
+        if (checkoutButton) {
+            checkoutButton.addEventListener("click", openCheckout);
+        }
+
+        if (homeCheckoutButton) {
+            homeCheckoutButton.addEventListener("click", openCheckout);
+        }
+
+        closeCheckoutButton.addEventListener("click", closeCheckout);
+
+        checkoutOverlay.addEventListener("click", function (event) {
+            if (event.target === checkoutOverlay) {
+                closeCheckout();
+            }
+        });
+
+
+        /* =================================================
+           SYNC CART BETWEEN TABS
+        ================================================= */
+
+        window.addEventListener("storage", function (event) {
+            if (event.key === CART_STORAGE_KEY) {
+                loadCart();
+                updateCart();
+            }
+        });
+
+
+        /* =================================================
+           GOVERNORATE -> AREA
+        ================================================= */
+
+        customerGovernorateSelect.addEventListener("change", function () {
+
+            var selectedGovernorate = customerGovernorateSelect.value;
+
+            customerAreaSelect.innerHTML = '<option value="">SELECT AREA</option>';
+
+            customerAreaSelect.disabled = true;
+
+            if (!selectedGovernorate) {
+                return;
+            }
+
+            var areas = areasByGovernorate[selectedGovernorate];
+
+            if (!areas) {
+                return;
+            }
+
+            areas.forEach(function (area) {
+
+                var option = document.createElement("option");
+
+                option.value = area;
+                option.textContent = area;
+
+                customerAreaSelect.appendChild(option);
+
+            });
+
+            customerAreaSelect.disabled = false;
+
+        });
+
+
+        /* =================================================
+           PLACE ORDER
+        ================================================= */
+
+        checkoutForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            loadCart();
+
+            if (cartItemsArray.length === 0) {
+                alert("YOUR CART IS EMPTY");
+                return;
+            }
+
+            var customerName = customerNameInput.value.trim();
+            var customerPhone = customerPhoneInput.value.trim();
+            var governorate = customerGovernorateSelect.value;
+            var area = customerAreaSelect.value;
+            var customerAddress = customerAddressInput.value.trim();
+            var orderNotes = orderNotesInput.value.trim();
+
+            var total = 0;
+            var totalItems = 0;
+            var orderDetails = "";
+
+            cartItemsArray.forEach(function (item, index) {
+
+                var quantity = Number(item.quantity) || 1;
+                var itemTotal = item.price * quantity;
+
+                total += itemTotal;
+                totalItems += quantity;
+
+                orderDetails +=
+                    (index + 1) + ". " + item.name + "\n" +
+                    "COLOR: " + item.color + "\n" +
+                    "SIZE: " + item.size + "\n" +
+                    "QUANTITY: " + quantity + "\n" +
+                    "UNIT PRICE: " + item.price + " EGP\n" +
+                    "ITEM TOTAL: " + itemTotal + " EGP\n\n";
+
+            });
+
+            var orderNumber = "GAMY-" + Date.now().toString().slice(-6);
+
+            var whatsappNumber = "201105178891";
+
+            var confirmMessage =
+                "🟢 GAMY STORE - ORDER CONFIRMED\n\n" +
+                "ORDER NUMBER: " + orderNumber + "\n\n" +
+                "CUSTOMER DETAILS\n" +
+                "NAME: " + customerName + "\n" +
+                "PHONE: " + customerPhone + "\n\n" +
+                "DELIVERY DETAILS\n" +
+                "GOVERNORATE: " + governorate + "\n" +
+                "AREA: " + area + "\n" +
+                "ADDRESS: " + customerAddress + "\n\n" +
+                "ORDER DETAILS\n" +
+                orderDetails +
+                "TOTAL ITEMS: " + totalItems + "\n" +
+                "TOTAL: " + total + " EGP\n\n" +
+                "NOTES: " + (orderNotes || "No notes") + "\n\n" +
+                "✅ CUSTOMER CONFIRMS THIS ORDER.";
+
+            var rejectMessage =
+                "🔴 GAMY STORE - ORDER REJECTED\n\n" +
+                "ORDER NUMBER: " + orderNumber + "\n\n" +
+                "CUSTOMER DETAILS\n" +
+                "NAME: " + customerName + "\n" +
+                "PHONE: " + customerPhone + "\n\n" +
+                "TOTAL ITEMS: " + totalItems + "\n" +
+                "TOTAL: " + total + " EGP\n\n" +
+                "❌ CUSTOMER REJECTS THIS ORDER.";
+
+            var confirmURL =
+                "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(confirmMessage);
+
+            var rejectURL =
+                "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(rejectMessage);
+
+            /* SAVE ORDER */
+
+            try {
+
+                var savedOrders = JSON.parse(localStorage.getItem("gamyStoreOrders") || "[]");
+
+                savedOrders.push({
+                    orderNumber: orderNumber,
+                    customerName: customerName,
+                    phone: customerPhone,
+                    governorate: governorate,
+                    area: area,
+                    address: customerAddress,
+                    notes: orderNotes,
+                    items: cartItemsArray.map(function (item) {
+                        return {
+                            name: item.name,
+                            price: item.price,
+                            color: item.color,
+                            size: item.size,
+                            quantity: item.quantity || 1
+                        };
+                    }),
+                    totalItems: totalItems,
+                    total: total,
+                    status: "NEW",
+                    date: new Date().toLocaleString("en-EG")
+                });
+
+                localStorage.setItem("gamyStoreOrders", JSON.stringify(savedOrders));
+
+            } catch (error) {
+                console.error("Could not save order:", error);
+            }
+
+            /* RESULT POPUP */
+
+            var orderResultOverlay = document.createElement("div");
+
+            orderResultOverlay.className = "order-result-overlay";
+
+            orderResultOverlay.innerHTML =
+                '<div class="order-result-box">' +
+                    '<div class="order-success-icon">✓</div>' +
+                    '<h2>ORDER RECEIVED</h2>' +
+                    '<div class="order-number">' + orderNumber + '</div>' +
+                    '<p>PLEASE CHOOSE AN OPTION</p>' +
+                    '<a href="' + confirmURL + '" target="_blank" class="confirm-order-button">✓ CONFIRM ORDER</a>' +
+                    '<a href="' + rejectURL + '" target="_blank" class="reject-order-button">✕ REJECT ORDER</a>' +
+                    '<button type="button" class="close-order-result">CLOSE</button>' +
+                '</div>';
+
+            document.body.appendChild(orderResultOverlay);
+
+            orderResultOverlay
+                .querySelector(".close-order-result")
+                .addEventListener("click", function () {
+
+                    orderResultOverlay.remove();
+
+                    cartItemsArray = [];
+
+                    saveCart();
+
+                    updateCart();
+
+                    checkoutForm.reset();
+
+                    customerAreaSelect.innerHTML = '<option value="">SELECT AREA</option>';
+
+                    customerAreaSelect.disabled = true;
+
+                    closeCheckout();
+
+                    closeCart();
+
+                });
+
+        });
+
+
+        /* =================================================
+           HERO CONTROLS (hero is an image now, so these are
+           safe no-ops if there is no video iframe)
+        ================================================= */
+
+        var heroVideo = document.getElementById("heroVideo");
+        var playButton = document.getElementById("playButton");
+        var soundButton = document.getElementById("soundButton");
+        var fullscreenButton = document.getElementById("fullscreenButton");
+
+        var videoPlaying = true;
+        var videoMuted = true;
+
+        function sendYouTubeCommand(command, args) {
+
+            if (!heroVideo || !heroVideo.contentWindow) {
+                return;
+            }
+
+            heroVideo.contentWindow.postMessage(
+                JSON.stringify({
+                    event: "command",
+                    func: command,
+                    args: args || []
+                }),
+                "*"
+            );
+
+        }
+
+        if (playButton) {
+            playButton.addEventListener("click", function () {
+
+                if (videoPlaying) {
+                    sendYouTubeCommand("pauseVideo");
+                    videoPlaying = false;
+                    playButton.textContent = "▶ PLAY";
+                } else {
+                    sendYouTubeCommand("playVideo");
+                    videoPlaying = true;
+                    playButton.textContent = "❚❚ PAUSE";
+                }
+
+            });
+        }
+
+        if (soundButton) {
+            soundButton.addEventListener("click", function () {
+
+                if (videoMuted) {
+                    sendYouTubeCommand("playVideo");
+                    sendYouTubeCommand("unMute");
+                    sendYouTubeCommand("setVolume", [100]);
+                    videoMuted = false;
+                    soundButton.textContent = "🔊 SOUND ON";
+                } else {
+                    sendYouTubeCommand("mute");
+                    videoMuted = true;
+                    soundButton.textContent = "🔇 SOUND OFF";
+                }
+
+            });
+        }
+
+        if (fullscreenButton) {
+            fullscreenButton.addEventListener("click", function () {
+
+                if (!heroVideo) {
+                    return;
+                }
+
+                if (heroVideo.requestFullscreen) {
+                    heroVideo.requestFullscreen();
+                } else if (heroVideo.webkitRequestFullscreen) {
+                    heroVideo.webkitRequestFullscreen();
+                }
+
+            });
+        }
+
+
+        /* =================================================
+           INITIAL CART
+        ================================================= */
+
         loadCart();
-updateCart();
-        </script>
-        <!-- PRODUCT DETAILS MODAL -->
 
-<div id="productModal" class="product-modal">
+        updateCart();
 
-    <div class="product-modal-box">
 
-        <button id="closeProductModal" class="close-product-modal" type="button">
-            ×
-        </button>
+        /* =================================================
+           OPEN CHECKOUT WHEN COMING FROM product.html
+           (index.html?checkout=1)
+        ================================================= */
 
-        <div class="product-modal-image">
+        if (window.location.search.indexOf("checkout=1") !== -1) {
 
-            <img id="modalProductImage" src="" alt="">
+            openCheckout();
 
-        </div>
+            if (window.history && window.history.replaceState) {
+                window.history.replaceState(null, "", window.location.pathname);
+            }
 
-        <div class="product-modal-info">
+        }
 
-            <h2 id="modalProductName"></h2>
+    });
 
-            <div id="modalProductPrice" class="modal-product-price"></div>
-
-            <div class="modal-option">
-
-                <label for="modalProductColor">
-                    COLOR
-                </label>
-
-                <select id="modalProductColor"></select>
-
-            </div>
-
-            <div class="modal-option">
-
-                <label for="modalProductSize">
-                    SIZE
-                </label>
-
-                <select id="modalProductSize"></select>
-
-            </div>
-
-            <div class="modal-quantity">
-
-                <button id="modalMinus" type="button">
-                    −
-                </button>
-
-                <span id="modalQuantity">
-                    1
-                </span>
-
-                <button id="modalPlus" type="button">
-                    +
-                </button>
-
-            </div>
-
-            <button id="modalAddCart" class="modal-add-cart" type="button">
-                ADD TO CART
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
+    </script>
 
 </body>
 
