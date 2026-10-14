@@ -1810,7 +1810,24 @@
                 height: 380px;
             }
         }
+.gamy-logo-image {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    transition: transform 0.7s ease, filter 0.7s ease;
+}
 
+.gamy-logo-image:hover {
+    transform: rotate(360deg);
+    filter: drop-shadow(0 0 8px #c8a96b);
+}
+
+@media (max-width: 700px) {
+    .gamy-logo-image {
+        width: 44px;
+        height: 44px;
+    }
+}
     </style>
 </head>
 
@@ -1861,11 +1878,15 @@
          HEADER
     ===================================================== -->
 
-    <header class="header">
+ 
+<div class="logo">
+    <img
+        src="https://cdn.phototourl.com/member/2026-10-14-47cbdbb9-b046-459e-8cfb-e4eed73b54dd.jpg"
+        alt="GAMY STORE"
+        class="gamy-logo-image"
+    >
+</div>
 
-        <div class="logo">
-            GAMY STORE
-        </div>
 
         <nav class="nav">
 
