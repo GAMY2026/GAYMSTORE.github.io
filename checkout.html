@@ -1,336 +1,831 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Checkout | GAMY STORE</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
+            font-family: Arial, sans-serif;
             background: #f5f5f5;
             color: #111;
-            font-family: Arial, sans-serif;
         }
 
-        header {
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .checkout-header {
             background: #111;
-            color: white;
+            color: #fff;
             padding: 22px;
             text-align: center;
+            border-bottom: 2px solid #c8a96b;
+        }
+
+        .checkout-header h1 {
+            margin: 0;
+            font-size: 28px;
             letter-spacing: 3px;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 35px auto;
+        /* ==============================
+           MAIN
+        ============================== */
+
+        .checkout-container {
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 20px;
+
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
         }
 
-        .panel {
-            background: white;
+        .checkout-box {
+            background: #fff;
             padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px #0000000d;
+            border-radius: 10px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
         }
 
-        h2 {
+        .checkout-box h2 {
             margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 22px;
         }
 
-        .field {
-            margin-bottom: 16px;
+        /* ==============================
+           FORM
+        ============================== */
+
+        .form-group {
+            margin-bottom: 18px;
         }
 
-        label {
+        .form-group label {
             display: block;
             margin-bottom: 7px;
             font-weight: bold;
         }
 
-        input, textarea {
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
             width: 100%;
-            padding: 12px;
+
+            padding: 13px;
+
             border: 1px solid #ccc;
+
             border-radius: 6px;
-            font: inherit;
+
+            font-size: 15px;
+
+            outline: none;
         }
 
-        textarea {
-            min-height: 90px;
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #c8a96b;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
             resize: vertical;
         }
 
-        .item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+        /* ==============================
+           CART ITEMS
+        ============================== */
+
+        .checkout-item {
+
+            padding: 18px 0;
+
+            border-bottom:
+                1px solid #eee;
         }
 
-        .item h3 {
-            margin: 0 0 8px;
-            font-size: 16px;
+        .checkout-item:last-child {
+            border-bottom: none;
         }
 
-        .item p {
-            margin: 5px 0;
-            color: #555;
+        .checkout-item h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+        }
+
+        .checkout-item p {
+            margin: 6px 0;
+            color: #666;
             font-size: 14px;
         }
 
-        .total-row {
+        .checkout-item-price {
+            margin-top: 10px;
+
+            font-weight: bold;
+
+            color: #111;
+        }
+
+        /* ==============================
+           TOTAL
+        ============================== */
+
+        .checkout-total {
+
             display: flex;
+
             justify-content: space-between;
-            gap: 15px;
+
+            align-items: center;
+
             margin-top: 20px;
-            font-size: 19px;
+
+            padding-top: 20px;
+
+            border-top:
+                2px solid #c8a96b;
+
+            font-size: 20px;
+
             font-weight: bold;
         }
 
-        button, .back-link {
-            display: block;
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .confirm-order {
+
             width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
+
+            margin-top: 25px;
+
+            padding: 15px;
+
             background: #111;
-            color: white;
-            font-size: 15px;
+
+            color: #fff;
+
+            border: 1px solid #c8a96b;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
             font-weight: bold;
+
             cursor: pointer;
-            text-align: center;
-            text-decoration: none;
+
+            transition: 0.3s ease;
         }
 
-        button:hover, .back-link:hover {
-            background: #333;
+        .confirm-order:hover {
+
+            background: #c8a96b;
+
+            color: #111;
+
         }
 
-        .back-link {
+        .back-store {
+
+            display: block;
+
+            width: 100%;
+
             margin-top: 12px;
-            background: #e5e5e5;
-            color: #111;
-        }
 
-        .empty {
+            padding: 14px;
+
+            background: #eee;
+
+            color: #111;
+
+            text-decoration: none;
+
             text-align: center;
-            padding: 25px 0;
+
+            border-radius: 6px;
+
+            font-weight: bold;
         }
 
-        .empty a {
-            color: #111;
+        .back-store:hover {
+            background: #ddd;
         }
 
-        .notice {
-            color: #666;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-top: 15px;
+        /* ==============================
+           EMPTY CART
+        ============================== */
+
+        .empty-cart {
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #777;
         }
 
-        @media (max-width: 700px) {
-            .container {
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 750px) {
+
+            .checkout-container {
+
                 grid-template-columns: 1fr;
-                margin: 10px auto;
+
+                margin: 15px auto;
+
                 padding: 12px;
+
             }
+
+            .checkout-header h1 {
+                font-size: 22px;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
-<header>GAMY STORE — CHECKOUT</header>
+    <!-- ==============================
+         HEADER
+    ============================== -->
 
-<main class="container">
+    <header class="checkout-header">
 
-    <section class="panel">
-        <h2>Customer Information</h2>
+        <h1>
+            GAMY STORE
+        </h1>
 
-        <form id="checkoutForm">
+    </header>
 
-            <div class="field">
-                <label for="customerName">Full Name</label>
-                <input id="customerName" name="customerName"
-                       type="text" required>
-            </div>
 
-            <div class="field">
-                <label for="customerPhone">Phone Number</label>
-                <input id="customerPhone" name="customerPhone"
-                       type="tel" required>
-            </div>
+    <!-- ==============================
+         CHECKOUT
+    ============================== -->
 
-            <div class="field">
-                <label for="customerCity">Governorate</label>
-                <input id="customerCity" name="customerCity"
-                       type="text" required>
-            </div>
+    <main class="checkout-container">
 
-            <div class="field">
-                <label for="customerArea">Area</label>
-                <input id="customerArea" name="customerArea"
-                       type="text" required>
-            </div>
 
-            <div class="field">
-                <label for="customerAddress">Full Address</label>
-                <textarea id="customerAddress" name="customerAddress"
-                          required></textarea>
-            </div>
+        <!-- ==============================
+             CUSTOMER INFORMATION
+        ============================== -->
 
-            <div class="field">
-                <label for="orderNotes">Order Notes (Optional)</label>
-                <textarea id="orderNotes" name="orderNotes"></textarea>
-            </div>
+        <section class="checkout-box">
 
-            <button type="submit" id="confirmOrder">
-                CONFIRM ORDER
-            </button>
+            <h2>
+                CUSTOMER INFORMATION
+            </h2>
 
-            <p class="notice">
-                This form prepares your order details. It does not
-                process an online payment or send the order to the store.
-            </p>
 
-        </form>
-    </section>
+            <form id="checkoutForm">
 
-    <aside class="panel">
-        <h2>Your Order</h2>
 
-        <div id="checkoutItems"></div>
+                <div class="form-group">
 
-        <div id="orderTotal" class="total-row">
-            <span>TOTAL</span>
-            <span>0 EGP</span>
-        </div>
+                    <label for="customerName">
+                        FULL NAME
+                    </label>
 
-        <a class="back-link" href="index.html">
-            BACK TO STORE
-        </a>
-    </aside>
+                    <input
+                        type="text"
+                        id="customerName"
+                        required
+                    >
 
-</main>
-
-<script>
-    const CART_STORAGE_KEY = "gamyStoreCart";
-
-    const itemsContainer = document.getElementById("checkoutItems");
-    const orderTotal = document.getElementById("orderTotal");
-    const checkoutForm = document.getElementById("checkoutForm");
-    const confirmButton = document.getElementById("confirmOrder");
-
-    let cartItemsArray = [];
-
-    function loadCart() {
-        try {
-            const savedCart = localStorage.getItem(CART_STORAGE_KEY);
-            const parsedCart = savedCart ? JSON.parse(savedCart) : [];
-
-            cartItemsArray = Array.isArray(parsedCart) ? parsedCart : [];
-        } catch (error) {
-            console.error("Could not load cart:", error);
-            cartItemsArray = [];
-        }
-    }
-
-    function renderCheckout() {
-        loadCart();
-        itemsContainer.innerHTML = "";
-
-        let total = 0;
-        let totalItems = 0;
-
-        if (cartItemsArray.length === 0) {
-            itemsContainer.innerHTML = `
-                <div class="empty">
-                    <p>Your cart is empty.</p>
-                    <a href="index.html">Return to the store</a>
                 </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        PHONE NUMBER
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerCity">
+                        GOVERNORATE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerCity"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerArea">
+                        AREA
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerArea"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerAddress">
+                        FULL ADDRESS
+                    </label>
+
+                    <textarea
+                        id="customerAddress"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="orderNotes">
+                        ORDER NOTES
+                    </label>
+
+                    <textarea
+                        id="orderNotes"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="confirm-order"
+                >
+                    CONFIRM ORDER
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- ==============================
+             ORDER SUMMARY
+        ============================== -->
+
+        <section class="checkout-box">
+
+            <h2>
+                YOUR ORDER
+            </h2>
+
+
+            <div id="checkoutItems">
+
+            </div>
+
+
+            <div
+                class="checkout-total"
+                id="checkoutTotal"
+            >
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span>
+                    0 EGP
+                </span>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="back-store"
+            >
+                BACK TO STORE
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        /* ==========================================
+           CART STORAGE
+        ========================================== */
+
+        const CART_STORAGE_KEY =
+            "gamyStoreCart";
+
+
+        let cartItemsArray = [];
+
+
+        /* ==========================================
+           LOAD CART
+        ========================================== */
+
+        function loadCart() {
+
+            try {
+
+                const savedCart =
+                    localStorage.getItem(
+                        CART_STORAGE_KEY
+                    );
+
+
+                if (savedCart) {
+
+                    const parsedCart =
+                        JSON.parse(savedCart);
+
+
+                    if (Array.isArray(parsedCart)) {
+
+                        cartItemsArray =
+                            parsedCart;
+
+                    } else {
+
+                        cartItemsArray = [];
+
+                    }
+
+                } else {
+
+                    cartItemsArray = [];
+
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Could not load cart:",
+                    error
+                );
+
+                cartItemsArray = [];
+
+            }
+
+        }
+
+
+        /* ==========================================
+           DISPLAY CART
+        ========================================== */
+
+        function displayCheckout() {
+
+            loadCart();
+
+
+            const container =
+                document.getElementById(
+                    "checkoutItems"
+                );
+
+
+            const totalElement =
+                document.getElementById(
+                    "checkoutTotal"
+                );
+
+
+            container.innerHTML = "";
+
+
+            let total = 0;
+
+
+            if (
+                cartItemsArray.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        <p>
+                            YOUR CART IS EMPTY
+                        </p>
+
+                        <a href="index.html">
+                            RETURN TO STORE
+                        </a>
+
+                    </div>
+
+                `;
+
+
+                totalElement.innerHTML = `
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <span>
+                        0 EGP
+                    </span>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            cartItemsArray.forEach(
+                function(item) {
+
+
+                    const price =
+                        Number(item.price) || 0;
+
+
+                    const quantity =
+                        Number(item.quantity) || 1;
+
+
+                    const itemTotal =
+                        price * quantity;
+
+
+                    total += itemTotal;
+
+
+                    const itemElement =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    itemElement.className =
+                        "checkout-item";
+
+
+                    const name =
+                        document.createElement(
+                            "h3"
+                        );
+
+
+                    name.textContent =
+                        item.name ||
+                        "PRODUCT";
+
+
+                    const color =
+                        document.createElement(
+                            "p"
+                        );
+
+
+                    color.textContent =
+                        "COLOR: " +
+                        (item.color || "-");
+
+
+                    const size =
+                        document.createElement(
+                            "p"
+                        );
+
+
+                    size.textContent =
+                        "SIZE: " +
+                        (item.size || "-");
+
+
+                    const quantityText =
+                        document.createElement(
+                            "p"
+                        );
+
+
+                    quantityText.textContent =
+                        "QUANTITY: " +
+                        quantity;
+
+
+                    const priceText =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    priceText.className =
+                        "checkout-item-price";
+
+
+                    priceText.textContent =
+                        itemTotal.toLocaleString() +
+                        " EGP";
+
+
+                    itemElement.appendChild(
+                        name
+                    );
+
+
+                    itemElement.appendChild(
+                        color
+                    );
+
+
+                    itemElement.appendChild(
+                        size
+                    );
+
+
+                    itemElement.appendChild(
+                        quantityText
+                    );
+
+
+                    itemElement.appendChild(
+                        priceText
+                    );
+
+
+                    container.appendChild(
+                        itemElement
+                    );
+
+                }
+            );
+
+
+            totalElement.innerHTML = `
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span>
+                    ${total.toLocaleString()} EGP
+                </span>
+
             `;
 
-            orderTotal.innerHTML = `
-                <span>TOTAL</span>
-                <span>0 EGP</span>
-            `;
-
-            confirmButton.disabled = true;
-            confirmButton.style.opacity = "0.5";
-            return;
         }
 
-        cartItemsArray.forEach(function(item) {
-            const price = Number(item.price) || 0;
-            const quantity = Math.max(1, Number(item.quantity) || 1);
-            const itemTotal = price * quantity;
 
-            total += itemTotal;
-            totalItems += quantity;
+        /* ==========================================
+           CONFIRM ORDER
+        ========================================== */
 
-            const row = document.createElement("div");
-            row.className = "item";
+        document
+            .getElementById("checkoutForm")
+            .addEventListener(
+                "submit",
+                function(event) {
 
-            const name = document.createElement("h3");
-            name.textContent = item.name || "Product";
+                    event.preventDefault();
 
-            const details = document.createElement("p");
-            details.textContent =
-                "Color: " + (item.color || "-") +
-                " | Size: " + (item.size || "-");
 
-            const qty = document.createElement("p");
-            qty.textContent = "Quantity: " + quantity;
+                    loadCart();
 
-            const priceText = document.createElement("strong");
-            priceText.textContent =
-                itemTotal.toLocaleString() + " EGP";
 
-            row.append(name, details, qty, priceText);
-            itemsContainer.appendChild(row);
-        });
+                    if (
+                        cartItemsArray.length === 0
+                    ) {
 
-        orderTotal.innerHTML = `
-            <span>TOTAL (${totalItems} items)</span>
-            <span>${total.toLocaleString()} EGP</span>
-        `;
+                        alert(
+                            "YOUR CART IS EMPTY"
+                        );
 
-        confirmButton.disabled = false;
-        confirmButton.style.opacity = "1";
-    }
+                        return;
 
-    checkoutForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+                    }
 
-        loadCart();
 
-        if (cartItemsArray.length === 0) {
-            alert("Your cart is empty.");
-            renderCheckout();
-            return;
-        }
+                    const customerName =
+                        document
+                            .getElementById(
+                                "customerName"
+                            )
+                            .value
+                            .trim();
 
-        alert(
-            "Your details are ready, but the order has not been sent. " +
-            "Connect an order destination before accepting real orders."
-        );
-    });
 
-    window.addEventListener("storage", function(event) {
-        if (event.key === CART_STORAGE_KEY) {
-            renderCheckout();
-        }
-    });
+                    const customerPhone =
+                        document
+                            .getElementById(
+                                "customerPhone"
+                            )
+                            .value
+                            .trim();
 
-    renderCheckout();
-</script>
+
+                    const customerCity =
+                        document
+                            .getElementById(
+                                "customerCity"
+                            )
+                            .value
+                            .trim();
+
+
+                    const customerArea =
+                        document
+                            .getElementById(
+                                "customerArea"
+                            )
+                            .value
+                            .trim();
+
+
+                    const customerAddress =
+                        document
+                            .getElementById(
+                                "customerAddress"
+                            )
+                            .value
+                            .trim();
+
+
+                    if (
+                        !customerName ||
+                        !customerPhone ||
+                        !customerCity ||
+                        !customerArea ||
+                        !customerAddress
+                    ) {
+
+                        alert(
+                            "PLEASE COMPLETE YOUR INFORMATION"
+                        );
+
+                        return;
+
+                    }
+
+
+                    alert(
+                        "ORDER READY TO BE CONFIRMED"
+                    );
+
+                }
+            );
+
+
+        /* ==========================================
+           START
+        ========================================== */
+
+        displayCheckout();
+
+    </script>
 
 </body>
 </html>
