@@ -22,13 +22,12 @@ nav{display:flex;gap:26px;font-size:14px;font-weight:500}
 nav a:hover{color:var(--gold)}
 #openCart{border:1px solid var(--ink);background:var(--ink);color:var(--bone);border-radius:30px;padding:9px 16px;cursor:pointer;font-size:13px;font-weight:500;display:flex;gap:8px;align-items:center}
 #cartCount{background:var(--gold);color:var(--ink);border-radius:50%;min-width:20px;height:20px;display:grid;place-items:center;font-size:11px;font-weight:600}
-.hero{background:var(--forest);color:#fff;overflow:hidden}
-.frame{position:relative;display:flex;justify-content:center;background:#17130f;overflow:hidden}
-.frame .bg{position:absolute;inset:-30px;background:center/cover no-repeat;filter:blur(28px) brightness(.55)}
-.frame img{position:relative;display:block;width:100%;max-width:1400px;height:auto;max-height:78vh;object-fit:contain}
-.hero .tx{text-align:center;padding:34px 5% 38px;max-width:760px;margin:auto}
-.hero .tx h1{font-family:var(--serif);font-size:clamp(30px,5vw,54px);line-height:1.05;font-weight:500;margin-bottom:12px}
-.hero .tx p{font-size:16px;margin:0 auto 22px;color:#eadfca;max-width:420px}
+.hero{position:relative;background:var(--forest);color:#fff;overflow:hidden}
+.hero>img{display:block;width:100%;height:auto}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60%;background:linear-gradient(transparent,rgba(15,12,9,.82));pointer-events:none}
+.hero .tx{position:absolute;left:0;right:0;bottom:0;z-index:2;text-align:center;padding:0 5% 36px}
+.hero .tx h1{font-family:var(--serif);font-size:clamp(28px,4.5vw,54px);line-height:1.05;font-weight:500;margin-bottom:10px}
+.hero .tx p{font-size:16px;margin:0 auto 18px;color:#eadfca;max-width:420px}
 .btn{display:inline-block;border:1px solid #fff;padding:13px 26px;border-radius:30px;font-weight:500;font-size:14px;cursor:pointer;background:transparent;color:#fff;margin:0 4px 8px}
 .btn.fill{background:#fff;color:var(--ink)}
 .btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
@@ -91,7 +90,7 @@ footer{background:var(--ink);color:#9d9381;text-align:center;font-size:12px;padd
 .rb a,.rb button{border:1px solid var(--ink);border-radius:30px;padding:12px;font-size:14px;background:none;cursor:pointer}
 .rb a.ok{background:var(--ink);color:var(--bone)}
 @media(max-width:900px){.grid,#shoes .grid{grid-template-columns:repeat(2,1fr);gap:10px}.pm{grid-template-columns:1fr}.pm .im{min-height:280px}}
-@media(max-width:700px){nav{display:none}.frame img{max-height:62vh}.sec{padding-top:44px}.cols a{width:96px;font-size:12px}.pn{padding:9px;gap:8px}.pn h3{font-size:13px}.pi b{font-size:11px;padding:3px 8px}.add{font-size:12px;padding:7px}.r2{grid-template-columns:1fr}.brand b{font-size:20px}}
+@media(max-width:700px){nav{display:none}.hero::after{display:none}.hero .tx{position:static;background:var(--forest);padding:24px 5% 28px}.sec{padding-top:44px}.cols a{width:96px;font-size:12px}.pn{padding:9px;gap:8px}.pn h3{font-size:13px}.pi b{font-size:11px;padding:3px 8px}.add{font-size:12px;padding:7px}.r2{grid-template-columns:1fr}.brand b{font-size:20px}}
 </style>
 </head>
 <body>
@@ -102,7 +101,7 @@ footer{background:var(--ink);color:#9d9381;text-align:center;font-size:12px;padd
   <button id="openCart" type="button">Cart <span id="cartCount">0</span></button>
 </header>
 
-<section class="hero" id="home"><div class="frame"><div class="bg" style="background-image:url('https://cdn.phototourl.com/member/2026-10-17-c0c91864-032a-4e8c-a709-e9c1b767ca95.jpg')"></div><img src="https://cdn.phototourl.com/member/2026-10-17-c0c91864-032a-4e8c-a709-e9c1b767ca95.jpg" alt="Gamy Store"></div><div class="tx">
+<section class="hero" id="home"><img src="https://cdn.phototourl.com/member/2026-10-17-c0c91864-032a-4e8c-a709-e9c1b767ca95.jpg" alt="Gamy Store"><div class="tx">
   <h1>Dress like you mean it.</h1>
   <p>New season pieces for men and women. Pick your size, add to cart, and confirm on WhatsApp.</p>
   <a class="btn fill" href="#men">Shop men</a><a class="btn" href="#women">Shop women</a><button class="btn" id="homeCheckout" type="button">Checkout</button>
