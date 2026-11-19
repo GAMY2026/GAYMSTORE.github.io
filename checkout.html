@@ -1,831 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Checkout | GAMY STORE</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #111;
-        }
-
-        /* ==============================
-           HEADER
-        ============================== */
-
-        .checkout-header {
-            background: #111;
-            color: #fff;
-            padding: 22px;
-            text-align: center;
-            border-bottom: 2px solid #c8a96b;
-        }
-
-        .checkout-header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 3px;
-        }
-
-        /* ==============================
-           MAIN
-        ============================== */
-
-        .checkout-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .checkout-box {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-
-            box-shadow:
-                0 10px 35px rgba(0,0,0,0.08);
-        }
-
-        .checkout-box h2 {
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 22px;
-        }
-
-        /* ==============================
-           FORM
-        ============================== */
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-
-            width: 100%;
-
-            padding: 13px;
-
-            border: 1px solid #ccc;
-
-            border-radius: 6px;
-
-            font-size: 15px;
-
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: #c8a96b;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        /* ==============================
-           CART ITEMS
-        ============================== */
-
-        .checkout-item {
-
-            padding: 18px 0;
-
-            border-bottom:
-                1px solid #eee;
-        }
-
-        .checkout-item:last-child {
-            border-bottom: none;
-        }
-
-        .checkout-item h3 {
-            margin: 0 0 10px;
-            font-size: 17px;
-        }
-
-        .checkout-item p {
-            margin: 6px 0;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .checkout-item-price {
-            margin-top: 10px;
-
-            font-weight: bold;
-
-            color: #111;
-        }
-
-        /* ==============================
-           TOTAL
-        ============================== */
-
-        .checkout-total {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            margin-top: 20px;
-
-            padding-top: 20px;
-
-            border-top:
-                2px solid #c8a96b;
-
-            font-size: 20px;
-
-            font-weight: bold;
-        }
-
-        /* ==============================
-           BUTTONS
-        ============================== */
-
-        .confirm-order {
-
-            width: 100%;
-
-            margin-top: 25px;
-
-            padding: 15px;
-
-            background: #111;
-
-            color: #fff;
-
-            border: 1px solid #c8a96b;
-
-            border-radius: 6px;
-
-            font-size: 16px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
-        }
-
-        .confirm-order:hover {
-
-            background: #c8a96b;
-
-            color: #111;
-
-        }
-
-        .back-store {
-
-            display: block;
-
-            width: 100%;
-
-            margin-top: 12px;
-
-            padding: 14px;
-
-            background: #eee;
-
-            color: #111;
-
-            text-decoration: none;
-
-            text-align: center;
-
-            border-radius: 6px;
-
-            font-weight: bold;
-        }
-
-        .back-store:hover {
-            background: #ddd;
-        }
-
-        /* ==============================
-           EMPTY CART
-        ============================== */
-
-        .empty-cart {
-
-            text-align: center;
-
-            padding: 30px;
-
-            color: #777;
-        }
-
-        /* ==============================
-           MOBILE
-        ============================== */
-
-        @media (max-width: 750px) {
-
-            .checkout-container {
-
-                grid-template-columns: 1fr;
-
-                margin: 15px auto;
-
-                padding: 12px;
-
-            }
-
-            .checkout-header h1 {
-                font-size: 22px;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | Gamy Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--mid:#0b0e1a;--chalk:#f1f2f7;--cob:#3a4bff;--flame:#ff5a3c;--lilac:#d7d3ff;--mut:#666b82;--line:#dcdfeb;--disp:"Unbounded",Arial,sans-serif;--sans:"Manrope",Arial,sans-serif;--sh:0 18px 40px rgba(11,14,26,.10);--ease:cubic-bezier(.2,.8,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font:500 15px/1.55 var(--sans);background:var(--chalk);color:var(--mid);overflow-x:hidden}
+button,select,input,textarea{font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cob);outline-offset:3px}
+header{position:sticky;top:12px;z-index:50;margin:12px 3% 0;display:flex;align-items:center;justify-content:space-between;padding:9px 10px 9px 22px;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-radius:60px;box-shadow:var(--sh)}
+.brand b{font:700 21px/1 var(--disp);letter-spacing:-.5px}
+.brand small{display:block;font-size:8px;letter-spacing:6px;margin-top:4px;color:var(--cob);font-weight:800}
+.back{background:var(--mid);color:#fff;border-radius:30px;padding:11px 20px;font-size:13px;font-weight:700;transition:.25s}
+.back:hover{background:var(--cob)}
+.top{position:relative;background:var(--mid);color:#fff;margin-top:-72px;padding:140px 4% 110px;overflow:hidden;isolation:isolate;text-align:center}
+.top::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.6px) 0 0/30px 30px;-webkit-mask:radial-gradient(ellipse at 50% 40%,#000 15%,transparent 75%);mask:radial-gradient(ellipse at 50% 40%,#000 15%,transparent 75%)}
+.blob{position:absolute;z-index:-1;filter:blur(46px);opacity:.55;animation:drift 16s ease-in-out infinite alternate}
+.b1{width:480px;top:-140px;left:-120px}.b2{width:380px;bottom:-160px;right:4%;animation-delay:-7s}
+@keyframes drift{to{transform:translate(60px,40px) rotate(25deg)}}
+.top h1{font:700 clamp(32px,5vw,60px)/1.1 var(--disp);letter-spacing:-.03em;margin-bottom:34px;animation:up .9s var(--ease) both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.steps{display:flex;justify-content:center;align-items:center;gap:10px;font-size:13px;font-weight:800;flex-wrap:wrap}
+.steps span{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)}
+.steps span.on{background:var(--flame);border-color:var(--flame)}
+.steps i{width:22px;height:2px;background:rgba(255,255,255,.3)}
+.wrap{position:relative;z-index:3;width:min(1180px,92%);margin:-56px auto 0;display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
+.card{background:#fff;border-radius:30px;padding:30px;box-shadow:var(--sh)}
+.card h2{font:700 20px var(--disp);letter-spacing:-.02em;margin-bottom:20px}
+.f{margin-bottom:14px}
+.f label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:13px 14px;transition:border-color .2s,box-shadow .2s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--cob);box-shadow:0 0 0 4px rgba(58,75,255,.12);outline:0}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.it{grid-template-columns:72px 1fr auto;align-items:start}
+.th{width:72px;height:90px;border-radius:14px;background:#e6e8f2 center top/cover;display:grid;place-items:center;font:700 20px var(--disp);color:var(--mut)}
+.it .qr{grid-column:2/-1}
+.pays{border:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 12px}
+.pays legend{font-size:12px;font-weight:800;margin-bottom:8px}
+.pm{position:relative;cursor:pointer;display:block}
+.pm input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.pm span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border:1.5px solid var(--line);border-radius:18px;font-weight:800;font-size:13px;text-align:center;transition:.25s;height:100%}
+.pm svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:.25s}
+.pm:hover span{border-color:var(--cob)}
+.pm input:checked+span{border-color:var(--cob);background:rgba(58,75,255,.07);box-shadow:0 0 0 4px rgba(58,75,255,.12);color:var(--cob)}
+.pm input:focus-visible+span{outline:3px solid var(--cob);outline-offset:3px}
+.pnote{background:var(--chalk);border-radius:16px;padding:14px 16px;font-size:13px;font-weight:600;margin-bottom:18px}
+.cpy{margin-inline-start:8px;border:1.5px solid var(--cob);background:#fff;color:var(--cob);border-radius:20px;padding:3px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.cpy:hover{background:var(--cob);color:#fff}
+.main{width:100%;border:0;background:var(--flame);color:#fff;border-radius:40px;padding:17px;cursor:pointer;font-weight:800;font-size:15px;transition:.3s}
+.main:hover{background:var(--cob);transform:translateY(-2px)}
+.sticky{position:sticky;top:92px}
+.it{display:grid;grid-template-columns:1fr auto;gap:8px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.it h4{font-size:15px;font-weight:800}
+.it p{font-size:12px;color:var(--mut)}
+.it b{font-weight:800;white-space:nowrap}
+.qr{display:flex;align-items:center;gap:10px}
+.q{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:30px}
+.q button{width:32px;height:32px;border:0;background:none;font-size:17px;cursor:pointer;border-radius:50%}
+.q button:hover{color:var(--cob)}
+.q span{min-width:24px;text-align:center;font-weight:800;font-size:13px}
+.rm{border:0;background:none;color:var(--mut);font-size:12px;font-weight:700;cursor:pointer;text-decoration:underline}
+.rm:hover{color:var(--flame)}
+.tot{display:flex;justify-content:space-between;align-items:center;background:var(--mid);color:#fff;border-radius:18px;padding:18px 20px;margin-top:20px;font-weight:800}
+.tot b{font:700 20px var(--disp)}
+.sub{display:flex;justify-content:space-between;font-size:13px;color:var(--mut);font-weight:700;margin-top:14px}
+.empty{width:min(560px,92%);margin:-56px auto 0;position:relative;z-index:3;text-align:center;padding:56px 30px}
+.empty p{color:var(--mut);margin:8px 0 24px}
+.empty .main{display:inline-block;width:auto;padding:16px 34px}
+.ok{width:min(560px,92%);margin:-56px auto 0;position:relative;z-index:3;text-align:center;padding:44px 30px;display:flex;flex-direction:column;gap:10px;animation:up .7s var(--ease) both}
+.ok svg{width:96px;margin:0 auto 8px}
+.ok circle{fill:none;stroke:var(--cob);stroke-width:5;stroke-dasharray:290;stroke-dashoffset:290;animation:dr .8s .1s var(--ease) forwards}
+.ok path{fill:none;stroke:var(--flame);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:dr .5s .8s var(--ease) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.ok h2{margin-bottom:0}
+.ok .no{font:700 22px var(--disp);color:var(--cob);letter-spacing:1px}
+.ok p{color:var(--mut)}
+.ok a,.ok button{border:1.5px solid var(--mid);border-radius:30px;padding:14px;font-weight:800;font-size:14px;background:none;cursor:pointer;transition:.25s}
+.ok a.go{background:var(--mid);color:#fff}.ok a.go:hover{background:var(--cob);border-color:var(--cob)}
+.ok a.no2:hover{border-color:var(--flame);color:var(--flame)}
+.conf{position:fixed;inset:0;pointer-events:none;z-index:100;overflow:hidden}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+footer{margin-top:80px;background:var(--mid);color:#9aa0b8;text-align:center;font-size:12px;padding:26px;border-radius:36px 36px 0 0}
+[hidden]{display:none!important}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}.sticky{position:static}.order-sum{order:-1}}
+@media(max-width:600px){.pays{grid-template-columns:1fr}.pm span{flex-direction:row;justify-content:flex-start;padding:14px 16px}.r2{grid-template-columns:1fr}.card{padding:22px}.top{padding:120px 5% 100px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.ok circle,.ok path{stroke-dashoffset:0}}
+</style>
 </head>
-
 <body>
-
-    <!-- ==============================
-         HEADER
-    ============================== -->
-
-    <header class="checkout-header">
-
-        <h1>
-            GAMY STORE
-        </h1>
-
-    </header>
-
-
-    <!-- ==============================
-         CHECKOUT
-    ============================== -->
-
-    <main class="checkout-container">
-
-
-        <!-- ==============================
-             CUSTOMER INFORMATION
-        ============================== -->
-
-        <section class="checkout-box">
-
-            <h2>
-                CUSTOMER INFORMATION
-            </h2>
-
-
-            <form id="checkoutForm">
-
-
-                <div class="form-group">
-
-                    <label for="customerName">
-                        FULL NAME
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerName"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="customerPhone">
-                        PHONE NUMBER
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="customerPhone"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="customerCity">
-                        GOVERNORATE
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerCity"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="customerArea">
-                        AREA
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerArea"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="customerAddress">
-                        FULL ADDRESS
-                    </label>
-
-                    <textarea
-                        id="customerAddress"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="orderNotes">
-                        ORDER NOTES
-                    </label>
-
-                    <textarea
-                        id="orderNotes"
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="confirm-order"
-                >
-                    CONFIRM ORDER
-                </button>
-
-
-            </form>
-
-        </section>
-
-
-        <!-- ==============================
-             ORDER SUMMARY
-        ============================== -->
-
-        <section class="checkout-box">
-
-            <h2>
-                YOUR ORDER
-            </h2>
-
-
-            <div id="checkoutItems">
-
-            </div>
-
-
-            <div
-                class="checkout-total"
-                id="checkoutTotal"
-            >
-
-                <span>
-                    TOTAL
-                </span>
-
-                <span>
-                    0 EGP
-                </span>
-
-            </div>
-
-
-            <a
-                href="index.html"
-                class="back-store"
-            >
-                BACK TO STORE
-            </a>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- ==============================
-         JAVASCRIPT
-    ============================== -->
-
-    <script>
-
-        /* ==========================================
-           CART STORAGE
-        ========================================== */
-
-        const CART_STORAGE_KEY =
-            "gamyStoreCart";
-
-
-        let cartItemsArray = [];
-
-
-        /* ==========================================
-           LOAD CART
-        ========================================== */
-
-        function loadCart() {
-
-            try {
-
-                const savedCart =
-                    localStorage.getItem(
-                        CART_STORAGE_KEY
-                    );
-
-
-                if (savedCart) {
-
-                    const parsedCart =
-                        JSON.parse(savedCart);
-
-
-                    if (Array.isArray(parsedCart)) {
-
-                        cartItemsArray =
-                            parsedCart;
-
-                    } else {
-
-                        cartItemsArray = [];
-
-                    }
-
-                } else {
-
-                    cartItemsArray = [];
-
-                }
-
-            } catch (error) {
-
-                console.error(
-                    "Could not load cart:",
-                    error
-                );
-
-                cartItemsArray = [];
-
-            }
-
-        }
-
-
-        /* ==========================================
-           DISPLAY CART
-        ========================================== */
-
-        function displayCheckout() {
-
-            loadCart();
-
-
-            const container =
-                document.getElementById(
-                    "checkoutItems"
-                );
-
-
-            const totalElement =
-                document.getElementById(
-                    "checkoutTotal"
-                );
-
-
-            container.innerHTML = "";
-
-
-            let total = 0;
-
-
-            if (
-                cartItemsArray.length === 0
-            ) {
-
-                container.innerHTML = `
-
-                    <div class="empty-cart">
-
-                        <p>
-                            YOUR CART IS EMPTY
-                        </p>
-
-                        <a href="index.html">
-                            RETURN TO STORE
-                        </a>
-
-                    </div>
-
-                `;
-
-
-                totalElement.innerHTML = `
-
-                    <span>
-                        TOTAL
-                    </span>
-
-                    <span>
-                        0 EGP
-                    </span>
-
-                `;
-
-
-                return;
-
-            }
-
-
-            cartItemsArray.forEach(
-                function(item) {
-
-
-                    const price =
-                        Number(item.price) || 0;
-
-
-                    const quantity =
-                        Number(item.quantity) || 1;
-
-
-                    const itemTotal =
-                        price * quantity;
-
-
-                    total += itemTotal;
-
-
-                    const itemElement =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    itemElement.className =
-                        "checkout-item";
-
-
-                    const name =
-                        document.createElement(
-                            "h3"
-                        );
-
-
-                    name.textContent =
-                        item.name ||
-                        "PRODUCT";
-
-
-                    const color =
-                        document.createElement(
-                            "p"
-                        );
-
-
-                    color.textContent =
-                        "COLOR: " +
-                        (item.color || "-");
-
-
-                    const size =
-                        document.createElement(
-                            "p"
-                        );
-
-
-                    size.textContent =
-                        "SIZE: " +
-                        (item.size || "-");
-
-
-                    const quantityText =
-                        document.createElement(
-                            "p"
-                        );
-
-
-                    quantityText.textContent =
-                        "QUANTITY: " +
-                        quantity;
-
-
-                    const priceText =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    priceText.className =
-                        "checkout-item-price";
-
-
-                    priceText.textContent =
-                        itemTotal.toLocaleString() +
-                        " EGP";
-
-
-                    itemElement.appendChild(
-                        name
-                    );
-
-
-                    itemElement.appendChild(
-                        color
-                    );
-
-
-                    itemElement.appendChild(
-                        size
-                    );
-
-
-                    itemElement.appendChild(
-                        quantityText
-                    );
-
-
-                    itemElement.appendChild(
-                        priceText
-                    );
-
-
-                    container.appendChild(
-                        itemElement
-                    );
-
-                }
-            );
-
-
-            totalElement.innerHTML = `
-
-                <span>
-                    TOTAL
-                </span>
-
-                <span>
-                    ${total.toLocaleString()} EGP
-                </span>
-
-            `;
-
-        }
-
-
-        /* ==========================================
-           CONFIRM ORDER
-        ========================================== */
-
-        document
-            .getElementById("checkoutForm")
-            .addEventListener(
-                "submit",
-                function(event) {
-
-                    event.preventDefault();
-
-
-                    loadCart();
-
-
-                    if (
-                        cartItemsArray.length === 0
-                    ) {
-
-                        alert(
-                            "YOUR CART IS EMPTY"
-                        );
-
-                        return;
-
-                    }
-
-
-                    const customerName =
-                        document
-                            .getElementById(
-                                "customerName"
-                            )
-                            .value
-                            .trim();
-
-
-                    const customerPhone =
-                        document
-                            .getElementById(
-                                "customerPhone"
-                            )
-                            .value
-                            .trim();
-
-
-                    const customerCity =
-                        document
-                            .getElementById(
-                                "customerCity"
-                            )
-                            .value
-                            .trim();
-
-
-                    const customerArea =
-                        document
-                            .getElementById(
-                                "customerArea"
-                            )
-                            .value
-                            .trim();
-
-
-                    const customerAddress =
-                        document
-                            .getElementById(
-                                "customerAddress"
-                            )
-                            .value
-                            .trim();
-
-
-                    if (
-                        !customerName ||
-                        !customerPhone ||
-                        !customerCity ||
-                        !customerArea ||
-                        !customerAddress
-                    ) {
-
-                        alert(
-                            "PLEASE COMPLETE YOUR INFORMATION"
-                        );
-
-                        return;
-
-                    }
-
-
-                    alert(
-                        "ORDER READY TO BE CONFIRMED"
-                    );
-
-                }
-            );
-
-
-        /* ==========================================
-           START
-        ========================================== */
-
-        displayCheckout();
-
-    </script>
-
+<header><a class="brand" href="index.html"><span><b>Gamy</b><small>STORE</small></span></a><a class="back" href="index.html">Back to store</a></header>
+<section class="top">
+<svg class="blob b1" viewBox="0 0 200 200" aria-hidden="true"><path fill="#3a4bff" d="M100,20 C150,20 180,50 180,100 C180,150 150,180 100,180 C50,180 20,150 20,100 C20,50 50,20 100,20Z"><animate attributeName="d" dur="14s" repeatCount="indefinite" values="M100,20 C150,20 180,50 180,100 C180,150 150,180 100,180 C50,180 20,150 20,100 C20,50 50,20 100,20Z;M110,15 C165,25 185,70 175,110 C165,160 120,190 80,175 C30,160 15,110 30,70 C45,30 70,8 110,15Z;M100,20 C150,20 180,50 180,100 C180,150 150,180 100,180 C50,180 20,150 20,100 C20,50 50,20 100,20Z"/></path></svg>
+<svg class="blob b2" viewBox="0 0 200 200" aria-hidden="true"><path fill="#ff5a3c" d="M110,15 C165,25 185,70 175,110 C165,160 120,190 80,175 C30,160 15,110 30,70 C45,30 70,8 110,15Z"><animate attributeName="d" dur="12s" repeatCount="indefinite" values="M110,15 C165,25 185,70 175,110 C165,160 120,190 80,175 C30,160 15,110 30,70 C45,30 70,8 110,15Z;M95,25 C140,10 190,60 178,105 C170,150 140,185 95,182 C50,180 12,140 22,95 C30,55 55,35 95,25Z;M110,15 C165,25 185,70 175,110 C165,160 120,190 80,175 C30,160 15,110 30,70 C45,30 70,8 110,15Z"/></path></svg>
+<h1>Checkout</h1>
+<div class="steps"><span>1 Cart</span><i></i><span class="on" id="st2">2 Your details</span><i></i><span id="st3">3 Confirm on WhatsApp</span></div>
+</section>
+
+<main id="main">
+<div class="wrap" id="wrap">
+<form class="card" id="co">
+<h2>Delivery details</h2>
+<div class="f"><label for="cName">Full name</label><input id="cName" autocomplete="name" required></div>
+<div class="f"><label for="cPhone">Phone number</label><input id="cPhone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" title="Enter a valid phone number" required></div>
+<div class="r2"><div class="f"><label for="cGov">Governorate</label><select id="cGov" required><option value="">Select governorate</option></select></div>
+<div class="f"><label for="cArea">Area</label><select id="cArea" required disabled><option value="">Select area</option></select></div></div>
+<div class="f"><label for="cAddr">Full address</label><textarea id="cAddr" rows="2" placeholder="Street, building, floor, apartment" required></textarea></div>
+<div class="f"><label for="cNotes">Order notes (optional)</label><textarea id="cNotes" rows="2"></textarea></div>
+<fieldset class="pays"><legend>Payment method</legend>
+<label class="pm"><input type="radio" name="pay" value="cash" checked><span><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="8" width="26" height="16" rx="3"/><circle cx="16" cy="16" r="3.5"/><path d="M7 12v.01M25 20v.01"/></svg>Cash</span></label>
+<label class="pm"><input type="radio" name="pay" value="visa"><span><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="3"/><path d="M3 13h26M8 20h6"/></svg>Visa</span></label>
+<label class="pm"><input type="radio" name="pay" value="insta"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3L7 18h8l-1 11 11-15h-8z"/></svg>InstaPay</span></label>
+</fieldset>
+<div class="pnote" id="pnote" aria-live="polite"></div>
+<button class="main" type="submit">Place order</button>
+</form>
+<aside class="card sticky order-sum"><h2>Your order</h2><div id="items"></div>
+<div class="sub"><span id="cnt">0 items</span><span>Delivery fee confirmed on WhatsApp</span></div>
+<div class="tot"><span>Total</span><b id="tot">0 EGP</b></div></aside>
+</div>
+<div class="card empty" id="empty" hidden><h2>Your cart is empty</h2><p>Add a piece you like, then come back to check out.</p><a class="main" href="index.html#men">Browse the store</a></div>
+</main>
+<footer>© 2026 Gamy Store. All rights reserved.</footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},KEY="gamyStoreCart",W="201105178891",cart=[];
+function load(){try{var s=JSON.parse(localStorage.getItem(KEY)||"[]");cart=Array.isArray(s)?s:[]}catch(e){cart=[]}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
+function esc(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function totals(){var t=0,n=0;cart.forEach(function(i){var q=+i.quantity||1;t+=(+i.price||0)*q;n+=q});return{t:t,n:n}}
+function render(){var T=totals(),has=cart.length>0;
+ $("wrap").hidden=!has;$("empty").hidden=has;
+ $("items").innerHTML=cart.map(function(i,x){var q=+i.quantity||1;return '<div class="it"><div class="th"'+(i.img?' style="background-image:url(\''+esc(i.img)+'\')"':'')+'>'+(i.img?'':esc(String(i.name).charAt(0)))+'</div><div><h4>'+esc(i.name)+'</h4><p>'+esc(i.color)+' • '+esc(i.size)+'</p></div><b>'+(i.price*q).toLocaleString()+' EGP</b><div class="qr"><div class="q"><button type="button" data-a="-" data-x="'+x+'" aria-label="Decrease">−</button><span>'+q+'</span><button type="button" data-a="+" data-x="'+x+'" aria-label="Increase">+</button></div><button class="rm" type="button" data-a="x" data-x="'+x+'">Remove</button></div></div>'}).join("");
+ $("cnt").textContent=T.n+(T.n==1?" item":" items");$("tot").textContent=T.t.toLocaleString()+" EGP"}
+$("items").addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b)return;var x=+b.dataset.x,i=cart[x];if(!i)return;
+ if(b.dataset.a=="x")cart.splice(x,1);else{var q=(+i.quantity||1)+(b.dataset.a=="+"?1:-1);if(q<1)q=1;if(q>99)q=99;i.quantity=q}
+ save();render()});
+var A={"Cairo":"Nasr City,Heliopolis,Maadi,New Cairo,Fifth Settlement,Mokattam,Ain Shams,El Matareya,Shorouk,Badr,Downtown Cairo,Zamalek,Abbasia,Shubra,Misr El Kadima","Giza":"Dokki,Mohandessin,Haram,Faisal,6th of October,Sheikh Zayed,Hadayek October,Imbaba,Agouza,Bulaq El Dakrour,Warraq,Kerdasa","Alexandria":"Miami,Sidi Bishr,Smouha,Gleem,Stanley,Sporting,Roushdy,Mandara,Montaza,Agami,Borg El Arab,Moharam Bek,Kafr Abdo","Qalyubia":"Banha,Shubra El Kheima,Qalyub,Obour City,Khanka,Khosous,Tukh,Qaha,Shebeen El Qanater","Sharqia":"Zagazig,10th of Ramadan,Belbeis,Minya Al Qamh,Abu Kabir,Faqous,Hehia,Mashtoul El Souq","Dakahlia":"Mansoura,Talkha,Mit Ghamr,Dekernes,Sherbin,Aga,Belqas,Manzala,Sinbillawin","Gharbia":"Tanta,Mahalla El Kubra,Kafr El Zayat,Zefta,Santa,Basyoun,Qutour","Monufia":"Shibin El Kom,Menouf,Ashmoun,Sadat City,Quesna,Tala,Berket El Sabe","Beheira":"Damanhur,Kafr El Dawwar,Rashid,Edku,Abu Hummus,Hosh Essa,Kom Hamada,Mahmoudiyah","Kafr El Sheikh":"Kafr El Sheikh,Desouk,Metoubes,Baltim,Fouh,Sidi Salem,Qallin","Damietta":"Damietta,New Damietta,Ras El Bar,Faraskour,Kafr Saad,Zarqa","Port Said":"Port Said,Port Fouad,Arab District,Zohour District,Dawahy District","Ismailia":"Ismailia,Fayed,Qantara East,Qantara West,Tal El Kebir,Abu Suwir","Suez":"Suez,Arbaeen,Ataqah,Faisal,Ganayen","Fayoum":"Fayoum,Sinnuris,Tamiya,Ibshaway,Itsa,Yousef El Seddik","Beni Suef":"Beni Suef,Al Wasta,Nasser,Biba,Samasta,Ihnasiya","Minya":"Minya,Mallawi,Samalut,Maghagha,Beni Mazar,Abu Qurqas,Deir Mawas","Asyut":"Asyut,Dairut,Manfalut,Qusiya,Abnub,Sahel Selim,El Badari","Sohag":"Sohag,Akhmim,Girga,Tahta,Juhayna,Al Maragha,Al Monshah","Qena":"Qena,Nag Hammadi,Qus,Dishna,Farshout,Abu Tesht","Luxor":"Luxor,Esna,Armant,El Tod,Al Bayadiya","Aswan":"Aswan,Kom Ombo,Edfu,Daraw,Abu Simbel","Red Sea":"Hurghada,El Gouna,Safaga,Marsa Alam,Quseir","New Valley":"Kharga,Dakhla,Farafra,Baris,Balat","Matrouh":"Marsa Matrouh,El Alamein,Dabaa,Siwa,Salloum","North Sinai":"Arish,Sheikh Zuweid,Rafah,Bir al-Abd","South Sinai":"Sharm El Sheikh,Dahab,Nuweiba,Taba,Saint Catherine,El Tor"};
+Object.keys(A).forEach(function(g){$("cGov").insertAdjacentHTML("beforeend",'<option>'+g+'</option>')});
+$("cGov").onchange=function(){var a=A[this.value];$("cArea").innerHTML='<option value="">Select area</option>'+(a?a.split(",").map(function(v){return '<option>'+v+'</option>'}).join(""):"");$("cArea").disabled=!a};
+var INSTAPAY="01105178891";
+var PAYS={cash:{n:"Cash on delivery",t:"Pay the courier in cash when your order arrives."},visa:{n:"Visa card",t:"We will send you a secure card payment link on WhatsApp after you confirm."},insta:{n:"InstaPay",t:'Transfer the total to <b>'+INSTAPAY+'</b> on InstaPay, then send us the screenshot on WhatsApp. <button type="button" class="cpy" id="cpy">Copy</button>'}};
+function payVal(){return document.querySelector("input[name=pay]:checked").value}
+function payNote(){$("pnote").innerHTML=PAYS[payVal()].t}
+document.querySelectorAll("input[name=pay]").forEach(function(r){r.addEventListener("change",payNote)});
+$("pnote").addEventListener("click",function(e){var b=e.target.closest("#cpy");if(!b)return;try{navigator.clipboard.writeText(INSTAPAY)}catch(x){}b.textContent="Copied"});
+payNote();
+function confetti(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;var c=document.createElement("div"),k=["#3a4bff","#ff5a3c","#d7d3ff","#0b0e1a"],h="";c.className="conf";
+ for(var i=0;i<60;i++)h+='<i style="left:'+Math.random()*100+'%;background:'+k[i%4]+';animation-duration:'+(1.6+Math.random()*1.8)+'s;animation-delay:'+Math.random()*.5+'s"></i>';
+ c.innerHTML=h;document.body.appendChild(c);setTimeout(function(){c.remove()},4000)}
+$("co").onsubmit=function(e){e.preventDefault();load();if(!cart.length){render();return}
+ var name=$("cName").value.trim(),ph=$("cPhone").value.trim(),gov=$("cGov").value,area=$("cArea").value,addr=$("cAddr").value.trim(),notes=$("cNotes").value.trim(),T=totals(),det="",pv=payVal();
+ cart.forEach(function(i,x){var q=+i.quantity||1;det+=(x+1)+". "+i.name+"\nCOLOR: "+i.color+"\nSIZE: "+i.size+"\nQUANTITY: "+q+"\nUNIT PRICE: "+i.price+" EGP\nITEM TOTAL: "+i.price*q+" EGP\n\n"});
+ var no="GAMY-"+Date.now().toString().slice(-6);
+ var ok="🟢 GAMY STORE - ORDER CONFIRMED\n\nORDER NUMBER: "+no+"\n\nCUSTOMER DETAILS\nNAME: "+name+"\nPHONE: "+ph+"\n\nDELIVERY DETAILS\nGOVERNORATE: "+gov+"\nAREA: "+area+"\nADDRESS: "+addr+"\n\nPAYMENT METHOD: "+PAYS[pv].n+"\n\nORDER DETAILS\n"+det+"TOTAL ITEMS: "+T.n+"\nTOTAL: "+T.t+" EGP\n\nNOTES: "+(notes||"No notes")+"\n\n✅ CUSTOMER CONFIRMS THIS ORDER.";
+ var no2="🔴 GAMY STORE - ORDER REJECTED\n\nORDER NUMBER: "+no+"\n\nCUSTOMER DETAILS\nNAME: "+name+"\nPHONE: "+ph+"\n\nTOTAL ITEMS: "+T.n+"\nTOTAL: "+T.t+" EGP\n\n❌ CUSTOMER REJECTS THIS ORDER.";
+ try{var o=JSON.parse(localStorage.getItem("gamyStoreOrders")||"[]");o.push({orderNumber:no,customerName:name,phone:ph,governorate:gov,area:area,address:addr,notes:notes,payment:PAYS[pv].n,items:cart.slice(),totalItems:T.n,total:T.t,status:"NEW",date:new Date().toLocaleString("en-EG")});localStorage.setItem("gamyStoreOrders",JSON.stringify(o))}catch(x){}
+ cart=[];save();$("wrap").hidden=true;$("st2").classList.remove("on");$("st3").classList.add("on");
+ var d=document.createElement("div");d.className="card ok";
+ d.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/><path d="M30 52l13 13 27-30"/></svg><h2>Order received</h2><div class="no">'+no+'</div><p>'+(pv=='insta'?'Transfer '+T.t.toLocaleString()+' EGP to '+INSTAPAY+' on InstaPay, then send us the screenshot with your order on WhatsApp.':pv=='visa'?'Send your order on WhatsApp and we will reply with a secure card payment link.':'One last step: send your order to us on WhatsApp to confirm it.')+'</p><a class="go" target="_blank" rel="noopener" href="https://wa.me/'+W+'?text='+encodeURIComponent(ok)+'">Confirm on WhatsApp</a><a class="no2" target="_blank" rel="noopener" href="https://wa.me/'+W+'?text='+encodeURIComponent(no2)+'">Reject order</a><a href="index.html">Back to store</a>';
+ $("main").appendChild(d);confetti();scrollTo({top:0,behavior:"smooth"})};
+window.addEventListener("storage",function(e){if(e.key===KEY&&$("wrap")&&!$("wrap").hidden){load();render()}});
+load();render();
+})();
+</script>
 </body>
 </html>
